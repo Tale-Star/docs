@@ -640,7 +640,7 @@ Tale Star considera dos segmentos objetivo principales: padres o cuidadores y do
 
 Como delimitación preliminar del MVP, se plantea trabajar principalmente con contenido dirigido a niños entre aproximadamente 4 y 8 años. Este rango no constituye todavía un resultado de investigación; será validado mediante las entrevistas con ambos segmentos.
 
-#### **Padres y cuidadores de niños pequeños**
+#### Segmento 1: Padres y cuidadores de niños pequeños
 
 Este segmento está compuesto por adultos responsables que participan activamente en el aprendizaje, desarrollo y selección de contenido para niños pequeños.
 
@@ -661,7 +661,7 @@ Como referencia del contexto de este segmento, el Common Sense Census 2025 muest
 
 En el contexto peruano, el INEI reportó que el 61.9 % de los niños de 6 a 11 años utilizó Internet durante el segundo trimestre de 2025, lo que confirma una presencia significativa del entorno digital desde edades tempranas (INEI, 2025). ([INEI][3])
 
-#### **Docentes de educación inicial y primeros años de primaria**
+#### Segmento 2: Docentes de educación inicial y primeros años de primaria
 
 Este segmento comprende docentes que trabajan con niños pequeños y que necesitan seleccionar, preparar o adaptar diferentes materiales para desarrollar actividades educativas.
 
@@ -699,44 +699,572 @@ Los datos estadounidenses se utilizan únicamente como antecedentes sobre consum
 <a id="capitulo-ii-requirements-elicitation-analysis"></a>
 # Capítulo II: Requirements Elicitation & Analysis
 
+El presente capítulo desarrolla el proceso de investigación y análisis necesario para comprender el entorno competitivo de Tale Star y las necesidades de sus dos segmentos objetivo: padres o cuidadores y docentes que trabajan con niños.
+
+En primer lugar, se analiza la oferta de productos digitales que actualmente cubren parcialmente la problemática identificada, considerando plataformas orientadas a la creación de cuentos mediante inteligencia artificial, personalización de historias infantiles y elaboración de libros digitales en contextos educativos. Posteriormente, se establece el diseño de entrevistas que permitirá contrastar las hipótesis formuladas durante el Lean UX Process con experiencias y comportamientos de representantes reales de ambos segmentos.
+
+Finalmente, la información obtenida mediante las entrevistas servirá como entrada para el proceso de Needfinding. A partir de los patrones identificados se construirán los User Personas, User Task Matrix, Empathy Maps y As-Is Scenario Maps correspondientes. Estos artefactos permitirán representar de manera estructurada quiénes son los usuarios, qué tareas realizan actualmente, qué problemas experimentan y cómo se desarrolla su experiencia antes de la existencia de Tale Star.
+
 <a id="21-competidores"></a>
 ## 2.1. Competidores
+
+Para el análisis competitivo de Tale Star se seleccionaron tres productos digitales que cubren diferentes partes de la propuesta planteada: Storywizard.ai, Oscar Stories y StoryJumper.
+
+Storywizard.ai representa el competidor más cercano desde la perspectiva educativa. La plataforma utiliza inteligencia artificial para generar historias ilustradas y dispone de ofertas dirigidas tanto a familias como a docentes y centros educativos. Entre sus capacidades se encuentran historias generadas mediante IA, ilustraciones, narración, ejercicios educativos, descarga de historias y herramientas específicas para profesores. La propia plataforma indica que está orientada a estudiantes de entre 5 y 18 años y soporta múltiples idiomas, incluido español. ([Storywizard.ai][14])
+
+Oscar Stories representa un competidor especialmente relevante para el segmento de padres y cuidadores. Su propuesta consiste en generar cuentos infantiles personalizados mediante inteligencia artificial, permitiendo que el niño sea protagonista de las historias y que el adulto seleccione elementos como personajes, escenarios y moralejas. La aplicación incorpora ilustraciones generadas mediante IA y narración, y está dirigida oficialmente a niños entre 2 y 12 años y sus familias. Está disponible en web, iOS y Android. ([Oscar Stories][9])
+
+StoryJumper representa una alternativa especialmente importante para docentes. La plataforma permite crear libros de forma estructurada utilizando páginas, texto, imágenes, personajes, escenas y sonido. Asimismo, dispone de herramientas dirigidas al trabajo en clases, creación colaborativa de libros, plantillas, Google Classroom y generación de imágenes mediante IA cuando los usuarios no encuentran elementos adecuados dentro de su biblioteca gráfica. ([StoryJumper][12])
+
+La selección de estos competidores permite analizar tres aproximaciones distintas al problema: generación educativa de historias mediante IA, personalización de cuentos infantiles para familias y construcción estructurada de libros digitales en contextos educativos.
 
 <a id="211-analisis-competitivo"></a>
 ### 2.1.1. Análisis competitivo
 
+El objetivo del Competitive Analysis Landscape es determinar cómo Tale Star se diferencia de soluciones existentes sin ampliar innecesariamente su alcance. El análisis se concentra exclusivamente en las capacidades definidas para el producto: generación de imágenes mediante prompts, generación de canciones cortas, creación de cuentos página por página mediante texto, personajes, acciones y objetos, generación de ilustraciones para las páginas y visualización de los cuentos mediante realidad aumentada.
+
+**Competitive Analysis Landscape**
+
+| Perfil / Aspecto | Tale Star<br><img src="./imgs/comp/TaleStar.png" alt="Logo de Tale Star" width="110"/> | Storywizard.ai<br><img src="./imgs/comp/StorywizardAi.png" alt="Logo de Storywizard ai" width="110"/> | Oscar Stories<br><img src="./imgs/comp/OscarStories.png" alt="Logo de Oscar Stories" width="110"/> | StoryJumper<br><img src="./imgs/comp/StoryJumper.png" alt="Logo de StoryJumper" width="110"/> |
+| --- | --- | --- | --- | --- |
+| **Overview** | Plataforma orientada a padres y docentes para crear contenido educativo infantil. Permite generar imágenes, canciones cortas y cuentos ilustrados construidos página por página, además de visualizar los cuentos mediante AR. | Plataforma basada en IA orientada a crear historias y experiencias educativas para familias, estudiantes y docentes. | Aplicación de cuentos infantiles personalizados generados mediante IA, principalmente orientada a familias. | Plataforma online para crear, compartir y publicar libros digitales, con fuerte presencia en contextos escolares. |
+| **Ventaja competitiva / valor ofrecido** | Integra generación de imágenes, canciones, creación controlada de cuentos página por página y lectura mediante AR en una misma propuesta. | Fuerte orientación educativa, herramientas para docentes, actividades de aprendizaje y capacidades de seguimiento. | Personalización del cuento alrededor del niño como protagonista y experiencia especializada en historias infantiles familiares. | Editor de libros maduro, creación por páginas, personalización de personajes, multimedia y herramientas de aula. |
+| **Mercado objetivo** | Padres/cuidadores y docentes que trabajan con niños. | Familias, profesores, instituciones educativas y estudiantes K-12 de aproximadamente 5 a 18 años. | Niños de 2 a 12 años y sus familias. | Estudiantes, profesores, familias y personas interesadas en crear libros digitales. |
+| **Estrategias de marketing observables** | Posicionamiento inicial basado en creación de contenido educativo personalizado y supervisado por un adulto. | Segmenta explícitamente familias y docentes; ofrece pruebas gratuitas para profesores y planes específicos según cantidad de estudiantes. | Modelo gratuito con suscripción Premium y presencia en web, iOS y Android. | Creación online gratuita, herramientas y proyectos para profesores, integración con Google Classroom y monetización mediante productos publicados. |
+| **Productos y servicios** | Imágenes generadas mediante prompt; canciones cortas; cuentos construidos por páginas definiendo texto, personajes, acciones y objetos; ilustraciones por página; cuento completo; lectura AR sobre superficie plana. | Historias generadas mediante IA, ilustraciones, narración, ejercicios educativos, herramientas para profesores, PDF y múltiples idiomas. | Cuentos personalizados mediante IA, ilustraciones, narración y personalización de protagonistas, personajes, escenarios y moralejas. | Libros creados por páginas, texto, personajes, escenas, imágenes, IA para imágenes, voz, música, efectos de sonido y herramientas de aula. |
+| **Precios y costos** | Por definir posteriormente como parte del modelo de negocio. | 3 historias por USD 10; 6 historias por USD 18; 30 historias por USD 21 mensuales. Teacher Basic: USD 10/mes hasta 10 estudiantes. Teacher Ultimate: USD 29/mes hasta 40 estudiantes. | Oscar Premium: USD 49 por año, equivalente a USD 4.08 mensuales con facturación anual. Ofrece prueba gratuita y también paquetes de historias. | Creación online gratuita. PDF desde USD 2.99; Video Book desde USD 7.99; paperback desde USD 14.99; hardcover desde USD 27.99. |
+| **Canales de distribución** | Web Application y Mobile Application para lectura mediante AR. | Principalmente aplicación web. | Web, iOS y Android. | Aplicación web para computadora/iPad y productos digitales o físicos publicados. |
+| **Fortalezas** | Integra formatos diferentes y una experiencia AR sin abandonar la creación estructurada del cuento. | Producto ya especializado en educación y con herramientas dirigidas específicamente a docentes e instituciones. | Alto grado de personalización de historias infantiles y experiencia centrada claramente en familias. | Editor de libros consolidado, creación estructurada, multimedia y ecosistema educativo. |
+| **Debilidades** | Tale Star es una propuesta nueva, todavía sin usuarios reales ni validación de mercado. La calidad de las generaciones dependerá de servicios externos de IA. | Su amplitud funcional puede resultar mayor de la necesaria para usuarios que únicamente desean crear un recurso concreto. | Su foco principal es la generación de bedtime stories para familias y no la creación estructurada de recursos por parte de docentes. | El proceso de construcción del libro requiere mayor participación manual del usuario que una generación automática de historias completas. |
+| **Oportunidades** | Posicionarse mediante la combinación concreta de cuentos controlados por página, imágenes, canciones y lectura AR sin convertirse en un LMS o plataforma educativa integral. | Continuar ampliando adopción educativa e institucional. | Expandir el uso de historias personalizadas hacia más contextos educativos. | Incorporar progresivamente capacidades generativas a su editor existente. |
+| **Amenazas** | Competidores establecidos pueden incorporar funcionalidades similares; las herramientas generales de IA pueden reducir la percepción de diferenciación; los costos de servicios generativos pueden afectar el modelo de negocio. | Crecimiento continuo de herramientas EdTech generativas. | Aparición de nuevas herramientas de generación de historias personalizadas. | Herramientas de IA capaces de producir cuentos completos con menor intervención manual. |
+
+Los precios y características de Storywizard.ai han sido obtenidos directamente de su plataforma oficial, que actualmente publica planes separados para Families y Schools & Teachers. ([Storywizard.ai][14]) Oscar Stories publica oficialmente su enfoque para familias, público de 2 a 12 años y precio anual Premium. ([Oscar Stories][9]) StoryJumper señala que su uso online para crear y compartir libros es gratuito y publica precios diferenciados para PDF, Video Book, paperback y hardcover. ([StoryJumper][11])
+
+Las filas correspondientes al análisis SWOT representan una interpretación estratégica del equipo basada en las características observadas y no declaraciones realizadas por las empresas analizadas.
+
+A partir de la comparación se observa que Tale Star no puede considerar como diferenciación suficiente la simple “generación de cuentos mediante inteligencia artificial”. Storywizard.ai y Oscar Stories ya ofrecen generación de historias infantiles mediante IA, y StoryJumper posee un editor estructurado por páginas y herramientas especialmente maduras para docentes. ([Storywizard.ai][14])
+
+La oportunidad de diferenciación de Tale Star se encuentra, por tanto, en combinar dentro del alcance ya establecido cuatro capacidades: creación estructurada de cuentos página por página, generación independiente de imágenes, generación de canciones cortas y una experiencia sencilla de visualización de cuentos mediante realidad aumentada.
+
 <a id="212-estrategias-y-tacticas-frente-a-competidores"></a>
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+A partir de los resultados obtenidos en el Competitive Analysis Landscape, Tale Star adoptará una estrategia de diferenciación enfocada. Las decisiones competitivas se establecen considerando las fortalezas y debilidades identificadas en Storywizard.ai, Oscar Stories y StoryJumper, así como las oportunidades y amenazas observadas dentro del mercado.
+
+Tale Star no buscará competir con estas plataformas mediante una mayor cantidad de funcionalidades ni convertirse en un Learning Management System. La estrategia se concentrará en diferenciar la propuesta mediante la creación estructurada de cuentos, la integración de distintos formatos de contenido educativo y una experiencia complementaria de realidad aumentada, manteniendo un alcance dirigido específicamente a padres, cuidadores y docentes.
+
+**Estrategia general**
+
+Tale Star buscará posicionarse como una plataforma de creación de contenido educativo infantil que permita a padres, cuidadores y docentes generar y controlar cuentos ilustrados, imágenes y canciones desde una misma solución, incorporando adicionalmente una experiencia de lectura mediante realidad aumentada.
+
+La estrategia busca aprovechar la oportunidad identificada en el Competitive Analysis Landscape de combinar estas capacidades dentro de una propuesta especializada, evitando que la diferenciación dependa únicamente de la generación de contenido mediante inteligencia artificial, debido a que competidores como Storywizard.ai y Oscar Stories ya ofrecen generación de historias mediante IA y StoryJumper dispone de un editor estructurado para la creación de libros.
+
+**Tácticas principales**
+
+**Táctica 1 — Combinar control del usuario y generación automática en la construcción de cuentos**
+
+StoryJumper presenta como fortaleza un editor consolidado que permite construir libros de manera estructurada utilizando páginas, texto, personajes, escenas, imágenes y elementos multimedia. Sin embargo, su proceso requiere una participación manual considerable por parte del usuario.
+
+Tale Star afrontará esta fortaleza mediante una experiencia de creación igualmente estructurada, pero apoyada por inteligencia artificial. El usuario podrá construir el cuento página por página y definir en cada una de ellas:
+
+- texto;
+- personajes;
+- acciones;
+- objetos.
+
+A partir de esta información, el sistema generará la ilustración correspondiente y permitirá posteriormente componer el cuento completo.
+
+De esta manera, Tale Star aprovechará la debilidad identificada en StoryJumper relacionada con la mayor intervención manual requerida durante la creación, manteniendo al mismo tiempo el control del contenido en manos del padre o docente.
+
+**Táctica 2 — Diferenciarse de la generación automática mediante control página por página**
+
+Storywizard.ai y Oscar Stories ya permiten generar historias mediante inteligencia artificial, por lo que la simple capacidad de producir cuentos automáticamente no constituye una diferenciación suficiente para Tale Star.
+
+Frente a estas propuestas, Tale Star se enfocará en permitir que el adulto intervenga directamente en la construcción del contenido de cada página antes de obtener el cuento completo. La inteligencia artificial funcionará como apoyo para generar los recursos solicitados, pero el usuario conservará el control sobre los principales elementos narrativos y visuales.
+
+Esta táctica busca reducir la amenaza generada por la creciente disponibilidad de herramientas generales de inteligencia artificial, ya que la propuesta de Tale Star no se basará exclusivamente en generar contenido, sino en ofrecer un proceso de creación estructurado y orientado específicamente al contenido educativo infantil.
+
+**Táctica 3 — Integrar cuentos, imágenes y canciones dentro de una misma propuesta**
+
+Los competidores analizados presentan especializaciones diferentes. Storywizard.ai se concentra principalmente en historias y experiencias educativas; Oscar Stories se especializa en cuentos infantiles personalizados; y StoryJumper se enfoca en la creación y publicación de libros digitales.
+
+Tale Star aprovechará esta fragmentación mediante la integración de los tres formatos de generación establecidos para el producto:
+
+- generación de imágenes;
+- generación de canciones cortas;
+- creación de cuentos ilustrados.
+
+La diferenciación no consistirá en incorporar una cantidad creciente de tipos de contenido, sino en reunir estos tres formatos dentro de una misma plataforma orientada a padres, cuidadores y docentes.
+
+Esta táctica aprovecha directamente la oportunidad identificada en el Competitive Analysis Landscape de posicionar Tale Star mediante una combinación concreta de cuentos controlados por página, imágenes y canciones, sin convertir el producto en una plataforma educativa integral.
+
+**Táctica 4 — Mantener un alcance especializado frente a ecosistemas educativos amplios**
+
+Storywizard.ai y StoryJumper presentan como fortaleza una mayor amplitud de funcionalidades relacionadas con entornos educativos. Estas plataformas incluyen capacidades orientadas a docentes, aulas, actividades, colaboración u otros procesos asociados al contexto educativo.
+
+Tale Star no buscará afrontar esta fortaleza intentando reproducir todas estas funcionalidades. En su lugar, utilizará una estrategia de especialización centrada exclusivamente en el problema identificado: facilitar a padres, cuidadores y docentes la creación de contenido educativo infantil adaptado a sus necesidades.
+
+Asimismo, esta decisión permite aprovechar una posible debilidad de las plataformas con mayor amplitud funcional: para usuarios que únicamente necesitan crear un recurso educativo concreto, un ecosistema más amplio puede incorporar funciones que no son necesarias para dicha tarea.
+
+Por ello, Tale Star no incorporará funcionalidades propias de un Learning Management System, como gestión de aulas, assignments, seguimiento académico o administración educativa. Esto permite mantener un alcance delimitado y evitar complejidad innecesaria.
+
+**Táctica 5 — Atender conjuntamente a padres y docentes**
+
+Oscar Stories presenta como fortaleza una experiencia especializada en historias infantiles personalizadas para familias. Sin embargo, el Competitive Analysis Landscape identifica como debilidad que su propuesta está principalmente orientada a bedtime stories y al contexto familiar, en lugar de a la creación estructurada de recursos por parte de docentes.
+
+Tale Star aprovechará esta diferencia manteniendo dos segmentos objetivo claramente definidos:
+
+- padres y cuidadores;
+- docentes.
+
+La plataforma buscará que las mismas capacidades centrales de generación puedan utilizarse en ambos contextos, sin crear productos independientes ni roles funcionalmente distintos para cada segmento.
+
+De esta manera, Tale Star podrá atender tanto la creación de contenido para el entorno familiar como la preparación de recursos educativos por parte de docentes, manteniendo una propuesta común basada en la creación y supervisión del contenido por parte de un adulto.
+
+**Táctica 6 — Mantener la supervisión del adulto durante la creación del contenido**
+
+La participación del adulto será un componente central de la propuesta de Tale Star. Los padres, cuidadores y docentes serán quienes configuren y revisen el contenido generado, mientras que los niños serán los beneficiarios finales del material.
+
+Esta decisión complementa la estrategia de control página por página y permite que Tale Star se diferencie de una experiencia basada únicamente en solicitar contenido a una inteligencia artificial y utilizar directamente el resultado obtenido.
+
+El usuario adulto podrá definir los elementos principales del contenido y revisar el resultado antes de utilizarlo con el niño. Con ello, Tale Star mantendrá su posicionamiento como una herramienta de apoyo para la creación de contenido educativo y no como un sistema de generación autónoma dirigido directamente a menores.
+
+**Táctica 7 — Utilizar la realidad aumentada como experiencia complementaria de lectura**
+
+Los productos analizados concentran principalmente sus propuestas en la creación, personalización o lectura convencional de historias y libros digitales. Tale Star aprovechará la oportunidad identificada en el Landscape incorporando una experiencia complementaria de realidad aumentada para los cuentos creados.
+
+La aplicación móvil permitirá detectar una superficie plana y colocar virtualmente el cuento para que el usuario pueda visualizar sus páginas mediante realidad aumentada.
+
+La AR no reemplazará al creador de cuentos ni será considerada el único elemento diferenciador de Tale Star. Funcionará como una extensión de la experiencia de lectura y como parte de la combinación de capacidades que conforman la propuesta del producto.
+
+Para mantener el alcance delimitado, esta experiencia no incorporará animaciones 3D, personajes interactivos ni funcionalidades adicionales que no formen parte de la propuesta establecida.
+
+**Táctica 8 — Competir mediante una combinación específica de capacidades y no por amplitud funcional**
+
+Una de las principales amenazas identificadas es que los competidores establecidos puedan incorporar progresivamente funcionalidades similares y que las herramientas generales de inteligencia artificial reduzcan la diferenciación de las funciones generativas individuales.
+
+Por ello, Tale Star no basará su posicionamiento en una única capacidad que pueda ser replicada fácilmente. La propuesta competitiva se sustentará en la combinación dentro de un mismo producto de:
+
+1. generación de imágenes;
+2. generación de canciones cortas;
+3. construcción de cuentos página por página;
+4. definición de texto, personajes, acciones y objetos para cada página;
+5. generación de ilustraciones para las páginas;
+6. composición y lectura del cuento completo;
+7. visualización complementaria mediante realidad aumentada.
+
+Esta delimitación también permite controlar la dependencia de servicios externos de inteligencia artificial, identificada como una debilidad de Tale Star y como una posible amenaza debido a los costos asociados a servicios generativos.
+
+En consecuencia, las estrategias y tácticas planteadas buscan afrontar las fortalezas de los competidores sin intentar reproducir sus ecosistemas completos, aprovechar las debilidades detectadas en sus propuestas y utilizar las oportunidades identificadas para construir una diferenciación coherente con el alcance de Tale Star.
 
 <a id="22-entrevistas"></a>
 ## 2.2. Entrevistas
 
+Las entrevistas constituyen la principal fuente de información primaria para validar la problemática planteada en Tale Star y comprender cómo padres, cuidadores y docentes buscan, seleccionan, adaptan y utilizan actualmente contenido educativo infantil.
+
+El diseño de las entrevistas se orienta específicamente a validar los supuestos ya definidos para Tale Star y no a realizar una sesión de ideación de nuevas funcionalidades.
+
+Por ello, se evitarán preguntas como “¿qué funciones te gustaría que tuviera una aplicación?” o “¿qué más debería hacer Tale Star?”. En su lugar, se investigarán comportamientos reales, frecuencia del problema, tiempo invertido, recursos utilizados y percepción de valor sobre los formatos que ya forman parte del alcance.
+
+El Final Project Statement exige preguntas principales y complementarias diferenciadas por segmento y señala que la investigación debe permitir posteriormente construir arquetipos considerando información demográfica, personalidad, habilidades, marcas e influencias, dispositivos, canales digitales, objetivos, frustraciones y background.
+
+
 <a id="221-diseno-de-entrevistas"></a>
 ### 2.2.1. Diseño de entrevistas
+
+Las entrevistas semiestructuradas se realizarán de manera individual a padres, cuidadores y docentes. El guion prioriza experiencias recientes y comportamientos observables; el contraste con la propuesta de Tale Star se presenta únicamente al cierre para reducir el sesgo de confirmación.
+
+Cada entrevista comprende hasta tres preguntas de introducción y diez preguntas principales. La información recabada permitirá identificar patrones de búsqueda, selección, adaptación y creación de recursos educativos infantiles.
+
+### Segmento 1: Padres y cuidadores
+
+#### Preguntas de introducción
+
+1. ¿Cuál es tu nombre, edad y ocupación actual?
+2. ¿Eres madre, padre o cuidador? ¿Qué edad tiene el niño o los niños a tu cargo?
+3. ¿Cómo participas habitualmente en sus actividades de aprendizaje y en la selección de contenido digital?
+
+#### Preguntas principales
+
+1. Cuéntame sobre la última ocasión en que necesitaste explicar o reforzar un tema mediante un cuento, imagen, canción u otro recurso.
+2. ¿Dónde comenzaste a buscar ese contenido y cuánto tiempo te tomó encontrar algo utilizable?
+3. ¿Qué dificultades encontraste al evaluar si el material era adecuado para la edad, el tema y el contexto del niño?
+4. Cuando el recurso no se ajusta por completo a lo que necesitas, ¿qué haces normalmente?
+5. ¿Qué formatos te resultan más útiles para enseñar o reforzar un tema: cuentos, imágenes o canciones? ¿Por qué?
+6. ¿Con qué frecuencia terminas adaptando, combinando o creando material por tu cuenta?
+7. ¿Qué parte del proceso de buscar, revisar, adaptar y utilizar contenido te demanda mayor esfuerzo?
+8. ¿Has utilizado alguna vez herramientas de inteligencia artificial para crear contenido? ¿Qué resultado obtuviste y qué te preocupó?
+9. Pensando en una herramienta que permita crear cuentos ilustrados, imágenes y canciones para un objetivo educativo, ¿qué tan útil sería para ti y en qué situación concreta la usarías?
+10. ¿Qué tan importante sería poder revisar y definir personajes, acciones, objetos y texto antes de utilizar el contenido con el niño?
+
+### Segmento 2: Docentes
+
+#### Preguntas de introducción
+
+1. ¿Cuál es tu nombre, edad, profesión y años de experiencia docente?
+2. ¿En qué nivel, grado e institución trabajas actualmente?
+3. ¿Qué rol cumplen los recursos digitales en la preparación de tus clases?
+
+#### Preguntas principales
+
+1. Cuéntame sobre la última clase para la que necesitaste buscar o preparar un cuento, imagen, canción u otro recurso digital.
+2. ¿Qué fuentes consultaste y cuánto tiempo dedicaste a encontrar o adaptar el material?
+3. ¿Qué criterios utilizas para decidir que un recurso es adecuado para tus estudiantes y tu objetivo de aprendizaje?
+4. ¿Con qué frecuencia encuentras recursos que abordan el tema general, pero requieren modificaciones antes de utilizarlos?
+5. Cuando necesitas adaptar o crear material, ¿qué actividades te consumen más tiempo?
+6. ¿En qué situaciones utilizas cuentos, imágenes o canciones dentro de tus actividades educativas?
+7. ¿Has utilizado inteligencia artificial para preparar materiales? ¿Qué ventajas, limitaciones o preocupaciones encontraste?
+8. ¿Qué tan importante es para ti controlar el texto, personajes, acciones y objetos de una historia antes de usarla en clase?
+9. Pensando en una plataforma que reúna creación de cuentos ilustrados, imágenes y canciones cortas, ¿qué utilidad tendría para tu preparación de clases?
+10. ¿Qué valor tendría para ti visualizar un cuento en realidad aumentada como recurso complementario y en qué actividad lo aplicarías?
 
 <a id="222-registro-de-entrevistas"></a>
 ### 2.2.2. Registro de entrevistas
 
+Las entrevistas se registrarán con consentimiento informado mediante notas estructuradas y, cuando el participante lo autorice, grabación de audio. Cada registro identificará el segmento, el contexto del participante, las respuestas relevantes y las evidencias que permitan sustentar los hallazgos sin exponer información personal innecesaria.
+
 <a id="223-analisis-de-entrevistas"></a>
 ### 2.2.3. Análisis de entrevistas
+
+El análisis se realizará una vez concluida la recolección de datos. Las respuestas se agruparán por patrones de comportamiento, necesidades, dificultades, motivaciones y criterios de selección de contenido. Los resultados obtenidos serán la única base para completar los User Personas, la User Task Matrix, los Empathy Maps y los As-Is Scenario Maps de la sección 2.3.
 
 <a id="23-needfinding"></a>
 ## 2.3. Needfinding
 
+El proceso de Needfinding se desarrollará después de completar el registro y análisis de las entrevistas de ambos segmentos.
+
+El objetivo será transformar los patrones identificados en las entrevistas en representaciones estructuradas de los usuarios y de su experiencia actual. De esta manera, cada característica incluida en los artefactos deberá poder relacionarse con los resultados obtenidos durante la investigación y no con supuestos arbitrarios del equipo.
+
+El Project Statement exige específicamente User Personas, User Task Matrix, Empathy Mapping y As-is Scenario Mapping.  Los User Personas y Empathy Maps deben elaborarse con UXPressia, mientras que los As-Is Scenario Maps pueden elaborarse en LucidChart o Miro.
+
+En esta versión del informe se establece la estructura que deberán seguir los artefactos. El contenido específico de los perfiles, frecuencias, pensamientos, emociones, pains y gains se completará únicamente después del análisis de entrevistas.
+
 <a id="231-user-personas"></a>
 ### 2.3.1. User Personas
+
+A partir de los resultados de las entrevistas se elaborará un User Persona para cada segmento objetivo. Cada arquetipo representará los patrones predominantes encontrados entre los participantes y no corresponderá a una copia directa de una persona entrevistada.
+
+El Project Statement exige una ficha por segmento y señala que sus características deben derivarse del análisis previo.
+
+Cada User Persona deberá incluir como mínimo:
+
+* nombre ficticio;
+* fotografía representativa;
+* segmento;
+* edad representativa;
+* ocupación;
+* ubicación;
+* composición familiar cuando corresponda;
+* biografía o background;
+* personalidad;
+* habilidades;
+* nivel de adopción tecnológica;
+* dispositivos utilizados;
+* plataformas o canales digitales;
+* marcas e influencias;
+* necesidades;
+* objetivos;
+* motivaciones;
+* frustraciones;
+* pains;
+* comportamientos relevantes;
+* una frase o quote representativa.
+
+#### **User Persona 1 — Padre o Cuidador**
+
+Este arquetipo representará los patrones predominantes identificados entre los padres o cuidadores entrevistados. La ficha deberá concentrarse en su participación en la selección de contenido infantil, métodos actuales de búsqueda, formatos utilizados, grado de personalización que requiere, relación con herramientas digitales y principales frustraciones durante el proceso.
+
+<img src="imgs/leanux/ParentCaregiverUserPersona.png" alt="User Persona - Parent or Caregiver" title="User Persona del segmento Padres y Cuidadores" width="850"/>
+
+**Interpretación del User Persona**
+
+Una vez finalizado el análisis de entrevistas, debajo de la imagen se deberá redactar un párrafo similar al siguiente, reemplazando los campos indicados por resultados reales:
+
+[Nombre del arquetipo] representa al segmento de padres y cuidadores. Los resultados de las entrevistas muestran que sus principales objetivos se concentran en [objetivos predominantes], mientras que sus mayores frustraciones se relacionan con [pains encontrados]. Utiliza principalmente [dispositivos/plataformas predominantes] y recurre con mayor frecuencia a [formatos encontrados]. Estos hallazgos permitirán evaluar en qué medida la creación de imágenes, canciones y cuentos personalizados de Tale Star responde a necesidades observadas en el segmento.
+
+No se debe afirmar en este párrafo que una funcionalidad “fue validada” si esa conclusión no está respaldada por las entrevistas.
+
+#### **User Persona 2 — Docente**
+
+Este arquetipo representará los patrones predominantes identificados entre los docentes entrevistados. Deberá reflejar su proceso de preparación de materiales, recursos digitales utilizados, tiempo destinado a búsqueda o adaptación, formatos que emplea y objetivos relacionados con la utilización de cuentos, imágenes y canciones en sus actividades.
+
+<img src="imgs/leanux/TeacherUserPersona.png" alt="User Persona - Teacher" title="User Persona del segmento Docentes" width="850"/>
+
+**Interpretación del User Persona**
+
+Después de incorporar el artefacto, se redactará un párrafo con la siguiente estructura:
+
+[Nombre del arquetipo] representa al segmento de docentes que trabajan con niños. Su comportamiento se caracteriza por [patrones predominantes]. Sus principales objetivos son [objetivos], mientras que las principales dificultades encontradas durante la investigación corresponden a [frustraciones]. Los resultados muestran un uso predominante de [formatos, plataformas y dispositivos]. Esta información permitirá posteriormente priorizar los requisitos de Tale Star relacionados con los procesos que realmente representen mayor valor para este segmento.
 
 <a id="232-user-task-matrix"></a>
 ### 2.3.2. User Task Matrix
 
+La User Task Matrix concentrará las tareas que los User Personas realizan actualmente para alcanzar sus objetivos, independientemente de la existencia de Tale Star.
+
+El Project Statement advierte explícitamente que las tasks no deben confundirse con funcionalidades del producto.  Por tanto, no se incluirán tareas como “generar una imagen con Tale Star”, “crear cuento en Tale Star” o “usar AR”.
+
+Las tareas candidatas deberán validarse mediante las entrevistas antes de completar la matriz. Entre ellas se pueden analizar:
+
+* buscar contenido para explicar un tema;
+* evaluar si un contenido es adecuado para el niño o grupo;
+* comparar diferentes recursos;
+* adaptar contenido encontrado;
+* explicar un tema utilizando un cuento;
+* buscar o preparar imágenes;
+* buscar o utilizar canciones;
+* crear material cuando no encuentra uno adecuado;
+* combinar diferentes recursos para una misma explicación;
+* revisar contenido antes de presentarlo al niño;
+* reutilizar materiales previamente preparados.
+
+La tabla final debe contener una columna por User Persona y, para cada uno, las subcolumnas Frequency e Importance, exactamente como exige el statement.
+
+| User Task                                           | Padre/Cuidador Frequency | Padre/Cuidador Importance | Docente Frequency | Docente Importance |
+| --------------------------------------------------- | ------------------------ | ------------------------- | ----------------- | ------------------ |
+| Buscar contenido para explicar o reforzar un tema   | Por definir              | Por definir               | Por definir       | Por definir        |
+| Evaluar si un contenido es apropiado                | Por definir              | Por definir               | Por definir       | Por definir        |
+| Comparar recursos encontrados en diferentes fuentes | Por definir              | Por definir               | Por definir       | Por definir        |
+| Adaptar un recurso que no encaja completamente      | Por definir              | Por definir               | Por definir       | Por definir        |
+| Utilizar cuentos para explicar un tema              | Por definir              | Por definir               | Por definir       | Por definir        |
+| Buscar o preparar imágenes                          | Por definir              | Por definir               | Por definir       | Por definir        |
+| Buscar o utilizar canciones                         | Por definir              | Por definir               | Por definir       | Por definir        |
+| Crear material cuando no existe uno adecuado        | Por definir              | Por definir               | Por definir       | Por definir        |
+| Combinar distintos recursos                         | Por definir              | Por definir               | Por definir       | Por definir        |
+| Revisar el material antes de utilizarlo             | Por definir              | Por definir               | Por definir       | Por definir        |
+
+Las categorías finales de Frequency e Importance se asignarán después del análisis de entrevistas, utilizando una escala homogénea como High, Medium y Low.
+
+**Interpretación de la User Task Matrix**
+
+Después de completar la matriz se deberá incluir una explicación de:
+
+* las tareas con mayor frecuencia e importancia para ambos segmentos;
+* las tareas especialmente relevantes para padres;
+* las tareas especialmente relevantes para docentes;
+* coincidencias entre los dos User Personas;
+* principales diferencias.
+
+No se debe convertir directamente una tarea en una funcionalidad sin realizar posteriormente el proceso de Requirements Specification.
+
+### Artefacto auxiliar: User Journey Mapping
+
+El Final Project Statement actual no exige formalmente un User Journey Map general dentro del Capítulo II; el artefacto obligatorio es el As-Is Scenario Mapping. No obstante, siguiendo el formato de referencia de Dosys, puede mantenerse un User Journey Map general como artefacto auxiliar para resumir visualmente el recorrido de cada segmento. Dosys utiliza este recurso antes del AS-IS para proporcionar una visión global de la experiencia.
+
+Este mapa no reemplaza el As-Is Scenario Map requerido por el curso.
+
+#### **User Journey Map — Padre o Cuidador**
+
+El mapa general deberá representar el recorrido relacionado con la necesidad de encontrar o preparar contenido educativo, mostrando fases, objetivos, acciones, canales, dificultades y emociones.
+
+<img src="imgs/leanux/ParentCaregiverUserJourneyMap.png" alt="User Journey Map - Parent or Caregiver" title="User Journey Map del segmento Padres y Cuidadores" width="900"/>
+
+**Interpretación**
+
+El texto posterior deberá resumir dónde aparecen las principales fricciones dentro del recorrido del padre o cuidador y cuáles de esas fricciones fueron observadas reiteradamente durante las entrevistas.
+
+#### **User Journey Map — Docente**
+
+El mapa deberá representar el recorrido habitual del docente desde que identifica una necesidad de material hasta que utiliza el recurso con sus estudiantes y evalúa si resultó adecuado.
+
+<img src="imgs/leanux/TeacherUserJourneyMap.png" alt="User Journey Map - Teacher" title="User Journey Map del segmento Docentes" width="900"/>
+
+**Interpretación**
+
+El párrafo posterior deberá destacar las etapas de mayor esfuerzo, canales utilizados y puntos en los que el docente necesita buscar, adaptar o crear material.
+
 <a id="233-empathy-mapping"></a>
 ### 2.3.3. Empathy Mapping
+
+Los Empathy Maps permitirán profundizar en la perspectiva de cada User Persona utilizando la información obtenida durante las entrevistas.
+
+El Project Statement establece que cada mapa debe representar qué necesita hacer el usuario, qué dice, qué ve, qué hace, qué escucha, qué siente y piensa, además de sus Pains y Gains.
+
+Se elaborará un Empathy Map para cada segmento en UXPressia.
+
+#### **Empathy Map — Padre o Cuidador**
+
+El mapa deberá construirse a partir de observaciones y respuestas recurrentes de los padres o cuidadores entrevistados.
+
+<img src="imgs/leanux/ParentCaregiverEmpathyMap.png" alt="Empathy Map - Parent or Caregiver" title="Empathy Map del segmento Padres y Cuidadores" width="900"/>
+
+El artefacto deberá contener:
+
+**Who are we empathizing with?**
+
+Descripción resumida del User Persona y de su contexto familiar.
+
+**What do they need to do?**
+
+Tareas u objetivos que intenta cumplir cuando necesita explicar o reforzar un tema con el niño.
+
+**What do they see?**
+
+Plataformas, contenidos, recomendaciones, recursos y alternativas que encuentra actualmente.
+
+**What do they say?**
+
+Frases o comentarios recurrentes obtenidos durante las entrevistas.
+
+**What do they do?**
+
+Acciones observadas o declaradas: buscar, comparar, revisar, adaptar, combinar o crear contenido.
+
+**What do they hear?**
+
+Influencias provenientes de familiares, docentes, otros padres, redes sociales, instituciones o especialistas.
+
+**What do they think and feel?**
+
+Preocupaciones, percepciones y emociones relacionadas con la calidad del contenido, el tiempo requerido y el uso de herramientas digitales.
+
+**Pains**
+
+Problemas recurrentes demostrados mediante entrevistas.
+
+**Gains**
+
+Resultados que el usuario busca obtener al encontrar o producir un contenido adecuado.
+
+**Interpretación**
+
+Después de la imagen debe añadirse un párrafo que explique los pains y gains predominantes y cómo estos se relacionan con la problemática planteada en Tale Star, sin inventar funcionalidades nuevas.
+
+#### **Empathy Map — Docente**
+
+El segundo mapa reflejará la experiencia, pensamientos y comportamientos predominantes del docente durante el proceso de preparación y utilización de materiales.
+
+<img src="imgs/leanux/TeacherEmpathyMap.png" alt="Empathy Map - Teacher" title="Empathy Map del segmento Docentes" width="900"/>
+
+Debe incluir las mismas dimensiones:
+
+* quién es;
+* qué necesita hacer;
+* qué ve;
+* qué dice;
+* qué hace;
+* qué escucha;
+* qué piensa y siente;
+* pains;
+* gains.
+
+**Interpretación**
+
+El texto posterior deberá identificar las preocupaciones, frustraciones y resultados esperados que aparecen de manera reiterada en el segmento docente y explicar qué diferencias existen frente al mapa de padres o cuidadores.
 
 <a id="234-as-is-scenario-mapping"></a>
 ### 2.3.4. As-is Scenario Mapping
 
+El As-Is Scenario Mapping representa la experiencia actual de los User Personas antes de disponer de Tale Star.
+
+Este punto es obligatorio en el Project Statement y debe contener para cada persona las filas Phases, Doing, Thinking y Feeling. También deben identificarse áreas positivas, negativas y blank areas donde todavía existe información insuficiente.
+
+Los mapas se elaborarán en LucidChart o Miro, de acuerdo con las herramientas establecidas por el curso.
+
+#### **AS-IS Scenario Map — Padre o Cuidador**
+
+El mapa deberá representar únicamente la situación actual. No deberá incluir Tale Star ni ninguna funcionalidad futura.
+
+<img src="imgs/leanux/ParentCaregiverAsIsScenarioMap.png" alt="AS-IS Scenario Map - Parent or Caregiver" title="AS-IS Scenario Map del segmento Padres y Cuidadores" width="1000"/>
+
+Las fases exactas se determinarán después de las entrevistas. Como estructura inicial de análisis pueden considerarse, únicamente para validar:
+
+1. aparece una necesidad de explicar o reforzar un tema;
+2. busca recursos;
+3. revisa alternativas;
+4. determina si son adecuadas;
+5. adapta o combina material cuando es necesario;
+6. utiliza el contenido con el niño;
+7. observa si el recurso cumplió su propósito.
+
+Cada fase debe contener:
+
+**Doing**
+
+Qué hace actualmente el usuario.
+
+**Thinking**
+
+Qué piensa mientras realiza la tarea.
+
+**Feeling**
+
+Qué emoción o nivel de satisfacción experimenta.
+
+**Positive Areas**
+
+Momentos del recorrido que funcionan adecuadamente.
+
+**Negative Areas**
+
+Momentos de mayor frustración, esfuerzo o incertidumbre.
+
+**Blank Areas**
+
+Aspectos que todavía no pueden responderse con suficiente evidencia.
+
+**Interpretación**
+
+El texto posterior deberá identificar dónde se concentra la mayor fricción del recorrido y cuáles son los puntos que posteriormente deberán compararse con el To-Be Scenario Mapping del Capítulo III.
+
+#### **AS-IS Scenario Map — Docente**
+
+El segundo mapa representará el proceso actual del docente para preparar y utilizar materiales sin Tale Star.
+
+<img src="imgs/leanux/TeacherAsIsScenarioMap.png" alt="AS-IS Scenario Map - Teacher" title="AS-IS Scenario Map del segmento Docentes" width="1000"/>
+
+Como estructura preliminar a validar pueden considerarse las siguientes fases:
+
+1. identifica un objetivo o tema de clase;
+2. busca materiales;
+3. revisa diferentes fuentes;
+4. evalúa su pertinencia;
+5. adapta o crea material;
+6. utiliza el recurso;
+7. observa el resultado obtenido.
+
+Las fases definitivas deberán surgir de las entrevistas.
+
+Cada columna debe contener Doing, Thinking y Feeling, además de la identificación visual de áreas positivas, negativas y blank areas.
+
+**Interpretación**
+
+Después de la imagen se explicarán las etapas que concentran mayor tiempo, dificultad o frustración y las diferencias encontradas respecto al recorrido de padres o cuidadores.
+
 <a id="24-ubiquitous-language"></a>
 ## 2.4. Ubiquitous Language
+
+El Ubiquitous Language establece los términos utilizados de manera consistente por el equipo para describir el dominio de Tale Star.
+
+El glosario debe contener exclusivamente términos del business domain y no conceptos técnicos de Ingeniería de Software. El Project Statement establece además que los términos deben escribirse en inglés, pudiendo incluirse su equivalente en español, mientras que la definición puede mantenerse en español.
+
+| Term                     | Equivalent in Spanish   | Definition                                                                                                                       |
+| ------------------------ | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **Educational Content**  | Contenido educativo     | Recurso que un padre, cuidador o docente utiliza con la intención de explicar, presentar o reforzar un tema con un niño.         |
+| **Story**                | Cuento                  | Narrativa compuesta por una secuencia ordenada de Story Pages.                                                                   |
+| **Story Page**           | Página del cuento       | Unidad individual de un cuento que contiene texto y una ilustración asociada.                                                    |
+| **Story Text**           | Texto del cuento        | Contenido escrito correspondiente a una Story Page.                                                                              |
+| **Character**            | Personaje               | Persona, animal o entidad que participa dentro de una historia.                                                                  |
+| **Action**               | Acción                  | Actividad realizada por uno o más Characters dentro de una Story Page.                                                           |
+| **Object**               | Objeto                  | Elemento presente en la escena correspondiente a una Story Page.                                                                 |
+| **Illustration**         | Ilustración             | Representación visual correspondiente al contenido de una Story Page.                                                            |
+| **Image**                | Imagen                  | Contenido visual independiente generado a partir de las indicaciones proporcionadas por el usuario.                              |
+| **Song**                 | Canción                 | Contenido musical corto creado como recurso educativo infantil.                                                                  |
+| **Educational Topic**    | Tema educativo          | Tema, concepto o situación que el adulto desea explicar o reforzar mediante contenido.                                           |
+| **Caregiver**            | Cuidador                | Adulto responsable de acompañar al niño y seleccionar o utilizar contenido con él.                                               |
+| **Parent**               | Padre/Madre             | Adulto responsable del niño que participa en la selección o preparación de contenido.                                            |
+| **Teacher**              | Docente                 | Profesional que selecciona, prepara o utiliza materiales educativos con niños.                                                   |
+| **Child**                | Niño                    | Beneficiario final del contenido creado o seleccionado por padres, cuidadores o docentes.                                        |
+| **Content Selection**    | Selección de contenido  | Proceso mediante el cual el adulto busca y elige un recurso para utilizarlo con un niño.                                         |
+| **Content Adaptation**   | Adaptación de contenido | Modificación o complementación de un recurso existente para ajustarlo al tema que el adulto desea trabajar.                      |
+| **Content Review**       | Revisión de contenido   | Actividad mediante la cual el adulto evalúa un contenido antes de utilizarlo con un niño.                                        |
+| **Personalized Content** | Contenido personalizado | Contenido elaborado de acuerdo con elementos definidos específicamente por el adulto para una situación o necesidad determinada. |
+| **Story Reading**        | Lectura del cuento      | Actividad mediante la cual el adulto o niño recorre las diferentes Story Pages de un Story.                                      |
+
+No deben incluirse aquí términos como REST API, NestJS, PostgreSQL, endpoint, JWT, ARCore, repository, DTO o microservice, porque corresponden al lenguaje técnico de implementación y no al lenguaje ubicuo del dominio.
+
+---
 
 <a id="capitulo-iii-requirements-specification"></a>
 # Capítulo III: Requirements Specification
@@ -1085,28 +1613,54 @@ Los datos estadounidenses se utilizan únicamente como antecedentes sobre consum
 
 <a id="bibliografia"></a>
 # Bibliografía
-## Referencias bibliográficas
+
+Government Digital Service. (n.d.). *Learning about users and their needs*. GOV.UK Service Manual. Recuperado el 2 de septiembre de 2026, de [https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs](https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs)
+
+Government Digital Service. (n.d.). *Using in-depth interviews*. GOV.UK Service Manual. Recuperado el 2 de septiembre de 2026, de [https://www.gov.uk/service-manual/user-research/using-in-depth-interviews](https://www.gov.uk/service-manual/user-research/using-in-depth-interviews)
+
+HeyQQ GmbH. (n.d.). *Oscar Stories: AI-powered personalized bedtime stories for children*. Recuperado el 2 de septiembre de 2026, de [https://oscarstories.com/presskit/oscar-stories/](https://oscarstories.com/presskit/oscar-stories/)
+
+HeyQQ GmbH. (n.d.). *Oscar Stories pricing*. Recuperado el 2 de septiembre de 2026, de [https://app.oscarstories.com/pricing](https://app.oscarstories.com/pricing)
 
 Instituto Nacional de Estadística e Informática. (2025). *Estado de la niñez y adolescencia: Segundo trimestre 2025*. INEI. ([INEI][3])
 
-Mallawaarachchi, S., Burley, J., Mavilidi, M., Howard, S. J., Straker, L., Kervin, L., Staton, S., Hayes, N., Machell, A., Torjinski, M., Brady, B., Thomas, G., Horwood, S., White, S. L. J., Zabatiero, J., Rivera, C., & Cliff, D. (2024). Early childhood screen use contexts and cognitive and psychosocial outcomes: A systematic review and meta-analysis. *JAMA Pediatrics, 178*(10), 1017–1026. [https://doi.org/10.1001/jamapediatrics.2024.2620](https://doi.org/10.1001/jamapediatrics.2024.2620). ([JAMA Network][1])
+Mallawaarachchi, S., Burley, J., Mavilidi, M., Howard, S. J., Straker, L., Kervin, L., Staton, S., Hayes, N., Machell, A., Torjinski, M., Brady, B., Thomas, G., Horwood, S., White, S. L. J., Zabatiero, J., Rivera, C., & Cliff, D. (2024). Early childhood screen use contexts and cognitive and psychosocial outcomes: A systematic review and meta-analysis. *JAMA Pediatrics, 178*(10), 1017–1026. https://doi.org/10.1001/jamapediatrics.2024.2620. ([JAMA Network][1])
 
 Mann, S., Calvin, A., Lenhart, A., & Robb, M. B. (2025). *The Common Sense Census: Media use by kids zero to eight, 2025*. Common Sense Media.
 
 OECD. (2025). *Results from TALIS 2024*. OECD Publishing. ([OECD][5])
 
-OECD. (2026). *Education and skills in Peru*. OECD Publishing. [https://doi.org/10.1787/7d430d1b-en](https://doi.org/10.1787/7d430d1b-en). ([OECD][6])
+OECD. (2026). *Education and skills in Peru*. OECD Publishing. https://doi.org/10.1787/7d430d1b-en. ([OECD][6])
 
 Ofcom. (2026). *Exploring the relationship between persuasive design on online platforms, and the time that children spend on them*. Office of Communications. ([www.ofcom.org.uk][2])
 
 Radesky, J. S., Schaller, A., Yeo, S. L., Weeks, H. M., & Robb, M. B. (2020). *Young kids and YouTube: How ads, toys, and games dominate viewing*. Common Sense Media.
 
-[1]: https://jamanetwork.com/journals/jamapediatrics/fullarticle/2821940 "Early Childhood Screen Use Contexts and Cognitive and Psychosocial Outcomes: A Systematic Review and Meta-analysis | Translational Science | JAMA Pediatrics | JAMA Network"
+StoryJumper, Inc. (n.d.). *Price list*. Recuperado el 2 de septiembre de 2026, de [https://www.storyjumper.com/prices](https://www.storyjumper.com/prices)
+
+StoryJumper, Inc. (n.d.). *Teacher's guide*. Recuperado el 2 de septiembre de 2026, de [https://www.storyjumper.com/main/classroom](https://www.storyjumper.com/main/classroom)
+
+StoryJumper, Inc. (n.d.). *Why teachers love StoryJumper*. Recuperado el 2 de septiembre de 2026, de [https://www.storyjumper.com/school](https://www.storyjumper.com/school)
+
+Storywizard.ai. (n.d.). *Create incredible learning experiences using AI*. Recuperado el 2 de septiembre de 2026, de [https://www.storywizard.ai/](https://www.storywizard.ai/)
+
+Storywizard.ai. (n.d.). *Education reimagined with Storywizard.ai*. Recuperado el 2 de septiembre de 2026, de [https://www.storywizard.ai/education](https://www.storywizard.ai/education)
+
+[1]: https://jamanetwork.com/journals/jamapediatrics/fullarticle/2821940 "Early Childhood Screen Use Contexts and Cognitive and Psychosocial Outcomes: A Systematic Review and Meta-analysis | JAMA Pediatrics"
 [2]: https://www.ofcom.org.uk/media-use-and-attitudes/media-literacy/exploring-the-relationship-between-persuasive-design-on-online-platforms-and-the-time-that-children-spend-on-them "Exploring the relationship between persuasive design on online platforms, and the time that children spend on them"
 [3]: https://www.inei.gob.pe/media/MenuRecursivo/boletines/boletin_ninez_iit2025.pdf "Estado de la Niñez y Adolescencia"
-[4]: https://www.oecd.org/en/publications/education-and-skills-in-peru_7d430d1b-en/full-report/school-education-raising-quality-standards-and-enabling-informed-choice_113355a5.html "School education: Raising quality standards and enabling informed choice: Education and Skills in Peru | OECD"
-[5]: https://www.oecd.org/en/publications/results-from-talis-2024_90df6235-en/full-report/the-demands-of-teaching_0e941e2f.html "The demands of teaching: Results from TALIS 2024 | OECD"
-[6]: https://www.oecd.org/en/publications/education-and-skills-in-peru_7d430d1b-en.html "Education and Skills in Peru | OECD"
+[4]: https://www.oecd.org/en/publications/education-and-skills-in-peru_7d430d1b-en/full-report/school-education-raising-quality-standards-and-enabling-informed-choice_113355a5.html "School education: Raising quality standards and enabling informed choice"
+[5]: https://www.oecd.org/en/publications/results-from-talis-2024_90df6235-en/full-report/the-demands-of-teaching_0e941e2f.html "The demands of teaching: Results from TALIS 2024"
+[6]: https://www.oecd.org/en/publications/education-and-skills-in-peru_7d430d1b-en.html "Education and Skills in Peru"
+[7]: https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs "Learning about users and their needs"
+[8]: https://www.gov.uk/service-manual/user-research/using-in-depth-interviews "Using in-depth interviews"
+[9]: https://oscarstories.com/presskit/oscar-stories/ "Oscar Stories"
+[10]: https://app.oscarstories.com/pricing "Oscar Stories pricing"
+[11]: https://www.storyjumper.com/prices "StoryJumper Price List"
+[12]: https://www.storyjumper.com/main/classroom "StoryJumper Teacher's Guide"
+[13]: https://www.storyjumper.com/school "Why teachers love StoryJumper"
+[14]: https://www.storywizard.ai/ "Storywizard.ai"
+[15]: https://www.storywizard.ai/education "Storywizard.ai Education"
 
 <a id="anexos"></a>
 # Anexos
