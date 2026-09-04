@@ -255,26 +255,31 @@ A diferencia de herramientas generales de inteligencia artificial, Tale Star org
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | **Código:** U202210167  |                               |
 | **Carrera:** Ingeniería de Software |                               |
+| **Perfil:** Pendiente de completar por el integrante. | |
 
 | Nombre: Diaz Fiestas, Jorge Luis | <img src="imgs/team/Luis.png" alt="Luis" title="Foto de Luis" width="320"/> |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | **Código:** U20231D534  |                               |
 | **Carrera:** Ingeniería de Software |                               |
+| **Perfil:** Pendiente de completar por el integrante. | |
 
 | Nombre: Cardenas Minaya, Ricardo Fernando | <img src="imgs/team/Ricardo.png" alt="Ricardo" title="Foto de Ricardo" width="320"/> |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | **Código:** U202310004  |                               |
 | **Carrera:** Ingeniería de Software |                               |
+| **Perfil:** Pendiente de completar por el integrante. | |
 
 | Nombre: Oblitas Davila, Mariano Moises | <img src="imgs/team/Mariano.png" alt="Mariano" title="Foto de Mariano" width="320"/> |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | **Código:** U202310222  |                               |
 | **Carrera:** Ingeniería de Software |                               |
+| **Perfil:** Estudiante de 20 años de Ingeniería de Software en la UPC. Me caracterizo por mi creatividad, eficacia y capacidad para resolver problemas de manera racional. Apasionado por la programación y el desarrollo de software, busco constantemente innovar y aprender nuevas tecnologías. | |
 
 | Nombre: Huapaya Buitron, Ariana  | <img src="imgs/team/Ariana.png" alt="Ariana" title="Foto de Ariana" width="320"/> |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | **Código:** U201819645  |                               |
 | **Carrera:** Ingeniería de Software |                               |
+| **Perfil:** Pendiente de completar por la integrante. | |
 
 ## 1.2. Solution Profile
 
