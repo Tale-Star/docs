@@ -1301,6 +1301,8 @@ El To-Be Scenario Map del segmento de padres y cuidadores representa el recorrid
 
 En el escenario futuro, el padre o cuidador puede decidir qué tipo de contenido necesita, configurar sus características, generar o preparar el recurso, revisar el resultado y conservarlo para su utilización. Cuando el contenido corresponde a un cuento, también puede utilizar la experiencia de lectura tradicional o, desde un dispositivo móvil compatible, la experiencia de realidad aumentada.
 
+<img src="imgs/requirements/ParentCaregiverToBeScenarioMap.png" alt="To-Be Scenario Map - Parent or Caregiver" title="To-Be Scenario Map del segmento Padres y Cuidadores" width="1000"/>
+
 **Comparación con el escenario As-Is**
 
 Frente al escenario As-Is, el cambio principal consiste en disminuir la fragmentación entre diferentes fuentes y herramientas. El usuario deja de depender exclusivamente de encontrar un recurso ya existente que coincida con su necesidad y obtiene la posibilidad de crear uno a partir de parámetros que controla directamente.
@@ -1314,6 +1316,8 @@ La Biblioteca añade continuidad al recorrido porque permite conservar y recuper
 El To-Be Scenario Map del segmento docente representa el proceso futuro desde la identificación de una necesidad de material hasta su utilización dentro de una actividad educativa.
 
 Tale Star funciona en este escenario como una herramienta complementaria de creación. El docente determina el material que necesita, decide si utilizará un cuento, una imagen o un recurso musical, configura sus características, revisa el contenido generado y conserva aquellos recursos que considere útiles.
+
+<img src="imgs/requirements/TeacherToBeScenarioMap.png" alt="To-Be Scenario Map - Teacher" title="To-Be Scenario Map del segmento Docentes" width="1000"/>
 
 **Comparación con el escenario As-Is**
 
