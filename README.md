@@ -255,7 +255,7 @@ A diferencia de herramientas generales de inteligencia artificial, Tale Star org
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | **Código:** U202210167  |                               |
 | **Carrera:** Ingeniería de Software |                               |
-| **Perfil:** Pendiente de completar por el integrante. | |
+| **Perfil:** Estudiante de Ingeniería de Software en la UPC, con experiencia desarrollando sistemas de gestión, inventario y facturación para negocios reales. Interesado en arquitectura de software, desarrollo backend y en construir soluciones prácticas orientadas a resolver problemas concretos de negocio. | |
 
 | Nombre: Diaz Fiestas, Jorge Luis | <img src="imgs/team/Luis.png" alt="Luis" title="Foto de Luis" width="320"/> |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
