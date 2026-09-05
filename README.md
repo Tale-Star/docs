@@ -1167,6 +1167,10 @@ Este punto es obligatorio en el Project Statement y debe contener para cada pers
 
 Los mapas se elaborarán en LucidChart o Miro, de acuerdo con las herramientas establecidas por el curso.
 
+**Proceso de elaboración**
+
+Para cada segmento, el equipo preparó la sesión revisando los patrones identificados en el análisis de entrevistas correspondiente. A partir de esa preparación se realizó una lluvia de ideas individual sobre los pasos que sigue actualmente cada User Persona para resolver su necesidad, seguida de una revisión conjunta en la que se identificaron y nombraron las fases resultantes como columnas del mapa. Finalmente, para cada fase se completaron las filas Doing, Thinking y Feeling, y se identificaron y etiquetaron las áreas positivas, negativas y blank areas del recorrido.
+
 #### **AS-IS Scenario Map — Padre o Cuidador**
 
 El mapa deberá representar únicamente la situación actual. No deberá incluir Tale Star ni ninguna funcionalidad futura.
