@@ -999,9 +999,20 @@ Este arquetipo representará los patrones predominantes identificados entre los 
 
 **Interpretación del User Persona**
 
-Después de incorporar el artefacto, se redactará un párrafo con la siguiente estructura:
-
-[Nombre del arquetipo] representa al segmento de docentes que trabajan con niños. Su comportamiento se caracteriza por [patrones predominantes]. Sus principales objetivos son [objetivos], mientras que las principales dificultades encontradas durante la investigación corresponden a [frustraciones]. Los resultados muestran un uso predominante de [formatos, plataformas y dispositivos]. Esta información permitirá posteriormente priorizar los requisitos de Tale Star relacionados con los procesos que realmente representen mayor valor para este segmento.
+Daniela Rojas representa al segmento de docentes de educación inicial y
+primeros años de primaria. Su comportamiento se caracteriza por preparar
+materiales complementarios de forma recurrente y por adaptar recursos
+existentes que cubren el tema general pero no el contexto específico de su
+grupo. Sus principales objetivos son preparar materiales apropiados para
+cada actividad, reducir el tiempo destinado a búsqueda y adaptación, y
+mantener control pedagógico sobre lo que utiliza en clase. Las principales
+dificultades corresponden al tiempo limitado, la dispersión de fuentes, la
+adaptación manual y la dificultad para producir ilustraciones y recursos
+musicales propios. Se observa un uso predominante de cuentos, imágenes y
+canciones como formatos, apoyado en plataformas como Google, YouTube,
+PerúEduca y Canva desde laptop, smartphone y proyector de aula. Esta
+información permitirá posteriormente priorizar los requisitos de Tale Star
+relacionados con los procesos que representen mayor valor para este segmento.
 
 <a id="232-user-task-matrix"></a>
 ### 2.3.2. User Task Matrix
