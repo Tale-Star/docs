@@ -1699,6 +1699,8 @@ La tabla deberá replicarse posteriormente en la herramienta de gestión selecci
 
 **URL público del Product Backlog:** https://upc-team-t57kfmwu.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=&groupBy=none&atlOrigin=eyJpIjoiOWNlZGJjZWIyNTk5NGRhYzhmODk3ZTdmODJiMTVhZDkiLCJwIjoiaiJ9
 
+<img src="imgs/requirements/TaleStarProductBacklog.png" alt="Tale Star Product Backlog" title="Tale Star Product Backlog" width="1000"/>
+
 El orden refleja la prioridad relativa de negocio. En Sprint Planning podrán coexistir Stories de distinta posición cuando una dependencia, el Sprint Goal o la capacidad del equipo lo justifique. Sin embargo, esas decisiones no deben utilizarse para alterar artificialmente el valor de negocio reflejado en este Product Backlog.
 
 ---
