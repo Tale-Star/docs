@@ -1487,6 +1487,8 @@ Esta tabla constituye la fuente de verdad para los IDs y descripciones utilizado
 
 El Impact Mapping de Tale Star relaciona los objetivos medibles del negocio con los dos User Personas identificados durante el proceso de Needfinding. Su finalidad es evitar que el conjunto de funcionalidades se convierta en una lista aislada y asegurar que cada capability posea una relación explícita con un comportamiento esperado del usuario y con los resultados que Tale Star busca producir.
 
+<img src="imgs/requirements/TaleStarImpactMap.png" alt="Tale Star Impact Map" title="Tale Star Impact Map" width="1000"/>
+
 La estructura utilizada es:
 
 **Business Goal → Actor → Impact → Deliverable → User Stories**
@@ -1695,7 +1697,7 @@ Las historias de Account & Access no se colocan automáticamente al inicio. El S
 
 La tabla deberá replicarse posteriormente en la herramienta de gestión seleccionada por el equipo. La herramienta no sustituye esta especificación textual.
 
-**URL público del Product Backlog:** Pendiente de publicación.
+**URL público del Product Backlog:** https://upc-team-t57kfmwu.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=&groupBy=none&atlOrigin=eyJpIjoiOWNlZGJjZWIyNTk5NGRhYzhmODk3ZTdmODJiMTVhZDkiLCJwIjoiaiJ9
 
 El orden refleja la prioridad relativa de negocio. En Sprint Planning podrán coexistir Stories de distinta posición cuando una dependencia, el Sprint Goal o la capacidad del equipo lo justifique. Sin embargo, esas decisiones no deben utilizarse para alterar artificialmente el valor de negocio reflejado en este Product Backlog.
 
