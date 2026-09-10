@@ -194,9 +194,10 @@
 - [Bibliografía](#bibliografia)
 - [Anexos](#anexos)
   - [Anexo A. Repositorios del proyecto](#anexo-a-repositorios-del-proyecto)
-  - [Anexo B. Diseño y prototipos](#anexo-b-diseno-y-prototipos)
-  - [Anexo C. Documentación de servicios](#anexo-c-documentacion-de-servicios)
-  - [Anexo D. Videos de Exposiciones](#anexo-d-videos-de-exposiciones)
+  - [Anexo B. Entrevistas](#anexo-b-entrevistas)
+  - [Anexo C. Desplegables](#anexo-c-desplegables)
+  - [Anexo D. Documentación de servicios](#anexo-d-documentacion-de-servicios)
+  - [Anexo E. Videos de exposiciones](#anexo-e-videos-de-exposiciones)
 
 <a id="student-outcome"></a>
 # Student Outcome
@@ -2158,11 +2159,42 @@ Storywizard.ai. (n.d.). *Education reimagined with Storywizard.ai*. Recuperado e
 <a id="anexo-a-repositorios-del-proyecto"></a>
 ## Anexo A. Repositorios del proyecto
 
-<a id="anexo-b-diseno-y-prototipos"></a>
-## Anexo B. Diseño y prototipos
+Tale Star. (n.d.). *Design* [Repositorio de diseño]. GitHub. https://github.com/Tale-Star/design
 
-<a id="anexo-c-documentacion-de-servicios"></a>
-## Anexo C. Documentación de servicios
+Tale Star. (n.d.). *Documentation* [Repositorio de documentación]. GitHub. https://github.com/Tale-Star/docs
 
-<a id="anexo-d-videos-de-exposiciones"></a>
-## Anexo D. Videos de Exposiciones
+Tale Star. (n.d.). *Frontend mobile* [Repositorio de código fuente]. GitHub. https://github.com/Tale-Star/frontend-mobile
+
+Tale Star. (n.d.). *Frontend web* [Repositorio de código fuente]. GitHub. https://github.com/Tale-Star/frontend-web
+
+Tale Star. (n.d.). *Landing page* [Repositorio de código fuente]. GitHub. https://github.com/Tale-Star/landing-page
+
+<a id="anexo-b-entrevistas"></a>
+## Anexo B. Entrevistas
+
+Tale Star. (n.d.). *Entrevista 1: Sara Davila, segmento docentes* [Video]. YouTube. https://youtu.be/cABX9cd1hTY
+
+Tale Star. (n.d.). *Entrevista 2: Roxana Alvarado, segmento docentes* [Video]. YouTube. https://youtu.be/qM7wqQPLy8w
+
+Tale Star. (n.d.). *Entrevista 3: Diandra Valle, segmento docentes* [Video]. YouTube. https://youtu.be/VIJUaUCygm4
+
+<a id="anexo-c-desplegables"></a>
+## Anexo C. Desplegables
+
+### Aplicación web
+
+Enlace de despliegue pendiente de publicación.
+
+### Aplicación móvil descargable
+
+Enlace de descarga pendiente de publicación.
+
+### Landing page
+
+Enlace de despliegue pendiente de publicación.
+
+<a id="anexo-d-documentacion-de-servicios"></a>
+## Anexo D. Documentación de servicios
+
+<a id="anexo-e-videos-de-exposiciones"></a>
+## Anexo E. Videos de exposiciones
