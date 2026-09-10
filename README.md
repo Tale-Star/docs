@@ -271,7 +271,7 @@ A diferencia de herramientas generales de inteligencia artificial, Tale Star org
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | **Código:** U202310004  |                               |
 | **Carrera:** Ingeniería de Software |                               |
-| **Perfil:** Pendiente de completar por el integrante. | |
+| **Perfil:** Estudiante de Ingeniería de Software en la UPC. Me considero una persona entusiasta, creativa y comprometida con cada actividad que realizo. Estoy decidido a dar lo mejor de mí en este proyecto para lograr resultados de calidad. | |
 
 | Nombre: Oblitas Davila, Mariano Moises | <img src="imgs/team/Mariano.png" alt="Mariano" title="Foto de Mariano" width="320"/> |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
