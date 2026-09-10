@@ -66,6 +66,9 @@
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseno-de-entrevistas)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+      - [Entrevista 1 — Sara Davila](#entrevista-1-segmento-2)
+      - [Entrevista 2 — Roxana Alvarado](#entrevista-2-segmento-2)
+      - [Entrevista 3 — Diandra Valle](#entrevista-3-segmento-2)
     - [2.2.3. Análisis de entrevistas](#223-analisis-de-entrevistas)
   - [2.3. Needfinding](#23-needfinding)
     - [2.3.1. User Personas](#231-user-personas)
@@ -928,12 +931,75 @@ Cada entrevista comprende hasta tres preguntas de introducción y diez preguntas
 <a id="222-registro-de-entrevistas"></a>
 ### 2.2.2. Registro de entrevistas
 
-Las entrevistas se registrarán con consentimiento informado mediante notas estructuradas y, cuando el participante lo autorice, grabación de audio. Cada registro identificará el segmento, el contexto del participante, las respuestas relevantes y las evidencias que permitan sustentar los hallazgos sin exponer información personal innecesaria.
+Las entrevistas fueron registradas con autorización de las participantes. Los siguientes registros documentan la experiencia de tres docentes de educación inicial respecto a la búsqueda, adaptación y creación de recursos digitales para sus actividades pedagógicas.
+
+**Segmento objetivo 2: Docentes**
+
+<a id="entrevista-1-segmento-2"></a>
+#### Entrevista 1 — Sara Davila
+
+| Dato | Información |
+| :--- | :--- |
+| Edad | 48 años |
+| Experiencia docente | 20 años |
+| Nivel | Educación inicial |
+| Entrevistador | Mariano Oblitas |
+| Registro | [Video de la entrevista](https://youtu.be/cABX9cd1hTY) |
+
+Sara utiliza recursos digitales diariamente y suele crear o adaptar cuentos, imágenes y canciones para vincularlos con las actividades de sus estudiantes. El proceso puede tomar entre dos y tres horas debido a la búsqueda, generación y corrección del material. Señaló dificultades con imágenes generadas por inteligencia artificial, especialmente cuando los personajes son repetitivos o no representan las características solicitadas. Considera necesario revisar el contenido antes de utilizarlo y valora una herramienta que simplifique la configuración mediante elementos reutilizables. También reconoce el potencial de la realidad aumentada para hacer las actividades más interactivas.
+
+<p align="center">
+  <img src="imgs/interviews/entrevista1segmento2.PNG" alt="Evidencia de la entrevista a Sara Davila, docente de educación inicial" title="Entrevista 1 — Segmento Docentes: Sara Davila" width="850" />
+</p>
+
+<a id="entrevista-2-segmento-2"></a>
+#### Entrevista 2 — Roxana Alvarado
+
+| Dato | Información |
+| :--- | :--- |
+| Edad | 49 años |
+| Experiencia docente | 25 años |
+| Nivel | Educación inicial |
+| Entrevistador | Mariano Oblitas |
+| Registro | [Video de la entrevista](https://youtu.be/qM7wqQPLy8w) |
+
+Roxana emplea recursos digitales de forma continua para motivar y complementar sus clases. Utiliza principalmente PowerPoint y Canva para elaborar cuentos, fichas y otros materiales; sin embargo, la búsqueda de imágenes adecuadas, la eliminación de fondos y la edición incrementan el tiempo de preparación. Al usar inteligencia artificial para generar recursos visuales, tuvo que modificar varias veces sus indicaciones antes de obtener un resultado apropiado. Por ello, considera útil una interfaz guiada que permita definir características sin depender de prompts complejos. Asimismo, percibe la realidad aumentada como un recurso complementario capaz de captar la atención de los niños.
+
+<p align="center">
+  <img src="imgs/interviews/entrevista2segmento2.PNG" alt="Evidencia de la entrevista a Roxana Alvarado, docente de educación inicial" title="Entrevista 2 — Segmento Docentes: Roxana Alvarado" width="850" />
+</p>
+
+<a id="entrevista-3-segmento-2"></a>
+#### Entrevista 3 — Diandra Valle
+
+| Dato | Información |
+| :--- | :--- |
+| Edad | 41 años |
+| Experiencia docente | 18 años |
+| Nivel | Educación inicial, aula de 5 años |
+| Entrevistador | Mariano Oblitas |
+| Registro | [Video de la entrevista](https://youtu.be/VIJUaUCygm4) |
+
+Diandra utiliza recursos digitales en distintas áreas curriculares y ha empleado Gemini para crear cuentos personalizados. Para buscar imágenes recurre principalmente a Pinterest y estima que seleccionar recursos claros, nítidos y adecuados puede tomar entre 50 y 60 minutos. Aunque reconoce el potencial de la inteligencia artificial, identifica problemas de precisión y consistencia: al corregir un elemento de una imagen pueden aparecer errores en otros. Considera importante controlar personajes, escenarios, objetos y calidad visual, y valora una interfaz organizada por categorías que ayude a formular instrucciones más precisas. También considera la realidad aumentada útil como actividad complementaria para sus estudiantes.
+
+<p align="center">
+  <img src="imgs/interviews/entrevista3segmento2.PNG" alt="Evidencia de la entrevista a Diandra Valle, docente de educación inicial" title="Entrevista 3 — Segmento Docentes: Diandra Valle" width="850" />
+</p>
 
 <a id="223-analisis-de-entrevistas"></a>
 ### 2.2.3. Análisis de entrevistas
 
-El análisis se realizará una vez concluida la recolección de datos. Las respuestas se agruparán por patrones de comportamiento, necesidades, dificultades, motivaciones y criterios de selección de contenido. Los resultados obtenidos serán la única base para completar los User Personas, la User Task Matrix, los Empathy Maps y los As-Is Scenario Maps de la sección 2.3.
+Las tres docentes entrevistadas confirman que los recursos digitales son parte habitual de la preparación y el desarrollo de sus clases. Cuentos, imágenes, canciones, fichas y presentaciones se utilizan para contextualizar contenidos, captar la atención de los estudiantes y reforzar actividades de aprendizaje.
+
+El patrón más consistente es el tiempo invertido en localizar, adaptar o elaborar materiales adecuados. Sara indicó que el proceso puede demandar entre dos y tres horas; Diandra señaló que la búsqueda de imágenes apropiadas puede requerir entre 50 y 60 minutos; y Roxana describió actividades adicionales, como retirar fondos y editar recursos, que prolongan la preparación. La disponibilidad de contenido no elimina el trabajo docente: los recursos deben corresponder al objetivo de la actividad, al nivel de los estudiantes y a los criterios de calidad visual de cada caso.
+
+También se identificó una necesidad clara de control sobre el contenido generado. Las participantes reportaron personajes poco consistentes, características incorrectas y cambios no deseados al iterar imágenes generadas con inteligencia artificial. Estas experiencias refuerzan que la generación automática, por sí sola, no resulta suficiente para un contexto educativo: el docente necesita revisar el resultado y conservar la posibilidad de ajustar personajes, escenarios, objetos y otros elementos relevantes antes de incorporarlo a clase.
+
+Las entrevistas muestran además que redactar instrucciones eficaces para herramientas de inteligencia artificial puede convertirse en una barrera. Roxana tuvo que ajustar varias veces sus indicaciones para obtener el resultado esperado, mientras que Diandra destacó el valor de estructurar mejor la descripción. Este hallazgo respalda el enfoque de Tale Star basado en configuraciones guiadas, donde el docente puede definir elementos concretos de una escena o cuento sin depender exclusivamente de la elaboración de prompts técnicos.
+
+Finalmente, las participantes valoraron la realidad aumentada como una experiencia complementaria para incrementar la interacción y la atención durante actividades con niños. Su utilidad se entiende como un recurso de apoyo a cuentos ya preparados, no como sustituto de la planificación pedagógica ni de la revisión del adulto.
+
+En conjunto, los hallazgos se alinean con la propuesta de Tale Star: centralizar la creación de cuentos, imágenes y recursos musicales; facilitar la reutilización de personajes y escenarios; y mantener al adulto en control de la revisión y ajuste del contenido. Estos resultados aportan evidencia para priorizar el Story Creator, la generación guiada y la Biblioteca como capacidades centrales del producto, mientras que la realidad aumentada se mantiene como una funcionalidad complementaria con potencial para enriquecer el uso del cuento en el aula.
 
 <a id="23-needfinding"></a>
 ## 2.3. Needfinding
