@@ -265,7 +265,7 @@ A diferencia de herramientas generales de inteligencia artificial, Tale Star org
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | **Código:** U20231D534  |                               |
 | **Carrera:** Ingeniería de Software |                               |
-| **Perfil:** Pendiente de completar por el integrante. | |
+| **Perfil:** Estudiante de Ingeniería de Software en la UPC y desarrollador Fullstack e IoT, con experiencia construyendo plataformas reales en producción con React, Angular, TypeScript, Java y C#. Interesado en arquitecturas limpias, Domain-Driven Design y automatización de procesos. Con experiencia en sistemas embebidos y proyectos IoT, y en coordinación de equipos bajo metodología Scrum. | |
 
 | Nombre: Cardenas Minaya, Ricardo Fernando | <img src="imgs/team/Ricardo.png" alt="Ricardo" title="Foto de Ricardo" width="320"/> |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
