@@ -209,7 +209,7 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
  
 | Criterio específico | Acciones realizadas | Conclusiones |
 | :--- | :--- | :--- |
-| Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. |  |  |
+| Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Díaz Fiestas, Jorge Luis — TB1. Expuse oralmente en el video de sustentación los artefactos de Needfinding del segmento docente —User Persona, User Journey Map y Empathy Map de la arquetipo Daniela Rojas—, explicando cómo se estructuran y su rol dentro del proceso de investigación de Tale Star.  |  |
 | Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Díaz Fiestas, Jorge Luis — TB1. Elaboré y documenté los artefactos de Needfinding del segmento docente (User Persona, User Journey Map y Empathy Map de Daniela Rojas) en UXPressia, redacté la interpretación escrita del User Persona docente en el Capítulo II del informe y contribuí a la sección de perfiles del equipo. |  |
 
 <a id="capitulo-i-introduccion"></a>
