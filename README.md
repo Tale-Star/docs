@@ -66,6 +66,7 @@
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseno-de-entrevistas)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+        - [Entrevista 1 — Marjorie](#entrevista-1-segmento-1)
       - [Entrevista 1 — Sara Davila](#entrevista-1-segmento-2)
       - [Entrevista 2 — Roxana Alvarado](#entrevista-2-segmento-2)
       - [Entrevista 3 — Diandra Valle](#entrevista-3-segmento-2)
@@ -933,6 +934,24 @@ Cada entrevista comprende hasta tres preguntas de introducción y diez preguntas
 ### 2.2.2. Registro de entrevistas
 
 Las entrevistas fueron registradas con autorización de las participantes. Los siguientes registros documentan la experiencia de tres docentes de educación inicial respecto a la búsqueda, adaptación y creación de recursos digitales para sus actividades pedagógicas.
+
+**Segmento objetivo 1: Padres y cuidadores**
+
+<a id="entrevista-1-segmento-1"></a>
+#### Entrevista 1 — Marjorie
+
+| Dato | Información |
+| :--- | :--- |
+| Edad | 24 años |
+| Ocupación | Trabajadora independiente |
+| Rol | Cuidadora de una niña de 7 años |
+| Entrevistador | Jorge Díaz |
+| Registro | [Video de la entrevista](https://youtu.be/GYXhUYCt9OM) |
+
+Marjorie acompaña el aprendizaje de una niña de 7 años, principalmente cuando tiene tareas o cuando la niña quiere aprender algo que le interesa. Suele buscar los recursos en Google y YouTube, y en su experiencia más reciente —un tema sobre el sistema solar— dedicó alrededor de 15 minutos a encontrar material utilizable. Señala que algunos contenidos resultan demasiado complejos y otros demasiado básicos, y que los videos largos la obligan a revisarlos antes de usarlos. Cuando un recurso no se ajusta por completo, combina varios: un video para explicar y luego imágenes para complementar. Prefiere imágenes y videos porque facilitan que la niña visualice lo que se le explica. Adapta o combina material varias veces al mes, sobre todo cuando los recursos están incompletos, y considera que lo que más esfuerzo le demanda es encontrar contenido acorde al nivel de aprendizaje de la niña. Ha probado herramientas de inteligencia artificial para generar explicaciones e imágenes, con buenos resultados como punto de partida, aunque siempre revisa lo generado. Valora una herramienta que permita crear cuentos, imágenes y canciones para un objetivo educativo concreto —por ejemplo, un cuento sobre el sistema solar para una niña de 7 años— y considera importante poder revisar y ajustar personajes, texto, nivel de dificultad y vocabulario antes de mostrar el contenido.
+<p align="center">
+  <img src="imgs/interviews/entrevista1segmento1.PNG" alt="Evidencia de la entrevista a Marjorie, cuidadora" title="Entrevista 1 — Segmento Padres y Cuidadores: Marjorie" width="850" />
+</p>
 
 **Segmento objetivo 2: Docentes**
 
@@ -2561,6 +2580,8 @@ Tale Star. (n.d.). *Landing page* [Repositorio de código fuente]. GitHub. https
 
 <a id="anexo-b-entrevistas"></a>
 ## Anexo B. Entrevistas
+
+Tale Star. (n.d.). *Entrevista 1: Marjorie, segmento padres y cuidadores* [Video]. YouTube. https://youtu.be/GYXhUYCt9OM
 
 Tale Star. (n.d.). *Entrevista 1: Sara Davila, segmento docentes* [Video]. YouTube. https://youtu.be/cABX9cd1hTY
 
