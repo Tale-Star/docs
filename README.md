@@ -1775,65 +1775,455 @@ El orden refleja la prioridad relativa de negocio. En Sprint Planning podrán co
 <a id="capitulo-iv-strategic-level-software-design"></a>
 # Capítulo IV: Strategic-Level Software Design
 
+Este capítulo define el diseño estratégico de Tale Star mediante Attribute-Driven Design (ADD), Strategic Domain-Driven Design (DDD) y el modelo C4. La secuencia parte de los requisitos y objetivos de negocio del Capítulo III, identifica los Architectural Drivers que condicionan la solución y, posteriormente, establece los límites del dominio y la arquitectura de alto nivel. De esta manera, las decisiones tecnológicas responden a necesidades verificables del producto y no a una selección aislada de herramientas.
+
 <a id="41-strategic-level-attribute-driven-design"></a>
 ## 4.1. Strategic-Level Attribute-Driven Design
+
+ADD se utiliza para traducir la funcionalidad prioritaria, los Quality Attribute Scenarios y las Constraints en decisiones arquitectónicas. Los resultados se consolidan en un Architectural Drivers Backlog, que permite evaluar alternativas y hacer explícitas sus consecuencias.
 
 <a id="411-design-purpose"></a>
 ### 4.1.1. Design Purpose
 
+Tale Star debe permitir que padres, cuidadores y docentes construyan recursos educativos personalizados cuando los materiales disponibles no responden por completo al tema, contexto o características de los niños. La arquitectura debe sostener la creación de Images, Stories y Music sin sustituir el criterio del adulto, quien revisa, modifica y reutiliza el resultado antes de emplearlo.
+
+La solución requiere coordinar configuraciones creativas reutilizables, generación multimodal que puede tardar más que una petición ordinaria, y una Biblioteca capaz de recuperar tanto los assets como la configuración que los produjo. El Story Creator requiere conservar páginas, texto y referencias visuales; la Mobile Application debe recuperar esos Stories para lectura convencional y para una experiencia AR ejecutada localmente en el dispositivo.
+
+Por ello, el diseño prioriza límites explícitos entre la lógica creativa, la orquestación de generación, la persistencia del contenido y la identidad. También debe aislar los runtimes locales de IA para que un cambio de modelo no se propague al dominio ni a los contratos que consumen las aplicaciones.
+
+Las decisiones posteriores buscan mantenibilidad, modificabilidad, performance, seguridad, confiabilidad, interoperabilidad y simplicidad operacional dentro del alcance académico y local del proyecto.
+
 <a id="412-attribute-driven-design-inputs"></a>
 ### 4.1.2. Attribute-Driven Design Inputs
+
+Los inputs de ADD se obtienen de las User Stories, Technical Stories, Business Goals y alcance aprobados en el Capítulo III. Se seleccionan únicamente los requisitos que producen una consecuencia arquitectónica observable.
 
 <a id="4121-primary-functionality-primary-user-stories"></a>
 #### 4.1.2.1. Primary Functionality (Primary User Stories)
 
+La siguiente selección conserva los IDs y descripciones del Capítulo III. Estas Stories son arquitectónicamente relevantes porque exigen coordinación entre aplicaciones, persistencia, generación asíncrona, control de acceso o ejecución local en el dispositivo móvil.
+
+| Epic / User Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
+| :--- | :--- | :--- | :--- | :--- |
+| US01 | Crear una cuenta | Como usuario de Tale Star, deseo crear una cuenta proporcionando mi correo electrónico y contraseña, para poder utilizar las funcionalidades de la plataforma. | Registro válido; el sistema rechaza confirmación distinta o términos no aceptados. | EP01 |
+| US05 | Crear un personaje reutilizable | Como usuario, deseo crear un personaje indicando su nombre, tipo, descripción visual y personalidad para poder reutilizarlo posteriormente en mis generaciones. | La creación válida queda disponible para Images y Story Pages posteriores. | EP02 |
+| US07 | Crear un escenario reutilizable | Como usuario, deseo crear un escenario indicando un nombre y una descripción visual para poder utilizarlo posteriormente en mis imágenes y cuentos. | El Scenario guardado puede seleccionarse durante la configuración posterior. | EP02 |
+| US10 | Configurar un Prompt Guiado | Como usuario, deseo configurar una imagen mediante campos estructurados para describir la escena sin tener que redactar manualmente un prompt técnico. | La configuración reúne Characters, Action, Emotions, Objects, Scenario, Moment, Visual Style e indicaciones adicionales. | EP03 |
+| US19 | Generar una imagen | Como usuario, deseo generar una imagen utilizando el Prompt Guiado o Prompt Libre que he definido para obtener el recurso visual solicitado. | Una configuración válida inicia la generación y conserva un resultado utilizable. | EP03 |
+| US23 | Regenerar una imagen | Como usuario, deseo volver a generar una imagen utilizando su configuración actual para obtener una nueva alternativa. | La regeneración usa la configuración vigente sin perder la alternativa anterior. | EP03 |
+| US37 | Editar la página seleccionada | Como usuario, deseo que al cambiar de página se cargue la información correspondiente a esa página para modificar únicamente la página seleccionada. | La edición conserva los cambios en la Story Page correcta. | EP04 |
+| US41 | Generar un cuento | Como usuario, deseo generar el cuento a partir de las páginas que he configurado para obtener las ilustraciones correspondientes y disponer del cuento completo. | Las páginas configuradas se procesan y el Story resultante queda disponible. | EP04 |
+| US42 | Configurar la dirección musical | Como usuario, deseo definir las características generales de una pieza musical para orientar el resultado de la generación. | La configuración musical queda disponible antes de generar. | EP05 |
+| US60 | Generar una canción o pieza instrumental | Como usuario, deseo generar la pieza musical configurada para obtener el resultado de audio correspondiente. | El resultado puede previsualizarse antes de utilizarse. | EP05 |
+| US63 | Consultar mis creaciones | Como usuario, deseo consultar todas mis creaciones desde la Biblioteca para acceder nuevamente al contenido que he producido. | La Biblioteca retorna únicamente las creaciones del usuario. | EP06 |
+| US70 | Editar la configuración de una creación | Como usuario, deseo acceder desde una creación a su configuración original para modificar los parámetros utilizados para generarla. | La configuración original se recupera y puede guardarse o regenerarse. | EP06 |
+| US83 | Consumir contenido dentro del modo niño | Como usuario, deseo que el contenido abierto en modo niño permanezca en una experiencia enfocada en su visualización, lectura o reproducción para que el menor no pueda regresar accidentalmente a las herramientas de generación. | El modo restringe la navegación hacia capacidades de creación. | EP08 |
+| US87 | Acceder a la cámara para la experiencia AR | Como usuario móvil, deseo abrir la cámara al iniciar la realidad aumentada para visualizar el espacio físico donde colocaré el cuento. | La cámara se abre solo con los permisos correspondientes. | EP09 |
+| US90 | Navegar las páginas del cuento en AR | Como usuario, deseo avanzar y retroceder entre las páginas del cuento mientras utilizo realidad aumentada para completar su lectura. | La navegación conserva una Story Page válida dentro de los límites del Story. | EP09 |
+| TS01 | API de Account & Access | Como Developer, deseo exponer mediante la RESTful API las operaciones necesarias para registro, autenticación y recuperación de acceso para que los clientes de Tale Star utilicen un contrato común. | Requests inválidos reciben 4xx y operaciones protegidas sin sesión reciben 401. | EP11 |
+| TS07 | Servicio de contenido para lectura móvil y AR | Como Developer, deseo exponer los Stories y Story Pages requeridos por la aplicación móvil para permitir lectura y experiencia AR utilizando la misma información del producto web. | Un cliente autorizado recibe Story y páginas ordenadas; AR solo admite Stories válidos. | EP11 |
+| TS09 | Persistencia de configuraciones y recursos multimedia | Como Developer, deseo persistir los datos de las creaciones y las referencias a los recursos multimedia para que las configuraciones y resultados puedan recuperarse entre sesiones. | Una operación exitosa asocia metadata y asset; una falla no reporta persistencia exitosa. | EP11 |
+
+La funcionalidad seleccionada determina la necesidad de una RESTful API protegida, una separación entre operaciones ordinarias y GenerationJobs de larga duración, persistencia coherente de metadata y assets, y una aplicación móvil que consume Stories sin trasladar el procesamiento AR al backend.
+
 <a id="4122-quality-attribute-scenarios"></a>
 #### 4.1.2.2. Quality Attribute Scenarios
+
+Los siguientes escenarios son objetivos arquitectónicos iniciales y deberán validarse mediante pruebas durante la implementación; no representan mediciones ya obtenidas. Primero se presenta una vista consolidada y luego se detalla cada escenario para evitar tablas excesivamente anchas.
+
+| ID | Atributo de calidad | Escenario | Casos de uso asociados |
+| :--- | :--- | :--- | :--- |
+| QAS01 | Performance | Consulta ordinaria de Biblioteca o Story. | US63, US69, TS04, TS06, TS07 |
+| QAS02 | Performance | Solicitud no bloqueante de Image o Music. | US19, US41, US60, TS03, TS05 |
+| QAS03 | Availability / Reliability | Falla de runtime local de IA. | US19, US41, US60, TS08 |
+| QAS04 | Security | Acceso no autorizado a recursos protegidos. | US01, US02, US63, TS01 |
+| QAS05 | Modifiability | Cambio de modelo o StyleProfile. | US10, US19, US23, TS08 |
+| QAS06 | Reliability | Persistencia consistente de contenido generado. | US63, US70, TS06, TS09 |
+| QAS07 | Performance / Usability | Inicio local de AR Reading. | US87, US88, US89, US90, TS07 |
+| QAS08 | Performance / Capacity | Solicitudes concurrentes sobre una GPU ocupada. | US19, US41, US60, TS03, TS05 |
+
+#### QAS01 — API Query Performance
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Fuente | Web Application o Mobile Application. |
+| Estímulo | Solicita información ordinaria como Biblioteca o Story. |
+| Artefacto | Tale Star REST API. |
+| Entorno | Operación normal sin saturación. |
+| Respuesta | Recupera y retorna la información solicitada. |
+| Medida | p95 ≤ 500 ms para operaciones que no ejecutan generación de IA. |
+
+#### QAS02 — Non-blocking Generation Request
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Fuente | Usuario autenticado. |
+| Estímulo | Solicita generación de Image o Music. |
+| Artefacto | Generative Media. |
+| Entorno | Operación normal. |
+| Respuesta | Crea un GenerationJob y devuelve control al cliente sin esperar al modelo. |
+| Medida | La petición inicial retorna `202 Accepted` y `generationId` en ≤ 1 segundo, excluyendo latencia de red externa. |
+
+#### QAS03 — Local AI Runtime Failure
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Fuente | Z-Image-Turbo Runtime o ACE-Step Runtime. |
+| Estímulo | El runtime falla, no responde o no completa una generación. |
+| Artefacto | Generative Media. |
+| Entorno | Operación normal con un job activo. |
+| Respuesta | Captura el fallo, marca el job como Failed y mantiene operativa la API principal. |
+| Medida | El 100 % de fallos detectados termina en Completed o Failed; ningún job se marca falsamente como Completed. |
+
+#### QAS04 — Unauthorized Resource Access
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Fuente | Cliente no autenticado o token inválido. |
+| Estímulo | Solicita un recurso protegido. |
+| Artefacto | REST API / Identity & Access. |
+| Entorno | Operación normal. |
+| Respuesta | Rechaza la operación sin exponer contenido del usuario. |
+| Medida | El 100 % de solicitudes inválidas recibe HTTP 401 o 403 según corresponda. |
+
+#### QAS05 — Generator Modifiability
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Fuente | Developer. |
+| Estímulo | Sustituye un modelo de generación o modifica el catálogo de StyleProfiles. |
+| Artefacto | Generative Media. |
+| Entorno | Desarrollo o mantenimiento. |
+| Respuesta | Aísla la modificación en adapter/configuration sin cambiar Creative Authoring ni contratos públicos. |
+| Medida | Cero cambios en el Domain Layer de Creative Authoring y en contratos REST mientras se conserve el port contract. |
+
+#### QAS06 — Consistent Content Persistence
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Fuente | Usuario autenticado. |
+| Estímulo | Guarda un contenido generado. |
+| Artefacto | Content Library. |
+| Entorno | Operación normal. |
+| Respuesta | Persiste metadata, configuration y referencia al asset de manera consistente. |
+| Medida | El 100 % de operaciones exitosas es recuperable; una falla no deja metadata hacia un asset inexistente. |
+
+#### QAS07 — Mobile AR Startup
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Fuente | Usuario móvil. |
+| Estímulo | Selecciona AR Reading para un Story recuperado. |
+| Artefacto | Flutter Mobile Application / ArRuntime. |
+| Entorno | Dispositivo compatible y assets disponibles. |
+| Respuesta | Inicia la sesión AR localmente, sin solicitar procesamiento AR al backend. |
+| Medida | La inicialización comienza en ≤ 3 segundos después de disponer de los assets necesarios. |
+
+#### QAS08 — GPU Resource Contention
+
+| Elemento | Descripción |
+| :--- | :--- |
+| Fuente | Múltiples usuarios. |
+| Estímulo | Llegan solicitudes simultáneas de generación. |
+| Artefacto | Generation Worker. |
+| Entorno | GPU ocupada. |
+| Respuesta | Encola GenerationJobs en lugar de ejecutar trabajos ilimitados de forma concurrente. |
+| Medida | No supera el límite configurado por runtime y las consultas ordinarias continúan cumpliendo QAS01. |
 
 <a id="4123-constraints"></a>
 #### 4.1.2.3. Constraints
 
+Las Constraints representan decisiones con zero degrees of freedom: delimitan tecnologías y condiciones que el diseño debe respetar.
+
+| Technical Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
+| :--- | :--- | :--- | :--- | :--- |
+| CT01 | RESTful API propia | La integración entre productos se realiza mediante una API de elaboración interna. | La API expone contratos HTTPS/JSON y protege recursos con JWT. | EP11 |
+| CT02 | Web Application | La aplicación web se implementa con Vue 3, TypeScript y Vite. | Consume la REST API mediante contratos comunes. | EP11 |
+| CT03 | Mobile Application | La aplicación móvil se implementa con Flutter y Dart. | Consume la misma REST API y ejecuta AR localmente. | EP09 |
+| CT04 | Landing Page | Landing Page y Web Application son productos conceptualmente separados. | El sitio dirige al visitante a los puntos de acceso definidos. | EP10 |
+| CT05 | Generación local de Images | Z-Image-Turbo se ejecuta localmente detrás de ImageGeneratorPort. | Controllers y dominio no llaman al runtime directamente. | EP03 |
+| CT06 | Generación local de Music | ACE-Step Studio 1.5 se ejecuta localmente detrás de MusicGeneratorPort. | Creative Authoring no llama directamente a ACE-Step. | EP05 |
+| CT07 | Catálogo StyleProfile | Solo se admiten `z_lora_amelicart_000001750.safetensors`, `shitty_watercolor_zib.safetensors` y `zimagebase_flat_color_v2.1.safetensors`. | No se permite cargar LoRAs arbitrarios. | EP03 |
+| CT08 | Persistencia inicial | Se utiliza SQLite en modo WAL con SQLAlchemy y Alembic. | Metadata estructurada queda migrable; assets no se almacenan como BLOB. | EP11 |
+| CT09 | Asset storage | Images y audio se almacenan en filesystem local con metadata en SQLite. | Toda referencia persistida apunta a un asset existente. | EP11 |
+| CT10 | Modular Monolith | Backend con DDD, capas internas y Ports & Adapters. | Los Bounded Contexts conservan responsabilidades explícitas. | EP11 |
+| CT11 | CQRS ligero | Commands/Command Handlers se separan de Queries/Query Handlers. | No se usa Event Sourcing, Event Store ni infraestructura distribuida. | EP11 |
+| CT12 | GenerationJob | Generaciones largas usan worker local persistente. | La solicitud retorna 202 y el job usa Pending, Running, Completed o Failed. | EP03 |
+
 <a id="413-architectural-drivers-backlog"></a>
 ### 4.1.3. Architectural Drivers Backlog
+
+| Prioridad | Driver | Origen | Decisión condicionada |
+| :--- | :--- | :--- | :--- |
+| 1 | Generación no bloqueante y control de GPU | QAS02, QAS08, CT12 | GenerationJob persistente y worker local. |
+| 2 | Aislamiento de runtimes de IA | QAS03, QAS05, CT05–CT07 | Ports & Adapters y Anti-Corruption Layer. |
+| 3 | Persistencia recuperable de contenido | US63, US70, TS09, QAS06 | Filesystem para assets y SQLite WAL para metadata/configuration. |
+| 4 | Seguridad y propiedad de recursos | US01, TS01, QAS04 | JWT y validación de autorización por recurso. |
+| 5 | Lectura móvil y AR local | US87, US90, TS07, QAS07 | Flutter, Story Reader y ArRuntime en el dispositivo. |
+| 6 | Simplicidad y modificabilidad | CT08, CT10, CT11 | Modular Monolith, CQRS ligero y límites DDD. |
 
 <a id="414-architectural-design-decisions"></a>
 ### 4.1.4. Architectural Design Decisions
 
+| Decisión | Alternativas consideradas | Decisión y drivers | Consecuencia / trade-off |
+| :--- | :--- | :--- | :--- |
+| DEC01 — System structure | Modular Monolith; microservices. | Modular Monolith para conservar límites DDD con despliegue simple. | Menor independencia de despliegue que microservices, pero menor complejidad distribuida. |
+| DEC02 — Internal module architecture | Transaction Script; capas tradicionales; Ports & Adapters. | Domain, Application, Interfaces e Infrastructure con Ports & Adapters. | Exige disciplina de dependencias y más abstracciones iniciales. |
+| DEC03 — Interaction pattern | CRUD; CQRS ligero; CQRS + Event Sourcing. | CQRS ligero para separar Commands y Queries. | No aporta historial inmutable ni replay de eventos. |
+| DEC04 — Backend stack | NestJS; ASP.NET Core; Python/FastAPI. | Python 3.12 y FastAPI por integración con runtimes Python/PyTorch. | El equipo debe mantener consistencia entre tipos y contratos Python. |
+| DEC05 — Persistence | SQLite WAL; PostgreSQL; MongoDB. | SQLite WAL con SQLAlchemy y Alembic para una instancia principal local. | Capacidad concurrente y operativa menor que PostgreSQL; repositories facilitan migración futura. |
+| DEC06 — Long-running generation | HTTP síncrono; GenerationJob + worker; broker distribuido. | GenerationJob persistente y worker local. | No ofrece escalamiento distribuido automático. |
+| DEC07 — AI runtime boundary | Llamadas desde controllers; ports/adapters; microservices públicos. | Ports/adapters y boundary interno para Z-Image-Turbo y ACE-Step Studio 1.5. | Requiere mapeos entre contratos internos y runtime. |
+| DEC08 — Mobile technology | Kotlin/Swift; React Native; Flutter. | Flutter/Dart para una aplicación móvil que consume la misma API. | Un bridge nativo puede ser necesario para ARCore/ARKit. |
+| DEC09 — AR processing | AR en servidor; WebAR; AR móvil local. | AR local mediante ArRuntime. | Depende de capacidades, permisos y sensores del dispositivo. |
+| DEC10 — Authentication | Server sessions; JWT; OAuth externo exclusivo. | JWT para API protegida; Google Identity puede complementar el login si se mantiene en alcance. | Requiere gestionar expiración, refresh y custodia segura de tokens. |
+| DEC11 — Generated assets | SQLite BLOB; filesystem + metadata; object storage. | Filesystem local más metadata SQLite. | El backup y escalamiento del storage deben gestionarse si el despliegue crece. |
+| DEC12 — Model coupling | SDK directo; ACL/adapter; librería compartida. | Adapter / Anti-Corruption Layer. | Añade código de traducción, pero evita propagar contratos externos. |
+
 <a id="415-quality-attribute-scenario-refinements"></a>
 ### 4.1.5. Quality Attribute Scenario Refinements
+
+Los refinamientos priorizan los escenarios que introducen mayor riesgo arquitectónico. La siguiente tabla presenta su relación con los Business Goals y los requisitos funcionales del Capítulo III.
+
+| ID | Atributo de calidad | Escenario | Caso de uso asociado |
+| :--- | :--- | :--- | :--- |
+| QR01 | Performance / Reliability | Generación no bloqueante mediante GenerationJob. | US19, US41, US60; BG01, BG02 |
+| QR02 | Availability / Reliability | Aislamiento ante fallas de runtimes locales de IA. | US19, US41, US60; BG04 |
+| QR03 | Modifiability | Sustitución de modelos o StyleProfiles sin afectar el dominio. | US10, US19, US23; BG01, BG04 |
+| QR04 | Security | Rechazo de acceso no autorizado a recursos protegidos. | US01, US63, US70; BG04, BG05 |
+| QR05 | Performance / Usability | Inicio local de la experiencia AR móvil. | US87, US88, US89, US90; BG06 |
+| QR06 | Performance / Capacity | Control de contención de recursos GPU. | US19, US41, US60; BG01, BG02, BG03 |
+
+#### QR01 — Non-blocking Generation
+
+| Elemento | Refinamiento |
+| :--- | :--- |
+| Scenario(s) | QAS02 |
+| Business Goals | BG01, BG02 |
+| Relevant Quality Attributes | Performance y Reliability |
+| Stimulus | Un usuario solicita una generación. |
+| Stimulus Source | Usuario autenticado. |
+| Environment | Operación normal. |
+| Artifact | Generative Media y Generation Worker. |
+| Response | Se persiste un GenerationJob en estado Pending, se responde `202 Accepted` y el worker procesa el trabajo. |
+| Response Measure | Respuesta inicial en ≤ 1 segundo. |
+| Questions | ¿Cómo se recuperan jobs interrumpidos al reiniciar el worker? |
+| Issues | Warm-up del modelo y memoria GPU disponible. |
+
+#### QR02 — AI Runtime Failure Isolation
+
+| Elemento | Refinamiento |
+| :--- | :--- |
+| Scenario(s) | QAS03 |
+| Business Goals | BG04 |
+| Relevant Quality Attributes | Availability y Reliability |
+| Stimulus | Un runtime local falla. |
+| Stimulus Source | Z-Image-Turbo Runtime o ACE-Step Runtime. |
+| Environment | GenerationJob en estado Running. |
+| Artifact | Adapter y GenerationJob. |
+| Response | El adapter registra el fallo, el job queda Failed y no se publica un asset inválido. |
+| Response Measure | Ningún job fallido se informa como Completed. |
+| Questions | ¿Qué política de reintento es apropiada por tipo de error? |
+| Issues | Crash del runtime, timeouts y consistencia entre filesystem y metadata. |
+
+#### QR03 — Generator Modifiability
+
+| Elemento | Refinamiento |
+| :--- | :--- |
+| Scenario(s) | QAS05 |
+| Business Goals | BG01, BG04 |
+| Relevant Quality Attributes | Modifiability |
+| Stimulus | Se cambia un modelo o StyleProfile. |
+| Stimulus Source | Developer. |
+| Environment | Desarrollo o mantenimiento. |
+| Artifact | Adapter y configuration. |
+| Response | La modificación queda aislada en infraestructura sin alterar Creative Authoring. |
+| Response Measure | Cero cambios en el Domain Layer y contratos REST. |
+| Questions | ¿Cómo se versiona la metadata de generaciones anteriores? |
+| Issues | Compatibilidad LoRA y parámetros no soportados por un runtime nuevo. |
+
+#### QR04 — Unauthorized Protected Resource Access
+
+| Elemento | Refinamiento |
+| :--- | :--- |
+| Scenario(s) | QAS04 |
+| Business Goals | BG04, BG05 |
+| Relevant Quality Attributes | Security |
+| Stimulus | Un token inválido solicita un Story o LibraryItem. |
+| Stimulus Source | Cliente no autenticado. |
+| Environment | Operación normal. |
+| Artifact | REST API / Identity & Access. |
+| Response | Se valida JWT y propiedad del recurso antes de devolver datos. |
+| Response Measure | HTTP 401 o 403 en el 100 % de solicitudes inválidas. |
+| Questions | ¿Cuál será la duración de los access y refresh tokens? |
+| Issues | Expiración, revocación y filtración de tokens en el dispositivo. |
+
+#### QR05 — Mobile Local AR
+
+| Elemento | Refinamiento |
+| :--- | :--- |
+| Scenario(s) | QAS07 |
+| Business Goals | BG06 |
+| Relevant Quality Attributes | Performance y Usability |
+| Stimulus | El usuario selecciona AR Reading. |
+| Stimulus Source | Usuario móvil. |
+| Environment | Dispositivo compatible y assets disponibles. |
+| Artifact | Flutter Mobile Application / ArRuntime. |
+| Response | Se inicia cámara, se detecta una superficie y se presenta el Story localmente. |
+| Response Measure | Inicio en ≤ 3 segundos sin endpoint AR. |
+| Questions | ¿Qué dispositivos y versiones mínimas se soportarán? |
+| Issues | Permisos, soporte ARCore/ARKit y carga de assets. |
+
+#### QR06 — GPU Resource Contention
+
+| Elemento | Refinamiento |
+| :--- | :--- |
+| Scenario(s) | QAS08 |
+| Business Goals | BG01, BG02, BG03 |
+| Relevant Quality Attributes | Performance y Capacity |
+| Stimulus | Llegan varias solicitudes de generación. |
+| Stimulus Source | Múltiples usuarios. |
+| Environment | GPU ocupada. |
+| Artifact | Generation Worker. |
+| Response | Las solicitudes se encolan según el límite del runtime y las Queries continúan disponibles. |
+| Response Measure | La concurrencia GPU no supera el límite configurado. |
+| Questions | ¿Cómo se define prioridad o cancelación de jobs? |
+| Issues | Saturación de VRAM, tiempo de cola y starvation. |
 
 <a id="42-strategic-level-domain-driven-design"></a>
 ## 4.2. Strategic-Level Domain-Driven Design
 
+Strategic DDD utiliza los resultados de ADD para reconocer límites naturales dentro del dominio. La separación propuesta responde a responsabilidades, vocabulario y ciclos de cambio diferentes: configurar contenido no es lo mismo que ejecutar un modelo; almacenar una creación no es lo mismo que autenticar una cuenta.
+
 <a id="421-eventstorming"></a>
 ### 4.2.1. EventStorming
+
+La sesión de EventStorming se plantea con una duración de una a dos horas. El equipo identifica Domain Events en pasado, Commands que los provocan, Actors, policies, sistemas externos y puntos de fricción. La conversación se concentra en eventos pivotal: creación y regeneración de contenido, ejecución de GenerationJobs, persistencia en Biblioteca y lectura móvil.
+
+![Tale Star EventStorming](imgs/diagrams/taleStarEventStorming.png)
+
+El resultado debe mostrar eventos de Identity & Access —`UserRegistered`, `UserAuthenticated`, `PasswordRecoveryRequested`, `PasswordChanged`, `ChildModeEnabled` y `ChildModeUnlocked`—; de configuración —`CharacterCreated`, `CharacterUpdated`, `SettingCreated` y `SettingUpdated`—; y de generación —`ImageGenerationRequested`, `ImageGenerationQueued`, `ImageGenerated`, `ImageGenerationFailed`, `StoryCreated`, `StoryGenerationRequested`, `StoryGenerated`, `StoryPageAdded`, `StoryPageTextEdited`, `MusicGenerationRequested`, `MusicGenerated`, `MusicGenerationFailed` y `LyricsEdited`.
+
+También deben aparecer `ContentSaved`, `GenerationConfigurationSaved`, `LibraryItemOpened`, `OriginalConfigurationLoaded`, `SavedContentUpdated`, `ContentRegenerationRequested`, `StoryRequestedFromMobile`, `StoryLoadedOnMobile`, `TraditionalReadingStarted` y `ARReadingStarted`. Este último representa un evento de experiencia móvil; no implica que AR se procese en el backend.
 
 <a id="422-candidate-context-discovery"></a>
 ### 4.2.2. Candidate Context Discovery
 
+La identificación se realizó mediante start-with-value para agrupar capacidades por resultado de negocio, look-for-pivotal-events para separar ciclos de generación y persistencia, y start-with-simple como comprobación de que los límites no fragmentan innecesariamente el dominio.
+
+![Candidate Context Discovery - Initial](imgs/diagrams/taleStarCandidateContextDiscoveryStep1.png)
+
+La primera agrupación organiza los value streams de identidad, configuración creativa, generación y recuperación de contenido.
+
+![Candidate Context Discovery - Boundaries](imgs/diagrams/taleStarCandidateContextDiscoveryStep2.png)
+
+La segunda etapa identifica los eventos pivotal que diferencian una solicitud creativa de la ejecución de un runtime y de la conservación de un resultado.
+
+![Candidate Context Discovery - Final](imgs/diagrams/taleStarCandidateContextDiscoveryFinal.png)
+
+El resultado final establece Creative Authoring como Core Domain; Generative Media y Content Library como Supporting Domains; e Identity & Access como Generic Domain. Z-Image-Turbo y ACE-Step Studio 1.5 son infraestructura de Generative Media; AR pertenece a Mobile Application; y Characters, Settings, Image Generation y Music Generation son capacidades, no Bounded Contexts independientes.
+
 <a id="423-domain-message-flows-modeling"></a>
 ### 4.2.3. Domain Message Flows Modeling
+
+Domain Storytelling representa la interacción entre actores, objetos del dominio y sistemas, sin convertir el flujo en un diagrama técnico interno.
+
+![Domain Story - Image Generation](imgs/diagrams/taleStarDomainStoryImageGeneration.png)
+
+El usuario configura una Image en Creative Authoring; se solicita la generación y Generative Media crea un GenerationJob. ZImageAdapter transforma la solicitud para Z-Image-Turbo, y el resultado validado se entrega para su conservación en Content Library.
+
+![Domain Story - Story Creation](imgs/diagrams/taleStarDomainStoryStoryCreation.png)
+
+El usuario define Story, Story Pages, Characters y Settings. Creative Authoring conserva la intención narrativa; las ilustraciones se solicitan como generación y el Story final puede recuperarse desde Biblioteca.
+
+![Domain Story - Music Generation](imgs/diagrams/taleStarDomainStoryMusicGeneration.png)
+
+La configuración musical es preparada en Creative Authoring y enviada a Generative Media. MusicGeneratorPort y AceStepAdapter aíslan ACE-Step Studio 1.5 del dominio; el audio y su metadata se almacenan tras una generación exitosa.
+
+![Domain Story - Library Regeneration](imgs/diagrams/taleStarDomainStoryLibraryRegeneration.png)
+
+Content Library recupera la configuración original de una creación. El usuario la modifica en Creative Authoring y la nueva solicitud sigue el mismo flujo de GenerationJob, preservando trazabilidad con la versión guardada.
+
+![Domain Story - AR Reading](imgs/diagrams/taleStarDomainStoryArReading.png)
+
+La Mobile Application obtiene Story, Story Pages y assets desde la API. El Story Reader entrega estos datos al ArRuntime, que utiliza cámara y sensores localmente. El backend suministra contenido; no existe un servicio ni endpoint de AR.
 
 <a id="424-bounded-context-canvases"></a>
 ### 4.2.4. Bounded Context Canvases
 
+Los Bounded Context Canvases se construyen iterativamente mediante Context Overview Definition, Business Rules Distillation & Ubiquitous Language Capture, Capability Analysis, Capability Layering, Dependencies Capture y Design Critique.
+
+![Creative Authoring Bounded Context Canvas](imgs/diagrams/creativeAuthoringBoundedContextCanvas.png)
+
+Creative Authoring concentra Character Management, Setting Management, Image Configuration, Story Authoring, Story Page Management, Music Configuration, Prompt Composition, Generation Request, Content Editing y Regeneration Request. Es el Core Domain porque expresa la intención educativa y creativa definida por el adulto. Depende de Identity & Access para autorización, de Generative Media para resultados y de Content Library para reutilización.
+
+![Generative Media Bounded Context Canvas](imgs/diagrams/generativeMediaBoundedContextCanvas.png)
+
+Generative Media orquesta Image Generation, Music Generation, StoryTextGeneratorPort, Generation Job Management, Style Profile Selection, Generation Configuration y Generation Result Handling. Sus adapters implementan ImageGeneratorPort y MusicGeneratorPort; `StoryTextGeneratorPort` permanece independiente de proveedor porque no hay un modelo de texto aprobado.
+
+![Content Library Bounded Context Canvas](imgs/diagrams/contentLibraryBoundedContextCanvas.png)
+
+Content Library conserva Save Content, Browse Library, Retrieve Content, Load Original Configuration, Update Saved Content, Retrieve Story for Mobile, Retrieve Generated Assets y Store Generation Metadata. Mantiene metadata y configuración en SQLite, y referencias hacia assets del filesystem local, sin almacenar archivos multimedia como BLOB.
+
+![Identity and Access Bounded Context Canvas](imgs/diagrams/identityAccessBoundedContextCanvas.png)
+
+Identity & Access administra Register, Login, JWT Issuance, Token Refresh, Password Recovery y Child PIN Management. Google Identity puede actuar como servicio externo únicamente si permanece dentro del alcance vigente. El contexto no conoce reglas de creación ni de generación.
+
 <a id="425-context-mapping"></a>
 ### 4.2.5. Context Mapping
+
+La evaluación de alternativas evita asumir desde el inicio la partición definitiva del dominio.
+
+![Context Map Candidate A](imgs/diagrams/taleStarContextMapCandidateA.png)
+
+El candidato A separa Identity & Access, Story, Image Generation, Music Generation y Library. Se rechaza porque introduce demasiados límites, duplica conceptos creativos y aumenta la coordinación para una sola intención de autoría.
+
+![Context Map Candidate B](imgs/diagrams/taleStarContextMapCandidateB.png)
+
+El candidato B agrupa Generative Media y Content Library. Se rechaza porque mezcla la ejecución de modelos con el lifecycle y persistencia del contenido.
+
+![Tale Star Context Map](imgs/diagrams/taleStarContextMap.png)
+
+El mapa final define a Identity & Access como supplier de identidad y autorización para Creative Authoring. Creative Authoring es customer de Generative Media y Content Library; Generative Media usa Anti-Corruption Layers/adapters hacia los runtimes locales. No se emplea Shared Kernel: los contratos explícitos, ports y eventos de dominio evitan compartir modelos entre contextos con responsabilidades diferentes.
 
 <a id="43-software-architecture"></a>
 ## 4.3. Software Architecture
 
+El modelo C4 presenta la solución de forma progresiva. System Landscape delimita el ecosistema; Context Level muestra actores y sistema central; Container Level muestra aplicaciones, API, almacenamiento y runtimes; y Deployment describe su distribución física.
+
 <a id="431-software-architecture-system-landscape-diagram"></a>
 ### 4.3.1. Software Architecture System Landscape Diagram
+
+![Tale Star System Landscape](imgs/diagrams/taleStarSystemLandscape.png)
+
+El System Landscape sitúa a padres/cuidadores y docentes como usuarios de Tale Star. La plataforma incluye Landing Page, Web Application y Mobile Application, y puede integrarse con Google Identity si dicha opción se conserva en los requisitos. Los motores locales de IA y el runtime AR no se presentan como sistemas independientes para el usuario final.
 
 <a id="432-software-architecture-context-level-diagram"></a>
 ### 4.3.2. Software Architecture Context Level Diagram
 
+![Tale Star System Context](imgs/diagrams/taleStarSystemContext.png)
+
+El diagrama de contexto muestra Parent/Caregiver y Teacher interactuando con Tale Star Platform. Google Identity aparece únicamente como sistema externo opcional para autenticación. SQLite, FastAPI, runtimes de IA y Bounded Contexts se omiten porque pertenecen a niveles internos posteriores.
+
 <a id="433-software-architecture-container-level-diagram"></a>
 ### 4.3.3. Software Architecture Container Level Diagram
 
+![Tale Star Container Diagram](imgs/diagrams/taleStarContainerDiagram.png)
+
+Landing Page y Web Application se desarrollan con Vue 3, TypeScript y Vite. La Mobile Application utiliza Flutter y Dart, incorpora Story Reader y ArRuntime local. Ambas aplicaciones consumen la REST API mediante HTTPS/JSON.
+
+La REST API, desarrollada con Python 3.12 y FastAPI, opera como Modular Monolith y coordina los cuatro Bounded Contexts. Un Generation Worker de Python ejecuta GenerationJobs sin bloquear peticiones ordinarias. SQLite WAL mantiene metadata estructurada a través de SQLAlchemy y Alembic; Media Storage usa filesystem local para Images y audio. Z-Image-Turbo, con el catálogo fijo de StyleProfiles, y ACE-Step Studio 1.5 se consumen mediante HTTP interno desde adapters del worker. Las relaciones con storage usan filesystem local y las de persistencia usan SQL.
+
 <a id="434-software-architecture-deployment-diagram"></a>
 ### 4.3.4. Software Architecture Deployment Diagram
+
+![Tale Star Deployment Diagram](imgs/diagrams/taleStarDeploymentDiagram.png)
+
+Cloud Static Hosting aloja Landing Page y Web Application. Un GPU-capable Server o Workstation aloja FastAPI REST API, Generation Worker, SQLite, Media Storage, Z-Image-Turbo, los archivos LoRA y ACE-Step Studio 1.5. El uso de una instancia principal simplifica el despliegue local y corresponde al alcance académico actual.
+
+El Mobile Device ejecuta Flutter Mobile Application, Story Reader, ArRuntime, cámara y sensores; puede requerir un bridge hacia ARCore o ARKit según la plataforma. La aplicación móvil obtiene Stories y assets desde la REST API, pero la sesión AR nunca se despliega ni procesa en el servidor. Google Identity se ubica en External Cloud solo cuando sea aplicable.
+
+La trazabilidad obtenida conecta Requirements con ADD Inputs, Architectural Drivers, decisiones, Bounded Contexts y arquitectura C4. El Capítulo V desarrollará el diseño táctico interno de cada Bounded Context sin modificar estos límites estratégicos.
 
 <a id="capitulo-v-tactical-level-software-design"></a>
 # Capítulo V: Tactical-Level Software Design
