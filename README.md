@@ -67,6 +67,7 @@
     - [2.2.1. Diseño de entrevistas](#221-diseno-de-entrevistas)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
         - [Entrevista 1 — Marjorie](#entrevista-1-segmento-1)
+        - [Entrevista 2 — Sebastián Ramírez](#entrevista-2-segmento-1)
       - [Entrevista 1 — Sara Davila](#entrevista-1-segmento-2)
       - [Entrevista 2 — Roxana Alvarado](#entrevista-2-segmento-2)
       - [Entrevista 3 — Diandra Valle](#entrevista-3-segmento-2)
@@ -951,6 +952,23 @@ Las entrevistas fueron registradas con autorización de las participantes. Los s
 Marjorie acompaña el aprendizaje de una niña de 7 años, principalmente cuando tiene tareas o cuando la niña quiere aprender algo que le interesa. Suele buscar los recursos en Google y YouTube, y en su experiencia más reciente —un tema sobre el sistema solar— dedicó alrededor de 15 minutos a encontrar material utilizable. Señala que algunos contenidos resultan demasiado complejos y otros demasiado básicos, y que los videos largos la obligan a revisarlos antes de usarlos. Cuando un recurso no se ajusta por completo, combina varios: un video para explicar y luego imágenes para complementar. Prefiere imágenes y videos porque facilitan que la niña visualice lo que se le explica. Adapta o combina material varias veces al mes, sobre todo cuando los recursos están incompletos, y considera que lo que más esfuerzo le demanda es encontrar contenido acorde al nivel de aprendizaje de la niña. Ha probado herramientas de inteligencia artificial para generar explicaciones e imágenes, con buenos resultados como punto de partida, aunque siempre revisa lo generado. Valora una herramienta que permita crear cuentos, imágenes y canciones para un objetivo educativo concreto —por ejemplo, un cuento sobre el sistema solar para una niña de 7 años— y considera importante poder revisar y ajustar personajes, texto, nivel de dificultad y vocabulario antes de mostrar el contenido.
 <p align="center">
   <img src="imgs/interviews/entrevista1segmento1.PNG" alt="Evidencia de la entrevista a Marjorie, cuidadora" title="Entrevista 1 — Segmento Padres y Cuidadores: Marjorie" width="850" />
+</p>
+
+<a id="entrevista-2-segmento-1"></a>
+#### Entrevista 2 — Sebastián Ramírez
+
+| Dato | Información |
+| :--- | :--- |
+| Edad | 28 años |
+| Ocupación | Cuidador de niños |
+| Rol | Cuidador de un niño de 5 años |
+| Entrevistador | Jorge Díaz |
+| Registro | [Video de la entrevista](https://youtu.be/Jr87RMa8Z0Y) |
+
+Sebastián acompaña el aprendizaje de un niño de 5 años, ayudándolo con sus tareas y buscando videos, cuentos o imágenes cuando necesita reforzar algún tema. En su experiencia más reciente —enseñarle los animales y sus sonidos— comenzó buscando en YouTube y Google, y dedicó entre 20 y 30 minutos porque, si bien había bastante contenido, no todo resultaba apropiado para la edad del niño. Señala que algunos videos incluían demasiada información, vocabulario que el niño aún no comprende o un exceso de estímulos. Cuando un recurso no se ajusta, busca otro, se lo explica él mismo o utiliza solo una parte del video o de las imágenes. Prefiere imágenes y canciones: las imágenes ayudan al niño a reconocer las cosas y las canciones facilitan que recuerde la información. Adapta o combina material una o dos veces por semana, sobre todo cuando no encuentra exactamente lo que necesita, y considera que lo que más esfuerzo le demanda es verificar que el contenido sea realmente adecuado, dada la gran cantidad de resultados. Ha usado ChatGPT para generar ideas de cuentos, con buena ayuda, aunque le preocupa que la información no siempre sea correcta o apropiada para un niño pequeño. Considera muy útil una herramienta que permita crear cuentos, imágenes y canciones para un objetivo educativo específico, y valora poder revisar y definir personajes, acciones, objetos y texto antes de usar el contenido para asegurar que sea apropiado y contenga exactamente lo que desea enseñar.
+
+<p align="center">
+  <img src="imgs/interviews/entrevista2segmento1.PNG" alt="Evidencia de la entrevista a Sebastián Ramírez, cuidador" title="Entrevista 2 — Segmento Padres y Cuidadores: Sebastián Ramírez" width="850" />
 </p>
 
 **Segmento objetivo 2: Docentes**
@@ -2582,6 +2600,8 @@ Tale Star. (n.d.). *Landing page* [Repositorio de código fuente]. GitHub. https
 ## Anexo B. Entrevistas
 
 Tale Star. (n.d.). *Entrevista 1: Marjorie, segmento padres y cuidadores* [Video]. YouTube. https://youtu.be/GYXhUYCt9OM
+
+Tale Star. (n.d.). *Entrevista 2: Sebastián Ramírez, segmento padres y cuidadores* [Video]. YouTube. https://youtu.be/Jr87RMa8Z0Y
 
 Tale Star. (n.d.). *Entrevista 1: Sara Davila, segmento docentes* [Video]. YouTube. https://youtu.be/cABX9cd1hTY
 
