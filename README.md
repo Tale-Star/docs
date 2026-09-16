@@ -281,11 +281,11 @@ A diferencia de herramientas generales de inteligencia artificial, Tale Star org
 | **Carrera:** Ingeniería de Software |                               |
 | **Perfil:** Estudiante de 20 años de Ingeniería de Software en la UPC. Me caracterizo por mi creatividad, eficacia y capacidad para resolver problemas de manera racional. Apasionado por la programación y el desarrollo de software, busco constantemente innovar y aprender nuevas tecnologías. | |
 
-| Nombre: Huapaya Buitron, Ariana  | <img src="imgs/team/Ariana.png" alt="Ariana" title="Foto de Ariana" width="320"/> |
+| Nombre: Huapaya Buitron, Ariana  | <img src="imgs/team/ariana-huapaya.jpeg" alt="Ariana" title="Foto de Ariana" width="320"/> |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | **Código:** U201819645  |                               |
 | **Carrera:** Ingeniería de Software |                               |
-| **Perfil:** Pendiente de completar por la integrante. | |
+| **Perfil:** Estudiante de Ingeniería de Software en la UPC, orientado al desarrollo de software y la creación de soluciones eficientes. Manejo tecnologías como JavaScript, Node.js, Python, C++ y SQL, con enfoque en Back-end y desarrollo de APIs. Me interesa seguir fortaleciendo mis habilidades y aprender nuevas tecnologías. | |
 
 ## 1.2. Solution Profile
 
