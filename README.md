@@ -35,12 +35,14 @@
 <a id="registro-de-versiones-del-informe"></a>
 # Registro de Versiones del Informe
 
-| Versión | Fecha | Autor | Descripción de modificación |
+| Versión | Fecha | Autores | Descripción de modificación |
 | :--- | :--- | :--- | :--- |
-|  |  |  |  |
+| TB1 | 19/09/2026 | Seijas Vasquez, Diego Antonio<br>Diaz Fiestas, Jorge Luis<br>Cardenas Minaya, Ricardo Fernando<br>Oblitas Davila, Mariano Moises<br>Huapaya Buitron, Ariana<br>Becerra Llempen, Fabiola Dayane | Consolidación y corrección de los capítulos I–IV; análisis de entrevistas y Needfinding; actualización de User Personas, User Task Matrix, Empathy Mapping y As-Is; consolidación de Requirements Specification; alineación de modelos generativos self-hosted en infraestructura cloud; refinamiento de ADD, Strategic DDD, Bounded Context Canvases, Ubiquitous Language, decisiones arquitectónicas, trazabilidad y Student Outcome. |
 
 <a id="project-report-collaboration-insights"></a>
 # Project Report Collaboration Insights
+
+Durante TB1, el historial del repositorio evidencia una distribución del trabajo documental entre los integrantes: se incorporaron entrevistas y artefactos de Needfinding, mapas de escenarios, Product Backlog, diagramas y correcciones de la arquitectura estratégica. Las contribuciones se integraron progresivamente en `README.md` y en los recursos de `imgs`, manteniendo el informe como fuente central de trazabilidad del proyecto.
 
 <a id="contenido"></a>
 # Contenido
@@ -107,7 +109,7 @@
     - [4.3.3. Software Architecture Container Level Diagram](#433-software-architecture-container-level-diagram)
     - [4.3.4. Software Architecture Deployment Diagram](#434-software-architecture-deployment-diagram)
 - [Capítulo V: Tactical-Level Software Design](#capitulo-v-tactical-level-software-design)
-  - [5.1. Bounded Context: Story Authoring](#51-bounded-context-story-authoring)
+  - [5.1. Bounded Context: Creative Authoring](#51-bounded-context-creative-authoring)
     - [5.1.1. Domain Layer](#511-domain-layer)
     - [5.1.2. Interface Layer](#512-interface-layer)
     - [5.1.3. Application Layer](#513-application-layer)
@@ -213,14 +215,16 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
  
 | Criterio específico | Acciones realizadas | Conclusiones |
 | :--- | :--- | :--- |
-| Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Díaz Fiestas, Jorge Luis — TB1. Expuse oralmente en el video de sustentación los artefactos de Needfinding del segmento docente —User Persona, User Journey Map y Empathy Map de la arquetipo Daniela Rojas—, explicando cómo se estructuran y su rol dentro del proceso de investigación de Tale Star.  |  |
-| Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Díaz Fiestas, Jorge Luis — TB1. Elaboré y documenté los artefactos de Needfinding del segmento docente (User Persona, User Journey Map y Empathy Map de Daniela Rojas) en UXPressia, redacté la interpretación escrita del User Persona docente en el Capítulo II del informe y contribuí a la sección de perfiles del equipo. |  |
+| Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Diaz Fiestas, Jorge Luis — TB1: expuso en el video de sustentación los artefactos de Needfinding del segmento docente, explicando el User Persona, User Journey Map y Empathy Map de Daniela Rojas y su relación con la investigación de Tale Star. | La evidencia disponible de TB1 documenta una sustentación oral de los hallazgos de Needfinding del segmento docente. |
+| Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Seijas Vasquez, Diego Antonio — TB1: documentó los mapas As-Is y To-Be del informe.<br><br>Diaz Fiestas, Jorge Luis — TB1: registró entrevistas de padres/cuidadores y documentó artefactos de Needfinding del segmento docente.<br><br>Cardenas Minaya, Ricardo Fernando — TB1: incorporó evidencia del Impact Map, Product Backlog y diagramas C4.<br><br>Oblitas Davila, Mariano Moises — TB1: incorporó entrevistas y análisis del segmento docente, además de avances documentales del informe.<br><br>Huapaya Buitron, Ariana — TB1: incorporó User Personas, Empathy Maps y actualizaciones del Capítulo IV.<br><br>Becerra Llempen, Fabiola Dayane — TB1: incorporó y ajustó recursos visuales y documentación de Strategic DDD y C4. | Durante TB1 el equipo consolidó evidencia escrita de investigación, requisitos, diseño estratégico y recursos visuales en el repositorio. Las contribuciones documentales son complementarias y permiten comunicar el avance del proyecto a audiencias académicas y técnicas. |
 
 <a id="capitulo-i-introduccion"></a>
 # Capítulo I: Introducción
 
+<a id="11-startup-profile"></a>
 ## 1.1. Startup Profile
 
+<a id="111-descripcion-de-la-startup"></a>
 ### 1.1.1. Descripción de la Startup
 
 Tale Star es una startup tecnológica orientada a mejorar la forma en que padres y docentes crean y utilizan contenido educativo digital para niños. La propuesta surge frente a un entorno donde existe una gran cantidad de contenido infantil disponible en plataformas digitales, pero donde la disponibilidad de contenido no garantiza que este posea una intención pedagógica clara, sea apropiado para la edad o responda al tema específico que un adulto desea enseñar.
@@ -245,7 +249,7 @@ Convertirse en una plataforma de referencia en Latinoamérica para la creación 
 
 **Innovación y tecnología**
 
-Tale Star combina inteligencia artificial generativa y realidad aumentada dentro de una solución multicomponente. La inteligencia artificial permite producir contenido textual, visual y musical a partir de las indicaciones del usuario, mientras que la realidad aumentada proporciona un nuevo medio para visualizar los cuentos generados.
+Tale Star combina inteligencia artificial generativa y realidad aumentada dentro de una solución multicomponente. La inteligencia artificial produce ilustraciones, imágenes y recursos musicales a partir de las configuraciones del usuario, mientras que la realidad aumentada proporciona un nuevo medio para visualizar los cuentos generados. El adulto escribe y revisa el texto de cada Story Page.
 
 La innovación no reside únicamente en utilizar modelos generativos, sino en estructurar estas capacidades alrededor de un proceso orientado a la educación: el adulto define qué desea enseñar, determina las características del contenido, supervisa los resultados y decide cuándo y cómo utilizarlos.
 
@@ -293,16 +297,18 @@ A diferencia de herramientas generales de inteligencia artificial, Tale Star org
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | **Código:** U20171a518  |                               |
 | **Carrera:** Ingeniería de Software |                               |
-| **Perfil:** Estudiante de Ingeniería de Software en la UPC, con experiencia desarrollando sistemas de gestión, inventario y facturación para negocios reales. Interesado en arquitectura de software, desarrollo backend y en construir soluciones prácticas orientadas a resolver problemas concretos de negocio. | |
+| **Perfil:** Estudiante de Ingeniería de Software en la UPC, interesada en el desarrollo backend y la arquitectura de software. Su formación se complementa con experiencia en sistemas de gestión, inventario y facturación, lo que orienta su interés hacia soluciones prácticas para necesidades operativas concretas. | |
 
+<a id="12-solution-profile"></a>
 ## 1.2. Solution Profile
 
 Tale Star propone una solución digital multicomponente para padres y docentes que necesitan crear recursos educativos infantiles adaptados a objetivos específicos de aprendizaje.
 
-La solución integra una aplicación web orientada a la creación y administración de contenido, servicios de inteligencia artificial para generación textual, visual y musical, una RESTful API desarrollada por el equipo y una aplicación móvil que incorpora una experiencia de realidad aumentada para visualizar los cuentos generados.
+La solución integra una aplicación web orientada a la creación y administración de contenido, servicios de inteligencia artificial para generación visual y musical, una RESTful API desarrollada por el equipo y una aplicación móvil que incorpora una experiencia de realidad aumentada para visualizar los cuentos generados. El usuario redacta manualmente el texto de los cuentos.
 
 El producto busca disminuir el esfuerzo necesario para pasar de una necesidad educativa concreta a un recurso que pueda ser utilizado y supervisado por el adulto.
 
+<a id="121-antecedentes-y-problematica"></a>
 ### 1.2.1. Antecedentes y problemática
 
 La presencia de medios digitales durante la infancia es actualmente significativa. El estudio *The Common Sense Census: Media Use by Kids Zero to Eight* reportó que los niños estadounidenses de 0 a 8 años utilizan aproximadamente 2 horas y 27 minutos diarios de medios de pantalla. Entre los niños de 5 a 8 años, el promedio alcanza 3 horas y 28 minutos diarios. El estudio también encontró un crecimiento del consumo de videos cortos en plataformas como TikTok, Instagram Reels y YouTube Shorts (Mann et al., 2025). Estas cifras corresponden a Estados Unidos y no representan directamente al contexto peruano, pero permiten observar la importancia adquirida por los medios digitales durante la infancia.
@@ -325,7 +331,7 @@ A ello se añade el esfuerzo asociado con la preparación educativa. Los resulta
 
 En este contexto, la brecha identificada por Tale Star no consiste en una inexistencia absoluta de contenido educativo infantil. La problemática se encuentra entre la enorme disponibilidad de contenido digital y la capacidad de padres y docentes para disponer rápidamente de un recurso que simultáneamente responda a un objetivo educativo, resulte apropiado para la edad, pueda adaptarse al contexto del niño y mantenga al adulto en control de su creación.
 
-La necesidad de utilizar contenido relacionado con acontecimientos recientes o temas altamente específicos se considera inicialmente una hipótesis del proyecto y deberá validarse mediante las entrevistas de Needfinding. No existe todavía evidencia suficiente para afirmar que esta necesidad tenga una frecuencia significativa dentro de nuestros segmentos.
+La necesidad de adaptar materiales a temas específicos se mantuvo como hipótesis inicial y fue contrastada en las cinco entrevistas de Needfinding. Los participantes describieron búsquedas y adaptaciones asociadas a temas concretos, como el sistema solar, los animales y actividades de aula; este estudio cualitativo no busca estimar su frecuencia poblacional.
 
 **Enunciado del problema**
 
@@ -347,7 +353,7 @@ La problemática aparece cuando un padre o docente necesita introducir, explicar
 
 Puede ser especialmente relevante cuando el contenido debe adaptarse a características particulares, como la edad del niño, sus intereses, personajes que reconoce, una situación específica o un tema poco cubierto por recursos existentes.
 
-La frecuencia real con que padres y docentes experimentan esta situación será evaluada mediante las entrevistas del proyecto.
+Las entrevistas realizadas confirman que esta situación aparece en ambos segmentos, aunque su frecuencia no se estima estadísticamente con una muestra cualitativa de cinco participantes.
 
 ##### **¿Dónde ocurre? (Where)**
 
@@ -391,7 +397,7 @@ Actualmente, padres y docentes pueden recurrir a buscadores, plataformas de vide
 
 Cuando ninguna fuente responde completamente a la necesidad, el adulto debe combinar diferentes recursos o realizar modificaciones manuales.
 
-Tale Star parte del supuesto de que centralizar este proceso y permitir generar diferentes formatos desde una misma plataforma puede reducir ese esfuerzo. Sin embargo, este supuesto deberá ser contrastado mediante las entrevistas y actividades de validación del proyecto.
+Tale Star parte del supuesto de que centralizar este proceso y permitir construir cuentos con texto definido por el adulto, además de generar imágenes y música, puede reducir ese esfuerzo. Las entrevistas realizadas respaldan la necesidad de configuraciones guiadas, revisión, reutilización y reducción de la búsqueda dispersa; la magnitud de la adopción deberá evaluarse en etapas posteriores de validación.
 
 ##### **¿Cuán grande es el impacto? (How Much)**
 
@@ -427,6 +433,7 @@ No se desarrollarán inicialmente personajes tridimensionales animados ni experi
 
 El producto deberá mantener una experiencia inclusiva, accesible e internacionalizable de acuerdo con las restricciones generales establecidas por el proyecto del curso.
 
+<a id="122-lean-ux-process"></a>
 ### 1.2.2. Lean UX Process
 
 El Lean UX Process de Tale Star permitirá transformar la problemática identificada en supuestos e hipótesis comprobables.
@@ -435,6 +442,7 @@ Las afirmaciones relacionadas con las necesidades, comportamientos y preferencia
 
 El proceso permitirá determinar qué necesidades presentan mayor relevancia para los segmentos objetivo, qué funcionalidades generan mayor valor y cuáles deben priorizarse durante la construcción del producto.
 
+<a id="1221-lean-ux-problem-statements"></a>
 #### 1.2.2.1. Lean UX Problem Statements
 
 **Problem Statement 1 – Padres y cuidadores**
@@ -453,6 +461,7 @@ Hemos observado que, aunque existen recursos educativos digitales y materiales c
 
 ¿Cómo podríamos permitir que los docentes generen y adapten rápidamente contenido educativo infantil en diferentes formatos a partir de un objetivo específico de aprendizaje, manteniendo control y supervisión sobre el resultado?
 
+<a id="1222-lean-ux-assumptions"></a>
 #### 1.2.2.2. Lean UX Assumptions
 
 **Business Assumptions:**
@@ -461,7 +470,7 @@ Hemos observado que, aunque existen recursos educativos digitales y materiales c
 
 2. Creemos que actualmente parte de este proceso requiere buscar recursos en distintas fuentes, revisar su pertinencia y adaptarlos cuando no corresponden exactamente con la necesidad.
 
-3. Creemos que estas necesidades pueden ser abordadas mediante una plataforma que permita generar cuentos ilustrados, imágenes y canciones a partir de las indicaciones proporcionadas por el adulto.
+3. Creemos que estas necesidades pueden ser abordadas mediante una plataforma que permita construir cuentos ilustrados a partir del texto proporcionado por el adulto y generar imágenes y canciones según sus indicaciones.
 
 4. Nuestros clientes iniciales serán padres y cuidadores responsables de niños pequeños y docentes de educación inicial o primeros años de educación primaria.
 
@@ -501,6 +510,7 @@ Hemos observado que, aunque existen recursos educativos digitales y materiales c
 
 6. **¿Cómo debe verse y comportarse nuestro producto?** Tale Star debe ofrecer una experiencia sencilla, guiada y comprensible para usuarios que no posean conocimientos técnicos de inteligencia artificial. El adulto debe comprender qué información está proporcionando, mantener control sobre la generación, poder revisar los resultados y modificarlos antes de utilizarlos.
 
+<a id="1223-lean-ux-hypothesis-statements"></a>
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
 **Hypothesis Statement 1:**
@@ -539,6 +549,7 @@ Creemos que la realidad aumentada proporcionará una experiencia diferenciada pa
 
 Sabremos que hemos tenido éxito cuando al menos el 80 % de los participantes consiga colocar y navegar un cuento mediante la experiencia AR sin asistencia.
 
+<a id="1224-lean-ux-canvas"></a>
 #### 1.2.2.4. Lean UX Canvas
 
 El Lean UX Canvas v2 integra en una sola representación el problema de negocio de Tale Star, los resultados esperados, los segmentos objetivo, los beneficios esperados por los usuarios, las soluciones consideradas, las principales hipótesis y el experimento inicial necesario para evaluar la suposición de mayor riesgo.
@@ -653,6 +664,7 @@ El experimento se considerará favorable inicialmente cuando al menos el 70 % de
 
 * **Experimento de validación (Box 8):** El primer mecanismo de aprendizaje será la realización de entrevistas de Needfinding a ambos segmentos. Posteriormente, un prototipo simplificado del Story Creator permitirá evaluar personalización, facilidad de uso y percepción de valor antes de implementar la solución completa.
 
+<a id="13-segmentos-objetivo"></a>
 ## 1.3. Segmentos objetivo
 
 Tale Star considera dos segmentos objetivo principales: padres o cuidadores y docentes. Los usuarios directos de la plataforma serán adultos responsables de crear, seleccionar y supervisar el contenido, mientras que los niños constituirán sus beneficiarios finales.
@@ -713,7 +725,7 @@ Adicionalmente, TALIS 2024 encontró que el 35 % de los docentes de los sistemas
 | Niños peruanos de 6-11 años que utilizaron Internet                              |     61.9 % | INEI (2025)           |
 | Docentes OECD que consideran excesiva preparación de clases una fuente de estrés |       35 % | OECD (2025)           |
 
-Los datos estadounidenses se utilizan únicamente como antecedentes sobre consumo y características del ecosistema digital infantil y no como estimaciones del comportamiento de los segmentos peruanos. Los datos específicos sobre necesidades, frecuencia del problema, métodos actuales y disposición a utilizar Tale Star serán obtenidos posteriormente mediante las entrevistas establecidas en el Capítulo II.
+Los datos estadounidenses se utilizan únicamente como antecedentes sobre consumo y características del ecosistema digital infantil y no como estimaciones del comportamiento de los segmentos peruanos. Los datos específicos sobre necesidades, frecuencia del problema, métodos actuales y disposición a utilizar Tale Star se recogieron mediante las entrevistas documentadas en el Capítulo II.
 
 <a id="capitulo-ii-requirements-elicitation-analysis"></a>
 # Capítulo II: Requirements Elicitation & Analysis
@@ -751,10 +763,10 @@ El objetivo del Competitive Analysis Landscape es determinar cómo Tale Star se 
 | **Mercado objetivo** | Padres/cuidadores y docentes que trabajan con niños. | Familias, profesores, instituciones educativas y estudiantes K-12 de aproximadamente 5 a 18 años. | Niños de 2 a 12 años y sus familias. | Estudiantes, profesores, familias y personas interesadas en crear libros digitales. |
 | **Estrategias de marketing observables** | Posicionamiento inicial basado en creación de contenido educativo personalizado y supervisado por un adulto. | Segmenta explícitamente familias y docentes; ofrece pruebas gratuitas para profesores y planes específicos según cantidad de estudiantes. | Modelo gratuito con suscripción Premium y presencia en web, iOS y Android. | Creación online gratuita, herramientas y proyectos para profesores, integración con Google Classroom y monetización mediante productos publicados. |
 | **Productos y servicios** | Imágenes generadas mediante prompt; canciones cortas; cuentos construidos por páginas definiendo texto, personajes, acciones y objetos; ilustraciones por página; cuento completo; lectura AR sobre superficie plana. | Historias generadas mediante IA, ilustraciones, narración, ejercicios educativos, herramientas para profesores, PDF y múltiples idiomas. | Cuentos personalizados mediante IA, ilustraciones, narración y personalización de protagonistas, personajes, escenarios y moralejas. | Libros creados por páginas, texto, personajes, escenas, imágenes, IA para imágenes, voz, música, efectos de sonido y herramientas de aula. |
-| **Precios y costos** | Por definir posteriormente como parte del modelo de negocio. | 3 historias por USD 10; 6 historias por USD 18; 30 historias por USD 21 mensuales. Teacher Basic: USD 10/mes hasta 10 estudiantes. Teacher Ultimate: USD 29/mes hasta 40 estudiantes. | Oscar Premium: USD 49 por año, equivalente a USD 4.08 mensuales con facturación anual. Ofrece prueba gratuita y también paquetes de historias. | Creación online gratuita. PDF desde USD 2.99; Video Book desde USD 7.99; paperback desde USD 14.99; hardcover desde USD 27.99. |
+| **Precios y costos** | El modelo comercial se definirá en una etapa posterior; la arquitectura considera costos de infraestructura cloud, GPU, almacenamiento, procesamiento y operación de runtimes self-hosted. | 3 historias por USD 10; 6 historias por USD 18; 30 historias por USD 21 mensuales. Teacher Basic: USD 10/mes hasta 10 estudiantes. Teacher Ultimate: USD 29/mes hasta 40 estudiantes. | Oscar Premium: USD 49 por año, equivalente a USD 4.08 mensuales con facturación anual. Ofrece prueba gratuita y también paquetes de historias. | Creación online gratuita. PDF desde USD 2.99; Video Book desde USD 7.99; paperback desde USD 14.99; hardcover desde USD 27.99. |
 | **Canales de distribución** | Web Application y Mobile Application para lectura mediante AR. | Principalmente aplicación web. | Web, iOS y Android. | Aplicación web para computadora/iPad y productos digitales o físicos publicados. |
 | **Fortalezas** | Integra formatos diferentes y una experiencia AR sin abandonar la creación estructurada del cuento. | Producto ya especializado en educación y con herramientas dirigidas específicamente a docentes e instituciones. | Alto grado de personalización de historias infantiles y experiencia centrada claramente en familias. | Editor de libros consolidado, creación estructurada, multimedia y ecosistema educativo. |
-| **Debilidades** | Tale Star es una propuesta nueva, todavía sin usuarios reales ni validación de mercado. La calidad de las generaciones dependerá de servicios externos de IA. | Su amplitud funcional puede resultar mayor de la necesaria para usuarios que únicamente desean crear un recurso concreto. | Su foco principal es la generación de bedtime stories para familias y no la creación estructurada de recursos por parte de docentes. | El proceso de construcción del libro requiere mayor participación manual del usuario que una generación automática de historias completas. |
+| **Debilidades** | Tale Star es una propuesta nueva, todavía sin usuarios reales ni validación de mercado. La calidad de las generaciones dependerá de la operación y mantenimiento de sus runtimes self-hosted. | Su amplitud funcional puede resultar mayor de la necesaria para usuarios que únicamente desean crear un recurso concreto. | Su foco principal es la generación de bedtime stories para familias y no la creación estructurada de recursos por parte de docentes. | El proceso de construcción del libro requiere mayor participación manual del usuario que una generación automática de historias completas. |
 | **Oportunidades** | Posicionarse mediante la combinación concreta de cuentos controlados por página, imágenes, canciones y lectura AR sin convertirse en un LMS o plataforma educativa integral. | Continuar ampliando adopción educativa e institucional. | Expandir el uso de historias personalizadas hacia más contextos educativos. | Incorporar progresivamente capacidades generativas a su editor existente. |
 | **Amenazas** | Competidores establecidos pueden incorporar funcionalidades similares; las herramientas generales de IA pueden reducir la percepción de diferenciación; los costos de servicios generativos pueden afectar el modelo de negocio. | Crecimiento continuo de herramientas EdTech generativas. | Aparición de nuevas herramientas de generación de historias personalizadas. | Herramientas de IA capaces de producir cuentos completos con menor intervención manual. |
 
@@ -776,7 +788,7 @@ Tale Star no buscará competir con estas plataformas mediante una mayor cantidad
 
 **Estrategia general**
 
-Tale Star buscará posicionarse como una plataforma de creación de contenido educativo infantil que permita a padres, cuidadores y docentes generar y controlar cuentos ilustrados, imágenes y canciones desde una misma solución, incorporando adicionalmente una experiencia de lectura mediante realidad aumentada.
+Tale Star buscará posicionarse como una plataforma de creación de contenido educativo infantil que permita a padres, cuidadores y docentes construir y controlar cuentos ilustrados, además de generar imágenes y canciones desde una misma solución, incorporando adicionalmente una experiencia de lectura mediante realidad aumentada.
 
 La estrategia busca aprovechar la oportunidad identificada en el Competitive Analysis Landscape de combinar estas capacidades dentro de una propuesta especializada, evitando que la diferenciación dependa únicamente de la generación de contenido mediante inteligencia artificial, debido a que competidores como Storywizard.ai y Oscar Stories ya ofrecen generación de historias mediante IA y StoryJumper dispone de un editor estructurado para la creación de libros.
 
@@ -874,7 +886,7 @@ Por ello, Tale Star no basará su posicionamiento en una única capacidad que pu
 6. composición y lectura del cuento completo;
 7. visualización complementaria mediante realidad aumentada.
 
-Esta delimitación también permite controlar la dependencia de servicios externos de inteligencia artificial, identificada como una debilidad de Tale Star y como una posible amenaza debido a los costos asociados a servicios generativos.
+Esta delimitación también permite controlar el esfuerzo operativo de los runtimes generativos self-hosted, identificado como una debilidad de Tale Star y como una posible amenaza debido a los costos de infraestructura asociados.
 
 En consecuencia, las estrategias y tácticas planteadas buscan afrontar las fortalezas de los competidores sin intentar reproducir sus ecosistemas completos, aprovechar las debilidades detectadas en sus propuestas y utilizar las oportunidades identificadas para construir una diferenciación coherente con el alcance de Tale Star.
 
@@ -1035,6 +1047,10 @@ Diandra utiliza recursos digitales en distintas áreas curriculares y ha emplead
 <a id="223-analisis-de-entrevistas"></a>
 ### 2.2.3. Análisis de entrevistas
 
+Los dos padres/cuidadores entrevistados utilizan Google y YouTube como punto de partida cuando necesitan explicar o reforzar un tema. Ambos revisan el material antes de presentarlo, ya que encuentran diferencias de nivel, vocabulario, duración o cantidad de estímulos. Cuando el recurso no encaja, buscan otra alternativa, combinan formatos o complementan la explicación personalmente. Para este segmento, el objetivo es encontrar con rapidez contenido apropiado para el niño sin perder el control sobre lo que se muestra.
+
+También se observa una apertura prudente hacia herramientas de inteligencia artificial. Los cuidadores las han utilizado como punto de partida para ideas, explicaciones o imágenes, pero señalan la necesidad de revisar la exactitud y adecuación del resultado. Las imágenes, cuentos y canciones se valoran por su capacidad para apoyar la comprensión y el recuerdo, no como sustitutos del acompañamiento adulto.
+
 Las tres docentes entrevistadas confirman que los recursos digitales son parte habitual de la preparación y el desarrollo de sus clases. Cuentos, imágenes, canciones, fichas y presentaciones se utilizan para contextualizar contenidos, captar la atención de los estudiantes y reforzar actividades de aprendizaje.
 
 El patrón más consistente es el tiempo invertido en localizar, adaptar o elaborar materiales adecuados. Sara indicó que el proceso puede demandar entre dos y tres horas; Diandra señaló que la búsqueda de imágenes apropiadas puede requerir entre 50 y 60 minutos; y Roxana describió actividades adicionales, como retirar fondos y editar recursos, que prolongan la preparación. La disponibilidad de contenido no elimina el trabajo docente: los recursos deben corresponder al objetivo de la actividad, al nivel de los estudiantes y a los criterios de calidad visual de cada caso.
@@ -1045,67 +1061,33 @@ Las entrevistas muestran además que redactar instrucciones eficaces para herram
 
 Finalmente, las participantes valoraron la realidad aumentada como una experiencia complementaria para incrementar la interacción y la atención durante actividades con niños. Su utilidad se entiende como un recurso de apoyo a cuentos ya preparados, no como sustituto de la planificación pedagógica ni de la revisión del adulto.
 
-En conjunto, los hallazgos se alinean con la propuesta de Tale Star: centralizar la creación de cuentos, imágenes y recursos musicales; facilitar la reutilización de personajes y escenarios; y mantener al adulto en control de la revisión y ajuste del contenido. Estos resultados aportan evidencia para priorizar el Story Creator, la generación guiada y la Biblioteca como capacidades centrales del producto, mientras que la realidad aumentada se mantiene como una funcionalidad complementaria con potencial para enriquecer el uso del cuento en el aula.
+En ambos segmentos, la disponibilidad de contenido no evita el esfuerzo de buscar, evaluar y adaptar. Los cuidadores priorizan adecuación y acompañamiento individual; los docentes, además, enfrentan una preparación recurrente y la necesidad de relacionar cada material con un objetivo de clase. Estos hallazgos alimentan Needfinding y Requirements: respaldan la prioridad de configuraciones guiadas, revisión y edición por el adulto, reutilización en Biblioteca y generación visual o musical como apoyo a contenido cuyo texto es definido por el usuario. La realidad aumentada se mantiene como una experiencia complementaria de lectura móvil.
 
 <a id="23-needfinding"></a>
 ## 2.3. Needfinding
 
-El proceso de Needfinding se desarrollará después de completar el registro y análisis de las entrevistas de ambos segmentos.
+Needfinding transforma los hallazgos de cinco entrevistas en representaciones de los dos segmentos objetivo. Los artefactos sintetizan comportamientos actuales, necesidades, dificultades y criterios de decisión observados en padres/cuidadores y docentes; no representan funcionalidades futuras de Tale Star.
 
-El objetivo será transformar los patrones identificados en las entrevistas en representaciones estructuradas de los usuarios y de su experiencia actual. De esta manera, cada característica incluida en los artefactos deberá poder relacionarse con los resultados obtenidos durante la investigación y no con supuestos arbitrarios del equipo.
-
-El Project Statement exige específicamente User Personas, User Task Matrix, Empathy Mapping y As-is Scenario Mapping.  Los User Personas y Empathy Maps deben elaborarse con UXPressia, mientras que los As-Is Scenario Maps pueden elaborarse en LucidChart o Miro.
-
-En esta versión del informe se establece la estructura que deberán seguir los artefactos. El contenido específico de los perfiles, frecuencias, pensamientos, emociones, pains y gains se completará únicamente después del análisis de entrevistas.
+Los User Personas, la User Task Matrix, los Empathy Maps y los As-Is Scenario Maps se elaboraron a partir de patrones repetidos en los registros de entrevistas. Estos resultados alimentan los requisitos del Capítulo III al identificar dónde se concentran el esfuerzo de búsqueda, la necesidad de adaptación y la importancia de revisar el contenido antes de utilizarlo.
 
 <a id="231-user-personas"></a>
 ### 2.3.1. User Personas
 
-A partir de los resultados de las entrevistas se elaborará un User Persona para cada segmento objetivo. Cada arquetipo representará los patrones predominantes encontrados entre los participantes y no corresponderá a una copia directa de una persona entrevistada.
-
-El Project Statement exige una ficha por segmento y señala que sus características deben derivarse del análisis previo.
-
-Cada User Persona deberá incluir como mínimo:
-
-* nombre ficticio;
-* fotografía representativa;
-* segmento;
-* edad representativa;
-* ocupación;
-* ubicación;
-* composición familiar cuando corresponda;
-* biografía o background;
-* personalidad;
-* habilidades;
-* nivel de adopción tecnológica;
-* dispositivos utilizados;
-* plataformas o canales digitales;
-* marcas e influencias;
-* necesidades;
-* objetivos;
-* motivaciones;
-* frustraciones;
-* pains;
-* comportamientos relevantes;
-* una frase o quote representativa.
+A partir de los resultados se construyó un arquetipo por segmento. Cada User Persona resume patrones predominantes y no corresponde a una copia literal de una persona entrevistada.
 
 #### **User Persona 1 — Padre o Cuidador**
 
-Este arquetipo representará los patrones predominantes identificados entre los padres o cuidadores entrevistados. La ficha deberá concentrarse en su participación en la selección de contenido infantil, métodos actuales de búsqueda, formatos utilizados, grado de personalización que requiere, relación con herramientas digitales y principales frustraciones durante el proceso.
+Valeria Torres representa a padres y cuidadores que participan activamente en el aprendizaje de niños pequeños y seleccionan contenido digital para explicar o reforzar temas concretos.
 
 <img src="imgs/leanux/ParentCaregiverUserPersona.png" alt="User Persona - Parent or Caregiver" title="User Persona del segmento Padres y Cuidadores" width="850"/>
 
 **Interpretación del User Persona**
 
-Una vez finalizado el análisis de entrevistas, debajo de la imagen se deberá redactar un párrafo similar al siguiente, reemplazando los campos indicados por resultados reales:
-
-[Nombre del arquetipo] representa al segmento de padres y cuidadores. Los resultados de las entrevistas muestran que sus principales objetivos se concentran en [objetivos predominantes], mientras que sus mayores frustraciones se relacionan con [pains encontrados]. Utiliza principalmente [dispositivos/plataformas predominantes] y recurre con mayor frecuencia a [formatos encontrados]. Estos hallazgos permitirán evaluar en qué medida la creación de imágenes, canciones y cuentos personalizados de Tale Star responde a necesidades observadas en el segmento.
-
-No se debe afirmar en este párrafo que una funcionalidad “fue validada” si esa conclusión no está respaldada por las entrevistas.
+El arquetipo refleja a adultos que recurren principalmente a Google y YouTube desde smartphone o laptop, comparan recursos y adaptan explicaciones cuando el nivel, duración o enfoque del contenido no se ajusta al niño. Buscan ahorrar tiempo, encontrar materiales apropiados y mantener control sobre lo que se muestra. Sus pains se concentran en contenido genérico, múltiples fuentes, calidad desigual y revisión previa obligatoria; sus gains esperados son recursos personalizables, sencillos de preparar y recuperables para usos posteriores. Estos hallazgos justifican priorizar configuraciones guiadas, revisión adulta y Biblioteca sin asumir que la tecnología reemplaza el acompañamiento.
 
 #### **User Persona 2 — Docente**
 
-Este arquetipo representará los patrones predominantes identificados entre los docentes entrevistados. Deberá reflejar su proceso de preparación de materiales, recursos digitales utilizados, tiempo destinado a búsqueda o adaptación, formatos que emplea y objetivos relacionados con la utilización de cuentos, imágenes y canciones en sus actividades.
+Daniela Rojas representa a docentes que preparan materiales complementarios de forma recurrente y ajustan recursos disponibles para relacionarlos con el objetivo y el contexto de su grupo.
 
 <img src="imgs/leanux/TeacherUserPersona.png" alt="User Persona - Teacher" title="User Persona del segmento Docentes" width="850"/>
 
@@ -1129,52 +1111,24 @@ relacionados con los procesos que representen mayor valor para este segmento.
 <a id="232-user-task-matrix"></a>
 ### 2.3.2. User Task Matrix
 
-La User Task Matrix concentrará las tareas que los User Personas realizan actualmente para alcanzar sus objetivos, independientemente de la existencia de Tale Star.
-
-El Project Statement advierte explícitamente que las tasks no deben confundirse con funcionalidades del producto.  Por tanto, no se incluirán tareas como “generar una imagen con Tale Star”, “crear cuento en Tale Star” o “usar AR”.
-
-Las tareas candidatas deberán validarse mediante las entrevistas antes de completar la matriz. Entre ellas se pueden analizar:
-
-* buscar contenido para explicar un tema;
-* evaluar si un contenido es adecuado para el niño o grupo;
-* comparar diferentes recursos;
-* adaptar contenido encontrado;
-* explicar un tema utilizando un cuento;
-* buscar o preparar imágenes;
-* buscar o utilizar canciones;
-* crear material cuando no encuentra uno adecuado;
-* combinar diferentes recursos para una misma explicación;
-* revisar contenido antes de presentarlo al niño;
-* reutilizar materiales previamente preparados.
-
-La tabla final debe contener una columna por User Persona y, para cada uno, las subcolumnas Frequency e Importance, exactamente como exige el statement.
+La User Task Matrix representa actividades reales realizadas antes de utilizar Tale Star. Las categorías High, Medium y Low se asignaron de manera cualitativa a partir de la frecuencia y relevancia expresadas en las entrevistas, sin inferir porcentajes.
 
 | User Task                                           | Padre/Cuidador Frequency | Padre/Cuidador Importance | Docente Frequency | Docente Importance |
 | --------------------------------------------------- | ------------------------ | ------------------------- | ----------------- | ------------------ |
-| Buscar contenido para explicar o reforzar un tema   | Por definir              | Por definir               | Por definir       | Por definir        |
-| Evaluar si un contenido es apropiado                | Por definir              | Por definir               | Por definir       | Por definir        |
-| Comparar recursos encontrados en diferentes fuentes | Por definir              | Por definir               | Por definir       | Por definir        |
-| Adaptar un recurso que no encaja completamente      | Por definir              | Por definir               | Por definir       | Por definir        |
-| Utilizar cuentos para explicar un tema              | Por definir              | Por definir               | Por definir       | Por definir        |
-| Buscar o preparar imágenes                          | Por definir              | Por definir               | Por definir       | Por definir        |
-| Buscar o utilizar canciones                         | Por definir              | Por definir               | Por definir       | Por definir        |
-| Crear material cuando no existe uno adecuado        | Por definir              | Por definir               | Por definir       | Por definir        |
-| Combinar distintos recursos                         | Por definir              | Por definir               | Por definir       | Por definir        |
-| Revisar el material antes de utilizarlo             | Por definir              | Por definir               | Por definir       | Por definir        |
-
-Las categorías finales de Frequency e Importance se asignarán después del análisis de entrevistas, utilizando una escala homogénea como High, Medium y Low.
+| Buscar contenido para explicar o reforzar un tema   | High                     | High                      | High              | High               |
+| Evaluar si un contenido es apropiado                | High                     | High                      | High              | High               |
+| Comparar recursos encontrados en diferentes fuentes | Medium                   | High                      | High              | High               |
+| Adaptar un recurso que no encaja completamente      | Medium                   | High                      | High              | High               |
+| Utilizar cuentos para explicar un tema              | Medium                   | Medium                    | High              | High               |
+| Buscar o preparar imágenes                          | High                     | High                      | High              | High               |
+| Buscar o utilizar canciones                         | Medium                   | Medium                    | Medium            | Medium             |
+| Crear material cuando no existe uno adecuado        | Medium                   | High                      | High              | High               |
+| Combinar distintos recursos                         | High                     | High                      | High              | High               |
+| Revisar el material antes de utilizarlo             | High                     | High                      | High              | High               |
 
 **Interpretación de la User Task Matrix**
 
-Después de completar la matriz se deberá incluir una explicación de:
-
-* las tareas con mayor frecuencia e importancia para ambos segmentos;
-* las tareas especialmente relevantes para padres;
-* las tareas especialmente relevantes para docentes;
-* coincidencias entre los dos User Personas;
-* principales diferencias.
-
-No se debe convertir directamente una tarea en una funcionalidad sin realizar posteriormente el proceso de Requirements Specification.
+Buscar, evaluar y revisar recursos son tareas High para ambos segmentos porque preceden a cualquier uso con niños. Padres y cuidadores enfatizan la adecuación al nivel y el tiempo de búsqueda; los docentes, además, realizan con alta frecuencia la comparación, adaptación y creación de materiales vinculados a una actividad de clase. Estas coincidencias sustentan la prioridad de creación guiada, edición y recuperación de contenido; las diferencias mantienen a Tale Star como una herramienta complementaria a los criterios de cada adulto.
 
 ### Artefacto auxiliar: User Journey Mapping
 
@@ -1184,185 +1138,75 @@ Este mapa no reemplaza el As-Is Scenario Map requerido por el curso.
 
 #### **User Journey Map — Padre o Cuidador**
 
-El mapa general deberá representar el recorrido relacionado con la necesidad de encontrar o preparar contenido educativo, mostrando fases, objetivos, acciones, canales, dificultades y emociones.
+El mapa resume el recorrido actual del padre o cuidador desde la necesidad de explicar un tema hasta el uso del recurso con el niño.
 
 <img src="imgs/leanux/ParentCaregiverUserJourneyMap.png" alt="User Journey Map - Parent or Caregiver" title="User Journey Map del segmento Padres y Cuidadores" width="900"/>
 
 **Interpretación**
 
-El texto posterior deberá resumir dónde aparecen las principales fricciones dentro del recorrido del padre o cuidador y cuáles de esas fricciones fueron observadas reiteradamente durante las entrevistas.
+La mayor fricción aparece durante la búsqueda y revisión: los cuidadores encuentran abundante contenido, pero deben determinar si el vocabulario, duración y enfoque son apropiados. Cuando no lo son, combinan videos, imágenes o explicaciones propias. La revisión previa y la necesidad de adaptar recursos explican la importancia de personalización y control adulto.
 
 #### **User Journey Map — Docente**
 
-El mapa deberá representar el recorrido habitual del docente desde que identifica una necesidad de material hasta que utiliza el recurso con sus estudiantes y evalúa si resultó adecuado.
+El mapa resume el recorrido actual del docente desde que identifica una necesidad de material hasta que lo utiliza y evalúa en clase.
 
 <img src="imgs/leanux/TeacherUserJourneyMap.png" alt="User Journey Map - Teacher" title="User Journey Map del segmento Docentes" width="900"/>
 
 **Interpretación**
 
-El párrafo posterior deberá destacar las etapas de mayor esfuerzo, canales utilizados y puntos en los que el docente necesita buscar, adaptar o crear material.
+Las etapas de búsqueda, revisión y adaptación concentran el mayor esfuerzo. Las docentes recurren a Google, YouTube, PerúEduca, Canva y otras fuentes, pero los materiales suelen requerir ajustes de contexto, imágenes o nivel de dificultad. La reutilización organizada reduce trabajo posterior, aunque no elimina la necesidad de control pedagógico.
 
 <a id="233-empathy-mapping"></a>
 ### 2.3.3. Empathy Mapping
 
-Los Empathy Maps permitirán profundizar en la perspectiva de cada User Persona utilizando la información obtenida durante las entrevistas.
-
-El Project Statement establece que cada mapa debe representar qué necesita hacer el usuario, qué dice, qué ve, qué hace, qué escucha, qué siente y piensa, además de sus Pains y Gains.
-
-Se elaborará un Empathy Map para cada segmento en UXPressia.
+Los Empathy Maps profundizan en la perspectiva de cada User Persona a partir de las entrevistas y complementan los patrones observados en sus recorridos actuales.
 
 #### **Empathy Map — Padre o Cuidador**
 
-El mapa deberá construirse a partir de observaciones y respuestas recurrentes de los padres o cuidadores entrevistados.
+El mapa reúne observaciones y respuestas recurrentes de los padres y cuidadores entrevistados.
 
 <img src="imgs/leanux/ParentCaregiverEmpathyMap.png" alt="Empathy Map - Parent or Caregiver" title="Empathy Map del segmento Padres y Cuidadores" width="900"/>
 
-El artefacto deberá contener:
-
-**Who are we empathizing with?**
-
-Descripción resumida del User Persona y de su contexto familiar.
-
-**What do they need to do?**
-
-Tareas u objetivos que intenta cumplir cuando necesita explicar o reforzar un tema con el niño.
-
-**What do they see?**
-
-Plataformas, contenidos, recomendaciones, recursos y alternativas que encuentra actualmente.
-
-**What do they say?**
-
-Frases o comentarios recurrentes obtenidos durante las entrevistas.
-
-**What do they do?**
-
-Acciones observadas o declaradas: buscar, comparar, revisar, adaptar, combinar o crear contenido.
-
-**What do they hear?**
-
-Influencias provenientes de familiares, docentes, otros padres, redes sociales, instituciones o especialistas.
-
-**What do they think and feel?**
-
-Preocupaciones, percepciones y emociones relacionadas con la calidad del contenido, el tiempo requerido y el uso de herramientas digitales.
-
-**Pains**
-
-Problemas recurrentes demostrados mediante entrevistas.
-
-**Gains**
-
-Resultados que el usuario busca obtener al encontrar o producir un contenido adecuado.
-
 **Interpretación**
 
-Después de la imagen debe añadirse un párrafo que explique los pains y gains predominantes y cómo estos se relacionan con la problemática planteada en Tale Star, sin inventar funcionalidades nuevas.
+El mapa evidencia que los cuidadores ven una oferta amplia pero desigual de videos, recomendaciones y herramientas. Buscan, comparan, adaptan y guardan recursos útiles, mientras escuchan recomendaciones de docentes, otros padres y plataformas. Piensan en la adecuación del contenido y se frustran cuando este es genérico, poco personalizable o exige usar varias aplicaciones. Valoran rapidez, supervisión, reutilización y una experiencia protegida para el niño. Por ello, Tale Star debe facilitar la configuración y revisión del contenido sin aumentar la complejidad de la tarea.
 
 #### **Empathy Map — Docente**
 
-El segundo mapa reflejará la experiencia, pensamientos y comportamientos predominantes del docente durante el proceso de preparación y utilización de materiales.
+El mapa refleja la experiencia de las docentes durante la preparación y utilización de materiales educativos.
 
 <img src="imgs/leanux/TeacherEmpathyMap.png" alt="Empathy Map - Teacher" title="Empathy Map del segmento Docentes" width="900"/>
 
-Debe incluir las mismas dimensiones:
-
-* quién es;
-* qué necesita hacer;
-* qué ve;
-* qué dice;
-* qué hace;
-* qué escucha;
-* qué piensa y siente;
-* pains;
-* gains.
-
 **Interpretación**
 
-El texto posterior deberá identificar las preocupaciones, frustraciones y resultados esperados que aparecen de manera reiterada en el segmento docente y explicar qué diferencias existen frente al mapa de padres o cuidadores.
+Las docentes necesitan planificar actividades, localizar materiales y adaptarlos al nivel de cada grupo. Ven recursos institucionales y plataformas diversas, pero reportan fuentes dispersas, trabajo manual y materiales poco específicos. Sus gains se concentran en ahorrar tiempo, personalizar el recurso, mantener control pedagógico y recuperar lo que ya prepararon. A diferencia de los cuidadores, la frecuencia de preparación y la relación con objetivos de clase hacen que la reutilización organizada y la adaptación de material sean especialmente relevantes.
 
 <a id="234-as-is-scenario-mapping"></a>
 ### 2.3.4. As-is Scenario Mapping
 
 El As-Is Scenario Mapping representa la experiencia actual de los User Personas antes de disponer de Tale Star.
 
-Este punto es obligatorio en el Project Statement y debe contener para cada persona las filas Phases, Doing, Thinking y Feeling. También deben identificarse áreas positivas, negativas y blank areas donde todavía existe información insuficiente.
-
-Los mapas se elaborarán en LucidChart o Miro, de acuerdo con las herramientas establecidas por el curso.
-
-**Proceso de elaboración**
-
-Para cada segmento, el equipo preparó la sesión revisando los patrones identificados en el análisis de entrevistas correspondiente. A partir de esa preparación se realizó una lluvia de ideas individual sobre los pasos que sigue actualmente cada User Persona para resolver su necesidad, seguida de una revisión conjunta en la que se identificaron y nombraron las fases resultantes como columnas del mapa. Finalmente, para cada fase se completaron las filas Doing, Thinking y Feeling, y se identificaron y etiquetaron las áreas positivas, negativas y blank areas del recorrido.
+Los mapas recogen las Phases, Doing, Thinking y Feeling de la experiencia actual, e identifican áreas positivas, negativas y de información insuficiente a partir de los patrones de entrevistas.
 
 #### **AS-IS Scenario Map — Padre o Cuidador**
 
-El mapa deberá representar únicamente la situación actual. No deberá incluir Tale Star ni ninguna funcionalidad futura.
+El mapa representa únicamente la situación actual del padre o cuidador, sin incorporar capacidades futuras de Tale Star.
 
 <img src="imgs/leanux/ParentCaregiverAsIsScenarioMap.png" alt="AS-IS Scenario Map - Parent or Caregiver" title="AS-IS Scenario Map del segmento Padres y Cuidadores" width="1000"/>
 
-Las fases exactas se determinarán después de las entrevistas. Como estructura inicial de análisis pueden considerarse, únicamente para validar:
-
-1. aparece una necesidad de explicar o reforzar un tema;
-2. busca recursos;
-3. revisa alternativas;
-4. determina si son adecuadas;
-5. adapta o combina material cuando es necesario;
-6. utiliza el contenido con el niño;
-7. observa si el recurso cumplió su propósito.
-
-Cada fase debe contener:
-
-**Doing**
-
-Qué hace actualmente el usuario.
-
-**Thinking**
-
-Qué piensa mientras realiza la tarea.
-
-**Feeling**
-
-Qué emoción o nivel de satisfacción experimenta.
-
-**Positive Areas**
-
-Momentos del recorrido que funcionan adecuadamente.
-
-**Negative Areas**
-
-Momentos de mayor frustración, esfuerzo o incertidumbre.
-
-**Blank Areas**
-
-Aspectos que todavía no pueden responderse con suficiente evidencia.
-
 **Interpretación**
 
-El texto posterior deberá identificar dónde se concentra la mayor fricción del recorrido y cuáles son los puntos que posteriormente deberán compararse con el To-Be Scenario Mapping del Capítulo III.
+El recorrido inicia al identificar un tema, continúa con búsqueda y revisión de alternativas, y suele requerir combinar o adaptar material antes de usarlo. La fricción principal se concentra en determinar si el contenido encontrado es adecuado para la edad y el objetivo, especialmente cuando hay exceso de resultados o recursos incompletos. El acompañamiento y la explicación directa son áreas positivas; la búsqueda repetida y la revisión previa son las principales oportunidades de mejora.
 
 #### **AS-IS Scenario Map — Docente**
 
-El segundo mapa representará el proceso actual del docente para preparar y utilizar materiales sin Tale Star.
+El mapa representa el proceso actual del docente para preparar y utilizar materiales sin Tale Star.
 
 <img src="imgs/leanux/TeacherAsIsScenarioMap.png" alt="AS-IS Scenario Map - Teacher" title="AS-IS Scenario Map del segmento Docentes" width="1000"/>
 
-Como estructura preliminar a validar pueden considerarse las siguientes fases:
-
-1. identifica un objetivo o tema de clase;
-2. busca materiales;
-3. revisa diferentes fuentes;
-4. evalúa su pertinencia;
-5. adapta o crea material;
-6. utiliza el recurso;
-7. observa el resultado obtenido.
-
-Las fases definitivas deberán surgir de las entrevistas.
-
-Cada columna debe contener Doing, Thinking y Feeling, además de la identificación visual de áreas positivas, negativas y blank areas.
-
 **Interpretación**
 
-Después de la imagen se explicarán las etapas que concentran mayor tiempo, dificultad o frustración y las diferencias encontradas respecto al recorrido de padres o cuidadores.
+El docente identifica el objetivo de la clase, busca y compara recursos, evalúa su pertinencia y los adapta o crea antes de presentarlos. Las mayores dificultades aparecen en la dispersión de fuentes, la falta de contexto de los materiales y el trabajo manual de edición. A diferencia del cuidador, este ciclo forma parte de una preparación recurrente y debe responder a un grupo completo; por ello, recuperar configuraciones y materiales útiles resulta una oportunidad relevante.
 
 <a id="24-ubiquitous-language"></a>
 ## 2.4. Ubiquitous Language
@@ -1409,7 +1253,7 @@ La especificación se organiza en cuatro artefactos relacionados. En primer luga
 
 El alcance funcional utilizado en este capítulo corresponde exclusivamente a las capacidades aprobadas para Tale Star: administración básica de la cuenta; generación de imágenes mediante Prompt Guiado y Prompt Libre; elementos creativos reutilizables; creación de cuentos página por página; generación musical estructurada; Biblioteca; perfil y planes; control parental mediante PIN; lectura de contenido; y experiencia de realidad aumentada exclusivamente para cuentos. No se incorporan funcionalidades de LMS, administración de aulas, colaboración, marketplace, red social, personajes tridimensionales ni otras características fuera del alcance acordado.
 
-Además del comportamiento funcional, la especificación considera los productos exigidos por la solución multicomponente del curso. Por este motivo se incluyen User Stories del Landing Page y Technical Stories que permiten representar las capacidades de la RESTful API y sus integraciones. El Statement establece que la solución debe incluir productos digitales integrados, Landing Page, RESTful APIs de elaboración interna, Web Application y Native Mobile Application, además de acceso a servicios externos.
+Además del comportamiento funcional, la especificación considera los productos exigidos por la solución multicomponente del curso. Por este motivo se incluyen User Stories del Landing Page y Technical Stories que permiten representar las capacidades de la RESTful API y sus integraciones. El Statement establece que la solución debe incluir productos digitales integrados, Landing Page, RESTful APIs de elaboración interna, Web Application y Native Mobile Application, además de la infraestructura necesaria para sus capacidades generativas self-hosted.
 
 ---
 
@@ -1494,7 +1338,7 @@ Los Acceptance Criteria se expresan mediante escenarios Gherkin utilizando Dado�
 | **US16**             | Escribir un Prompt Libre                              | Como usuario, deseo escribir directamente una descripción libre de la imagen para generar contenido sin utilizar la configuración guiada.                                                                                          | **E01 – Texto válido:** Dado que el usuario utiliza Prompt Libre y proporciona una descripción, cuando solicita la generación, entonces esa descripción forma parte de la solicitud.<br><br>**E02 – Edición:** Dado que existe un Prompt Libre previamente escrito, cuando el usuario modifica su contenido antes de generar, entonces el sistema utiliza la versión vigente.                                                                                                                                                                                                                                                                         | EP03                      |
 | **US17**             | Aplicar modificadores rápidos al Prompt Libre         | Como usuario, deseo aplicar modificadores rápidos a mi descripción para ajustar características del prompt sin tener que redactarlas manualmente.                                                                                  | **E01 – Modificador aplicado:** Dado que existe una descripción libre, cuando el usuario aplica un modificador disponible, entonces el sistema incorpora su efecto a la configuración del prompt.<br><br>**E02 – Varios modificadores:** Dado que un modificador ya fue aplicado, cuando el usuario aplica otro compatible, entonces ambos ajustes se consideran en la configuración.                                                                                                                                                                                                                                                                 | EP03                      |
 | **US18**             | Guardar una configuración de imagen sin generarla     | Como usuario, deseo guardar la información de generación de una imagen aunque todavía no haya generado el resultado para poder retomarla posteriormente desde la Biblioteca.                                                       | **E01 – Configuración sin resultado:** Dado que el usuario ha configurado una Image pero todavía no existe un archivo generado, cuando guarda la creación, entonces el sistema conserva sus parámetros.<br><br>**E02 – Recuperación:** Dado que existe una configuración guardada sin resultado generado, cuando el usuario vuelve a editarla desde la Biblioteca, entonces recupera los parámetros previamente almacenados.                                                                                                                                                                                                                          | EP03                      |
-| **US19**             | Generar una imagen                                    | Como usuario, deseo generar una imagen utilizando el Prompt Guiado o Prompt Libre que he definido para obtener el recurso visual solicitado.                                                                                       | **E01 – Generación válida:** Dado que existe una configuración de generación válida, cuando el usuario solicita generar la Image, entonces el sistema procesa la solicitud de generación.<br><br>**E02 – Resultado recibido:** Dado que el servicio generativo completa correctamente la solicitud, cuando Tale Star recibe el resultado, entonces lo asocia con la creación correspondiente.<br><br>**E03 – Error externo:** Dado que la generación no puede completarse, cuando el servicio externo informa un fallo, entonces el sistema conserva la configuración para permitir un nuevo intento.                                                 | EP03                      |
+| **US19**             | Generar una imagen                                    | Como usuario, deseo generar una imagen utilizando el Prompt Guiado o Prompt Libre que he definido para obtener el recurso visual solicitado.                                                                                       | **E01 – Generación válida:** Dado que existe una configuración de generación válida, cuando el usuario solicita generar la Image, entonces el sistema procesa la solicitud de generación.<br><br>**E02 – Resultado recibido:** Dado que el runtime self-hosted completa correctamente la solicitud, cuando Tale Star recibe el resultado, entonces lo asocia con la creación correspondiente.<br><br>**E03 – Error del runtime:** Dado que la generación no puede completarse, cuando el runtime informa un fallo, entonces el sistema conserva la configuración para permitir un nuevo intento.                                                 | EP03                      |
 | **US20**             | Previsualizar una imagen generada                     | Como usuario, deseo visualizar el resultado de una generación para decidir si deseo conservarlo, regenerarlo o descargarlo.                                                                                                        | **E01 – Resultado disponible:** Dado que una Image fue generada correctamente, cuando el usuario consulta la creación, entonces puede revisar el resultado.<br><br>**E02 – Sin resultado:** Dado que todavía no existe una Image generada, cuando el usuario consulta la creación, entonces el sistema no presenta un resultado inexistente y mantiene el estado previo a la generación.                                                                                                                                                                                                                                                              | EP03                      |
 | **US21**             | Consultar el prompt construido                        | Como usuario, deseo visualizar el prompt construido por Tale Star para conocer qué descripción se utilizó finalmente durante la generación.                                                                                        | **E01 – Prompt disponible:** Dado que el sistema ha construido la descripción utilizada para una generación, cuando el usuario consulta la información de la creación, entonces puede revisar ese texto.<br><br>**E02 – Actualización:** Dado que la configuración fue modificada antes de una nueva generación, cuando se vuelve a construir el prompt, entonces se presenta la versión correspondiente a los parámetros vigentes.                                                                                                                                                                                                                   | EP03                      |
 | **US22**             | Copiar el prompt construido                           | Como usuario, deseo copiar el prompt construido para poder reutilizarlo fuera de la generación actual.                                                                                                                             | **E01 – Contenido disponible:** Dado que existe un prompt construido, cuando el usuario solicita copiarlo, entonces el sistema proporciona el texto completo para su reutilización.<br><br>**E02 – Correspondencia:** Dado que el prompt fue actualizado, cuando se copia, entonces se utiliza su versión vigente.                                                                                                                                                                                                                                                                                                                                    | EP03                      |
@@ -1517,7 +1361,7 @@ Los Acceptance Criteria se expresan mediante escenarios Gherkin utilizando Dado�
 | **US38**             | Duplicar una página                                   | Como usuario, deseo duplicar una página existente para crear una nueva página reutilizando su configuración como punto de partida.                                                                                                 | **E01 – Duplicación:** Dado que existe una Story Page, cuando el usuario la duplica, entonces el sistema crea otra página con una copia de la configuración disponible.<br><br>**E02 – Edición posterior:** Dado que se creó una página duplicada, cuando el usuario modifica la nueva página, entonces la página de origen mantiene su propia información.                                                                                                                                                                                                                                                                                           | EP04                      |
 | **US39**             | Guardar una página                                    | Como usuario, deseo guardar la configuración y contenido de una página para conservar los cambios realizados durante la edición del cuento.                                                                                        | **E01 – Guardado:** Dado que se realizaron cambios en una Story Page, cuando el usuario guarda la página, entonces el sistema conserva su estado actual.<br><br>**E02 – Recuperación:** Dado que la Story Page fue guardada, cuando el usuario vuelve a seleccionarla, entonces recupera la información almacenada.                                                                                                                                                                                                                                                                                                                                   | EP04                      |
 | **US40**             | Previsualizar una página                              | Como usuario, deseo visualizar el título del cuento, la ilustración y el texto correspondiente a la página seleccionada para revisar cómo quedará el resultado.                                                                    | **E01 – Illustration disponible:** Dado que una Story Page posee una Illustration generada, cuando se previsualiza, entonces se muestran su contenido visual y Story Text correspondientes.<br><br>**E02 – Illustration pendiente:** Dado que todavía no se ha generado una Illustration para la página, cuando se consulta su previsualización, entonces el sistema conserva el estado pendiente sin presentar una imagen inexistente.                                                                                                                                                                                                               | EP04                      |
-| **US41**             | Generar un cuento                                     | Como usuario, deseo generar el cuento a partir de las páginas que he configurado para obtener las ilustraciones correspondientes y disponer del cuento completo.                                                                   | **E01 – Generación de páginas:** Dado que el Story contiene Story Pages configuradas, cuando el usuario solicita generar el cuento, entonces el sistema procesa la generación de las Illustrations correspondientes utilizando los datos de cada página.<br><br>**E02 – Composición:** Dado que las Illustrations requeridas están disponibles, cuando finaliza el proceso, entonces el Story conserva el orden de sus páginas, sus textos y sus ilustraciones correspondientes.<br><br>**E03 – Fallo parcial:** Dado que una generación no puede completarse, cuando ocurre el fallo, entonces la información ya configurada del Story no se pierde. | EP04                      |
+| **US41**             | Generar las ilustraciones del cuento                  | Como usuario, deseo generar las ilustraciones de las páginas que he configurado para disponer del cuento completo con el texto que he escrito.                                                                                     | **E01 – Generación de páginas:** Dado que el Story contiene Story Pages configuradas, cuando el usuario solicita generar sus ilustraciones, entonces el sistema procesa las Illustrations correspondientes utilizando los datos de cada página.<br><br>**E02 – Composición:** Dado que las Illustrations requeridas están disponibles, cuando finaliza el proceso, entonces el Story conserva el orden de sus páginas, sus textos escritos por el usuario y sus ilustraciones correspondientes.<br><br>**E03 – Fallo parcial:** Dado que una generación no puede completarse, cuando ocurre el fallo, entonces la información ya configurada del Story no se pierde. | EP04                      |
 | **EP05**             | **Music Generation**                                  | Agrupa las capacidades necesarias para configurar la dirección musical, estructurar una composición, generar audio y reproducir o descargar su resultado.                                                                          | No aplica. Epic de agrupación.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | —                         |
 | **US42**             | Configurar la dirección musical                       | Como usuario, deseo definir las características generales de una pieza musical para orientar el resultado de la generación.                                                                                                        | **E01 – Configuración:** Dado que el usuario crea una pieza musical, cuando define Genre, Mood, Instruments, Output Type, Voice cuando corresponde, Language y Production, entonces el sistema conserva estos valores como dirección musical general.<br><br>**E02 – Instrumental:** Dado que el usuario selecciona Instrumental como tipo de salida, cuando configura la pieza, entonces los parámetros vocales no son requeridos para la generación.                                                                                                                                                                                                | EP05                      |
 | **US43**             | Seleccionar el tipo de voz                            | Como usuario, deseo seleccionar el tipo de voz cuando estoy generando una canción para adecuar la interpretación vocal al resultado que busco.                                                                                     | **E01 – Canción:** Dado que el tipo de salida es Canción, cuando el usuario selecciona un tipo de voz disponible, entonces el sistema lo incorpora a la configuración musical.<br><br>**E02 – Instrumental:** Dado que el tipo de salida es Instrumental, cuando se configura la generación, entonces el tipo de voz no condiciona el resultado.                                                                                                                                                                                                                                                                                                      | EP05                      |
@@ -1537,7 +1381,7 @@ Los Acceptance Criteria se expresan mediante escenarios Gherkin utilizando Dado�
 | **US57**             | Visualizar la estructura como texto                   | Como usuario, deseo visualizar la letra y estructura de la canción en una representación textual para revisar su contenido de otra forma.                                                                                          | **E01 – Representación:** Dado que existe una estructura musical, cuando el usuario solicita su representación textual, entonces el sistema presenta las secciones y el contenido disponible en su orden actual.<br><br>**E02 – Actualización:** Dado que la estructura fue modificada, cuando se vuelve a consultar la representación textual, entonces refleja los cambios vigentes.                                                                                                                                                                                                                                                                | EP05                      |
 | **US58**             | Restablecer la dirección musical                      | Como usuario, deseo restablecer la configuración de Dirección Musical para volver a sus valores iniciales.                                                                                                                         | **E01 – Restablecimiento:** Dado que la dirección musical contiene modificaciones, cuando el usuario solicita restablecerla, entonces los parámetros configurables regresan a sus valores iniciales definidos.<br><br>**E02 – Estructura:** Dado que existen secciones musicales, cuando se restablece la dirección general, entonces las secciones permanecen como elementos de la composición salvo que su comportamiento definido indique lo contrario.                                                                                                                                                                                            | EP05                      |
 | **US59**             | Consultar el resumen de generación musical            | Como usuario, deseo revisar los principales parámetros de la canción antes de generarla para comprobar su configuración.                                                                                                           | **E01 – Resumen:** Dado que existe una configuración musical, cuando el usuario consulta su resumen, entonces el sistema presenta duración, idioma cuando corresponda, BPM y formato de salida.<br><br>**Regla:** El formato de audio definido para el alcance actual es FLAC.                                                                                                                                                                                                                                                                                                                                                                        | EP05                      |
-| **US60**             | Generar una canción o pieza instrumental              | Como usuario, deseo generar la pieza musical configurada para obtener el resultado de audio correspondiente.                                                                                                                       | **E01 – Generación válida:** Dado que la configuración contiene la información requerida, cuando el usuario solicita generar la pieza, entonces el sistema procesa la solicitud musical.<br><br>**E02 – Resultado:** Dado que el proveedor completa la generación, cuando el sistema recibe el audio, entonces lo asocia con la creación correspondiente.<br><br>**E03 – Error:** Dado que el proveedor no completa la generación, cuando se produce el fallo, entonces la configuración se conserva para permitir un nuevo intento.                                                                                                                  | EP05                      |
+| **US60**             | Generar una canción o pieza instrumental              | Como usuario, deseo generar la pieza musical configurada para obtener el resultado de audio correspondiente.                                                                                                                       | **E01 – Generación válida:** Dado que la configuración contiene la información requerida, cuando el usuario solicita generar la pieza, entonces el sistema procesa la solicitud musical.<br><br>**E02 – Resultado:** Dado que el runtime self-hosted completa la generación, cuando el sistema recibe el audio, entonces lo asocia con la creación correspondiente.<br><br>**E03 – Error:** Dado que el runtime no completa la generación, cuando se produce el fallo, entonces la configuración se conserva para permitir un nuevo intento.                                                                                                                  | EP05                      |
 | **US61**             | Reproducir una canción generada                       | Como usuario, deseo reproducir el audio generado dentro de Tale Star para previsualizar el resultado antes de utilizarlo.                                                                                                          | **E01 – Audio disponible:** Dado que existe una pieza generada, cuando el usuario inicia su reproducción, entonces el sistema proporciona el contenido de audio correspondiente.<br><br>**E02 – Sin resultado:** Dado que la pieza todavía no ha sido generada, cuando se intenta reproducirla, entonces el sistema no reproduce un audio inexistente.                                                                                                                                                                                                                                                                                                | EP05                      |
 | **US62**             | Descargar una canción                                 | Como usuario, deseo descargar la pieza musical generada en formato FLAC para utilizarla fuera de Tale Star.                                                                                                                        | **E01 – Descarga:** Dado que existe una pieza musical generada, cuando el usuario solicita descargarla, entonces el sistema proporciona el archivo FLAC correspondiente.<br><br>**E02 – Sin generación:** Dado que no existe todavía un archivo de audio generado, cuando se intenta descargarlo, entonces el sistema no proporciona un archivo inexistente.                                                                                                                                                                                                                                                                                          | EP05                      |
 | **EP06**             | **Content Library**                                   | Agrupa las capacidades para consultar, buscar, organizar, abrir, editar y reutilizar las creaciones del usuario.                                                                                                                   | No aplica. Epic de agrupación.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | —                         |
@@ -1579,15 +1423,15 @@ Los Acceptance Criteria se expresan mediante escenarios Gherkin utilizando Dado�
 | **US94**             | Conocer las capacidades principales                   | Como visitante, deseo conocer las principales capacidades de Tale Star para comprender qué tipos de experiencias ofrece la solución.                                                                                               | **E01 – Capacidades:** Dado que el visitante consulta las características del producto, cuando revisa la información disponible, entonces puede identificar Image Generation, Story Authoring, Music Generation, Content Library y AR Story Experience.<br><br>**E02 – Coherencia:** Dado que se describen las capacidades, cuando el visitante las consulta, entonces corresponden al alcance funcional vigente.                                                                                                                                                                                                                                     | EP10                      |
 | **US95**             | Acceder a la Web Application                          | Como visitante interesado, deseo acceder a la aplicación web de Tale Star para comenzar a utilizar sus capacidades de creación.                                                                                                    | **E01 – Destino disponible:** Dado que el visitante decide utilizar la Web Application, cuando activa el acceso correspondiente, entonces es dirigido al punto de entrada de la aplicación web.<br><br>**E02 – Segmentos:** Dado que padres/cuidadores y docentes utilizan el mismo tipo de cuenta, cuando cualquiera de ambos segmentos accede a la Web Application, entonces utiliza el mismo producto funcional.                                                                                                                                                                                                                                   | EP10                      |
 | **US96**             | Acceder a la Mobile Application                       | Como visitante interesado, deseo acceder al punto correspondiente de la aplicación móvil para utilizar las capacidades móviles de Tale Star.                                                                                       | **E01 – Acceso móvil:** Dado que el visitante desea utilizar la Mobile Application, cuando utiliza el acceso correspondiente, entonces es dirigido al punto de distribución o acceso definido para la aplicación móvil.<br><br>**E02 – Propósito móvil:** Dado que el visitante consulta las capacidades móviles, cuando revisa la propuesta, entonces identifica la lectura de Stories y la experiencia AR como capacidades relacionadas con dicho producto.                                                                                                                                                                                         | EP10                      |
-| **EP11**             | **Platform Services**                                 | Agrupa las Technical Stories necesarias para que Web Application, Mobile Application y servicios externos utilicen capacidades consistentes mediante la RESTful API propia de Tale Star.                                           | No aplica. Epic técnico de agrupación.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | —                         |
+| **EP11**             | **Platform Services**                                 | Agrupa las Technical Stories necesarias para que Web Application y Mobile Application utilicen capacidades consistentes mediante la RESTful API propia de Tale Star.                                                               | No aplica. Epic técnico de agrupación.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | —                         |
 | **TS01**             | API de Account & Access                               | Como Developer, deseo exponer mediante la RESTful API las operaciones necesarias para registro, autenticación y recuperación de acceso para que los clientes de Tale Star utilicen un contrato común.                              | **E01 – Request válido:** Dado que un cliente realiza una solicitud válida para una operación soportada, cuando la API procesa el request, entonces responde con un código HTTP exitoso y los datos correspondientes.<br><br>**E02 – Request inválido:** Dado que la solicitud no cumple el contrato requerido, cuando la API la procesa, entonces responde con un código HTTP 4xx y no ejecuta una modificación inválida.<br><br>**E03 – No autenticado:** Dado que una operación requiere autenticación y la solicitud no acredita una sesión válida, cuando se procesa, entonces responde con HTTP 401.                                            | EP11                      |
 | **TS02**             | API de elementos creativos reutilizables              | Como Developer, deseo exponer mediante la RESTful API operaciones para Characters y Scenarios para que las aplicaciones puedan crear y reutilizar estos elementos consistentemente.                                                | **E01 – Recuperación:** Dado que existen elementos asociados al usuario, cuando el cliente realiza una consulta válida, entonces la API responde con HTTP 200 y los recursos correspondientes.<br><br>**E02 – Creación:** Dado que el cliente envía datos válidos para un Character o Scenario, cuando se procesa la solicitud, entonces la API registra el recurso y responde con un resultado exitoso.<br><br>**E03 – Recurso ajeno:** Dado que se solicita un recurso no perteneciente al usuario autorizado, cuando se procesa el request, entonces la API no entrega el recurso.                                                                 | EP11                      |
-| **TS03**             | API de Image Generation                               | Como Developer, deseo exponer las operaciones de configuración y generación de Images mediante la RESTful API para que los clientes puedan utilizar las mismas capacidades generativas.                                            | **E01 – Generación aceptada:** Dado que el cliente envía una configuración válida, cuando solicita una generación, entonces la API acepta la operación y devuelve una respuesta coherente con su procesamiento.<br><br>**E02 – Datos inválidos:** Dado que el request no cumple los datos requeridos, cuando se procesa, entonces la API devuelve HTTP 400.<br><br>**E03 – Falla del proveedor:** Dado que el proveedor externo no puede completar la operación, cuando la API procesa el resultado, entonces devuelve una respuesta de error sin eliminar la configuración de la creación.                                                           | EP11                      |
+| **TS03**             | API de Image Generation                               | Como Developer, deseo exponer las operaciones de configuración y generación de Images mediante la RESTful API para que los clientes puedan utilizar las mismas capacidades generativas.                                            | **E01 – Generación aceptada:** Dado que el cliente envía una configuración válida, cuando solicita una generación, entonces la API acepta la operación y devuelve una respuesta coherente con su procesamiento.<br><br>**E02 – Datos inválidos:** Dado que el request no cumple los datos requeridos, cuando se procesa, entonces la API devuelve HTTP 400.<br><br>**E03 – Falla del runtime:** Dado que el runtime self-hosted no puede completar la operación, cuando la API procesa el resultado, entonces devuelve una respuesta de error sin eliminar la configuración de la creación.                                                           | EP11                      |
 | **TS04**             | API de Story Authoring                                | Como Developer, deseo exponer las operaciones de Stories y Story Pages mediante la RESTful API para mantener sincronizada la edición y lectura entre los productos de Tale Star.                                                   | **E01 – Consulta:** Dado que existe un Story asociado al usuario, cuando un cliente autorizado lo solicita, entonces la API responde con HTTP 200 y la información correspondiente.<br><br>**E02 – Modificación:** Dado que el cliente envía una modificación válida de una Story Page, cuando la API la procesa, entonces conserva los nuevos datos de esa página.<br><br>**E03 – Recurso inexistente:** Dado que el Story solicitado no existe, cuando se realiza la consulta, entonces la API responde con HTTP 404.                                                                                                                               | EP11                      |
-| **TS05**             | API de Music Generation                               | Como Developer, deseo exponer las operaciones necesarias para configurar y generar contenido musical para que las aplicaciones utilicen un contrato común con el servicio musical.                                                 | **E01 – Configuración válida:** Dado que el request contiene una configuración musical válida, cuando la API la procesa, entonces devuelve una respuesta exitosa o el estado de procesamiento correspondiente.<br><br>**E02 – Parámetros inválidos:** Dado que el request contiene datos fuera de las reglas establecidas, cuando la API lo procesa, entonces devuelve HTTP 400.<br><br>**E03 – Falla externa:** Dado que el proveedor musical falla, cuando la API recibe el error, entonces devuelve una respuesta controlada sin reportar una generación inexistente como exitosa.                                                                 | EP11                      |
+| **TS05**             | API de Music Generation                               | Como Developer, deseo exponer las operaciones necesarias para configurar y generar contenido musical para que las aplicaciones utilicen un contrato común con el servicio musical.                                                 | **E01 – Configuración válida:** Dado que el request contiene una configuración musical válida, cuando la API la procesa, entonces devuelve una respuesta exitosa o el estado de procesamiento correspondiente.<br><br>**E02 – Parámetros inválidos:** Dado que el request contiene datos fuera de las reglas establecidas, cuando la API lo procesa, entonces devuelve HTTP 400.<br><br>**E03 – Falla del runtime:** Dado que el runtime musical self-hosted falla, cuando la API recibe el error, entonces devuelve una respuesta controlada sin reportar una generación inexistente como exitosa.                                                                 | EP11                      |
 | **TS06**             | API de Library, Profile y Subscription                | Como Developer, deseo exponer operaciones para Biblioteca, perfil y plan contratado para que los productos de Tale Star accedan consistentemente a la información del usuario.                                                     | **E01 – Biblioteca:** Dado que el cliente autorizado consulta las creaciones de su usuario, cuando la API procesa la solicitud, entonces responde con HTTP 200 y únicamente los recursos asociados a esa cuenta.<br><br>**E02 – Perfil:** Dado que el cliente modifica un dato permitido mediante un request válido, cuando se procesa, entonces la API conserva la modificación.<br><br>**E03 – Plan:** Dado que se solicita un cambio válido entre los planes definidos, cuando la operación se procesa correctamente, entonces la API devuelve el estado actualizado correspondiente.                                                              | EP11                      |
 | **TS07**             | Servicio de contenido para lectura móvil y AR         | Como Developer, deseo exponer los Stories y Story Pages requeridos por la aplicación móvil para permitir lectura y experiencia AR utilizando la misma información del producto web.                                                | **E01 – Story disponible:** Dado que un cliente móvil autorizado solicita un Story válido, cuando la API procesa el request, entonces responde con HTTP 200 y sus Story Pages en la secuencia correspondiente.<br><br>**E02 – Story inexistente:** Dado que el identificador no corresponde a un Story disponible, cuando se realiza la consulta, entonces la API responde con HTTP 404.<br><br>**E03 – Tipo no compatible:** Dado que una operación específica de AR se intenta relacionar con un contenido que no es Story, cuando se valida la solicitud, entonces el servicio no lo considera un recurso AR válido.                               | EP11                      |
-| **TS08**             | Integración con servicios generativos externos        | Como Developer, deseo encapsular la comunicación con los servicios externos utilizados para generación visual y musical para que Tale Star pueda solicitar contenido sin exponer sus contratos directamente al dominio.            | **E01 – Solicitud externa válida:** Dado que Tale Star dispone de una solicitud de generación válida, cuando el adaptador la envía al proveedor correspondiente, entonces transforma la información al contrato externo requerido.<br><br>**E02 – Respuesta exitosa:** Dado que el proveedor entrega un resultado válido, cuando el adaptador lo recibe, entonces lo transforma a una representación utilizable por Tale Star.<br><br>**E03 – Proveedor no disponible:** Dado que el servicio externo falla o no responde, cuando la integración procesa el error, entonces informa el fallo al servicio interno sin producir un resultado ficticio.  | EP11                      |
+| **TS08**             | Operación de runtimes generativos self-hosted         | Como Developer, deseo encapsular la comunicación con los runtimes generativos administrados por Tale Star para que el Generation Worker solicite generación visual y musical sin exponer contratos de runtime al dominio. | **E01 – Solicitud válida:** Dado que existe una solicitud válida, cuando el adapter la envía al runtime self-hosted correspondiente, entonces transforma la información al contrato requerido.<br><br>**E02 – Respuesta exitosa:** Dado que el runtime entrega un resultado válido, cuando el adapter lo recibe, entonces lo transforma a una representación utilizable por Tale Star.<br><br>**E03 – Runtime no disponible:** Dado que el runtime falla o no responde, cuando se procesa el error, entonces se informa el fallo sin producir un resultado ficticio. | EP11 |
 | **TS09**             | Persistencia de configuraciones y recursos multimedia | Como Developer, deseo persistir los datos de las creaciones y las referencias a los recursos multimedia para que las configuraciones y resultados puedan recuperarse entre sesiones.                                               | **E01 – Persistencia de metadatos:** Dado que una creación debe guardarse, cuando se completa correctamente la operación de persistencia, entonces su configuración puede recuperarse posteriormente.<br><br>**E02 – Recurso multimedia:** Dado que se genera un archivo visual o de audio válido, cuando se almacena, entonces queda asociado a la creación correspondiente mediante una referencia persistente.<br><br>**E03 – Fallo:** Dado que una operación de almacenamiento falla, cuando no puede confirmarse su persistencia, entonces el sistema no reporta el recurso como almacenado exitosamente.                                        | EP11                      |
 
 Esta tabla constituye la fuente de verdad para los IDs y descripciones utilizados posteriormente en Impact Mapping, Product Backlog, Primary Functionality del Capítulo IV y Sprint Backlogs. El Final Project Statement indica expresamente que las Stories y sus Acceptance Criteria deben escribirse dentro del Document Report y no sustituirse por capturas de herramientas.
@@ -1672,7 +1516,7 @@ La realidad aumentada representa un diferenciador tecnológico, pero no constitu
 
 Desde una perspectiva social, Tale Star mantiene al adulto como responsable de configurar, revisar y decidir la utilización del contenido. El producto no plantea que la inteligencia artificial sustituya al padre, cuidador o docente ni garantiza resultados pedagógicos por sí misma.
 
-Desde una perspectiva económica, la propuesta busca reducir esfuerzo de búsqueda, adaptación y producción, aunque su viabilidad también dependerá del costo operativo de los servicios generativos externos y de que los planes comerciales establecidos resulten sostenibles.
+Desde una perspectiva económica, la propuesta busca reducir esfuerzo de búsqueda, adaptación y producción, aunque su viabilidad también dependerá de los costos de infraestructura cloud, GPU, almacenamiento, procesamiento y operación de los runtimes generativos self-hosted.
 
 Desde una perspectiva global, la problemática de selección y personalización de contenido digital puede presentarse en diferentes contextos culturales y educativos. Sin embargo, la solución debe evitar asumir que un mismo contenido resulta automáticamente apropiado para todos los niños o contextos.
 
@@ -1701,7 +1545,7 @@ Las historias de Account & Access no se colocan automáticamente al inicio. El S
 
 | # Orden | User Story Id | Título                                                | Descripción                                                                                                                                                                                                                        | Story Points |
 | ------: | ------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -----------: |
-|       1 | US41          | Generar un cuento                                     | Como usuario, deseo generar el cuento a partir de las páginas que he configurado para obtener las ilustraciones correspondientes y disponer del cuento completo.                                                                   |            8 |
+|       1 | US41          | Generar las ilustraciones del cuento                  | Como usuario, deseo generar las ilustraciones de las páginas que he configurado para disponer del cuento completo con el texto que he escrito.                                                                                     |            8 |
 |       2 | US27          | Configurar una página del cuento                      | Como usuario, deseo configurar individualmente cada página del cuento para mantener control sobre el contenido de la historia.                                                                                                     |            5 |
 |       3 | US28          | Escribir el texto de una página                       | Como usuario, deseo escribir manualmente el texto de una página para controlar exactamente la narración del cuento.                                                                                                                |            2 |
 |       4 | US35          | Agregar una página                                    | Como usuario, deseo agregar una nueva página al cuento para continuar construyendo la historia.                                                                                                                                    |            2 |
@@ -1803,7 +1647,7 @@ Las historias de Account & Access no se colocan automáticamente al inicio. El S
 |     100 | TS02          | API de elementos creativos reutilizables              | Como Developer, deseo exponer mediante la RESTful API operaciones para Characters y Scenarios para que las aplicaciones puedan crear y reutilizar estos elementos consistentemente.                                                |            5 |
 |     101 | TS06          | API de Library, Profile y Subscription                | Como Developer, deseo exponer operaciones para Biblioteca, perfil y plan contratado para que los productos de Tale Star accedan consistentemente a la información del usuario.                                                     |            8 |
 |     102 | TS07          | Servicio de contenido para lectura móvil y AR         | Como Developer, deseo exponer los Stories y Story Pages requeridos por la aplicación móvil para permitir lectura y experiencia AR utilizando la misma información del producto web.                                                |            5 |
-|     103 | TS08          | Integración con servicios generativos externos        | Como Developer, deseo encapsular la comunicación con los servicios externos utilizados para generación visual y musical para que Tale Star pueda solicitar contenido sin exponer sus contratos directamente al dominio.            |            8 |
+|     103 | TS08          | Operación de runtimes generativos self-hosted         | Como Developer, deseo encapsular la comunicación con los runtimes generativos administrados por Tale Star para que el Generation Worker solicite generación visual y musical sin exponer contratos de runtime al dominio. |            8 |
 |     104 | TS09          | Persistencia de configuraciones y recursos multimedia | Como Developer, deseo persistir los datos de las creaciones y las referencias a los recursos multimedia para que las configuraciones y resultados puedan recuperarse entre sesiones.                                               |            8 |
 |     105 | TS01          | API de Account & Access                               | Como Developer, deseo exponer mediante la RESTful API las operaciones necesarias para registro, autenticación y recuperación de acceso para que los clientes de Tale Star utilicen un contrato común.                              |            5 |
 
@@ -1853,7 +1697,7 @@ La funcionalidad principal de Tale Star comprende las capacidades que sostienen 
 | **US07** | Crear un escenario reutilizable | Como usuario, deseo crear un escenario indicando un nombre y una descripción visual para poder utilizarlo posteriormente en mis imágenes y cuentos. | **E01 – Creación válida:**<br>Dado que el usuario proporciona un nombre y una descripción visual.<br>Cuando guarda el Scenario.<br>Entonces el sistema lo incorpora a su biblioteca reutilizable.<br><br>**E02 – Disponibilidad posterior:**<br>Dado que un Scenario está guardado.<br>Cuando el usuario configura una Image o Story Page.<br>Entonces puede seleccionarlo. | **EP02** |
 | **US08** | Reutilizar un escenario guardado | Como usuario, deseo seleccionar un escenario previamente guardado para utilizar su descripción visual en una imagen o página de un cuento. | **E01 – Selección válida:**<br>Dado que existen Scenarios guardados.<br>Cuando el usuario selecciona uno para una creación.<br>Entonces el sistema asocia su información con la configuración actual.<br><br>**E02 – Restricción de escenario:**<br>Dado que una escena admite un Scenario seleccionado.<br>Cuando el usuario reemplaza el Scenario actual por otro.<br>Entonces la configuración utiliza únicamente el nuevo Scenario seleccionado. | **EP02** |
 | **US18** | Guardar una configuración de imagen sin generarla | Como usuario, deseo guardar la información de generación de una imagen aunque todavía no haya generado el resultado para poder retomarla posteriormente desde la Biblioteca. | **E01 – Configuración sin resultado:**<br>Dado que el usuario ha configurado una Image pero todavía no existe un archivo generado.<br>Cuando guarda la creación.<br>Entonces el sistema conserva sus parámetros.<br><br>**E02 – Recuperación:**<br>Dado que existe una configuración guardada sin resultado generado.<br>Cuando el usuario vuelve a editarla desde la Biblioteca.<br>Entonces recupera los parámetros previamente almacenados. | **EP03** |
-| **US19** | Generar una imagen | Como usuario, deseo generar una imagen utilizando el Prompt Guiado o Prompt Libre que he definido para obtener el recurso visual solicitado. | **E01 – Generación válida:**<br>Dado que existe una configuración de generación válida.<br>Cuando el usuario solicita generar la Image.<br>Entonces el sistema procesa la solicitud de generación.<br><br>**E02 – Resultado recibido:**<br>Dado que el servicio generativo completa correctamente la solicitud.<br>Cuando Tale Star recibe el resultado.<br>Entonces lo asocia con la creación correspondiente.<br><br>**E03 – Error externo:**<br>Dado que la generación no puede completarse.<br>Cuando el servicio externo informa un fallo.<br>Entonces el sistema conserva la configuración para permitir un nuevo intento. | **EP03** |
+| **US19** | Generar una imagen | Como usuario, deseo generar una imagen utilizando el Prompt Guiado o Prompt Libre que he definido para obtener el recurso visual solicitado. | **E01 – Generación válida:**<br>Dado que existe una configuración de generación válida.<br>Cuando el usuario solicita generar la Image.<br>Entonces el sistema procesa la solicitud de generación.<br><br>**E02 – Resultado recibido:**<br>Dado que el runtime self-hosted completa correctamente la solicitud.<br>Cuando Tale Star recibe el resultado.<br>Entonces lo asocia con la creación correspondiente.<br><br>**E03 – Error del runtime:**<br>Dado que la generación no puede completarse.<br>Cuando el runtime informa un fallo.<br>Entonces el sistema conserva la configuración para permitir un nuevo intento. | **EP03** |
 | **US23** | Regenerar una imagen | Como usuario, deseo volver a generar una imagen utilizando su configuración actual para obtener una nueva alternativa. | **E01 – Nueva generación:**<br>Dado que existe una creación con configuración válida.<br>Cuando el usuario solicita regenerarla.<br>Entonces el sistema inicia una nueva generación utilizando los parámetros vigentes.<br><br>**E02 – Resultado alternativo:**<br>Dado que la regeneración finaliza correctamente.<br>Cuando el sistema recibe el resultado.<br>Entonces lo presenta como una nueva alternativa de la creación. | **EP03** |
 | **US25** | Guardar una imagen generada | Como usuario, deseo guardar una imagen generada para acceder a ella posteriormente desde mi Biblioteca. | **E01 – Guardado válido:**<br>Dado que existe una Image generada.<br>Cuando el usuario decide conservarla.<br>Entonces el sistema almacena la creación y su configuración.<br><br>**E02 – Recuperación:**<br>Dado que una Image está guardada.<br>Cuando el usuario consulta su Biblioteca.<br>Entonces puede volver a acceder a ella. | **EP03** |
 | **US27** | Configurar una página del cuento | Como usuario, deseo configurar individualmente cada página del cuento para mantener control sobre el contenido de la historia. | **E01 – Configuración individual:**<br>Dado que existe una Story Page seleccionada.<br>Cuando el usuario define sus Characters, Story Text, Action, Emotions, Objects, Scenario, Moment, Visual Style e indicaciones adicionales.<br>Entonces la información queda asociada exclusivamente a esa Story Page.<br><br>**E02 – Independencia:**<br>Dado que el Story contiene varias páginas.<br>Cuando se modifica una Story Page.<br>Entonces los datos específicos de las demás páginas no se reemplazan. | **EP04** |
@@ -1867,8 +1711,8 @@ La funcionalidad principal de Tale Star comprende las capacidades que sostienen 
 | **US35** | Agregar una página | Como usuario, deseo agregar una nueva página al cuento para continuar construyendo la historia. | **E01 – Página agregada:**<br>Dado que existe un Story en edición.<br>Cuando el usuario solicita agregar una página.<br>Entonces el sistema incorpora una nueva Story Page al Story.<br><br>**E02 – Configuración posterior:**<br>Dado que la nueva Story Page fue incorporada.<br>Cuando el usuario la selecciona.<br>Entonces puede configurar su contenido de forma independiente. | **EP04** |
 | **US37** | Editar la página seleccionada | Como usuario, deseo que al cambiar de página se cargue la información correspondiente a esa página para modificar únicamente la página seleccionada. | **E01 – Carga de información:**<br>Dado que el Story contiene varias Story Pages.<br>Cuando el usuario selecciona una página.<br>Entonces el sistema carga la información correspondiente a dicha página.<br><br>**E02 – Edición independiente:**<br>Dado que existe una Story Page seleccionada.<br>Cuando el usuario modifica su información.<br>Entonces los cambios afectan únicamente a la página seleccionada. | **EP04** |
 | **US39** | Guardar una página | Como usuario, deseo guardar la configuración y contenido de una página para conservar los cambios realizados durante la edición del cuento. | **E01 – Guardado:**<br>Dado que se realizaron cambios en una Story Page.<br>Cuando el usuario guarda la página.<br>Entonces el sistema conserva su estado actual.<br><br>**E02 – Recuperación:**<br>Dado que la Story Page fue guardada.<br>Cuando el usuario vuelve a seleccionarla.<br>Entonces recupera la información almacenada. | **EP04** |
-| **US41** | Generar un cuento | Como usuario, deseo generar el cuento a partir de las páginas que he configurado para obtener las ilustraciones correspondientes y disponer del cuento completo. | **E01 – Generación de páginas:**<br>Dado que el Story contiene Story Pages configuradas.<br>Cuando el usuario solicita generar el cuento.<br>Entonces el sistema procesa la generación de las Illustrations correspondientes utilizando los datos de cada página.<br><br>**E02 – Composición:**<br>Dado que las Illustrations requeridas están disponibles.<br>Cuando finaliza el proceso.<br>Entonces el Story conserva el orden de sus páginas, sus textos y sus ilustraciones correspondientes.<br><br>**E03 – Fallo parcial:**<br>Dado que una generación no puede completarse.<br>Cuando ocurre el fallo.<br>Entonces la información ya configurada del Story no se pierde. | **EP04** |
-| **US60** | Generar una canción o pieza instrumental | Como usuario, deseo generar la pieza musical configurada para obtener el resultado de audio correspondiente. | **E01 – Generación válida:**<br>Dado que la configuración contiene la información requerida.<br>Cuando el usuario solicita generar la pieza.<br>Entonces el sistema procesa la solicitud musical.<br><br>**E02 – Resultado:**<br>Dado que el proveedor completa la generación.<br>Cuando el sistema recibe el audio.<br>Entonces lo asocia con la creación correspondiente.<br><br>**E03 – Error:**<br>Dado que el proveedor no completa la generación.<br>Cuando se produce el fallo.<br>Entonces la configuración se conserva para permitir un nuevo intento. | **EP05** |
+| **US41** | Generar las ilustraciones del cuento | Como usuario, deseo generar las ilustraciones de las páginas que he configurado para disponer del cuento completo con el texto que he escrito. | **E01 – Generación de páginas:**<br>Dado que el Story contiene Story Pages configuradas.<br>Cuando el usuario solicita generar sus ilustraciones.<br>Entonces el sistema procesa las Illustrations correspondientes utilizando los datos de cada página.<br><br>**E02 – Composición:**<br>Dado que las Illustrations requeridas están disponibles.<br>Cuando finaliza el proceso.<br>Entonces el Story conserva el orden de sus páginas, sus textos escritos por el usuario y sus ilustraciones correspondientes.<br><br>**E03 – Fallo parcial:**<br>Dado que una generación no puede completarse.<br>Cuando ocurre el fallo.<br>Entonces la información ya configurada del Story no se pierde. | **EP04** |
+| **US60** | Generar una canción o pieza instrumental | Como usuario, deseo generar la pieza musical configurada para obtener el resultado de audio correspondiente. | **E01 – Generación válida:**<br>Dado que la configuración contiene la información requerida.<br>Cuando el usuario solicita generar la pieza.<br>Entonces el sistema procesa la solicitud musical.<br><br>**E02 – Resultado:**<br>Dado que el runtime self-hosted completa la generación.<br>Cuando el sistema recibe el audio.<br>Entonces lo asocia con la creación correspondiente.<br><br>**E03 – Error:**<br>Dado que el runtime no completa la generación.<br>Cuando se produce el fallo.<br>Entonces la configuración se conserva para permitir un nuevo intento. | **EP05** |
 | **US61** | Reproducir una canción generada | Como usuario, deseo reproducir el audio generado dentro de Tale Star para previsualizar el resultado antes de utilizarlo. | **E01 – Audio disponible:**<br>Dado que existe una pieza generada.<br>Cuando el usuario inicia su reproducción.<br>Entonces el sistema proporciona el contenido de audio correspondiente.<br><br>**E02 – Sin resultado:**<br>Dado que la pieza todavía no ha sido generada.<br>Cuando se intenta reproducirla.<br>Entonces el sistema no reproduce un audio inexistente. | **EP05** |
 | **US62** | Descargar una canción | Como usuario, deseo descargar la pieza musical generada en formato FLAC para utilizarla fuera de Tale Star. | **E01 – Descarga:**<br>Dado que existe una pieza musical generada.<br>Cuando el usuario solicita descargarla.<br>Entonces el sistema proporciona el archivo FLAC correspondiente.<br><br>**E02 – Sin generación:**<br>Dado que no existe todavía un archivo de audio generado.<br>Cuando se intenta descargarlo.<br>Entonces el sistema no proporciona un archivo inexistente. | **EP05** |
 | **US63** | Consultar mis creaciones | Como usuario, deseo consultar todas mis creaciones desde la Biblioteca para acceder nuevamente al contenido que he producido. | **E01 – Biblioteca disponible:**<br>Dado que el usuario posee creaciones almacenadas.<br>Cuando accede a la Biblioteca.<br>Entonces el sistema recupera las creaciones asociadas a su cuenta.<br><br>**E02 – Sin creaciones:**<br>Dado que el usuario no posee creaciones almacenadas.<br>Cuando accede a la Biblioteca.<br>Entonces el sistema informa que no existen creaciones disponibles. | **EP06** |
@@ -1894,12 +1738,14 @@ Los escenarios de atributos de calidad permiten especificar de manera concreta c
 |---|---|---|---|---|---|---|---|
 | **QAS01** | Performance | Web Application / Mobile Application | Solicita información de la Biblioteca o de un cuento | REST API | Operación normal | Recupera y devuelve la información solicitada sin ejecutar procesos de generación mediante IA | **p95 ≤ 500 ms** en operaciones sin generación de IA |
 | **QAS02** | Performance | Usuario autenticado | Solicita la generación de una imagen o pieza musical | Generative Media | Operación normal | Crea un `GenerationJob` y devuelve el control al cliente sin esperar la finalización de la generación | **HTTP 202 (`Accepted`) + `generationId` ≤ 1 s**, excluyendo la latencia de red externa |
-| **QAS03** | Availability / Reliability | Z-Image-Turbo Runtime / ACE-Step Runtime | El runtime de IA falla, deja de responder o no completa una generación | Generative Media | Operación normal con un `GenerationJob` activo | Captura el fallo, marca el job como `Failed` y mantiene operativa la API principal | **100%** de los jobs terminan en estado `Completed` o `Failed` |
+| **QAS03** | Availability / Reliability | Z-Image-Turbo Runtime / ACE-Step Runtime | El runtime self-hosted falla, deja de responder o no completa una generación | Generative Media | Operación normal con un `GenerationJob` activo | Captura el fallo, marca el job como `Failed` y mantiene operativa la API principal | Validar que cada job detectado termine en `Succeeded` o `Failed`, sin estados finales inconsistentes. |
 | **QAS04** | Security | Cliente | Solicita un recurso protegido sin autorización válida | REST API / IAM | Operación normal | Rechaza la solicitud sin exponer información ni contenido protegido | **100%** de las solicitudes no autorizadas reciben HTTP **401/403** |
 | **QAS05** | Modifiability | Developer | Modifica el motor de generación o el catálogo de estilos | Generative Media | Mantenimiento | Permite realizar el cambio de forma aislada mediante adapters y/o configuración, sin afectar el dominio de Creative Authoring | **0 cambios** en el dominio de Creative Authoring |
 | **QAS06** | Reliability | Usuario | Guarda una creación o contenido generado | Content Library | Operación normal | Persiste la metadata, configuración y referencia al asset correspondiente, permitiendo su posterior recuperación | **100%** de los guardados exitosos son recuperables |
 | **QAS07** | Performance / Usability | Usuario móvil | Inicia una experiencia de lectura mediante realidad aumentada | Flutter Mobile Application / ArRuntime | Dispositivo móvil compatible | Inicializa la experiencia AR mediante procesamiento local utilizando los assets disponibles | Inicio de la experiencia AR **≤ 3 s** con assets disponibles |
 | **QAS08** | Performance / Capacity | Usuarios / solicitudes concurrentes | Se producen solicitudes simultáneas de generación mediante IA | Generation Worker | GPU ocupada | Encola los `GenerationJob` y limita la concurrencia de acuerdo con la capacidad configurada del runtime | No superar el límite de concurrencia configurado; valor inicial: **1 job pesado por runtime** |
+| **QAS09** | Interoperability | Web Application o Mobile Application | Consume un contrato REST/JSON o se incorpora un cliente compatible | REST API / Application Layer | Evolución de clientes | Mantiene contratos estables y evita cambios en el Domain Layer cuando el cliente utiliza capacidades existentes | Validar que el cliente interoperable use el contrato publicado sin requerir cambios en el dominio. |
+| **QAS10** | Operational Simplicity | Equipo de despliegue | Configura o despliega API, Generation Worker y runtimes self-hosted | Unidades de despliegue de Tale Star | Nuevo entorno cloud administrado por el proyecto | Aplica configuración externalizada y unidades reproducibles, minimizando pasos manuales específicos del entorno | Validar la reproducibilidad del despliegue y registrar los parámetros externos requeridos. |
 
 > **Nota:** Los valores establecidos en estos escenarios representan **objetivos arquitectónicos iniciales** y no mediciones obtenidas del sistema en producción. Su cumplimiento deberá ser validado mediante las pruebas correspondientes durante la implementación y evaluación de Tale Star.
 
@@ -1914,14 +1760,13 @@ Los constraints representan decisiones arquitectónicas con **cero grados de lib
 | **CT02** | Web Application | Como Developer, deseo que Tale Star disponga de una Web Application, para proporcionar el acceso web a las capacidades de creación y gestión de contenido. | La solución dispone de una Web Application independiente de la Mobile Application y utiliza la REST API propia para comunicarse con los servicios del sistema. |
 | **CT03** | Mobile Application con Flutter + Dart | Como Developer, deseo implementar la Mobile Application utilizando Flutter y Dart, para disponer de una aplicación móvil que integre las capacidades móviles de Tale Star. | La Mobile Application está implementada con **Flutter + Dart** y consume la REST API propia. La aplicación incorpora las capacidades móviles definidas para Tale Star, incluyendo la experiencia AR local. |
 | **CT04** | Landing Page | Como Developer, deseo disponer de una Landing Page separada de la Web Application, para presentar la propuesta de Tale Star y dirigir al usuario hacia los puntos de acceso correspondientes. | La solución dispone de una Landing Page conceptualmente separada de la Web Application. La Landing Page proporciona los accesos definidos hacia los productos disponibles. |
-| **CT05** | Generación local de imagen con Z-Image-Turbo | Como Developer, deseo utilizar **Z-Image-Turbo** para la generación local de imágenes, para mantener el procesamiento de generación dentro de la infraestructura definida para Tale Star. | Z-Image-Turbo se ejecuta localmente. El acceso al runtime se realiza mediante la capa de generación correspondiente y los Controllers y el dominio no acceden directamente al runtime. |
-| **CT06** | Generación local de música con ACE-Step Studio 1.5 | Como Developer, deseo utilizar **ACE-Step Studio 1.5** para la generación local de música, para mantener el procesamiento musical dentro de la infraestructura definida para Tale Star. | ACE-Step Studio 1.5 se ejecuta localmente. Creative Authoring no accede directamente al runtime de ACE-Step, sino mediante la capa de generación correspondiente. |
+| **CT05** | Generación self-hosted de imagen con Z-Image-Turbo | Como Developer, deseo utilizar **Z-Image-Turbo** para generación de imágenes, para mantener el procesamiento dentro de la infraestructura cloud administrada por Tale Star. | Z-Image-Turbo se ejecuta como runtime self-hosted. El acceso se realiza mediante la capa de generación y los Controllers y el dominio no acceden directamente al runtime. |
+| **CT06** | Generación self-hosted de música con ACE-Step Studio 1.5 | Como Developer, deseo utilizar **ACE-Step Studio 1.5** para generación musical, para mantener el procesamiento dentro de la infraestructura cloud administrada por Tale Star. | ACE-Step Studio 1.5 se ejecuta como runtime self-hosted. Creative Authoring no accede directamente al runtime, sino mediante la capa de generación correspondiente. |
 | **CT07** | Catálogo de 3 StyleProfiles aprobados | Como Developer, deseo utilizar únicamente los StyleProfiles aprobados para la generación de imágenes, para mantener un catálogo controlado de estilos visuales. | Solo se admiten los tres archivos definidos para Tale Star. No se permite cargar LoRAs arbitrarios fuera de este catálogo. |
 | **CT08** | AR local únicamente en Mobile mediante ArRuntime | Como Developer, deseo que la experiencia de realidad aumentada se ejecute localmente y únicamente en la Mobile Application, para utilizar las capacidades AR del dispositivo. | La experiencia AR se ejecuta mediante **ArRuntime** dentro de la Mobile Application. El procesamiento de la experiencia AR no se despliega ni ejecuta en la Web Application o en el servidor. |
 | **CT09** | JWT para recursos privados | Como Developer, deseo utilizar **JWT** para proteger los recursos privados de Tale Star, para controlar el acceso a la información asociada a los usuarios. | Las solicitudes a recursos privados requieren una credencial JWT válida. Las solicitudes sin autorización válida son rechazadas y no permiten acceder al contenido protegido. |
 | **CT10** | Runtimes de IA no accesibles directamente desde clientes | Como Developer, deseo mantener los runtimes de IA aislados de los clientes Web y Mobile, para evitar que estos accedan directamente a los motores de generación. | Los clientes no realizan llamadas directas a Z-Image-Turbo ni a ACE-Step Studio 1.5. Las solicitudes de generación pasan por los componentes internos de Tale Star definidos para este propósito. |
-| **CT11** | Integración con servicio externo | Como Developer, deseo mantener la posibilidad de integrar un servicio externo de identidad, para soportar la autenticación mediante **Google Identity** cuando esta opción permanezca dentro del alcance. | La integración con Google Identity se mantiene como servicio externo opcional. Cuando se encuentre habilitada, la autenticación utiliza el mecanismo de integración definido sin exponer directamente los runtimes internos de Tale Star. |
-| **CT12** | Conservación de la configuración original | Como Developer, deseo conservar la configuración original utilizada para crear una generación, para permitir posteriormente su edición y regeneración. | Cada creación conserva la configuración necesaria para su posterior recuperación. El usuario puede recuperar dicha configuración para editarla o utilizarla como base para una nueva generación. |
+| **CT11** | Conservación de la configuración original | Como Developer, deseo conservar la configuración original utilizada para crear una generación, para permitir posteriormente su edición y regeneración. | Cada creación conserva la configuración necesaria para su posterior recuperación. El usuario puede recuperar dicha configuración para editarla o utilizarla como base para una nueva generación. |
 
 <a id="413-architectural-drivers-backlog"></a>
 ### 4.1.3. Architectural Drivers Backlog
@@ -1930,7 +1775,7 @@ El Architectural Drivers Backlog reúne los principales elementos que condiciona
 
 | Driver ID | Título de Driver | Tipo | Importancia para Stakeholders | Complejidad Técnica |
 |---|---|---|---|---|
-| **FD01** | Multimodal Local Content Generation | Functional Driver | High | High |
+| **FD01** | Multimodal Self-hosted Content Generation | Functional Driver | High | High |
 | **FD02** | Personalized Story Authoring | Functional Driver | High | High |
 | **FD03** | Library and Original Configuration Recovery | Functional Driver | High | High |
 | **FD06** | On-Device AR Reading | Functional Driver | High | High |
@@ -1938,27 +1783,28 @@ El Architectural Drivers Backlog reúne los principales elementos que condiciona
 | **QD03** | AI Runtime Fault Isolation | Quality Attribute Driver | High | High |
 | **QD05** | Generator Modifiability | Quality Attribute Driver | High | High |
 | **QD07** | GPU Capacity Control | Quality Attribute Driver | High | High |
-| **FD04** | Reusable Characters and Settings | Functional Driver | High | Medium |
+| **FD04** | Reusable Characters and Scenarios | Functional Driver | High | Medium |
 | **FD05** | Mobile Story Retrieval | Functional Driver | High | Medium |
 | **FD07** | Identity and Protected Content | Functional Driver | High | Medium |
 | **QD02** | REST Query Performance | Quality Attribute Driver | High | Medium |
 | **QD04** | Security / JWT | Quality Attribute Driver | High | Medium |
 | **QD06** | Persistence Consistency | Quality Attribute Driver | High | Medium |
 | **QD08** | Mobile AR Startup | Quality Attribute Driver | Medium | High |
+| **QD09** | REST Contract Interoperability | Quality Attribute Driver | Medium | Medium |
+| **QD10** | Operational Simplicity | Quality Attribute Driver | Medium | Medium |
 | **CT01** | RESTful API interna propia | Constraint | — | — |
 | **CT02** | Web Application | Constraint | — | — |
 | **CT03** | Mobile Application implementada con Flutter + Dart | Constraint | — | — |
 | **CT04** | Landing Page | Constraint | — | — |
-| **CT05** | Generación local de imagen con Z-Image-Turbo | Constraint | — | — |
-| **CT06** | Generación local de música con ACE-Step Studio 1.5 | Constraint | — | — |
+| **CT05** | Generación self-hosted de imagen con Z-Image-Turbo | Constraint | — | — |
+| **CT06** | Generación self-hosted de música con ACE-Step Studio 1.5 | Constraint | — | — |
 | **CT07** | Solo 3 StyleProfiles aprobados | Constraint | — | — |
 | **CT08** | AR ejecutada localmente y solo en Mobile mediante ArRuntime | Constraint | — | — |
 | **CT09** | JWT para recursos privados | Constraint | — | — |
 | **CT10** | Runtimes de IA no accesibles directamente desde clientes | Constraint | — | — |
-| **CT11** | Integración con servicio externo; Google Identity si sigue en alcance | Constraint | — | — |
-| **CT12** | Conservar configuración original para edición/regeneración | Constraint | — | — |
+| **CT11** | Conservar configuración original para edición/regeneración | Constraint | — | — |
 
-Como sustento de los drivers y decisiones consideradas para la construcción del Architectural Drivers Backlog, se priorizaron aquellas necesidades que tienen mayor impacto sobre el funcionamiento y la estructura de Tale Star. La prioridad alta de los drivers relacionados con la generación multimodal, la creación personalizada de cuentos y la recuperación de configuraciones se sustenta en que constituyen capacidades centrales de la solución y requieren integrar procesos de generación, persistencia y reutilización de contenido. Asimismo, los drivers relacionados con la generación no bloqueante, el aislamiento de los runtimes de IA, la modificabilidad de los generadores y el control de capacidad de GPU presentan una alta complejidad técnica debido al procesamiento local de los modelos de inteligencia artificial. La lectura mediante realidad aumentada también presenta una prioridad alta por requerir procesamiento local y capacidades específicas de los dispositivos móviles. Finalmente, los constraints relacionados con la REST API, las aplicaciones Web y Mobile, los runtimes de IA, JWT, los StyleProfiles y ArRuntime no son opcionales, ya que establecen las condiciones técnicas definidas para la solución y delimitan las alternativas disponibles durante el diseño arquitectónico.
+Como sustento de los drivers y decisiones consideradas para la construcción del Architectural Drivers Backlog, se priorizaron aquellas necesidades que tienen mayor impacto sobre el funcionamiento y la estructura de Tale Star. La prioridad alta de los drivers relacionados con la generación multimodal, la creación personalizada de cuentos y la recuperación de configuraciones se sustenta en que constituyen capacidades centrales de la solución y requieren integrar procesos de generación, persistencia y reutilización de contenido. Asimismo, los drivers relacionados con la generación no bloqueante, el aislamiento de los runtimes de IA, la modificabilidad de los generadores y el control de capacidad de GPU presentan una alta complejidad técnica debido al procesamiento en runtimes self-hosted administrados por Tale Star. La lectura mediante realidad aumentada también presenta una prioridad alta por requerir procesamiento local y capacidades específicas de los dispositivos móviles. Los drivers QD09 y QD10 orientan, respectivamente, la compatibilidad del contrato REST con clientes Web y Mobile y la operación reproducible de las unidades desplegadas. Finalmente, los constraints relacionados con la REST API, las aplicaciones Web y Mobile, los runtimes de IA, JWT, los StyleProfiles y ArRuntime no son opcionales, ya que establecen las condiciones técnicas definidas para la solución y delimitan las alternativas disponibles durante el diseño arquitectónico.
 
 <a id="414-architectural-design-decisions"></a>
 ### 4.1.4. Architectural Design Decisions
@@ -1970,14 +1816,14 @@ Las decisiones arquitectónicas de Tale Star se establecen a partir de los Archi
 | **DEC01** | Architecture Style | FD01, FD02, FD03, QD03, QD05, QD07 | **Layered Monolith:** despliegue simple y menor complejidad inicial. **Modular Monolith:** mantiene límites claros y un despliegue sencillo. **Microservices:** permite independencia de despliegue y escalamiento individual. | **Layered:** simplicidad inicial. **Modular:** equilibrio entre modularidad y operación. **Microservices:** mayor independencia de despliegue. | **Layered:** puede aumentar el acoplamiento. **Modular:** los módulos comparten proceso y despliegue. **Microservices:** introduce complejidad distribuida, comunicación entre servicios y mayor carga operativa. | **Modular Monolith** | Se priorizan límites claros entre módulos y Bounded Contexts sin asumir la complejidad distribuida de microservices. El trade-off es una menor independencia de despliegue frente a microservices. |
 | **DEC02** | Internal Module Architecture | QD05, QD03, FD03, CT10 | **Transaction Script:** implementación simple orientada a operaciones. **Layered:** separación tradicional de responsabilidades. **Ports & Adapters:** aislamiento del dominio frente a infraestructura y proveedores externos. | **Transaction Script:** simplicidad. **Layered:** estructura clara. **Ports & Adapters:** mayor aislamiento y modificabilidad. | **Transaction Script:** puede concentrar lógica y dificultar su evolución. **Layered:** puede generar dependencias rígidas. **Ports & Adapters:** requiere más abstracciones y disciplina. | **Ports & Adapters + Domain/Application/Interfaces/Infrastructure** | Se obtiene mayor aislamiento entre dominio e infraestructura, especialmente frente a los runtimes de IA. El trade-off es una mayor cantidad de interfaces, adapters y reglas de dependencia. |
 | **DEC03** | Application Pattern | QD01, FD03, QD06 | **CRUD:** simple y directo. **Lightweight CQRS:** separa Commands y Queries. **CQRS + Event Sourcing:** permite historial de eventos y replay. | **CRUD:** baja complejidad. **Lightweight CQRS:** separación clara sin infraestructura excesiva. **Event Sourcing:** trazabilidad e historial completo. | **CRUD:** no diferencia explícitamente comandos y consultas. **Lightweight CQRS:** añade estructura. **Event Sourcing:** introduce complejidad e infraestructura innecesaria para el alcance actual. | **Lightweight CQRS** | Se separan Commands y Queries manteniendo una complejidad controlada. El trade-off es que no se dispone de historial inmutable ni replay de eventos como en Event Sourcing. |
-| **DEC04** | Backend | FD01, QD03, QD05, CT05, CT06 | **NestJS:** estructura backend con TypeScript. **ASP.NET Core:** alto rendimiento y estructura robusta. **Python + FastAPI:** integración directa con el ecosistema Python de los runtimes de IA. | **NestJS:** organización y ecosistema TypeScript. **ASP.NET Core:** rendimiento y robustez. **Python/FastAPI:** integración con runtimes Python/PyTorch. | **NestJS:** requiere integrar un stack diferente con los runtimes de IA. **ASP.NET Core:** aumenta la separación tecnológica. **Python/FastAPI:** requiere mantener consistencia entre tipos y contratos Python. | **Python 3.12 + FastAPI** | Se facilita la integración con los runtimes locales de IA. El trade-off es mantener consistencia entre los contratos y componentes desarrollados en Python. |
-| **DEC05** | Persistence | FD03, QD06, CT12 | **SQLite WAL:** persistencia local sencilla. **PostgreSQL:** mayor concurrencia y capacidad de crecimiento. **MongoDB:** esquema documental flexible. | **SQLite:** operación sencilla. **PostgreSQL:** robustez y concurrencia. **MongoDB:** flexibilidad documental. | **SQLite:** menor capacidad concurrente y operativa que PostgreSQL. **PostgreSQL:** mayor complejidad operativa. **MongoDB:** no se ajusta directamente al modelo estructurado definido. | **SQLite WAL + ORM/migrations** | Se mantiene una persistencia sencilla para metadata y configuración. El trade-off es una menor capacidad de concurrencia frente a PostgreSQL; repositories permiten facilitar una futura migración. |
-| **DEC06** | Long-running generation | QD01, QD03, QD07 | **Synchronous:** espera el resultado durante la solicitud. **GenerationJob + Worker:** procesa la generación como un trabajo persistente. **Distributed broker:** distribuye trabajos entre workers. | **Synchronous:** simplicidad. **GenerationJob:** evita bloquear y permite controlar jobs. **Broker:** facilita escalamiento distribuido. | **Synchronous:** bloquea solicitudes y dificulta controlar concurrencia. **GenerationJob:** requiere gestionar estados y errores. **Broker:** añade infraestructura y complejidad operativa. | **GenerationJob + local Python Worker** | Las generaciones pueden ejecutarse sin bloquear las solicitudes y con control sobre la capacidad de GPU. El trade-off es que no se dispone de escalamiento distribuido automático. |
-| **DEC07** | AI boundary | QD03, QD05, CT05–CT10 | **Direct SDK:** integración directa. **Ports & Adapters:** aislamiento mediante interfaces. **Public AI services:** delegación del procesamiento a servicios externos. | **Direct SDK:** menor cantidad de capas. **Ports & Adapters:** desacoplamiento y modificabilidad. **Public services:** reduce infraestructura local. | **Direct SDK:** alto acoplamiento. **Ports & Adapters:** requiere mappings adicionales. **Public services:** no cumple las restricciones de generación local. | **Ports & Adapters + internal runtime boundary** | Los runtimes de IA quedan aislados de clientes y dominio. El trade-off es mantener mappings entre contratos internos y contratos específicos de los runtimes. |
+| **DEC04** | Backend | FD01, QD03, QD05, CT05, CT06 | **NestJS:** estructura backend con TypeScript. **ASP.NET Core:** alto rendimiento y estructura robusta. **Python + FastAPI:** integración directa con el ecosistema Python de los runtimes de IA. | **NestJS:** organización y ecosistema TypeScript. **ASP.NET Core:** rendimiento y robustez. **Python/FastAPI:** integración con runtimes Python/PyTorch. | **NestJS:** requiere integrar un stack diferente con los runtimes de IA. **ASP.NET Core:** aumenta la separación tecnológica. **Python/FastAPI:** requiere mantener consistencia entre tipos y contratos Python. | **Python 3.12 + FastAPI** | Se facilita la integración con runtimes generativos self-hosted desplegados en infraestructura cloud administrada por Tale Star. El trade-off es mantener consistencia entre contratos y componentes Python. |
+| **DEC05** | Persistence | FD03, QD06, CT11 | **SQLite WAL:** persistencia local sencilla. **PostgreSQL:** mayor concurrencia y capacidad de crecimiento. **MongoDB:** esquema documental flexible. | **SQLite:** operación sencilla. **PostgreSQL:** robustez y concurrencia. **MongoDB:** flexibilidad documental. | **SQLite:** menor capacidad concurrente y operativa que PostgreSQL. **PostgreSQL:** mayor complejidad operativa. **MongoDB:** no se ajusta directamente al modelo estructurado definido. | **SQLite WAL + ORM/migrations** | Se mantiene una persistencia sencilla para metadata y configuración. El trade-off es una menor capacidad de concurrencia frente a PostgreSQL; repositories permiten facilitar una futura migración. |
+| **DEC06** | Long-running generation | QD01, QD03, QD07 | **Synchronous:** espera el resultado durante la solicitud. **GenerationJob + Worker:** procesa la generación como un trabajo persistente. **Distributed broker:** distribuye trabajos entre workers. | **Synchronous:** simplicidad. **GenerationJob:** evita bloquear y permite controlar jobs. **Broker:** facilita escalamiento distribuido. | **Synchronous:** bloquea solicitudes y dificulta controlar concurrencia. **GenerationJob:** requiere gestionar estados y errores. **Broker:** añade infraestructura y complejidad operativa. | **GenerationJob + Python Worker self-hosted** | Las generaciones pueden ejecutarse sin bloquear las solicitudes y con control sobre la capacidad de GPU. El trade-off es que no se dispone de escalamiento distribuido automático. |
+| **DEC07** | AI boundary | QD03, QD05, CT05–CT10 | **Direct SDK:** integración directa. **Ports & Adapters:** aislamiento mediante interfaces. **Servicio generativo administrado:** delegación del procesamiento fuera de la infraestructura del proyecto. | **Direct SDK:** menor cantidad de capas. **Ports & Adapters:** desacoplamiento y modificabilidad. **Servicio administrado:** reduce la carga de infraestructura propia. | **Direct SDK:** alto acoplamiento. **Ports & Adapters:** requiere mappings adicionales. **Servicio administrado:** no cumple la restricción de ejecutar los modelos self-hosted bajo administración de Tale Star. | **Ports & Adapters + internal runtime boundary** | Los runtimes de IA quedan aislados de clientes y dominio. El trade-off es mantener mappings entre contratos internos y contratos específicos de los runtimes. |
 | **DEC08** | Mobile | FD05, FD06, QD08, CT03 | **Kotlin/Swift:** desarrollo nativo. **React Native:** aplicación multiplataforma. **Flutter:** aplicación multiplataforma con una base de código. | **Kotlin/Swift:** acceso directo a capacidades nativas. **React Native:** reutilización de código. **Flutter:** base de código compartida y cumplimiento del constraint definido. | **Kotlin/Swift:** requiere mantener plataformas separadas. **React Native:** puede requerir integración nativa para AR. **Flutter:** puede requerir bridge nativo para determinadas capacidades de ARCore/ARKit. | **Flutter + Dart** | Se mantiene una única base de código para la Mobile Application. El trade-off es la posible necesidad de integración nativa para capacidades específicas de realidad aumentada. |
 | **DEC09** | AR | FD06, QD08, CT08 | **Server-side:** procesamiento en servidor. **WebAR:** experiencia AR mediante navegador. **On-device:** procesamiento local en el dispositivo. | **Server-side:** centraliza procesamiento. **WebAR:** evita depender exclusivamente de una aplicación nativa. **On-device:** aprovecha cámara, sensores y capacidades AR del dispositivo. | **Server-side:** no aprovecha adecuadamente capacidades locales. **WebAR:** presenta restricciones de compatibilidad y capacidades. **On-device:** depende de capacidades, permisos y sensores del dispositivo. | **On-device AR mediante ArRuntime; bridge nativo hacia ARCore/ARKit cuando sea necesario** | Se cumple el procesamiento local establecido para la experiencia AR. El trade-off es la dependencia respecto de las capacidades y permisos del dispositivo móvil. |
-| **DEC10** | Authentication | FD07, QD04, CT09–CT11 | **Server sessions:** sesiones gestionadas por servidor. **JWT:** autenticación mediante tokens. **OAuth-only:** delegación completa a un proveedor externo. | **Server sessions:** mecanismo conocido de sesión. **JWT:** adecuado para clientes Web y Mobile. **OAuth:** delega identidad a un proveedor externo. | **Server sessions:** menos conveniente para una REST API consumida por múltiples clientes. **JWT:** requiere gestionar expiración, refresh y custodia segura. **OAuth-only:** aumenta la dependencia de servicios externos. | **JWT + optional Google OAuth** | JWT protege la API y Google Identity puede complementar el inicio de sesión si permanece en alcance. El trade-off es gestionar correctamente expiración, refresh y almacenamiento seguro de tokens. |
-| **DEC11** | Generated assets | FD03, QD06, CT12 | **DB BLOB:** archivos dentro de la base de datos. **Filesystem + metadata:** assets como archivos y metadata en SQLite. **Object storage:** almacenamiento especializado y escalable. | **DB BLOB:** centraliza datos. **Filesystem:** separa assets de metadata. **Object storage:** facilita escalamiento. | **DB BLOB:** aumenta el tamaño y dificulta la gestión de multimedia. **Filesystem:** requiere gestionar referencias, backups y consistencia. **Object storage:** introduce infraestructura y dependencia adicional. | **Filesystem + metadata** | Images y audio se mantienen en filesystem y la metadata/configuración en SQLite. El trade-off es que backup y escalamiento del storage deben gestionarse si el despliegue crece. |
+| **DEC10** | Authentication | FD07, QD04, CT09 | **Server sessions:** sesiones gestionadas por servidor. **JWT:** autenticación mediante tokens. | **Server sessions:** mecanismo conocido de sesión. **JWT:** adecuado para clientes Web y Mobile. | **Server sessions:** menos conveniente para una REST API consumida por múltiples clientes. **JWT:** requiere gestionar expiración, refresh y custodia segura. | **JWT** | JWT protege la API con autenticación mediante correo y contraseña. El trade-off es gestionar correctamente expiración, refresh y almacenamiento seguro de tokens. |
+| **DEC11** | Generated assets | FD03, QD06, CT11 | **DB BLOB:** archivos dentro de la base de datos. **Filesystem + metadata:** assets como archivos y metadata en SQLite. **Object storage:** almacenamiento especializado y escalable. | **DB BLOB:** centraliza datos. **Filesystem:** separa assets de metadata. **Object storage:** facilita escalamiento. | **DB BLOB:** aumenta el tamaño y dificulta la gestión de multimedia. **Filesystem:** requiere gestionar referencias, backups y consistencia. **Object storage:** introduce infraestructura y dependencia adicional. | **Filesystem + metadata** | Images y audio se mantienen en filesystem y la metadata/configuración en SQLite. Un asset se escribe primero como temporal; al confirmar el archivo se realiza un rename o move atómico y la metadata cambia a disponible. Ante error se marca fallido y se limpia el temporal; una reconciliación detecta metadata sin archivo y archivos huérfanos. |
 | **DEC12** | External model coupling | QD05, QD03, CT05, CT06, CT10 | **Direct SDK:** uso directo del SDK. **ACL-Adapter:** traducción entre contratos externos e internos. **Shared model:** estructuras compartidas entre componentes. | **Direct SDK:** menor cantidad de código de integración. **ACL-Adapter:** aislamiento de contratos externos. **Shared model:** reduce mappings. | **Direct SDK:** propaga contratos externos. **ACL-Adapter:** añade código de traducción. **Shared model:** aumenta el acoplamiento y permite propagar cambios externos. | **Adapter / Anti-Corruption Layer** | Se evita que los contratos externos se propaguen hacia el dominio. El trade-off es mantener código de traducción adicional a cambio de mayor aislamiento y modificabilidad. |
 
 
@@ -1990,7 +1836,7 @@ Los refinamientos priorizan los escenarios que introducen mayor riesgo arquitect
 | ID | Atributo de calidad | Escenario | Caso de uso asociado |
 | :--- | :--- | :--- | :--- |
 | QR01 | Performance / Reliability | Generación no bloqueante mediante GenerationJob. | US19, US41, US60; BG01, BG02 |
-| QR02 | Availability / Reliability | Aislamiento ante fallas de runtimes locales de IA. | US19, US41, US60; BG04 |
+| QR02 | Availability / Reliability | Aislamiento ante fallas de runtimes de IA self-hosted. | US19, US41, US60; BG04 |
 | QR03 | Modifiability | Sustitución de modelos o StyleProfiles sin afectar el dominio. | US10, US19, US23; BG01, BG04 |
 | QR04 | Security | Rechazo de acceso no autorizado a recursos protegidos. | US01, US63, US70; BG04, BG05 |
 | QR05 | Performance / Usability | Inicio local de la experiencia AR móvil. | US87, US88, US89, US90; BG06 |
@@ -2007,10 +1853,10 @@ Los refinamientos priorizan los escenarios que introducen mayor riesgo arquitect
 | **Stimulus Source** | Usuario autenticado. |
 | **Environment** | Operación normal. |
 | **Artifact** | Generative Media y Generation Worker. |
-| **Response** | Se persiste un `GenerationJob` en estado `Pending`, se responde `202 Accepted` y el worker procesa el trabajo sin bloquear la solicitud inicial. |
+| **Response** | Se persiste un `GenerationJob` en estado `Pending`, se responde `202 Accepted` y el worker reclama el trabajo, lo cambia a `Processing` y lo ejecuta sin bloquear la solicitud inicial. |
 | **Response Measure** | Respuesta inicial en **≤ 1 segundo**. |
-| **Questions** | ¿Cómo se recuperan los jobs interrumpidos cuando el worker se reinicia? |
-| **Issues** | Warm-up del modelo y memoria GPU disponible. |
+| **Questions** | ¿Qué tiempo de expiración permite identificar un job detenido en `Processing`? |
+| **Issues** | Warm-up del modelo y memoria GPU disponible. Al reiniciar, el worker identifica jobs vencidos en `Processing` y los recupera o reintenta con el mismo identificador de solicitud para evitar assets finales duplicados. |
 
 ### QR02 — AI Runtime Failure Isolation
 
@@ -2019,12 +1865,12 @@ Los refinamientos priorizan los escenarios que introducen mayor riesgo arquitect
 | **Scenario(s)** | QAS03 |
 | **Business Goals** | BG04 |
 | **Relevant Quality Attributes** | Availability y Reliability |
-| **Stimulus** | Un runtime local de IA falla, deja de responder o no completa la generación. |
+| **Stimulus** | Un runtime de IA self-hosted falla, deja de responder o no completa la generación. |
 | **Stimulus Source** | Z-Image-Turbo Runtime o ACE-Step Runtime. |
-| **Environment** | `GenerationJob` en estado `Running`. |
+| **Environment** | `GenerationJob` en estado `Processing`. |
 | **Artifact** | Adapter y `GenerationJob`. |
 | **Response** | El adapter registra el fallo, el job queda en estado `Failed` y no se publica un asset inválido. |
-| **Response Measure** | Ningún job fallido se informa como `Completed`. |
+| **Response Measure** | Ningún job fallido se informa como `Succeeded`. |
 | **Questions** | ¿Qué política de reintento es apropiada para cada tipo de error? |
 | **Issues** | Crash del runtime, timeouts y consistencia entre filesystem y metadata. |
 
@@ -2039,8 +1885,8 @@ Los refinamientos priorizan los escenarios que introducen mayor riesgo arquitect
 | **Stimulus Source** | Developer. |
 | **Environment** | Desarrollo o mantenimiento. |
 | **Artifact** | Adapter y configuration. |
-| **Response** | La modificación queda aislada en infraestructura sin alterar Creative Authoring. |
-| **Response Measure** | **Cero cambios** en el Domain Layer y contratos REST. |
+| **Response** | La modificación queda aislada en infraestructura cuando el adapter conserva el contrato de capacidades existente. |
+| **Response Measure** | No se requieren cambios en el Domain Layer ni en contratos REST mientras el adapter conserve el contrato actual; una capacidad nueva puede requerir cambios funcionales explícitos. |
 | **Questions** | ¿Cómo se versionará la metadata asociada a generaciones anteriores? |
 | **Issues** | Compatibilidad de LoRA y parámetros no soportados por un runtime nuevo. |
 
@@ -2104,7 +1950,7 @@ La sesión de EventStorming se plantea con una duración de una a dos horas. El 
 
 ![Tale Star EventStorming](imgs/diagrams/taleStarEventStorming.png)
 
-El resultado debe mostrar eventos de Identity & Access —`UserRegistered`, `UserAuthenticated`, `PasswordRecoveryRequested`, `PasswordChanged`, `ChildModeEnabled` y `ChildModeUnlocked`—; de configuración —`CharacterCreated`, `CharacterUpdated`, `SettingCreated` y `SettingUpdated`—; y de generación —`ImageGenerationRequested`, `ImageGenerationQueued`, `ImageGenerated`, `ImageGenerationFailed`, `StoryCreated`, `StoryGenerationRequested`, `StoryGenerated`, `StoryPageAdded`, `StoryPageTextEdited`, `MusicGenerationRequested`, `MusicGenerated`, `MusicGenerationFailed` y `LyricsEdited`.
+El resultado muestra eventos de Identity & Access —`UserRegistered`, `UserAuthenticated`, `PasswordRecoveryRequested`, `PasswordChanged`, `ChildModeEnabled` y `ChildModeUnlocked`—; de configuración —`CharacterCreated`, `CharacterUpdated`, `ScenarioCreated`, `ScenarioUpdated`, `StoryCreated`, `StoryPageAdded` y `StoryPageTextEdited`—; y de generación —`ImageGenerationRequested`, `ImageGenerationQueued`, `ImageGenerated`, `ImageGenerationFailed`, `MusicGenerationRequested`, `MusicGenerated` y `MusicGenerationFailed`. La redacción y edición del texto de las Story Pages corresponde al usuario adulto.
 
 También deben aparecer `ContentSaved`, `GenerationConfigurationSaved`, `LibraryItemOpened`, `OriginalConfigurationLoaded`, `SavedContentUpdated`, `ContentRegenerationRequested`, `StoryRequestedFromMobile`, `StoryLoadedOnMobile`, `TraditionalReadingStarted` y `ARReadingStarted`. Este último representa un evento de experiencia móvil; no implica que AR se procese en el backend.
 
@@ -2123,7 +1969,7 @@ La segunda etapa identifica los eventos pivotal que diferencian una solicitud cr
 
 ![Candidate Context Discovery - Final](imgs/diagrams/taleStarCandidateContextDiscoveryFinal.png)
 
-El resultado final establece Creative Authoring como Core Domain; Generative Media y Content Library como Supporting Domains; e Identity & Access como Generic Domain. Z-Image-Turbo y ACE-Step Studio 1.5 son infraestructura de Generative Media; AR pertenece a Mobile Application; y Characters, Settings, Image Generation y Music Generation son capacidades, no Bounded Contexts independientes.
+El resultado final establece Creative Authoring como Core Domain; Generative Media y Content Library como Supporting Domains; e Identity & Access como Generic Domain. Z-Image-Turbo y ACE-Step Studio 1.5 son infraestructura de Generative Media; AR pertenece a Mobile Application; y Characters, Scenarios, Image Generation y Music Generation son capacidades, no Bounded Contexts independientes.
 
 <a id="423-domain-message-flows-modeling"></a>
 ### 4.2.3. Domain Message Flows Modeling
@@ -2136,7 +1982,7 @@ El usuario configura una Image en Creative Authoring; se solicita la generación
 
 ![Domain Story - Story Creation](imgs/diagrams/taleStarDomainStoryStoryCreation.png)
 
-El usuario define Story, Story Pages, Characters y Settings. Creative Authoring conserva la intención narrativa; las ilustraciones se solicitan como generación y el Story final puede recuperarse desde Biblioteca.
+El usuario define Story, Story Pages, Characters y Scenarios. Creative Authoring conserva la intención narrativa y el texto escrito por el usuario; las ilustraciones se solicitan como generación y el Story final puede recuperarse desde Biblioteca.
 
 ![Domain Story - Music Generation](imgs/diagrams/taleStarDomainStoryMusicGeneration.png)
 
@@ -2162,32 +2008,38 @@ Los Bounded Context Canvases se construyen iterativamente mediante Context Overv
 | **Contexto / Tipo** | **CREATIVE AUTHORING** *(Core Domain)* |
 | **Propósito (Purpose)** | Concentrar la intención educativa y creativa del usuario adulto para estructurar cuentos y recursos pedagógicos. |
 | **Lenguaje Ubicuo (Ubiquitous Language)** | • Story, Story Page <br> • Character, Scenario <br> • Educational Topic <br> • Prompt Configuration <br> • Scene Parameters |
-| **Capacidades (Capabilities)** | • Character Management & Setting Management <br> • Story Authoring & Story Page Management <br> • Image Configuration & Music Configuration <br> • Prompt Composition & Regeneration Requests |
-| **Dependencias e Interfaces** | • Identity & Access (Auth) <br> • Generative Media (Requests) <br> • Content Library (Persistence) |
+| **Capacidades (Capabilities)** | • Character Management & Scenario Management <br> • Story Authoring & Story Page Management <br> • Image Configuration & Music Configuration <br> • Prompt Composition & Regeneration Requests |
+| **Dependencias e Interfaces** | • Identity & Access para autorización <br> • Generative Media para solicitudes de generación <br> • Content Library para persistencia y recuperación |
+
+### 2. Generative Media Bounded Context Canvas
 
 | Sección | Detalle / Contenido |
 | :--- | :--- |
 | **Contexto / Tipo** | **GENERATIVE MEDIA** *(Supporting Domain)* |
-| **Propósito (Purpose)** | Orquestar y procesar solicitudes de generación multimedia asíncrona mediante modelos IA. |
-| **Lenguaje Ubicuo (Ubiquitous Language)** | • Generation Job, Prompt Payload <br> • Generation Status (Pending, Completed, Failed) <br> • Port, Adapter, Media Output |
-| **Capacidades (Capabilities)** | • Image Generation & Music Generation <br> • Generation Job Management & Result Handling <br> • Style Profile Selection <br> • StoryTextGeneratorPort |
-| **Dependencias e Interfaces** | • External AI Services (ACL) <br> • ImageGeneratorPort <br> • MusicGeneratorPort |
+| **Propósito (Purpose)** | Orquestar solicitudes asíncronas de generación visual y musical con runtimes self-hosted administrados por Tale Star. |
+| **Lenguaje Ubicuo (Ubiquitous Language)** | • Generation Job <br> • Generation Status <br> • Generated Image, Song <br> • Style Profile |
+| **Capacidades (Capabilities)** | • Image Generation & Music Generation <br> • Generation Job Management & Result Handling <br> • Style Profile Selection <br> • Generation Configuration |
+| **Dependencias e Interfaces** | • ImageGeneratorPort hacia Z-Image-Turbo self-hosted <br> • MusicGeneratorPort hacia ACE-Step self-hosted <br> • Adapters ejecutados por Generation Worker |
+
+### 3. Content Library Bounded Context Canvas
 
 | Sección | Detalle / Contenido |
 | :--- | :--- |
-| **Contexto / Tipo** | **CONTENT LIBRARY** *(Generic / Supporting Domain)* |
+| **Contexto / Tipo** | **CONTENT LIBRARY** *(Supporting Domain)* |
 | **Propósito (Purpose)** | Gestionar el ciclo de vida, la organización y la persistencia de los recursos creados. |
-| **Lenguaje Ubicuo (Ubiquitous Language)** | • Library Item, Asset Reference <br> • Metadata, Resource Category <br> • Storage Path, Filter Criteria |
+| **Lenguaje Ubicuo (Ubiquitous Language)** | • Library Item <br> • Generated Asset <br> • Generation Configuration <br> • Resource Category |
 | **Capacidades (Capabilities)** | • Save Content & Update Saved Content <br> • Browse Library & Retrieve Content <br> • Store Generation Metadata <br> • Retrieve Story for Mobile / Generated Assets |
-| **Dependencias e Interfaces** | • File System / Cloud Storage <br> • Relational Database (Metadata) |
+| **Dependencias e Interfaces** | • Generative Media para resultados validados <br> • Persistencia de metadata y assets administrada por infraestructura |
+
+### 4. Identity & Access Bounded Context Canvas
 
 | Sección | Detalle / Contenido |
 | :--- | :--- |
 | **Contexto / Tipo** | **IDENTITY & ACCESS** *(Generic Domain)* |
 | **Propósito (Purpose)** | Gestionar la seguridad, autenticación y mecanismos de protección de interfaz para niños. |
-| **Lenguaje Ubicuo (Ubiquitous Language)** | • User Account, JWT Token <br> • Parental PIN, Access Scope <br> • Auth Credentials, Role |
+| **Lenguaje Ubicuo (Ubiquitous Language)** | • User Account <br> • Password <br> • Child PIN <br> • Authenticated User |
 | **Capacidades (Capabilities)** | • Register, Login & Password Recovery <br> • JWT Issuance & Token Refresh <br> • Child PIN Management |
-| *
+| **Dependencias e Interfaces** | • REST API para registro, login, refresh y recuperación <br> • Creative Authoring y Content Library como consumidores de identidad autorizada |
 
 <a id="425-context-mapping"></a>
 ### 4.2.5. Context Mapping
@@ -2204,7 +2056,7 @@ El candidato B agrupa Generative Media y Content Library. Se rechaza porque mezc
 
 ![Tale Star Context Map](imgs/diagrams/taleStarContextMap.png)
 
-El mapa final define a Identity & Access como supplier de identidad y autorización para Creative Authoring. Creative Authoring es customer de Generative Media y Content Library; Generative Media usa Anti-Corruption Layers/adapters hacia los runtimes locales. No se emplea Shared Kernel: los contratos explícitos, ports y eventos de dominio evitan compartir modelos entre contextos con responsabilidades diferentes.
+El mapa final define a Identity & Access como supplier de identidad y autorización para Creative Authoring. Creative Authoring es customer de Generative Media y Content Library; Generative Media usa Anti-Corruption Layers/adapters hacia los runtimes self-hosted administrados por Tale Star. No se emplea Shared Kernel: los contratos explícitos, ports y eventos de dominio evitan compartir modelos entre contextos con responsabilidades diferentes.
 
 <a id="43-software-architecture"></a>
 ## 4.3. Software Architecture
@@ -2216,14 +2068,14 @@ El modelo C4 presenta la solución de forma progresiva. System Landscape delimit
 
 ![Tale Star System Landscape](imgs/diagrams/taleStarSystemLandscape.png)
 
-El System Landscape sitúa a padres/cuidadores y docentes como usuarios de Tale Star. La plataforma incluye Landing Page, Web Application y Mobile Application, y puede integrarse con Google Identity si dicha opción se conserva en los requisitos. Los motores locales de IA y el runtime AR no se presentan como sistemas independientes para el usuario final.
+El System Landscape sitúa a padres/cuidadores y docentes como usuarios de Tale Star. La plataforma incluye Landing Page, Web Application y Mobile Application. Los motores generativos self-hosted y el runtime AR no se presentan como sistemas independientes para el usuario final.
 
 <a id="432-software-architecture-context-level-diagram"></a>
 ### 4.3.2. Software Architecture Context Level Diagram
 
 ![Tale Star System Context](imgs/diagrams/taleStarSystemContext.png)
 
-El diagrama de contexto muestra Parent/Caregiver y Teacher interactuando con Tale Star Platform. Google Identity aparece únicamente como sistema externo opcional para autenticación. SQLite, FastAPI, runtimes de IA y Bounded Contexts se omiten porque pertenecen a niveles internos posteriores.
+El diagrama de contexto muestra Parent/Caregiver y Teacher interactuando con Tale Star Platform. SQLite, FastAPI, runtimes generativos y Bounded Contexts se omiten porque pertenecen a niveles internos posteriores.
 
 <a id="433-software-architecture-container-level-diagram"></a>
 ### 4.3.3. Software Architecture Container Level Diagram
@@ -2232,24 +2084,26 @@ El diagrama de contexto muestra Parent/Caregiver y Teacher interactuando con Tal
 
 Landing Page y Web Application se desarrollan con Vue 3, TypeScript y Vite. La Mobile Application utiliza Flutter y Dart, incorpora Story Reader y ArRuntime local. Ambas aplicaciones consumen la REST API mediante HTTPS/JSON.
 
-La REST API, desarrollada con Python 3.12 y FastAPI, opera como Modular Monolith y coordina los cuatro Bounded Contexts. Un Generation Worker de Python ejecuta GenerationJobs sin bloquear peticiones ordinarias. SQLite WAL mantiene metadata estructurada a través de SQLAlchemy y Alembic; Media Storage usa filesystem local para Images y audio. Z-Image-Turbo, con el catálogo fijo de StyleProfiles, y ACE-Step Studio 1.5 se consumen mediante HTTP interno desde adapters del worker. Las relaciones con storage usan filesystem local y las de persistencia usan SQL.
+La REST API, desarrollada con Python 3.12 y FastAPI, opera como Modular Monolith y coordina los cuatro Bounded Contexts. Un Generation Worker de Python ejecuta GenerationJobs sin bloquear peticiones ordinarias. SQLite WAL mantiene metadata estructurada a través de SQLAlchemy y Alembic; Media Storage usa un filesystem persistente administrado por la infraestructura cloud de Tale Star para Images y audio. Z-Image-Turbo, con el catálogo fijo de StyleProfiles, y ACE-Step Studio 1.5 se consumen mediante HTTP interno desde adapters del worker. Las relaciones con storage usan el filesystem persistente y las de persistencia usan SQL.
 
 <a id="434-software-architecture-deployment-diagram"></a>
 ### 4.3.4. Software Architecture Deployment Diagram
 
 ![Tale Star Deployment Diagram](imgs/diagrams/taleStarDeploymentDiagram.png)
 
-Cloud Static Hosting aloja Landing Page y Web Application. Un GPU-capable Server o Workstation aloja FastAPI REST API, Generation Worker, SQLite, Media Storage, Z-Image-Turbo, los archivos LoRA y ACE-Step Studio 1.5. El uso de una instancia principal simplifica el despliegue local y corresponde al alcance académico actual.
+Cloud Static Hosting aloja Landing Page y Web Application. Una VM o servidor con GPU, desplegado sobre infraestructura cloud administrada por Tale Star, aloja FastAPI REST API, Generation Worker, SQLite, Media Storage, Z-Image-Turbo, los archivos LoRA y ACE-Step Studio 1.5. Los modelos son self-hosted y administrados por el proyecto; el proveedor cloud aporta capacidad computacional, no una API generativa de terceros.
 
-El Mobile Device ejecuta Flutter Mobile Application, Story Reader, ArRuntime, cámara y sensores; puede requerir un bridge hacia ARCore o ARKit según la plataforma. La aplicación móvil obtiene Stories y assets desde la REST API, pero la sesión AR nunca se despliega ni procesa en el servidor. Google Identity se ubica en External Cloud solo cuando sea aplicable.
+El Mobile Device ejecuta Flutter Mobile Application, Story Reader, ArRuntime, cámara y sensores; puede requerir un bridge hacia ARCore o ARKit según la plataforma. La aplicación móvil obtiene Stories y assets desde la REST API, pero la sesión AR nunca se despliega ni procesa en el servidor.
+
+La infraestructura centralizada aceptada para TB1/MVP constituye un single point of failure y no pretende ofrecer alta disponibilidad. Como mitigación, la metadata y los assets se mantienen en almacenamiento persistente con backups, los procesos cuentan con políticas de reinicio y el Generation Worker recupera trabajos interrumpidos al reiniciarse. Esta simplificación reduce complejidad operacional dentro del alcance actual.
 
 La trazabilidad obtenida conecta Requirements con ADD Inputs, Architectural Drivers, decisiones, Bounded Contexts y arquitectura C4. El Capítulo V desarrollará el diseño táctico interno de cada Bounded Context sin modificar estos límites estratégicos.
 
 <a id="capitulo-v-tactical-level-software-design"></a>
 # Capítulo V: Tactical-Level Software Design
 
-<a id="51-bounded-context-story-authoring"></a>
-## 5.1. Bounded Context: Story Authoring
+<a id="51-bounded-context-creative-authoring"></a>
+## 5.1. Bounded Context: Creative Authoring
 
 <a id="511-domain-layer"></a>
 ### 5.1.1. Domain Layer
