@@ -2157,70 +2157,37 @@ Los Bounded Context Canvases se construyen iterativamente mediante Context Overv
 
 ### 1. Creative Authoring Bounded Context Canvas
 
-+------------------------------------------------------------------------------------+
-|                             CREATIVE AUTHORING CANVAS                              |
-| Tipo: Core Domain                                                                  |
-+--------------------------------------------------+---------------------------------+
-| PURPOSE:                                         | UBIQUITOUS LANGUAGE:            |
-| Concentrar la intención educativa y creativa      | • Story, Story Page             |
-| del usuario adulto para estructurar cuentos y     | • Character, Scenario           |
-| recursos pedagógicos.                            | • Educational Topic             |
-|                                                  | • Prompt Configuration          |
-|                                                  | • Scene Parameters              |
-+--------------------------------------------------+---------------------------------+
-| CAPABILITIES:                                    | DEPENDENCIES & INTERFACES:      |
-| • Character Management & Setting Management      | • Identity & Access (Auth)      |
-| • Story Authoring & Story Page Management        | • Generative Media (Requests)   |
-| • Image Configuration & Music Configuration      | • Content Library (Persistence) |
-| • Prompt Composition & Regeneration Requests     |                                 |
-+--------------------------------------------------+---------------------------------+
+| Sección | Detalle / Contenido |
+| :--- | :--- |
+| **Contexto / Tipo** | **CREATIVE AUTHORING** *(Core Domain)* |
+| **Propósito (Purpose)** | Concentrar la intención educativa y creativa del usuario adulto para estructurar cuentos y recursos pedagógicos. |
+| **Lenguaje Ubicuo (Ubiquitous Language)** | • Story, Story Page <br> • Character, Scenario <br> • Educational Topic <br> • Prompt Configuration <br> • Scene Parameters |
+| **Capacidades (Capabilities)** | • Character Management & Setting Management <br> • Story Authoring & Story Page Management <br> • Image Configuration & Music Configuration <br> • Prompt Composition & Regeneration Requests |
+| **Dependencias e Interfaces** | • Identity & Access (Auth) <br> • Generative Media (Requests) <br> • Content Library (Persistence) |
 
-+------------------------------------------------------------------------------------+
-|                             GENERATIVE MEDIA CANVAS                                |
-| Tipo: Supporting Domain                                                            |
-+--------------------------------------------------+---------------------------------+
-| PURPOSE:                                         | UBIQUITOUS LANGUAGE:            |
-| Orquestar y procesar solicitudes de generación   | • Generation Job, Prompt Payload|
-| multimedia asíncrona mediante modelos IA.        | • Generation Status (Pending...) |
-|                                                  | • Port, Adapter, Media Output   |
-+--------------------------------------------------+---------------------------------+
-| CAPABILITIES:                                    | DEPENDENCIES & INTERFACES:      |
-| • Image Generation & Music Generation            | • External AI Services (ACL)    |
-| • Generation Job Management & Result Handling    | • ImageGeneratorPort            |
-| • Style Profile Selection                        | • MusicGeneratorPort            |
-| • StoryTextGeneratorPort                         |                                 |
-+--------------------------------------------------+---------------------------------+
+| Sección | Detalle / Contenido |
+| :--- | :--- |
+| **Contexto / Tipo** | **GENERATIVE MEDIA** *(Supporting Domain)* |
+| **Propósito (Purpose)** | Orquestar y procesar solicitudes de generación multimedia asíncrona mediante modelos IA. |
+| **Lenguaje Ubicuo (Ubiquitous Language)** | • Generation Job, Prompt Payload <br> • Generation Status (Pending, Completed, Failed) <br> • Port, Adapter, Media Output |
+| **Capacidades (Capabilities)** | • Image Generation & Music Generation <br> • Generation Job Management & Result Handling <br> • Style Profile Selection <br> • StoryTextGeneratorPort |
+| **Dependencias e Interfaces** | • External AI Services (ACL) <br> • ImageGeneratorPort <br> • MusicGeneratorPort |
 
-+------------------------------------------------------------------------------------+
-|                             CONTENT LIBRARY CANVAS                                 |
-| Tipo: Generic / Supporting Domain                                                  |
-+--------------------------------------------------+---------------------------------+
-| PURPOSE:                                         | UBIQUITOUS LANGUAGE:            |
-| Gestionar el ciclo de vida, la organización y la | • Library Item, Asset Reference |
-| persistencia de los recursos creados.            | • Metadata, Resource Category   |
-|                                                  | • Storage Path, Filter Criteria |
-+--------------------------------------------------+---------------------------------+
-| CAPABILITIES:                                    | DEPENDENCIES & INTERFACES:      |
-| • Save Content & Update Saved Content            | • File System / Cloud Storage   |
-| • Browse Library & Retrieve Content              | • Relational Database (Metadata)|
-| • Store Generation Metadata                      |                                 |
-| • Retrieve Story for Mobile / Generated Assets   |                                 |
-+--------------------------------------------------+---------------------------------+
+| Sección | Detalle / Contenido |
+| :--- | :--- |
+| **Contexto / Tipo** | **CONTENT LIBRARY** *(Generic / Supporting Domain)* |
+| **Propósito (Purpose)** | Gestionar el ciclo de vida, la organización y la persistencia de los recursos creados. |
+| **Lenguaje Ubicuo (Ubiquitous Language)** | • Library Item, Asset Reference <br> • Metadata, Resource Category <br> • Storage Path, Filter Criteria |
+| **Capacidades (Capabilities)** | • Save Content & Update Saved Content <br> • Browse Library & Retrieve Content <br> • Store Generation Metadata <br> • Retrieve Story for Mobile / Generated Assets |
+| **Dependencias e Interfaces** | • File System / Cloud Storage <br> • Relational Database (Metadata) |
 
-+------------------------------------------------------------------------------------+
-|                          IDENTITY & ACCESS CANVAS                                  |
-| Tipo: Generic Domain                                                               |
-+--------------------------------------------------+---------------------------------+
-| PURPOSE:                                         | UBIQUITOUS LANGUAGE:            |
-| Gestionar la seguridad, autenticación y          | • User Account, JWT Token       |
-| mecanismos de protección de interfaz para niños. | • Parental PIN, Access Scope    |
-|                                                  | • Auth Credentials, Role        |
-+--------------------------------------------------+---------------------------------+
-| CAPABILITIES:                                    | DEPENDENCIES & INTERFACES:      |
-| • Register, Login & Password Recovery            | • OAuth / Google Identity       |
-| • JWT Issuance & Token Refresh                   | • Client Applications           |
-| • Child PIN Management                           |                                 |
-+--------------------------------------------------+---------------------------------+
+| Sección | Detalle / Contenido |
+| :--- | :--- |
+| **Contexto / Tipo** | **IDENTITY & ACCESS** *(Generic Domain)* |
+| **Propósito (Purpose)** | Gestionar la seguridad, autenticación y mecanismos de protección de interfaz para niños. |
+| **Lenguaje Ubicuo (Ubiquitous Language)** | • User Account, JWT Token <br> • Parental PIN, Access Scope <br> • Auth Credentials, Role |
+| **Capacidades (Capabilities)** | • Register, Login & Password Recovery <br> • JWT Issuance & Token Refresh <br> • Child PIN Management |
+| *
 
 <a id="425-context-mapping"></a>
 ### 4.2.5. Context Mapping
