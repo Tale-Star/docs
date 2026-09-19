@@ -25,6 +25,8 @@
 | U202310004 | Ricardo Fernando Cardenas Minaya |
 | U202310222 | Mariano Moises Oblitas Davila |
 | U201819645 | Ariana Huapaya Buitron |
+| U20171a518 | Fabiola Dayane Becerra Llempen |
+
 
 <p align="center"><strong>Diciembre 2026</strong></p>
 
@@ -286,6 +288,12 @@ A diferencia de herramientas generales de inteligencia artificial, Tale Star org
 | **Código:** U201819645  |                               |
 | **Carrera:** Ingeniería de Software |                               |
 | **Perfil:** Estudiante de Ingeniería de Software en la UPC, orientado al desarrollo de software y la creación de soluciones eficientes. Manejo tecnologías como JavaScript, Node.js, Python, C++ y SQL, con enfoque en Back-end y desarrollo de APIs. Me interesa seguir fortaleciendo mis habilidades y aprender nuevas tecnologías. | |
+
+| Nombre: Becerra Llempen, Fabiola Dayane | <img src="imgs/team/Fabiola.png" alt="Fabiola" title="Foto de Fabiola" width="320"/> |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
+| **Código:** U20171a518  |                               |
+| **Carrera:** Ingeniería de Software |                               |
+| **Perfil:** Estudiante de Ingeniería de Software en la UPC, con experiencia desarrollando sistemas de gestión, inventario y facturación para negocios reales. Interesado en arquitectura de software, desarrollo backend y en construir soluciones prácticas orientadas a resolver problemas concretos de negocio. | |
 
 ## 1.2. Solution Profile
 
