@@ -986,9 +986,24 @@ Marjorie acompaña el aprendizaje de una niña de 7 años, principalmente cuando
 | Registro | [Video de la entrevista](https://youtu.be/Jr87RMa8Z0Y) |
 
 Sebastián acompaña el aprendizaje de un niño de 5 años, ayudándolo con sus tareas y buscando videos, cuentos o imágenes cuando necesita reforzar algún tema. En su experiencia más reciente —enseñarle los animales y sus sonidos— comenzó buscando en YouTube y Google, y dedicó entre 20 y 30 minutos porque, si bien había bastante contenido, no todo resultaba apropiado para la edad del niño. Señala que algunos videos incluían demasiada información, vocabulario que el niño aún no comprende o un exceso de estímulos. Cuando un recurso no se ajusta, busca otro, se lo explica él mismo o utiliza solo una parte del video o de las imágenes. Prefiere imágenes y canciones: las imágenes ayudan al niño a reconocer las cosas y las canciones facilitan que recuerde la información. Adapta o combina material una o dos veces por semana, sobre todo cuando no encuentra exactamente lo que necesita, y considera que lo que más esfuerzo le demanda es verificar que el contenido sea realmente adecuado, dada la gran cantidad de resultados. Ha usado ChatGPT para generar ideas de cuentos, con buena ayuda, aunque le preocupa que la información no siempre sea correcta o apropiada para un niño pequeño. Considera muy útil una herramienta que permita crear cuentos, imágenes y canciones para un objetivo educativo específico, y valora poder revisar y definir personajes, acciones, objetos y texto antes de usar el contenido para asegurar que sea apropiado y contenga exactamente lo que desea enseñar.
-
 <p align="center">
   <img src="imgs/interviews/entrevista2segmento1.PNG" alt="Evidencia de la entrevista a Sebastián Ramírez, cuidador" title="Entrevista 2 — Segmento Padres y Cuidadores: Sebastián Ramírez" width="850" />
+</p>
+
+<a id="entrevista-3-segmento-1"></a>
+#### Entrevista 3 — Bruno Ontón
+
+| Dato | Información |
+| :--- | :--- |
+| Edad | 30 años |
+| Ocupación | Mecánico |
+| Rol | Padre de dos hijos (12 y 7 años) |
+| Entrevistador | Ricardo Cardenas |
+| Registro | [Video de la entrevista](https://drive.google.com/file/d/1hTwUpfPAk6CyrUUyQKCP9_PDfsskpAoG/view?usp=sharing) |
+
+Bruno participa en el aprendizaje de sus hijos y en la elección de su contenido digital solo cuando su trabajo se lo permite, ya que a veces lo hace él y otras su esposa. En su experiencia más reciente buscó reforzar matemáticas básicas, como sumar y restar, para su hijo menor, a quien le cuesta el tema. Para eso recurrió a videos animados de YouTube. Su principal dificultad no fue tanto que el contenido no fuera apropiado para la edad, sino cómo estaba planteado el video: su hijo menor suele distraerse incluso con un video de matemáticas, por lo que le serviría un recurso más corto o uno en el que pueda pintar. Cuando el material no se ajusta, se lo explica él mismo al final, en tono de broma para que el niño se divierta. Considera que las canciones son el formato más útil por ser interactivas, sobre todo las que muestran la letra como subtítulos para que los niños canten. Adapta, combina o crea material propio muy poco: lo que más le limita es el tiempo, porque le gustaría hacerlo pero su trabajo no se lo permite, y tampoco se considera lo bastante creativo, por lo que recurre a lo que ya está en YouTube. Ha usado inteligencia artificial una vez, para crear una imagen que sus hijos pudieran pintar y así desarrollar su habilidad con el lápiz y los colores, y no comentó preocupaciones al respecto. Le parecería útil una aplicación o programa que le permita elegir qué quiere que su hijo vea, escuche o con qué interactúe, y la usaría sobre todo cuando esté en casa con él. Sobre definir los elementos de un cuento antes de usarlo, mencionó que le gustaría incluir personajes con los que su hijo pueda identificarse o personajes que ya existen, como los héroes de Marvel.
+<p align="center">
+  <img src="imgs/interviews/entrevista3segmento1.png" alt="Evidencia de la entrevista a Bruno Ontón, padre" title="Entrevista 2 — Segmento Padres y Cuidadores: Bruno Ontón" width="850" />
 </p>
 
 **Segmento objetivo 2: Docentes**
