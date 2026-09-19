@@ -2147,21 +2147,73 @@ La Mobile Application obtiene Story, Story Pages y assets desde la API. El Story
 
 Los Bounded Context Canvases se construyen iterativamente mediante Context Overview Definition, Business Rules Distillation & Ubiquitous Language Capture, Capability Analysis, Capability Layering, Dependencies Capture y Design Critique.
 
-![Creative Authoring Bounded Context Canvas](imgs/diagrams/creativeAuthoringBoundedContextCanvas.png)
+### 1. Creative Authoring Bounded Context Canvas
 
-Creative Authoring concentra Character Management, Setting Management, Image Configuration, Story Authoring, Story Page Management, Music Configuration, Prompt Composition, Generation Request, Content Editing y Regeneration Request. Es el Core Domain porque expresa la intención educativa y creativa definida por el adulto. Depende de Identity & Access para autorización, de Generative Media para resultados y de Content Library para reutilización.
+```text
++------------------------------------------------------------------------------------+
+|                             CREATIVE AUTHORING CANVAS                              |
+| Tipo: Core Domain                                                                  |
++--------------------------------------------------+---------------------------------+
+| PURPOSE:                                         | UBIQUITOUS LANGUAGE:            |
+| Concentrar la intención educativa y creativa      | • Story, Story Page             |
+| del usuario adulto para estructurar cuentos y     | • Character, Scenario           |
+| recursos pedagógicos.                            | • Educational Topic             |
+|                                                  | • Prompt Configuration          |
+|                                                  | • Scene Parameters              |
++--------------------------------------------------+---------------------------------+
+| CAPABILITIES:                                    | DEPENDENCIES & INTERFACES:      |
+| • Character Management & Setting Management      | • Identity & Access (Auth)      |
+| • Story Authoring & Story Page Management        | • Generative Media (Requests)   |
+| • Image Configuration & Music Configuration      | • Content Library (Persistence) |
+| • Prompt Composition & Regeneration Requests     |                                 |
++--------------------------------------------------+---------------------------------+
 
-![Generative Media Bounded Context Canvas](imgs/diagrams/generativeMediaBoundedContextCanvas.png)
++------------------------------------------------------------------------------------+
+|                             GENERATIVE MEDIA CANVAS                                |
+| Tipo: Supporting Domain                                                            |
++--------------------------------------------------+---------------------------------+
+| PURPOSE:                                         | UBIQUITOUS LANGUAGE:            |
+| Orquestar y procesar solicitudes de generación   | • Generation Job, Prompt Payload|
+| multimedia asíncrona mediante modelos IA.        | • Generation Status (Pending...) |
+|                                                  | • Port, Adapter, Media Output   |
++--------------------------------------------------+---------------------------------+
+| CAPABILITIES:                                    | DEPENDENCIES & INTERFACES:      |
+| • Image Generation & Music Generation            | • External AI Services (ACL)    |
+| • Generation Job Management & Result Handling    | • ImageGeneratorPort            |
+| • Style Profile Selection                        | • MusicGeneratorPort            |
+| • StoryTextGeneratorPort                         |                                 |
++--------------------------------------------------+---------------------------------+
 
-Generative Media orquesta Image Generation, Music Generation, StoryTextGeneratorPort, Generation Job Management, Style Profile Selection, Generation Configuration y Generation Result Handling. Sus adapters implementan ImageGeneratorPort y MusicGeneratorPort; `StoryTextGeneratorPort` permanece independiente de proveedor porque no hay un modelo de texto aprobado.
++------------------------------------------------------------------------------------+
+|                             CONTENT LIBRARY CANVAS                                 |
+| Tipo: Generic / Supporting Domain                                                  |
++--------------------------------------------------+---------------------------------+
+| PURPOSE:                                         | UBIQUITOUS LANGUAGE:            |
+| Gestionar el ciclo de vida, la organización y la | • Library Item, Asset Reference |
+| persistencia de los recursos creados.            | • Metadata, Resource Category   |
+|                                                  | • Storage Path, Filter Criteria |
++--------------------------------------------------+---------------------------------+
+| CAPABILITIES:                                    | DEPENDENCIES & INTERFACES:      |
+| • Save Content & Update Saved Content            | • File System / Cloud Storage   |
+| • Browse Library & Retrieve Content              | • Relational Database (Metadata)|
+| • Store Generation Metadata                      |                                 |
+| • Retrieve Story for Mobile / Generated Assets   |                                 |
++--------------------------------------------------+---------------------------------+
 
-![Content Library Bounded Context Canvas](imgs/diagrams/contentLibraryBoundedContextCanvas.png)
-
-Content Library conserva Save Content, Browse Library, Retrieve Content, Load Original Configuration, Update Saved Content, Retrieve Story for Mobile, Retrieve Generated Assets y Store Generation Metadata. Mantiene metadata y configuración en SQLite, y referencias hacia assets del filesystem local, sin almacenar archivos multimedia como BLOB.
-
-![Identity and Access Bounded Context Canvas](imgs/diagrams/identityAccessBoundedContextCanvas.png)
-
-Identity & Access administra Register, Login, JWT Issuance, Token Refresh, Password Recovery y Child PIN Management. Google Identity puede actuar como servicio externo únicamente si permanece dentro del alcance vigente. El contexto no conoce reglas de creación ni de generación.
++------------------------------------------------------------------------------------+
+|                          IDENTITY & ACCESS CANVAS                                  |
+| Tipo: Generic Domain                                                               |
++--------------------------------------------------+---------------------------------+
+| PURPOSE:                                         | UBIQUITOUS LANGUAGE:            |
+| Gestionar la seguridad, autenticación y          | • User Account, JWT Token       |
+| mecanismos de protección de interfaz para niños. | • Parental PIN, Access Scope    |
+|                                                  | • Auth Credentials, Role        |
++--------------------------------------------------+---------------------------------+
+| CAPABILITIES:                                    | DEPENDENCIES & INTERFACES:      |
+| • Register, Login & Password Recovery            | • OAuth / Google Identity       |
+| • JWT Issuance & Token Refresh                   | • Client Applications           |
+| • Child PIN Management                           |                                 |
++--------------------------------------------------+---------------------------------+
 
 <a id="425-context-mapping"></a>
 ### 4.2.5. Context Mapping
