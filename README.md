@@ -2214,21 +2214,21 @@ El modelo C4 presenta la solución de forma progresiva. System Landscape delimit
 <a id="431-software-architecture-system-landscape-diagram"></a>
 ### 4.3.1. Software Architecture System Landscape Diagram
 
-![Tale Star System Landscape](imgs/diagrams/taleStarSystemLandscape.jpg)
+![Tale Star System Landscape](imgs/diagrams/taleStarSystemLandscape.png)
 
 El System Landscape sitúa a padres/cuidadores y docentes como usuarios de Tale Star. La plataforma incluye Landing Page, Web Application y Mobile Application, y puede integrarse con Google Identity si dicha opción se conserva en los requisitos. Los motores locales de IA y el runtime AR no se presentan como sistemas independientes para el usuario final.
 
 <a id="432-software-architecture-context-level-diagram"></a>
 ### 4.3.2. Software Architecture Context Level Diagram
 
-![Tale Star System Context](imgs/diagrams/taleStarSystemContext.jpg)
+![Tale Star System Context](imgs/diagrams/taleStarSystemContext.png)
 
 El diagrama de contexto muestra Parent/Caregiver y Teacher interactuando con Tale Star Platform. Google Identity aparece únicamente como sistema externo opcional para autenticación. SQLite, FastAPI, runtimes de IA y Bounded Contexts se omiten porque pertenecen a niveles internos posteriores.
 
 <a id="433-software-architecture-container-level-diagram"></a>
 ### 4.3.3. Software Architecture Container Level Diagram
 
-![Tale Star Container Diagram](imgs/diagrams/taleStarContainerDiagram.jpg)
+![Tale Star Container Diagram](imgs/diagrams/taleStarContainerDiagram.png)
 
 Landing Page y Web Application se desarrollan con Vue 3, TypeScript y Vite. La Mobile Application utiliza Flutter y Dart, incorpora Story Reader y ArRuntime local. Ambas aplicaciones consumen la REST API mediante HTTPS/JSON.
 
