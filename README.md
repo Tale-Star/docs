@@ -2228,15 +2228,15 @@ Los Bounded Context Canvases se construyen iterativamente mediante Context Overv
 
 La evaluación de alternativas evita asumir desde el inicio la partición definitiva del dominio.
 
-![Context Map Candidate A](imgs/diagrams/taleStarContextMapCandidateA.png)
+![Context Map Candidate A](imgs/diagrams/taleStarContextMapCandidateA.jpg)
 
 El candidato A separa Identity & Access, Story, Image Generation, Music Generation y Library. Se rechaza porque introduce demasiados límites, duplica conceptos creativos y aumenta la coordinación para una sola intención de autoría.
 
-![Context Map Candidate B](imgs/diagrams/taleStarContextMapCandidateB.png)
+![Context Map Candidate B](imgs/diagrams/taleStarContextMapCandidateB.jpg)
 
 El candidato B agrupa Generative Media y Content Library. Se rechaza porque mezcla la ejecución de modelos con el lifecycle y persistencia del contenido.
 
-![Tale Star Context Map](imgs/diagrams/taleStarContextMap.png)
+![Tale Star Context Map](imgs/diagrams/taleStarContextMap.jpg)
 
 El mapa final define a Identity & Access como supplier de identidad y autorización para Creative Authoring. Creative Authoring es customer de Generative Media y Content Library; Generative Media usa Anti-Corruption Layers/adapters hacia los runtimes locales. No se emplea Shared Kernel: los contratos explícitos, ports y eventos de dominio evitan compartir modelos entre contextos con responsabilidades diferentes.
 
