@@ -2120,56 +2120,287 @@ La trazabilidad obtenida conecta Requirements con ADD Inputs, Architectural Driv
 <a id="51-bounded-context-creative-authoring"></a>
 ## 5.1. Bounded Context: Creative Authoring
 
+Creative Authoring conserva la intención escrita por el usuario para personajes, escenarios, perfiles visuales e historias. En el backend es un módulo del monolito modular FastAPI: las rutas validan HTTP, `CreativeAuthoringService` aplica ownership y referencias, y un repositorio traduce entre entidades Python y filas SQLAlchemy. Este contexto administra configuración narrativa; los modelos de imagen y música se ejecutan en Generative Media.
+
 <a id="511-domain-layer"></a>
 ### 5.1.1. Domain Layer
+
+El dominio contiene entidades dataclass independientes de HTTP y persistencia. Todas heredan `Entity`, que asigna un UUID y define igualdad por tipo e identidad. El código no declara una clase `AggregateRoot`, value objects ni enums propios de Creative Authoring; tampoco encapsula páginas dentro de `Story`. La asociación y sus reglas se coordinan en Application.
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| `Character` | Entity | Recurso reutilizable con `owner_id`, `name`, `description`, `visual_description`, `attributes` y fechas. | Domain |
+| `Scenario` | Entity | Recurso reutilizable con nombre, descripción, descripción visual, seed opcional y fechas. | Domain |
+| `StyleProfile` | Entity | Configuración visual con nombre, descripción, `prompt_modifier`, `visual_settings` y fechas. | Domain |
+| `Story` | Entity | Historia con propietario, título, descripción, referencias UUID opcionales a Scenario y StyleProfile, seed y fechas. | Domain |
+| `StoryPage` | Entity | Página con `story_id`, número, acción, texto, `visual_config`, seed opcional, lista ordenada de `character_ids` y fechas. | Domain |
+| `CreativeResourceNotFound` | Excepción de dominio | Indica recursos ausentes o referencias no pertenecientes al propietario validado. | Domain |
+| `DuplicatePageNumber` | Excepción de dominio | Representa la repetición del número de página dentro de una historia. | Domain |
+
+Las relaciones usan identificadores, no objetos anidados. Cada Story puede apuntar a cero o un Scenario y a cero o un StyleProfile; ambos recursos pueden ser referenciados por varias historias del mismo propietario. Una historia tiene cero o más StoryPage, ordenadas por `page_number`. Cada página referencia cero o más Character, y un personaje puede aparecer en varias páginas. El orden de los personajes se conserva mediante una posición en la tabla asociativa.
+
+El servicio verifica que Scenario y StyleProfile pertenezcan al propietario de la Story, que la página pertenezca a una Story propia y que todos los Characters asociados sean del mismo propietario. La base de datos aplica unicidad del número por historia y cascadas; no hay una entidad de dominio para la asociación ni reglas de contenido adicionales en los constructores.
 
 <a id="512-interface-layer"></a>
 ### 5.1.2. Interface Layer
 
+El router `app.creative_authoring.interfaces.routes.router` se monta bajo `/api/v1` y define las rutas listadas a continuación. Todas requieren un Bearer JWT válido mediante `get_current_user`. El owner se obtiene del usuario autenticado, nunca del cuerpo; las respuestas omiten `owner_id`. Un recurso ajeno se responde como `404` para no revelar su existencia.
+
+Los esquemas Pydantic prohíben propiedades extra. Nombres de Character, Scenario y StyleProfile: 1–120 caracteres tras recortar espacios; título de Story: 1–200. Seed: `0..4 294 967 295`. Una página admite hasta 50 UUID de personajes y `page_number` entre 1 y 1000. Los PATCH aplican campos enviados; `null` permite limpiar seed y referencias opcionales donde se indica. En campos no anulables, `null` se ignora.
+
+#### Characters
+
+| Método | Path | Request | Response | Códigos relevantes |
+| --- | --- | --- | --- | --- |
+| `POST` | `/api/v1/characters` | `CharacterCreateRequest`: `name`, `description` (máx. 5000), `visual_description` (máx. 4000), `attributes` JSON. | `CharacterResponse`, `201 Created`. | `401`, `422` |
+| `GET` | `/api/v1/characters?q=...` | `q` opcional, máx. 120. | Lista de `CharacterResponse`, `200 OK`. | `401`, `422` |
+| `GET` | `/api/v1/characters/{item_id}` | UUID en path. | `CharacterResponse`, `200 OK`. | `401`, `404` |
+| `PATCH` | `/api/v1/characters/{item_id}` | `CharacterPatchRequest` parcial. | `CharacterResponse`, `200 OK`. | `401`, `404`, `422` |
+| `DELETE` | `/api/v1/characters/{item_id}` | UUID en path. | Sin cuerpo, `204 No Content`. | `401`, `404` |
+
+#### Scenarios
+
+| Método | Path | Request | Response | Códigos relevantes |
+| --- | --- | --- | --- | --- |
+| `POST` | `/api/v1/scenarios` | `ScenarioCreateRequest`: `name`, `description` (máx. 5000), `visual_description` (máx. 4000), `seed` opcional. | `ScenarioResponse`, `201 Created`. | `401`, `422` |
+| `GET` | `/api/v1/scenarios?q=...` | `q` opcional, máx. 120. | Lista de `ScenarioResponse`, `200 OK`. | `401`, `422` |
+| `GET` | `/api/v1/scenarios/{item_id}` | UUID en path. | `ScenarioResponse`, `200 OK`. | `401`, `404` |
+| `PATCH` | `/api/v1/scenarios/{item_id}` | `ScenarioPatchRequest` parcial. | `ScenarioResponse`, `200 OK`. | `401`, `404`, `422` |
+| `DELETE` | `/api/v1/scenarios/{item_id}` | UUID en path. | Sin cuerpo, `204 No Content`. | `401`, `404` |
+
+#### Style Profiles
+
+| Método | Path | Request | Response | Códigos relevantes |
+| --- | --- | --- | --- | --- |
+| `POST` | `/api/v1/style-profiles` | `StyleProfileCreateRequest`: `name`, `description` (máx. 3000), `prompt_modifier` (máx. 4000), `visual_settings` JSON. | `StyleProfileResponse`, `201 Created`. | `401`, `422` |
+| `GET` | `/api/v1/style-profiles?q=...` | `q` opcional, máx. 120. | Lista de `StyleProfileResponse`, `200 OK`. | `401`, `422` |
+| `GET` | `/api/v1/style-profiles/{item_id}` | UUID en path. | `StyleProfileResponse`, `200 OK`. | `401`, `404` |
+| `PATCH` | `/api/v1/style-profiles/{item_id}` | `StyleProfilePatchRequest` parcial. | `StyleProfileResponse`, `200 OK`. | `401`, `404`, `422` |
+| `DELETE` | `/api/v1/style-profiles/{item_id}` | UUID en path. | Sin cuerpo, `204 No Content`. | `401`, `404` |
+
+#### Stories
+
+| Método | Path | Request | Response | Códigos relevantes |
+| --- | --- | --- | --- | --- |
+| `POST` | `/api/v1/stories` | `StoryCreateRequest`: `title`, `description` (máx. 10000), `scenario_id`, `style_profile_id`, `seed` opcionales. | `StoryResponse`, `201 Created`. | `401`, `404` por referencia no existente/no propia, `422` |
+| `GET` | `/api/v1/stories?q=...` | `q` opcional, máx. 200. | Lista de `StoryResponse`, `200 OK`. | `401`, `422` |
+| `GET` | `/api/v1/stories/{story_id}` | UUID en path. | `StoryResponse`, `200 OK`. | `401`, `404` |
+| `PATCH` | `/api/v1/stories/{story_id}` | `StoryPatchRequest` parcial; permite limpiar referencias con `null`. | `StoryResponse`, `200 OK`. | `401`, `404`, `422` |
+| `DELETE` | `/api/v1/stories/{story_id}` | UUID en path. | Sin cuerpo, `204 No Content`. | `401`, `404` |
+
+#### Story Pages
+
+| Método | Path | Request | Response | Códigos relevantes |
+| --- | --- | --- | --- | --- |
+| `POST` | `/api/v1/stories/{story_id}/pages` | `StoryPageCreateRequest`: `page_number`, `action` (máx. 2000), `text` (máx. 20000), `visual_config`, `character_ids`, `seed`. | `StoryPageResponse`, `201 Created`. | `401`, `404`, `409` número repetido, `422` |
+| `GET` | `/api/v1/stories/{story_id}/pages` | UUID de historia. | Lista ordenada de `StoryPageResponse`, `200 OK`. | `401`, `404` |
+| `GET` | `/api/v1/stories/{story_id}/pages/{page_id}` | UUID de historia y página. | `StoryPageResponse`, `200 OK`. | `401`, `404` |
+| `PATCH` | `/api/v1/stories/{story_id}/pages/{page_id}` | `StoryPagePatchRequest` parcial; admite limpiar seed. | `StoryPageResponse`, `200 OK`. | `401`, `404`, `409`, `422` |
+| `DELETE` | `/api/v1/stories/{story_id}/pages/{page_id}` | UUID de historia y página. | Sin cuerpo, `204 No Content`. | `401`, `404` |
+
+Las respuestas incluyen UUID y fechas; `StoryPageResponse` también expone `character_ids`. `401` cubre token ausente, inválido o vencido; `422` corresponde a validación de entrada. Un número de página duplicado se traduce a `409 Conflict` con código `duplicate_page_number`.
+
 <a id="513-application-layer"></a>
 ### 5.1.3. Application Layer
+
+`CreativeAuthoringService` concentra los casos de uso y depende del protocolo `CreativeAuthoringRepository`; no define Commands ni Handlers. Los métodos `create_*`, `get_*`, `list_*`, `save_*` y `delete_*` delegan operaciones. `save_*` implementa Update y actualiza `updated_at` en UTC.
+
+| Caso de uso | Coordinación del servicio |
+| --- | --- |
+| Create | Crea Character, Scenario y StyleProfile; Story valida sus referencias; StoryPage valida la propiedad de Story y Characters. |
+| Get | Consulta por ID y propietario. En páginas comprueba primero la Story. La ausencia se expresa como `None` y la interfaz devuelve `404`. |
+| List | Filtra por propietario, busca opcionalmente por nombre/título sin distinguir mayúsculas y ordena; las páginas se ordenan por número. |
+| Update | Confirma ownership. Story revalida Scenario y StyleProfile; StoryPage revalida Story y Characters. La ausencia genera `CreativeResourceNotFound`. |
+| Delete | Elimina solo con ID y propietario coincidentes; retorna `False` si no existe y la interfaz responde `404`. |
+
+El puerto define lectura/escritura y `owns_characters`. La validación evita enlazar recursos ajenos aunque se conozca su UUID. El repositorio filtra por `owner_id` en operaciones individuales y en consultas de páginas. La colisión de unicidad de una página se traduce a `DuplicatePageNumber`. Creative Authoring no invoca generadores: las rutas de Generative Media crean esos jobs.
 
 <a id="514-infrastructure-layer"></a>
 ### 5.1.4. Infrastructure Layer
 
+`SqlAlchemyCreativeAuthoringRepository` implementa el puerto y mapea explícitamente entidades de `domain.models` a registros de `infrastructure.models`. Los modelos ORM no se exponen en las rutas. El adaptador confirma transacciones, hace rollback ante errores y convierte la colisión de unicidad de página a `DuplicatePageNumber`.
+
+`get_creative_authoring_service` obtiene una sesión a través de `get_db_session` y esta se cierra al terminar la solicitud. `create_app` crea engine y fábrica de sesiones compartidos. SQLite local habilita claves foráneas, `busy_timeout`, WAL y `synchronous=NORMAL`; Alembic define el esquema en la revisión `20260930_0003_mvp_contexts`.
+
+| Tabla / modelo ORM | PK y columnas (tipo SQLAlchemy; `?` significa nullable) | FK y cascadas | Restricciones e índices |
+| --- | --- | --- | --- |
+| `creative_characters` / `CharacterRecord` | `id Uuid`; `owner_id Uuid`; `name String(120)`; `description Text`; `visual_description Text`; `attributes JSON`; `created_at DateTime(timezone=True)`; `updated_at DateTime(timezone=True)`. Todo NOT NULL. | `owner_id → identity_users.id ON DELETE CASCADE` (tabla externa). | Índice no único `(owner_id, name)`. |
+| `creative_scenarios` / `ScenarioRecord` | `id Uuid`; `owner_id Uuid`; `name String(120)`; `description Text`; `visual_description Text`; `seed Integer?`; `created_at DateTime(timezone=True)`; `updated_at DateTime(timezone=True)`. | `owner_id → identity_users.id ON DELETE CASCADE`. | Índice no único `(owner_id, name)`. |
+| `creative_style_profiles` / `StyleProfileRecord` | `id Uuid`; `owner_id Uuid`; `name String(120)`; `description Text`; `prompt_modifier Text`; `visual_settings JSON`; `created_at DateTime(timezone=True)`; `updated_at DateTime(timezone=True)`. Todo NOT NULL. | `owner_id → identity_users.id ON DELETE CASCADE`. | Índice no único `(owner_id, name)`. |
+| `creative_stories` / `StoryRecord` | `id Uuid`; `owner_id Uuid`; `title String(200)`; `description Text`; `scenario_id Uuid?`; `style_profile_id Uuid?`; `seed Integer?`; `created_at DateTime(timezone=True)`; `updated_at DateTime(timezone=True)`. | owner a identity con cascada; `scenario_id` y `style_profile_id` a sus tablas con `ON DELETE SET NULL`. | Índice no único `(owner_id, title)`. |
+| `creative_story_pages` / `StoryPageRecord` | `id Uuid`; `story_id Uuid`; `page_number Integer`; `action Text`; `text Text`; `visual_config JSON`; `seed Integer?`; `created_at DateTime(timezone=True)`; `updated_at DateTime(timezone=True)`. | `story_id → creative_stories.id ON DELETE CASCADE`. | Índice único `(story_id, page_number)`. |
+| `creative_story_page_characters` / `StoryPageCharacterRecord` | `page_id Uuid`; `character_id Uuid`; `position Integer`; todo NOT NULL; no tiene ID propio. | page a pages y character a characters, ambos con `ON DELETE CASCADE`. | PK compuesta `(page_id, character_id)`; position no es único. |
+
+`Uuid(as_uuid=True)`, `JSON` y `DateTime(timezone=True)` son los tipos declarados por SQLAlchemy/Alembic y SQLite los adapta físicamente. No hay nombres únicos por propietario. La relación Story-Scenario/StyleProfile es opcional; borrar esos recursos limpia las FK. Borrar Story elimina páginas y asociaciones; borrar Character elimina asociaciones, no páginas.
+
 <a id="515-bounded-context-software-architecture-component-level-diagrams"></a>
 ### 5.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+El C4 muestra la ruta desde Web Application hasta el servicio y repositorio de Creative Authoring, junto con SQLite. La fuente Structurizr DSL conserva el modelo y la vista de componentes de este contexto.
+
+![Creative Authoring Component Diagram](assets/diagrams/creative-authoring-component.png)
+
+La interfaz FastAPI adapta esquemas HTTP a entidades; `CreativeAuthoringService` valida ownership y referencias; `SqlAlchemyCreativeAuthoringRepository` implementa el puerto y persiste las seis tablas del contexto. La Web Application consume la API por HTTPS/JSON. El módulo de autoría no invoca directamente a los adaptadores de generación.
 
 <a id="516-bounded-context-software-architecture-code-level-diagrams"></a>
 ### 5.1.6. Bounded Context Software Architecture Code Level Diagrams
 
+Los diagramas de código detallan las entidades del dominio y las tablas que implementan su persistencia. Las fuentes PlantUML muestran el UML y el diseño relacional derivados del código y la revisión Alembic.
+
 <a id="5161-bounded-context-domain-layer-class-diagrams"></a>
 #### 5.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+El UML muestra la herencia desde `Entity`, las cinco entidades y sus referencias identificadoras. `CreativeAuthoringRepository` no aparece como interfaz de dominio porque su `Protocol` vive en Application.
+
+![Creative Authoring Domain Class Diagram](assets/diagrams/creative-authoring-domain-class.png)
+
+`Story` referencia opcionalmente un `Scenario` y un `StyleProfile`; cada página depende de una Story y se asocia con varios Characters. El dominio no almacena objetos completos en esas referencias. No hay Aggregate Root formal, value object ni enum en este contexto.
 
 <a id="5162-bounded-context-database-design-diagram"></a>
 #### 5.1.6.2. Bounded Context Database Design Diagram
 
+El diseño incluye únicamente las tablas de Creative Authoring. Las FK `owner_id` apuntan a `identity_users.id`, fuera de este conjunto de tablas, y se identifican sin añadir una tabla externa.
+
+![Creative Authoring Database Design Diagram](assets/diagrams/creative-authoring-database.png)
+
+Story referencia opcionalmente Scenario y StyleProfile con `SET NULL`; las páginas dependen de su Story con cascada. `creative_story_page_characters` resuelve la asociación muchos-a-muchos con PK compuesta. El índice único `(story_id, page_number)` implementa la numeración única por historia.
+
 <a id="52-bounded-context-generative-media"></a>
 ## 5.2. Bounded Context: Generative Media
+
+Generative Media recibe solicitudes de imágenes y música, las conserva como jobs consultables y ejecuta modelos fuera del ciclo HTTP. Lo implementan una API FastAPI y un proceso Worker independiente, coordinados por `generation_jobs`, un runtime configurable y almacenamiento local de assets.
 
 <a id="521-domain-layer"></a>
 ### 5.2.1. Domain Layer
 
+`GenerationJob` es el agregado documentado en `domain.generation_job`: contiene tipo, payload, owner opcional, seed, estado, resultado, error, timestamps e intentos. Hereda `Entity` para la identidad UUID. Tipo y estado usan `GenerationType` y `GenerationStatus`; el dominio no declara value objects ni puertos propios.
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| `GenerationJob` | Aggregate Root / Entity | Solicitud de generación y estado/resultado persistidos. | Domain |
+| `GenerationType` | Enum | `IMAGE = "Image"` o `MUSIC = "Music"`. | Domain |
+| `GenerationStatus` | Enum | `PENDING`, `PROCESSING`, `SUCCEEDED` o `FAILED`, serializados como PascalCase. | Domain |
+| `InvalidGenerationJobTransition` | Excepción de dominio | Rechaza el inicio, éxito o fallo desde un estado no permitido. | Domain |
+
+El ciclo normal inicia en `Pending`. `mark_processing` solo admite Pending, establece `started_at` e incrementa `attempts`; `mark_succeeded` solo admite Processing, conserva el resultado, limpia error y establece `completed_at`; `mark_failed` solo admite Processing, limita el mensaje a 2000 caracteres y establece el cierre. Un job terminal no tiene transición de reintento. Seed, marcas de tiempo de ejecución, resultado y error admiten nulos según la fase; payload es siempre diccionario. Las marcas se generan en UTC si no se proporcionan.
+
+En ejecución, el repositorio cambia atómicamente la fila de Pending a Processing e incrementa intentos al reclamarla, antes de devolverla al procesador. Esto conserva el ciclo de vida sin llevar detalles del Worker al dominio.
+
 <a id="522-interface-layer"></a>
 ### 5.2.2. Interface Layer
+
+El router `app.generative_media.interfaces.routes.router` se monta bajo `/api/v1/generations`. `media_router` se monta bajo `/api/v1/media`. Crear/consultar jobs y servir medios requiere Bearer JWT; todos los esquemas Pydantic prohíben campos extra. `422` indica entrada inválida; `404` oculta jobs y assets inexistentes o ajenos.
+
+| Método | Path | Request | Response | Códigos relevantes |
+| --- | --- | --- | --- | --- |
+| `POST` | `/api/v1/generations/images` | `ImageGenerationRequest`: `Action`/`Emotion` (máx. 200), `Scene`/`Moment` (500), `Extra` (2000), `FreePrompt` (4000), `Style` (200), `Characters[]` y `Objects[]` (hasta 50 cada una), `Seed` (`0..4 294 967 295`). | `GenerationJobResponse`, `202 Accepted`, estado inicial Pending. | `202`, `401`, `422` |
+| `POST` | `/api/v1/generations/music` | `MusicGenerationRequest`: `Caption` (máx. 4000), `Duration` (10–600 s), `Bpm` (30–300), `Voice` (100), `Language` (Español/English), `Output` (song/instrumental), `Genre[]`, `Mood[]`, `Instruments[]`, `Production[]` (hasta 50 cada una), `Sections[]` (hasta 50; `Type` máx. 100, `Modifier` 300 y `Text` 2000), `Seed` (`0..4 294 967 295`). | `GenerationJobResponse`, `202 Accepted`, estado inicial Pending. | `202`, `401`, `422` |
+| `GET` | `/api/v1/generations/{job_id}` | UUID del job. | `GenerationJobResponse` con estado y resultado/error. | `200`, `401`, `404` |
+| `GET` | `/api/v1/media/assets/{asset_id}` | UUID del asset. | Flujo binario con MIME type persistido y `X-Content-Type-Options: nosniff`. | `200`, `401`, `404` |
+| `GET` | `/api/v1/media/{asset_key:path}` | Clave relativa de almacenamiento. | Flujo binario autenticado. | `200`, `401`, `404` |
+
+Los POST devuelven `202 Accepted` porque validan y guardan el job sin esperar inferencia ni devolver el archivo. No hay endpoint de listado de jobs. `GenerationJobResponse` contiene `id`, `type`, `status`, `payload`, `result`, `error_message`, `seed`, `created_at`, `started_at`, `completed_at` y `attempts`. Al finalizar, el resultado incluye `asset_id` y claves de almacenamiento.
+
+En imagen, el router enriquece el payload con personajes propios y detalles de StyleProfile del mismo usuario si el nombre coincide sin distinguir mayúsculas. En música, persiste el contrato estructurado recibido. Solo el dueño puede consultar el job.
 
 <a id="523-application-layer"></a>
 ### 5.2.3. Application Layer
 
+`GenerationJobService` implementa creación, consulta de job y resolución de asset por medio de `GenerationJobRepository`. `create` construye y persiste un GenerationJob Pending; no inicia el modelo. `get` y `get_asset` delegan consultas con ownership. Las rutas no acceden directamente a SQLAlchemy.
+
+| Puerto / contrato | Responsabilidad |
+| --- | --- |
+| `ImageGeneratorPort` | Genera imagen y devuelve `GeneratedMedia`. |
+| `MusicGeneratorPort` | Genera audio y devuelve `GeneratedMedia`. |
+| `GenerationJobRepository` | Añade/consulta/guarda jobs, resuelve assets propios y reclama el siguiente pendiente. |
+| `GenerationRuntimePort` | Activa runtime por `GenerationType` y libera recursos. |
+| `GenerationQueueLockPort` | Adquiere/libera el bloqueo de cola entre procesos. |
+| `AssetStorage` | Guarda, abre y elimina bytes por ID o clave relativa. |
+
+`GeneratedMedia` es un DTO inmutable de Application, no un value object de dominio. Lleva bytes, extensión, MIME type y metadata opcional de seed, dimensiones, duración, BPM e idioma. `StoredMediaAsset` encapsula ID, ruta relativa y MIME type.
+
+Flujo de generación:
+
+1. El cliente autenticado envía una solicitud a `/generations/images` o `/generations/music`.
+2. La ruta valida el schema y, para imágenes, resuelve personajes y perfiles visuales propios.
+3. `GenerationJobService` crea el GenerationJob; el repositorio confirma `Pending` y HTTP responde `202`.
+4. El Worker consulta periódicamente; el repositorio reclama el pendiente más antiguo con un `UPDATE` condicional atómico a Processing, y persiste `started_at` e `attempts`.
+5. `GenerationWorker` selecciona el generador por tipo, activa runtime y obtiene bytes más metadata.
+6. Crea un UUID para el asset y `AssetStorage` escribe el archivo bajo una clave relativa del propietario.
+7. Construye resultado con asset ID, ruta, MIME type, extensión, seed y metadata disponible; llama a `mark_succeeded` y persiste estado terminal.
+8. El cliente consulta `GET /generations/{job_id}` y lee el asset mediante `/media/assets/{asset_id}` o clave relativa.
+
+Si generador, runtime o guardado producen una excepción, el worker marca `Failed`, limita y persiste el mensaje con `mark_failed`, registra el error y guarda el job. `KeyboardInterrupt` también se registra como fallo con un mensaje de interrupción y se propaga para apagar el proceso. El resultado no se expone como exitoso antes de persistir metadata y estado.
+
+`run_once` intenta el lock antes de reclamar el job. Si no lo obtiene, no procesa; mientras lo mantiene, procesa uno y libera el bloqueo en `finally`. `FileGenerationQueueLock` usa un lock de archivo con timeout cero para serializar workers locales. `SequentialGenerationRuntime` mantiene un modelo activo; al cambiar de tipo descarga el anterior, recolecta memoria y limpia caché CUDA si PyTorch está cargado y CUDA disponible. La API sigue atendiendo consultas mientras el worker infiere.
+
 <a id="524-infrastructure-layer"></a>
 ### 5.2.4. Infrastructure Layer
+
+`GenerationJobRecord` mapea la tabla y `SqlAlchemyGenerationJobRepository` serializa enums a sus valores. `claim_next` selecciona el Pending más antiguo y lo cambia mediante un solo `UPDATE` condicional con `RETURNING`; así dos procesos no reclaman la misma fila. El repositorio filtra por ID y propietario, y resuelve un asset consultando `result.asset_id` de jobs exitosos.
+
+| Componente | Responsabilidad | Implementación |
+| --- | --- | --- |
+| `GenerationJobRecord` | Mapeo ORM y restricciones. | SQLAlchemy, `generation_jobs`. |
+| `SqlAlchemyGenerationJobRepository` | Persistencia, ownership, consulta de assets y reclamo atómico. | SQLAlchemy y sesión compartida. |
+| `ZImageAdapter` | Traduce prompt y ejecuta Z-Image-Turbo. | Diffusers/PyTorch en el Worker. |
+| `AceStepAdapter` | Mapea caption, secciones e idioma al contrato ACE-Step y obtiene audio. | API Python local de ACE-Step 1.5 Turbo. |
+| `SequentialGenerationRuntime` | Mantiene un modelo activo y libera el anterior. | Adaptador de ciclo de vida Image/Music. |
+| `FileGenerationQueueLock` | Serializa workers que comparten GPU local. | `filelock` y ruta configurada. |
+| `LocalAssetStorage` | Guarda bytes y valida ownership/rutas. | Directorio indicado por `MEDIA_DIRECTORY`. |
+| `FakeImageGeneratorAdapter` / `FakeMusicGeneratorAdapter` | Generadores livianos para desarrollo y pruebas. | SVG y WAV sintetizados; son la configuración predeterminada. |
+
+`worker.__main__` compone repositorio, generadores, runtime, lock y storage en un proceso separado de FastAPI. Se elige `fake` o `zimage` para imagen, y `fake` o `acestep` para música; ambos valores de configuración predeterminados son `fake`. Z-Image requiere dependencias opcionales y ACE-Step una instalación indicada por `ACESTEP_PROJECT_ROOT`. API y Worker comparten URL de base de datos y directorio de medios. No existe broker externo: la tabla es la cola durable.
+
+**Z-Image-Turbo.** `ZImageAdapter` carga `ZImagePipeline` de Diffusers desde `ZIMAGE_MODEL_PATH` (por defecto `Tongyi-MAI/Z-Image-Turbo`) con PyTorch. `auto` usa CUDA disponible y CPU en caso contrario; `cuda` falla si PyTorch no detecta CUDA. El dtype automático usa `float32` en CPU, `bfloat16` cuando CUDA lo soporta y `float16` en otro caso. El offload configurable mueve módulos a CPU de forma secuencial o por modelo. Ancho y alto admiten 256–1536, múltiplos de 16 (por defecto 512 × 512). Los pasos predeterminados son 8 y guidance scale es `0.0`. Se preserva el seed explícito o se genera uno aleatorio; la salida es PNG.
+
+El prompt combina personajes, acción, emoción, escena, momento, objetos, detalles, texto libre y modificador visual. Para español, MarianMT (`Helsinki-NLP/opus-mt-es-en`) se carga bajo demanda y corre en CPU. Los perfiles aportan instrucciones y opciones LoRA: `visual_settings` reconoce `zimage_lora_asset` y `zimage_lora_scale` (0–2); los assets LoRA se validan por SHA-256. El JSON del servidor registra perfiles predeterminados, instrucciones, rutas/IDs LoRA y escala. El StyleProfile propio puede aportar modificador y opciones para el job. Al cambiar o liberar perfil se descargan los pesos anteriores cuando aplica.
+
+**ACE-Step 1.5 Turbo.** `AceStepAdapter` inicializa `AceStepHandler` en el Worker con config `acestep-v15-turbo`, sin language model, thinking, flash attention ni compilación. Permite offload a CPU para handler/DiT y cuantización configurable. Envía tarea `text2music`, 8 pasos, shift `3.0`, método `ode`, batch size 1 y salida FLAC. Conserva el seed proporcionado o genera uno.
+
+`Output` selecciona canción o instrumental; el instrumental usa `[Instrumental]` como lyrics. Para canción, `Sections` aporta tipo, modificador y texto de cada sección. `Language` traduce Español/English a `es`/`en`. Caption combina texto base, género, mood, instrumentos, producción y dirección de voz; se envían duración y BPM. La API limita duración a 10–600 s y BPM a 30–300. El adapter limita la lectura al directorio temporal y admite WAV, FLAC, MP3, Opus y AAC; devuelve MIME y metadata aplicable de duración, BPM, idioma y seed.
+
+**Integración de prompts y assets.** Antes de encolar, `enrich_image_payload` inspecciona personajes propios. Considera los nombres elegidos en `Characters` y menciones `@nombre` en `Action`, `Emotion`, `Scene`, `Moment`, `Extra` y `FreePrompt`. Sustituye menciones conocidas con etiquetas de `visual_description`, `description` y atributos de texto/lista; agrega nombres/descripciones en `CharacterDescriptions`. No busca personajes de otros usuarios ni crea una FK desde el job. `Style` se compara con perfiles propios; si coincide, el payload guarda `StyleProfileDetails`.
+
+`LocalAssetStorage` escribe en `MEDIA_DIRECTORY/{owner_uuid_hex}/{primeros_dos_hex}/{asset_uuid_hex}{extension}` y devuelve clave POSIX relativa. Valida extensión, traversal, raíz y ownership. La API valida de nuevo la clave antes de transmitir; por ID consulta primero resultado exitoso del dueño. No hay tabla propia de assets: metadata en `generation_jobs.result` JSON y bytes en filesystem. La ruta transmite por bloques y cierra el stream.
+
+| Tabla / modelo ORM | PK y columnas (tipo SQLAlchemy; `?` significa nullable) | FK y restricciones |
+| --- | --- | --- |
+| `generation_jobs` / `GenerationJobRecord` | `id Uuid`; `owner_id Uuid?`; `type String(10)`; `status String(12)`; `payload JSON`; `result JSON?`; `error_message Text?`; `seed Integer?`; `created_at DateTime(timezone=True)`; `started_at DateTime(timezone=True)?`; `completed_at DateTime(timezone=True)?`; `attempts Integer DEFAULT 0`; el resto NOT NULL. | `id` PK; owner opcional → `identity_users.id ON DELETE CASCADE` (FK externa). Checks: tipos Image/Music; estados Pending/Processing/Succeeded/Failed; attempts ≥ 0. Índices `(status, created_at)` y `owner_id`. |
+
+`owner_id` se añade nullable en `20260930_0003_mvp_contexts` para compatibilidad con jobs preexistentes o sin cuenta; las rutas HTTP actuales siempre asignan usuario autenticado. Assets no tienen FK ni tabla.
 
 <a id="525-bounded-context-software-architecture-component-level-diagrams"></a>
 ### 5.2.5. Bounded Context Software Architecture Component Level Diagrams
 
+El C4 separa la API del Worker como contenedores/procesos distintos. La API recibe y consulta jobs; el Worker reclama los mismos registros, activa los adaptadores y escribe medios. Ambos acceden al directorio compartido. No se muestra broker porque la cola se materializa en `generation_jobs`.
+
+![Generative Media Component Diagram](assets/diagrams/generative-media-component.png)
+
+La Web Application invoca las rutas para crear jobs y consultar estado/assets. La interfaz usa `GenerationJobService` y su repositorio; en paralelo `GenerationWorker` usa su instancia de repositorio, lock y runtime, selecciona Z-Image o ACE-Step y persiste metadata/bytes con SQLAlchemy y `LocalAssetStorage`. La ruta multimedia sirve archivos del mismo almacenamiento.
+
 <a id="526-bounded-context-software-architecture-code-level-diagrams"></a>
 ### 5.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los diagramas de código presentan el agregado, sus estados y la tabla `generation_jobs`. `GeneratedMedia`, generadores y adaptadores pertenecen a Application o Infrastructure y no forman parte del UML de dominio.
 
 <a id="5261-bounded-context-domain-layer-class-diagrams"></a>
 #### 5.2.6.1. Bounded Context Domain Layer Class Diagrams
 
+El UML representa `GenerationJob`, enums, operaciones de transición, excepción de transición inválida y base compartida `Entity`.
+
+![Generative Media Domain Class Diagram](assets/diagrams/generative-media-domain-class.png)
+
+El job conserva payload y resultado como diccionarios. El estado avanza de Pending a Processing y termina en Succeeded o Failed; solo operaciones de dominio autorizan las transiciones. Los contratos de persistencia, ejecución, lock y assets pertenecen a Application, no al dominio.
+
 <a id="5262-bounded-context-database-design-diagram"></a>
 #### 5.2.6.2. Bounded Context Database Design Diagram
+
+El diseño muestra la única tabla de Generative Media y sus constraints, índices y campos opcionales. Owner apunta a Identity & Access, fuera de las tablas incluidas.
+
+![Generative Media Database Design Diagram](assets/diagrams/generative-media-database.png)
+
+`generation_jobs` conserva payload/resultado JSON, error, estado y marcas temporales. El índice estado/creación apoya el reclamo ordenado y el índice owner las consultas privadas. El resultado guarda ID, clave y metadata del asset; sus bytes permanecen en filesystem.
 
 <a id="53-bounded-context-identity-access"></a>
 ## 5.3. Bounded Context: Identity & Access
