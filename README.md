@@ -2503,7 +2503,7 @@ La landing page es el punto de entrada público de Tale Star y está separada de
 | 8 | CTA final | *Usar la app web* / *Descargar la app móvil*, con una sola cuenta para ambos segmentos | US95, US96 |
 | 9 | Footer | Enlaces de producto, segmentos y cuenta | — |
 
-Diseño en Figma: [Tale Star — Landing Page](PEGAR_ENLACE_FIGMA)
+Diseño en Figma: [Tale Star — Landing Page](https://www.figma.com/design/9N8xyYoj4Enr7pB6jDBMAW/Tale-Star-%E2%80%94-Landing-Page)
 
 <a id="631-landing-page-wireframe"></a>
 ### 6.3.1. Landing Page Wireframe
