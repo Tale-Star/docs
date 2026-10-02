@@ -2489,12 +2489,90 @@ El diseño muestra la única tabla de Generative Media y sus constraints, índic
 <a id="63-landing-page-ui-design"></a>
 ## 6.3. Landing Page UI Design
 
+La landing page es el punto de entrada público de Tale Star y está separada de la Web App (CT04). Su objetivo es comunicar la propuesta de valor a los dos segmentos (padres o cuidadores y docentes) y llevar a cada visitante a la Web App o a la app móvil. La estructura se definió a partir de las historias de usuario de la épica EP10 (US91–US96), con un CTA diferenciado por segmento. Para el diseño visual se usaron los mismos tokens que el frontend web (tipografía, colores, radios y sombras). En esta entrega la landing queda diseñada; su implementación en el repositorio `landing-page` (Vue 3 + TypeScript + Vite) y su despliegue siguen pendientes.
+
+| # | Sección | Contenido | Historia |
+|---|---|---|---|
+| 1 | Navbar | Logo, anclas a las secciones, *Iniciar sesión* y *Crear cuenta* | US95 |
+| 2 | Hero | Propuesta de valor y un CTA por segmento: *Soy padre o cuidador* / *Soy docente* | US91 |
+| 3 | ¿Por qué Tale Star? | Tres problemas que resuelve: búsquedas dispersas, contenido genérico y el adulto en control | US91 |
+| 4 | Para quién es | Una tarjeta por segmento con sus beneficios y su CTA (*Empezar como padre o cuidador* / *Empezar como docente*) | US92, US93 |
+| 5 | Funcionalidades | Imágenes, Cuentos, Música, Biblioteca y Cuentos en realidad aumentada (app móvil) | US94 |
+| 6 | Cómo funciona | Cuatro pasos: Configura, Genera, Revisa y ajusta, Guarda y reutiliza | US94 |
+| 7 | App móvil | Lectura de cuentos y experiencia AR, con el CTA *Descargar la app móvil* | US96 |
+| 8 | CTA final | *Usar la app web* / *Descargar la app móvil*, con una sola cuenta para ambos segmentos | US95, US96 |
+| 9 | Footer | Enlaces de producto, segmentos y cuenta | — |
+
+Diseño en Figma: [Tale Star — Landing Page](PEGAR_ENLACE_FIGMA)
+
 <a id="631-landing-page-wireframe"></a>
 ### 6.3.1. Landing Page Wireframe
+
+Los wireframes son de baja fidelidad. Están en escala de grises, con una tipografía genérica y marcadores con una "X" en lugar de imágenes. Sirven para fijar el orden de las secciones, la jerarquía del contenido y la ubicación de los CTA antes de aplicar el estilo visual.
+
+**Desktop wireframe (1440 px).** El hero va en dos columnas: el texto y los CTA a la izquierda, y la vista previa del contenido generado a la derecha. Las tarjetas se ordenan en grillas de 3 columnas (problemas y funcionalidades), 2 columnas (segmentos) y 4 columnas (pasos). La navegación está en una barra superior fija.
+
+<p align="center">
+  <img src="imgs/landing/landingWireframeDesktop.png" alt="Wireframe desktop de la landing page de Tale Star" title="Landing Page — Desktop Wireframe" width="850" />
+</p>
+
+**Mobile wireframe (390 px).** El contenido pasa a una sola columna. La navegación se reduce a un menú hamburguesa, los CTA ocupan todo el ancho y se apilan, y la vista previa se ubica debajo del texto principal. Se mantiene el mismo orden de secciones que en desktop.
+
+<p align="center">
+  <img src="imgs/landing/landingWireframeMobile.png" alt="Wireframe mobile de la landing page de Tale Star" title="Landing Page — Mobile Wireframe" width="320" />
+</p>
 
 <a id="632-landing-page-mock-up"></a>
 ### 6.3.2. Landing Page Mock-up
 
+Los mock-ups son la versión de alta fidelidad de los wireframes. Se construyeron en Figma como frames editables (`Landing / Desktop 1440` y `Landing / Mobile 390`) con componentes reutilizables: `Navbar`, `Button/Primary`, `Button/Secondary`, `Card/Problem`, `Card/Segment`, `Card/Feature`, `Step` y `Footer`. El mismo componente se usa en ambas versiones, así que un cambio en uno se refleja en desktop y mobile.
+
+**Mock-up desktop**
+
+<p align="center">
+  <img src="imgs/landing/landingMockupDesktop.png" alt="Mock-up desktop de la landing page de Tale Star" title="Landing Page — Desktop Mock-up" width="850" />
+</p>
+
+**Mock-up mobile**
+
+<p align="center">
+  <img src="imgs/landing/landingMockupMobile.png" alt="Mock-up mobile de la landing page de Tale Star" title="Landing Page — Mobile Mock-up" width="320" />
+</p>
+
+**Coherencia con las Style Guidelines.** El mock-up aplica las guías definidas en 6.1 y los mismos valores que usa el frontend web, para que el paso de la landing a la aplicación no se sienta como un cambio de producto:
+
+| Elemento | Aplicación en la landing |
+|---|---|
+| Tipografía | Nunito (700–800) en títulos y Inter (400–700) en texto, botones y etiquetas |
+| Color primario | Escala morada `#5B3DFA`, `#7454FD`, `#9974FE`, `#B194FE` y `#E6DBFE`; fondo `#F8F6FF` |
+| Texto | `#15151B` (principal), `#5D606D` (secundario) y `#8D909B` (notas) |
+| Botones | Primario con degradado `#5B3DFA → #9974FE` para la acción principal; secundario blanco con borde suave. Radio de 14 px |
+| Tarjetas | Superficie blanca, borde tenue, sombra suave y radio de 22 px, igual que los paneles de la Web App |
+| Etiquetas | *Eyebrow* en mayúsculas y color morado sobre cada título de sección |
+| Iconografía | Íconos lineales sobre un fondo lila suave, sin emojis |
+| Marca | Logo mascota de Tale Star en la navbar y el footer |
+| Responsive | Punto de quiebre en 820 px: de grillas a una columna y de navbar a menú hamburguesa |
+
+La vista previa del hero reproduce la escena de "Vista previa" de la Web App. Así, el visitante ve el tipo de resultado que obtendrá antes de registrarse.
+
+---
+
+<a id="conclusiones-y-recomendaciones"></a>
+## Conclusiones y recomendaciones
+
+**Conclusiones**
+
+1. Dividir el dominio en cuatro bounded contexts aisló la generación con IA en Generative Media. Los cuatro contextos son Creative Authoring (Core), Generative Media y Content Library (Supporting) e Identity & Access (Generic). Gracias a esta separación, Creative Authoring conserva las reglas del cuento (páginas, personajes y aprobación del adulto) sin depender de un modelo de IA concreto.
+2. Organizar cada contexto en las capas Domain, Application, Interface e Infrastructure, con Ports & Adapters, dentro de un monolito modular permite cambiar de proveedor de generación sin modificar el dominio. Esto aplica a Z-Image-Turbo, ACE-Step y al generador de texto detrás de `StoryTextGeneratorPort`, y mantiene un despliegue simple, acorde al tamaño del equipo.
+3. La landing page se diseñó a partir de US91–US96 y con los mismos tokens visuales del frontend web, con un CTA propio para padres o cuidadores y otro para docentes. Esto da continuidad visual entre el primer contacto y la aplicación. Si la propuesta de valor se entiende sin explicación adicional aún debe confirmarse en las entrevistas de validación.
+4. Las tecnologías emergentes del producto se integran como infraestructura detrás de adaptadores y no como parte del dominio: la generación de imágenes con Z-Image-Turbo y de música con ACE-Step, ambas autoalojadas, y la realidad aumentada local en la app móvil mediante `ArRuntime`. Así, imagen y música no dependen de APIs de terceros, y la experiencia AR funciona en el dispositivo sin un endpoint dedicado en el backend.
+5. A esta entrega, Tale Star cuenta con el diseño estratégico y táctico documentado, la Web App en desarrollo y el diseño de la landing (wireframes y mock-ups). La landing aún no está implementada ni desplegada, y todavía no hay resultados de validación con usuarios, por lo que no se reportan métricas de uso.
+
+**Recomendaciones**
+
+1. Implementar la landing en el repositorio `landing-page` reutilizando el archivo de tokens del frontend web, para no duplicar estilos y mantener la coherencia visual.
+2. Publicar el enlace de despliegue de la landing en el Anexo C cuando esté disponible.
+3. Incluir en las entrevistas de validación una tarea de primer contacto con la landing para cada segmento, y ajustar los textos según lo que no se entienda.
 <a id="64-applications-uxui-design"></a>
 ## 6.4. Applications UX/UI Design
 
