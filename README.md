@@ -2473,8 +2473,189 @@ El diseño muestra la única tabla de Generative Media y sus constraints, índic
 <a id="611-general-style-guidelines"></a>
 ### 6.1.1. General Style Guidelines
 
+Esta sección documenta el sistema visual **tal como está implementado** en los repositorios de Tale Star: [`landing-page`](https://github.com/Tale-Star/landing-page) y [`frontend-web`](https://github.com/Tale-Star/frontend-web). Ambos comparten el mismo archivo de tokens (`src/styles/tokens.css`), por lo que los valores de color, tipografía y radios son idénticos. Las capturas provienen de esos frontends en ejecución. El diseño de referencia de la landing está en [Figma — Tale Star Landing Page](https://www.figma.com/design/9N8xyYoj4Enr7pB6jDBMAW/Tale-Star-%E2%80%94-Landing-Page).
+
+> **Alcance de la verificación.** El repositorio [`frontend-mobile`](https://github.com/Tale-Star/frontend-mobile) estaba vacío al momento de redactar esta sección, por lo que las reglas de Mobile (6.1.2) se derivan del comportamiento responsive de la Web App y la Landing, y deben revalidarse cuando exista la app móvil.
+
+#### Branding
+
+| Elemento | Descripción |
+| :-- | :-- |
+| **Nombre** | **Tale Star**, acompañado del descriptor **Creative Studio** (logo, sidebar y pantallas de acceso). |
+| **Finalidad del producto** | Ayudar a padres, cuidadores y docentes a convertir un tema concreto en un **cuento ilustrado, una imagen o una canción** para niños, con el adulto siempre en control del contenido. La app móvil complementa el producto con la lectura de cuentos en realidad aumentada. |
+| **Logo** | Marca cuadrada de esquinas redondeadas con un personaje en tonos lilas sobre fondo violeta (`tale-star-mark.png`, 180 × 180 px). Se usa junto al texto «Tale Star» (Nunito 800) y «Creative Studio» (Inter, `--text-3`). |
+| **Identidad visual** | Violeta como color de marca, fondos lavanda muy claros, superficies blancas y degradados suaves. Las pantallas de acceso y el área de contenido usan paneles translúcidos con desenfoque (*glass panel*). |
+| **Ilustraciones** | La landing no usa imágenes de stock: la vista previa del cuento se dibuja con CSS (cielo lila-rosado, sol amarillo pálido `#fff4bd`, colina verde `#5b7563`, suelo `#e3a7a6`). Los iconos son de línea (*outline*), con trazo de 1.8–2 px y extremos redondeados. Las portadas sin imagen usan un degradado violeta con el icono del tipo de recurso. |
+| **Personalidad gráfica** | Amable, calmada y creativa; redondeada (radios de 10 a 28 px), con sombras suaves teñidas de violeta y movimiento mínimo (elevación de 1 px al pasar el cursor). Se respeta `prefers-reduced-motion`. |
+
+<table>
+  <tr>
+    <td align="center"><img src="imgs/style/logo-tale-star.png" alt="Logo de Tale Star" width="120"/><br/><sub>Logo (tale-star-mark.png)</sub></td>
+    <td align="center"><img src="imgs/style/landing-desktop.png" alt="Landing page de Tale Star en escritorio" width="360"/><br/><sub>Landing page (escritorio)</sub></td>
+    <td align="center"><img src="imgs/style/web-login.png" alt="Pantalla de inicio de sesión de Tale Star" width="360"/><br/><sub>Web App: inicio de sesión</sub></td>
+  </tr>
+</table>
+
+#### Typography
+
+Fuentes cargadas desde Google Fonts en ambos proyectos: **Inter** (400, 500, 600, 700, 800) para la interfaz y **Nunito** (700, 800) para títulos. Pila de respaldo de la interfaz: `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`; de los títulos: `'Nunito', 'Inter', sans-serif`.
+
+| Token | Familia | Uso |
+| :-- | :-- | :-- |
+| `--font-ui` | Inter | Texto de interfaz, botones, formularios, párrafos. |
+| `--font-display` | Nunito | `h1`–`h3`, nombre de marca, títulos de modal y tarjetas de acceso (`letter-spacing` de −0.01em a −0.035em). |
+
+<img src="imgs/style/escala-tipografica.png" alt="Escala tipográfica de Tale Star" width="100%"/>
+
+| Rol | Landing | Web App (escritorio) | Peso | Line-height |
+| :-- | :-- | :-- | :-- | :-- |
+| Display / H1 | 54 px (36 px en móvil) | `clamp(25px, 2.4vw, 34px)` | 800 | 1.08 / 1.1 |
+| Título de sección H2 | 38 px (28 px ≤ 820 px) | 14 px (panel), 19 px (modal) | 800 / 750 | 1.15 |
+| Título de tarjeta de acceso | — | 27 px | 800 | — |
+| Subtítulo / *lead* | 17 px | 12 px | 400 | 1.6 / 1.55 |
+| Body | 14–15 px | 11–12 px | 400 | 1.5–1.6 |
+| Botón | 15 px (nav 14 px) | 11 px | 700 / 750 | — |
+| Etiqueta de campo | — | 10 px | 700 | — |
+| Caption / *hint* | 12–13 px | 9–10 px | 400 | 1.45 |
+| *Eyebrow* (MAYÚSCULAS) | 12 px, tracking 0.12em | 10 px, tracking 0.10em | 700 / 800 | — |
+
+Observaciones sobre lo implementado:
+
+- La Web App usa pesos `750` y `650`, que no existen en los archivos de Inter cargados; el navegador los resuelve a 800 y 700 respectivamente.
+- El texto de la Web App es pequeño (la mayor parte entre 9 y 12 px) frente a la landing (14–17 px). Para un público de padres y docentes conviene subir el mínimo a 12 px; ver recomendaciones al final de 6.1.2.
+
+#### Colors
+
+Paleta extraída de `tokens.css`. Los nombres entre paréntesis son las variables CSS reales.
+
+<img src="imgs/style/paleta-colores.png" alt="Paleta de colores de Tale Star" width="100%"/>
+
+| Rol | Color | Variable | Uso real |
+| :-- | :-- | :-- | :-- |
+| **Primary** | `#5b3dfa` | `--ts-purple-900` | Inicio del degradado de botones primarios, enlaces destacados, *eyebrow* de la landing. |
+| **Secondary** (acento) | `#7454fd` | `--ts-purple-700` / `--accent` | Estados activos, iconos, foco, enlaces de la app. |
+| Tonos de apoyo | `#9974fe`, `#b194fe`, `#e6dbfe` | `--ts-purple-500/300/100` | Fin de degradados, anillo de foco de la landing, fondos suaves. |
+| **Background** | `#f5f6f8` (app) · `#f8f6ff` (landing) | `--bg` | Fondo base. El área de contenido añade un degradado lavanda → violeta. |
+| **Surface** | `#ffffff` · `#f0f1f4` · `#e9ebef` | `--surface`, `--surface-2/3` | Tarjetas, campos de formulario (`--surface-2`), superficies secundarias. |
+| **Text primary** | `#15151b` | `--text` | Títulos y texto principal. |
+| **Text secondary** | `#5d606d` | `--text-2` | Párrafos de apoyo, etiquetas. Texto terciario: `#8d909b` (`--text-3`). |
+| **Border** | `rgba(28,30,38,0.10)` | `--border` | Bordes de campos y tarjetas. Reforzado: `rgba(28,30,38,0.16)` (`--border-strong`). |
+| **Success** | `#22a06b` | `--success` | Estado correcto; texto de aviso de éxito `#256b50`. |
+| **Warning** | `#e99a22` | `--warning` | Advertencias. |
+| **Error** | `#e05265` | `--danger` | Acciones destructivas; texto de error `#9d2035` / `#b92e45`. |
+
+**Degradados de marca:** botón primario web `135°, #5b3dfa → #7454fd 45% → #9974fe`; botón primario landing `90°, #5b3dfa → #9974fe`; fondo de contenido y acceso `150°, #f8f6ff → #e8e0ff → #c7b4ff → #8d69fe → #7454fd`; banda de app móvil `135°, #2d1b8f → #5b3dfa → #9974fe`.
+
+**Estados definidos en el código**
+
+| Componente | Hover | Active / seleccionado | Foco | Deshabilitado |
+| :-- | :-- | :-- | :-- | :-- |
+| Botón primario | `filter: brightness(1.055)` y elevación −1 px | — | Anillo de 3 px `rgba(116,84,253,0.45)`, desplazado 2 px (Landing: `#b194fe`) | `opacity: 0.58`, cursor `not-allowed` |
+| Botón secundario | Borde `rgba(116,84,253,0.34)`, fondo blanco 72 % | — | Igual | Igual |
+| Botón *ghost* / icono | Fondo `rgba(116,84,253,0.08)`, texto `--accent` | — | Igual | Igual |
+| Botón de peligro | — | Fondo `rgba(224,82,101,0.08)`, texto `#b92e45` | Igual | Igual |
+| Ítem de navegación | Fondo `rgba(116,84,253,0.07)` | Fondo `rgba(116,84,253,0.10)`, texto `--accent` | Igual | — |
+| Pestaña / chip | Fondo `rgba(116,84,253,0.07)` / borde de acento | Fondo `rgba(230,219,254,0.65–0.68)`, texto `#6849dd` o `--accent` | Igual | — |
+
+**Contraste (WCAG 2.1, calculado sobre los valores reales)**
+
+| Combinación | Ratio | Resultado |
+| :-- | :-- | :-- |
+| `#15151b` sobre `#f5f6f8` | 16.8 : 1 | Cumple AAA |
+| `#5d606d` sobre `#ffffff` | 6.3 : 1 | Cumple AA |
+| Blanco sobre `#5b3dfa` | 6.0 : 1 | Cumple AA |
+| Blanco sobre `#7454fd` | 4.7 : 1 | Cumple AA |
+| Blanco sobre `#9974fe` (extremo del degradado) | 3.3 : 1 | No cumple AA en texto pequeño |
+| `#8d909b` sobre `#ffffff` (`--text-3`, *hints*, metadatos) | 3.2 : 1 | No cumple AA en texto pequeño |
+| `#e99a22` / `#22a06b` / `#e05265` sobre blanco | 2.3 / 3.3 / 3.8 : 1 | Solo apto para iconos o rellenos, no para texto |
+
+#### Spacing
+
+El código **no sigue una escala estricta de 4/8 px**: predominan valores pares (8, 10, 12, 14, 16, 20) pero aparecen también 5, 7, 9, 11 y 13 px, sobre todo en la Web App. La landing es más regular (8, 10, 12, 20, 24, 28, 32, 40, 56, 88 px). La referencia práctica del sistema actual es la siguiente:
+
+| Aspecto | Landing | Web App |
+| :-- | :-- | :-- |
+| Contenedor | `max-width: 1160px`, padding lateral 32 px (20 px ≤ 820 px) | `max-width: 1720px`; padding del contenido `30px 34px 40px` (`26px 20px 34px` ≤ 900 px; `22px 14px 88px` ≤ 700 px) |
+| Espaciado entre secciones | 88 px (60 px ≤ 820 px) | 18 px entre cabecera y contenido |
+| Padding de componentes | Tarjetas 24–32 px (22–26 px en móvil); botón `0 22px` | Panel 20 px (15 px en móvil); tarjeta de recurso 16 px; modal 18–20 px; tarjeta de acceso 30 px |
+| *Gaps* | 8, 10, 12, 20 px; entre columnas del hero 56 px | 8 px (el más frecuente), 12 y 14 px entre campos y tarjetas; 16 px entre columnas de resultado |
+| Altura de controles | Botón 48 px (nav 42 px) | Botón 38 px (grande 46 px); campo mín. 40 px; botón de icono 34 px |
+| Grid | Hero `1.05fr / 0.95fr`; tarjetas en 3 columnas | Shell `218px / 1fr`; recursos y biblioteca en 3 columnas (2 ≤ 900 px; 1 ≤ 700 px / 420 px); resultado `1.1fr / 0.9fr`; formulario de 2 columnas, gap 14 px |
+| Sidebar | — | 218 px → 188 px (≤ 1180) → 76 px solo iconos (≤ 900) → barra inferior de 66 px (≤ 700) |
+
+**Border radius.** Tokens: `--radius-sm 10px`, `--radius 16px`, `--radius-lg 22px`. Uso real: campos 11 px; botones 12 px (landing 14 px); tarjetas y paneles 15–18 px; modal 20 px; tarjeta de acceso 24 px; banda de app móvil 28 px; chips y *pills* 999 px; avatares e iconos circulares 50 %.
+
+**Sombras.** `--shadow-sm` `0 1px 2px / 0 4px 18px` al 4 %; `--shadow-md` `0 8px 30px` al 8 %; `--shadow-lg` `0 24px 80px` al 16 %; botón primario `0 8px 20px rgba(91,61,250,0.2)`.
+
+#### Tone of Communication
+
+Tale Star habla a **padres, cuidadores y docentes** (adultos que supervisan el contenido que verá el niño). El tono real de la interfaz, verificado en botones, *placeholders* y avisos del código, es **cercano, claro y tranquilizador**:
+
+| Rasgo | Cómo se manifiesta | Ejemplos reales |
+| :-- | :-- | :-- |
+| **Cercano** | Tuteo («tú», «tu») y posesivos que hacen sentir el espacio como propio. | «Entra a tu espacio creativo para continuar con tus historias.» · «Tu biblioteca aún está vacía» · «Tu próxima escena empieza aquí.» |
+| **Claro y directo** | Botones con verbo + objeto, en infinitivo/imperativo corto. | «Crear cuento» · «Guardar en biblioteca» · «Regenerar imagen» · «Entrar a Tale Star» |
+| **Comprensible** | Los *placeholders* guían con ejemplos cotidianos. | «tu@correo.com» · «Ej.: alegres y curiosos» · «Describe qué sucede en la escena» · «Escribe el texto de esta página…» |
+| **Tranquilizador (control adulto)** | Refuerza que el adulto decide antes de que el niño vea algo. | «Un mismo producto para ambos: tú revisas y decides antes de que el niño lo vea.» · «Un adulto debe ingresar el PIN parental para continuar.» · «El niño solo ve lo que tú apruebas.» |
+| **Positivo ante errores** | Dice qué pasó y qué hacer, sin culpar. | «El trabajo falló. Puedes volver a intentarlo.» · «No encontramos esa página» + «Revisa la dirección o vuelve al área de creación.» |
+| **Confirmaciones breves** | Frase corta en pasado. | «Cuento guardado en tu biblioteca.» · «PIN parental actualizado.» · «Prompt copiado.» |
+| **Estados vacíos amables** | Explican qué hacer a continuación. | «Aún no hay cuentos» · «Cuando guardes una creación, podrás verla aquí.» |
+| **Llamadas a la acción por segmento** | Se identifican con el rol del lector. | «Soy padre o cuidador» · «Soy docente» · «Empezar como docente» |
+
+**Frases de la landing que resumen la voz de marca:** «Menos tiempo buscando, más tiempo acompañando» · «Pensado para quienes enseñan a niños» · «Crea tu primer recurso en minutos».
+
+**Puntos donde el tono real se aleja de lo deseado** (a corregir):
+
+- Algunas cadenas de la Web App son técnicas y no apropiadas para padres o docentes: «Devuelto por GET /api/v1/auth/me», «El backend no publica endpoint de refresh ni logout.», «Guardado en sessionStorage y verificado con /api/v1/auth/me.», «Objeto JSON para los atributos del personaje.», «La solicitud musical fue aceptada por el backend.», «Caption de ACE-Step».
+- Hay términos en inglés sin traducir en la interfaz: *Creative Studio*, *Prompt*, *Seed*, *Caption*, *Lyrics*, *Job del backend*.
+- Los avisos de error del servidor se muestran tal como llegan de la API (por ejemplo «No encontrado»), sin reformular.
+
+**Reglas de redacción propuestas para mantener el tono:** hablar de «tú»; usar verbos de acción en botones; evitar jerga técnica (*backend*, *endpoint*, *JSON*, *token*); explicar siempre qué ocurrió y cuál es el siguiente paso; reservar los mensajes de éxito para una sola línea; y mencionar el control adulto cuando haya contenido para niños.
+
 <a id="612-web-mobile-devices-style-guidelines"></a>
 ### 6.1.2. Web, Mobile & Devices Style Guidelines
+
+Las reglas siguientes aplican los tokens de 6.1.1 a cada plataforma. Breakpoints reales del código: **820 px** (landing), **1180 / 900 / 700 / 420 px** (Web App).
+
+#### Web (escritorio y tablet)
+
+- **Estructura.** Shell de dos columnas: sidebar fija de 218 px (fondo `rgba(249,249,252,0.97)`, borde derecho 1 px) y área de contenido con degradado lavanda → violeta y contenido en paneles translúcidos (`rgba(255,255,255,0.72)`, borde blanco 58 %, radio 18 px, desenfoque 20 px).
+- **Cabecera de página.** *Eyebrow* en mayúsculas (10 px, `#6849dd`), `h1` en Nunito 800, descripción de 12 px en `--text-2` y acciones alineadas a la derecha.
+- **Botones.** Primario con degradado violeta y texto blanco; secundario translúcido con borde de acento; *ghost* para acciones terciarias; peligro con fondo rosado suave. Una sola acción primaria por vista.
+- **Formularios.** Etiqueta de 10 px sobre el campo (gap 6 px), campos de 40 px con fondo `--surface-2`, radio 11 px, borde `--border` y *placeholder* `#8d909b`. Ayudas en 10 px debajo del campo.
+- **Navegación.** Sidebar con cuatro áreas de creación (Imágenes, Cuentos, Música, Biblioteca) y Perfil al pie; el ítem activo usa fondo violeta suave y texto `--accent`. Entre 900 y 701 px se reduce a solo iconos (76 px).
+- **Avisos.** Pila en la esquina inferior derecha (máx. 380 px), tarjeta blanca 93 %, radio 14 px; el texto de error usa `#9d2035` y el de éxito `#256b50`.
+- **Modales.** Tarjeta `#fcfbff` de hasta 600 px, radio 20 px, fondo oscurecido `rgba(24,19,43,0.42)` con desenfoque.
+- **Landing.** Barra superior fija de 72 px con fondo translúcido, héroe con degradado lavanda, secciones de 88 px, tarjetas blancas con radio 22 px y un CTA primario por segmento.
+
+<table>
+  <tr>
+    <td align="center"><img src="imgs/style/web-imagenes.png" alt="Web App: creación de imágenes" width="420"/><br/><sub>Web App · Imágenes</sub></td>
+    <td align="center"><img src="imgs/style/web-cuentos.png" alt="Web App: editor de cuentos" width="420"/><br/><sub>Web App · Cuentos</sub></td>
+  </tr>
+</table>
+
+#### Mobile (navegador móvil y app)
+
+- **Web App en móvil (≤ 700 px).** La sidebar se convierte en **barra de navegación inferior fija de 66 px** con cinco destinos (Imágenes, Cuentos, Música, Biblioteca, Perfil), icono de 18 px y rótulo de 9 px; respeta `safe-area-inset`. El contenido pasa a una columna con padding `22px 14px 88px` (el margen inferior evita que la barra tape contenido), los paneles bajan a padding 15 px y radio 16 px, y los grids de recursos y biblioteca pasan a 1–2 columnas.
+- **Landing en móvil (≤ 820 px).** Menú de hamburguesa con cajón desplegable, secciones de 60 px, `h2` de 28 px y `h1` de 36 px; el gutter lateral baja a 20 px.
+- **App móvil (lectura AR de cuentos).** Aún no hay código publicado. Cuando se implemente deberá reutilizar los mismos tokens (colores, Inter/Nunito, radios) y la banda oscura violeta de la landing (`#2d1b8f → #9974fe`) como referencia de su identidad.
+
+<table>
+  <tr>
+    <td align="center"><img src="imgs/style/landing-mobile.png" alt="Landing en móvil" width="190"/><br/><sub>Landing · móvil</sub></td>
+    <td align="center"><img src="imgs/style/web-login-mobile.png" alt="Inicio de sesión en móvil" width="190"/><br/><sub>Acceso · móvil</sub></td>
+    <td align="center"><img src="imgs/style/web-imagenes-mobile.png" alt="Web App en móvil con barra inferior" width="190"/><br/><sub>Web App · móvil</sub></td>
+  </tr>
+</table>
+
+#### Recomendaciones derivadas de la revisión
+
+1. Subir a 12 px como mínimo los textos de la Web App que hoy son menores (etiquetas de 10 px, metadatos de 9 px y 8 px) y revisar los *hints* en `--text-3`, que no cumplen contraste AA.
+2. Usar `--text-2` en lugar de `--text-3` para texto informativo, y no emplear `--success`, `--warning` ni `--danger` como color de texto.
+3. En móvil, llevar los controles táctiles a un mínimo de 44 px (botón de 38 px, botón de icono de 34 px y chips de 30 px hoy quedan por debajo).
+4. Definir una escala de espaciado explícita (por ejemplo 4 / 8 / 12 / 16 / 24 / 32) y migrar los valores sueltos (5, 7, 9, 11, 13 px).
+5. Sustituir las cadenas técnicas y en inglés listadas en «Tone of Communication» por textos orientados a padres y docentes.
 
 <a id="62-information-architecture"></a>
 ## 6.2. Information Architecture
