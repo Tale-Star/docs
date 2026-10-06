@@ -158,6 +158,7 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
   - [6.3. Landing Page UI Design](#63-landing-page-ui-design)
     - [6.3.1. Landing Page Wireframe](#631-landing-page-wireframe)
     - [6.3.2. Landing Page Mock-up](#632-landing-page-mock-up)
+    - [6.3.3. Landing Page Implementation Screenshots](#633-landing-page-implementation-screenshots)
   - [6.4. Applications UX/UI Design](#64-applications-uxui-design)
     - [6.4.1. Applications Wireframes](#641-applications-wireframes)
     - [6.4.2. Applications Wireflow Diagrams](#642-applications-wireflow-diagrams)
@@ -2684,7 +2685,7 @@ Las reglas siguientes aplican los tokens de 6.1.1 a cada plataforma. Breakpoints
 
 <table>
   <tr>
-    <td align="center"><img src="imgs/style/landing-mobile.png" alt="Landing en móvil" width="190"/><br/><sub>Landing · móvil</sub></td>
+    <td align="center"><img src="imgs/style/landing-mobile.png" alt="Landing responsive en móvil, viewport de 390 × 844 px" width="190"/><br/><sub>Landing · responsive móvil</sub></td>
     <td align="center"><img src="imgs/style/web-login-mobile.png" alt="Inicio de sesión en móvil" width="190"/><br/><sub>Acceso · móvil</sub></td>
     <td align="center"><img src="imgs/style/web-imagenes-mobile.png" alt="Web App en móvil con barra inferior" width="190"/><br/><sub>Web App · móvil</sub></td>
   </tr>
@@ -2719,19 +2720,21 @@ Las reglas siguientes aplican los tokens de 6.1.1 a cada plataforma. Breakpoints
 <a id="63-landing-page-ui-design"></a>
 ## 6.3. Landing Page UI Design
 
-La landing page es el punto de entrada público de Tale Star y está separada de la Web App (CT04). Su objetivo es comunicar la propuesta de valor a los dos segmentos (padres o cuidadores y docentes) y llevar a cada visitante a la Web App o a la app móvil. La estructura se definió a partir de las historias de usuario de la épica EP10 (US91–US96), con un CTA diferenciado por segmento. Para el diseño visual se usaron los mismos tokens que el frontend web (tipografía, colores, radios y sombras). En esta entrega la landing queda diseñada; su implementación en el repositorio `landing-page` (Vue 3 + TypeScript + Vite) y su despliegue siguen pendientes.
+La landing page es el punto de entrada público de Tale Star y está separada de la Web App (CT04). Su objetivo es comunicar la propuesta de valor a los dos segmentos (padres o cuidadores y docentes) y orientar a cada visitante hacia la Web App o la app móvil cuando sus destinos públicos están configurados. La estructura se definió a partir de las historias de usuario de la épica EP10 (US91–US96), con un CTA diferenciado por segmento. Para el diseño visual se usaron los mismos tokens que el frontend web (tipografía, colores, radios y sombras). La landing está implementada en el repositorio `landing-page` con Vue 3, TypeScript y Vite, y se encuentra publicada en [GitHub Pages](https://tale-star.github.io/landing-page/).
 
 | # | Sección | Contenido | Historia |
 |---|---|---|---|
-| 1 | Navbar | Logo, anclas a las secciones, *Iniciar sesión* y *Crear cuenta* | US95 |
+| 1 | Navbar | Logo y anclas a las secciones; los controles de acceso web se habilitan con una URL pública y, si falta, muestran *Próximamente* | US95 |
 | 2 | Hero | Propuesta de valor y un CTA por segmento: *Soy padre o cuidador* / *Soy docente* | US91 |
 | 3 | ¿Por qué Tale Star? | Tres problemas que resuelve: búsquedas dispersas, contenido genérico y el adulto en control | US91 |
-| 4 | Para quién es | Una tarjeta por segmento con sus beneficios y su CTA (*Empezar como padre o cuidador* / *Empezar como docente*) | US92, US93 |
+| 4 | Para quién es | Una tarjeta por segmento con sus beneficios y su CTA (*Empezar como padre o cuidador* / *Empezar como docente*); en el despliegue actual se muestran como *Próximamente* | US92, US93 |
 | 5 | Funcionalidades | Imágenes, Cuentos, Música, Biblioteca y Cuentos en realidad aumentada (app móvil) | US94 |
 | 6 | Cómo funciona | Cuatro pasos: Configura, Genera, Revisa y ajusta, Guarda y reutiliza | US94 |
-| 7 | App móvil | Lectura de cuentos y experiencia AR, con el CTA *Descargar la app móvil* | US96 |
-| 8 | CTA final | *Usar la app web* / *Descargar la app móvil*, con una sola cuenta para ambos segmentos | US95, US96 |
+| 7 | App móvil | Presenta la lectura de cuentos y la experiencia AR previstas; el CTA de descarga se habilita al configurar una URL pública de la app | US96 |
+| 8 | CTA final | Acceso a la Web App y descarga móvil, habilitados al configurar sus destinos públicos | US95, US96 |
 | 9 | Footer | Enlaces de producto, segmentos y cuenta | — |
+
+La arquitectura de información organiza el recorrido desde el reconocimiento de la propuesta y el problema, hacia la identificación del segmento, la exploración de funcionalidades y pasos de uso, y finalmente la acción de acceso o descarga. La navbar enlaza las secciones; las etiquetas y CTA nombran de forma explícita a padres/cuidadores y docentes; el CTA final repite las acciones principales y el footer agrupa enlaces secundarios. En móvil se conserva esta secuencia y jerarquía, adaptando la navegación a un menú hamburguesa y el contenido a una sola columna. Los enlaces de cuenta y descarga solo apuntan a destinos HTTP(S) públicos configurados; si faltan, la landing muestra *Próximamente* y no dirige al visitante a `localhost`.
 
 Diseño en Figma: [Tale Star — Landing Page](https://www.figma.com/design/9N8xyYoj4Enr7pB6jDBMAW/Tale-Star-%E2%80%94-Landing-Page)
 
@@ -2785,24 +2788,27 @@ Los mock-ups son la versión de alta fidelidad de los wireframes. Se construyero
 
 La vista previa del hero reproduce la escena de "Vista previa" de la Web App. Así, el visitante ve el tipo de resultado que obtendrá antes de registrarse.
 
+<a id="633-landing-page-implementation-screenshots"></a>
+### 6.3.3. Landing Page Implementation Screenshots
+
+Las siguientes capturas muestran la landing publicada en GitHub Pages después del arreglo de sus destinos de navegación. Son capturas de la implementación ejecutándose en Chromium, no wireframes ni mock-ups; se tomó la página completa para documentar el orden y la adaptación de sus secciones. En la vista móvil se usó un viewport de 390 × 844 px y se verificó que el documento no excediera los 390 px de ancho.
+
+**Implementación en desktop (viewport de 1440 × 900 px).** La captura muestra el hero en dos columnas, las grillas de problemas, segmentos, funcionalidades y pasos, la banda de app móvil, el CTA final y el footer. Los CTA de acceso y descarga aparecen deshabilitados como *Próximamente* mientras no haya URLs públicas configuradas.
+
+<p align="center">
+  <img src="imgs/landing/landingResponsiveDesktop.png" alt="Captura completa de la landing implementada en viewport desktop de 1440 píxeles" title="Landing Page — Implementación responsive desktop" width="850" />
+</p>
+
+**Implementación responsive en móvil (viewport de 390 × 844 px).** La captura muestra el menú hamburguesa, el hero apilado y las secciones en una sola columna; el ancho de contenido permanece dentro del viewport y los CTA sin destino público se presentan como *Próximamente*.
+
+<p align="center">
+  <img src="imgs/landing/landingResponsiveMobile.png" alt="Captura completa de la landing implementada y responsive en viewport móvil de 390 píxeles" title="Landing Page — Implementación responsive móvil" width="320" />
+</p>
+
+La comparación de ambas capturas confirma que la estructura se adapta por ancho de viewport: la navegación cambia a menú hamburguesa y las grillas pasan a una columna en móvil, mientras se conserva el orden visual del recorrido.
+
 ---
 
-<a id="conclusiones-y-recomendaciones"></a>
-## Conclusiones y recomendaciones
-
-**Conclusiones**
-
-1. Dividir el dominio en cuatro bounded contexts aisló la generación con IA en Generative Media. Los cuatro contextos son Creative Authoring (Core), Generative Media y Content Library (Supporting) e Identity & Access (Generic). Gracias a esta separación, Creative Authoring conserva las reglas del cuento (páginas, personajes y aprobación del adulto) sin depender de un modelo de IA concreto.
-2. Organizar cada contexto en las capas Domain, Application, Interface e Infrastructure, con Ports & Adapters, dentro de un monolito modular permite cambiar de proveedor de generación sin modificar el dominio. Esto aplica a Z-Image-Turbo, ACE-Step y al generador de texto detrás de `StoryTextGeneratorPort`, y mantiene un despliegue simple, acorde al tamaño del equipo.
-3. La landing page se diseñó a partir de US91–US96 y con los mismos tokens visuales del frontend web, con un CTA propio para padres o cuidadores y otro para docentes. Esto da continuidad visual entre el primer contacto y la aplicación. Si la propuesta de valor se entiende sin explicación adicional aún debe confirmarse en las entrevistas de validación.
-4. Las tecnologías emergentes del producto se integran como infraestructura detrás de adaptadores y no como parte del dominio: la generación de imágenes con Z-Image-Turbo y de música con ACE-Step, ambas autoalojadas, y la realidad aumentada local en la app móvil mediante `ArRuntime`. Así, imagen y música no dependen de APIs de terceros, y la experiencia AR funciona en el dispositivo sin un endpoint dedicado en el backend.
-5. A esta entrega, Tale Star cuenta con el diseño estratégico y táctico documentado, la Web App en desarrollo y el diseño de la landing (wireframes y mock-ups). La landing aún no está implementada ni desplegada, y todavía no hay resultados de validación con usuarios, por lo que no se reportan métricas de uso.
-
-**Recomendaciones**
-
-1. Implementar la landing en el repositorio `landing-page` reutilizando el archivo de tokens del frontend web, para no duplicar estilos y mantener la coherencia visual.
-2. Publicar el enlace de despliegue de la landing en el Anexo C cuando esté disponible.
-3. Incluir en las entrevistas de validación una tarea de primer contacto con la landing para cada segmento, y ajustar los textos según lo que no se entienda.
 <a id="64-applications-uxui-design"></a>
 ## 6.4. Applications UX/UI Design
 
@@ -2917,6 +2923,20 @@ La vista previa del hero reproduce la escena de "Vista previa" de la Web App. As
 <a id="conclusiones-y-recomendaciones"></a>
 ## Conclusiones y recomendaciones
 
+**Conclusiones**
+
+1. Dividir el dominio en cuatro bounded contexts separa la configuración narrativa, la generación, la biblioteca y la identidad según sus responsabilidades. Creative Authoring conserva Stories, páginas y personajes; el adulto revisa el contenido y decide si lo guarda en la biblioteca, sin que la autoría dependa de un modelo generativo concreto.
+2. Organizar los contextos en Domain, Application, Interface e Infrastructure, con Ports & Adapters dentro de un monolito modular, permite sustituir los adaptadores de generación sin incorporar sus dependencias al dominio. En el backend, los puertos de imagen y música aíslan Z-Image-Turbo y ACE-Step; el texto de las Story Pages lo redacta y edita el usuario adulto, pues no existe un `StoryTextGeneratorPort` implementado.
+3. La landing implementa las historias US91–US96 y está publicada con los mismos tokens visuales de la Web App, un CTA para padres o cuidadores y otro para docentes. Esto da continuidad entre el primer contacto y la aplicación. La comprensión de la propuesta y la efectividad de los CTA todavía deben validarse con usuarios.
+4. Generative Media integra los adaptadores de imagen y música como infraestructura; la configuración de ejecución local permite usar Z-Image-Turbo y ACE-Step sin depender de APIs de inferencia de terceros. La realidad aumentada mediante `ArRuntime` es una decisión objetivo para la aplicación móvil, pero aún no está implementada en un cliente móvil publicado ni en el backend; por ello, no se presenta como capacidad operativa actual.
+5. A esta entrega, Tale Star cuenta con el diseño estratégico y táctico documentado, una Web App en desarrollo y una landing implementada y publicada. La aplicación móvil con lectura AR sigue planificada. Todavía no hay resultados de validación con usuarios, por lo que no se reportan métricas de uso.
+
+**Recomendaciones**
+
+1. Validar con padres/cuidadores y docentes si la propuesta, los segmentos y las acciones principales de la landing se comprenden sin explicación adicional; ajustar los textos a partir de esos resultados.
+2. Comprobar que el workflow de publicación termina correctamente después de cambios en la landing y mantener actualizados los destinos de sus CTA.
+3. Cuando la aplicación móvil tenga una versión descargable, configurar y verificar el CTA móvil de producción para que dirija a su canal oficial de distribución.
+
 <a id="video-about-the-team"></a>
 ## Video About-the-Team
 
@@ -3013,7 +3033,7 @@ Enlace de descarga pendiente de publicación.
 
 ### Landing page
 
-Enlace de despliegue pendiente de publicación.
+Sitio publicado: [https://tale-star.github.io/landing-page/](https://tale-star.github.io/landing-page/).
 
 <a id="anexo-d-documentacion-de-servicios"></a>
 ## Anexo D. Documentación de servicios
