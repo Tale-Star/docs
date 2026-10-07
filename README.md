@@ -3069,6 +3069,14 @@ Los wireframes son en formato Mobile Application
 <a id="644-applications-user-flow-diagrams"></a>
 ### 6.4.4. Applications User Flow Diagrams
 
+<p align="center">
+  <img src="imgs/FlowDiagrams/CreateAndSaveStory.png" alt="User Flow Diagrams de Create And Save Story de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+
+<p align="center">
+  <img src="imgs/FlowDiagrams/ARStoryExperience.png" alt="User Flow Diagrams de AR Story Experience de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+
 <a id="65-applications-prototyping"></a>
 ## 6.5. Applications Prototyping
 
