@@ -2877,21 +2877,132 @@ Las reglas siguientes aplican los tokens de 6.1.1 a cada plataforma. Breakpoints
 <a id="62-information-architecture"></a>
 ## 6.2. Information Architecture
 
+La Arquitectura de Información (IA) de Tale Star define cómo se estructuran, organizan, rotulan y encuentran los contenidos en los distintos puntos de contacto del producto. Su propósito es reducir la carga cognitiva de padres, cuidadores y docentes, permitiéndoles comunicar una necesidad educativa, crear recursos multimodales, revisar el resultado, organizar sus creaciones y consumir cuentos de forma clara.
+
+La solución articula tres puntos de contacto complementarios:
+
+1. **Landing Page pública:** comunica la propuesta de valor y orienta a padres o cuidadores y docentes hacia las acciones principales.
+2. **Web Application autenticada:** concentra la autoría de cuentos, la generación de imágenes y música, los recursos reutilizables, la biblioteca y la configuración de la cuenta.
+3. **Mobile Application prevista:** estará orientada a la lectura compartida, el modo protegido para niños y la experiencia de realidad aumentada. Esta aplicación no se presenta como una capacidad publicada en el estado actual del producto.
+
 <a id="621-organization-systems"></a>
 ### 6.2.1. Organization Systems
+
+Los sistemas de organización combinan esquemas jerárquicos, secuenciales, categóricos y contextuales para reflejar el modelo mental de los adultos que crean y supervisan el contenido.
+
+#### Organización jerárquica
+
+La información se descompone desde el ecosistema hasta los elementos editables:
+
+| Nivel | Organización actual |
+| --- | --- |
+| Ecosistema | La **Landing Page** presenta la propuesta y sus segmentos; la **Web Application** ofrece el espacio autenticado de creación y gestión; la aplicación móvil queda como canal de consumo planificado. |
+| Web Application | El espacio autenticado se organiza alrededor de creación de cuentos, generadores de imágenes y música, recursos reutilizables, Biblioteca y Perfil. |
+| Cuento | Una `Story` contiene metadatos y una secuencia ordenada de `StoryPage`. |
+| Página | Cada página contiene texto escrito por el adulto y la configuración de la escena: personajes, acción, emoción, objetos, momento y directivas visuales. |
+| Generación de imagen | El usuario configura un prompt guiado o libre, revisa la previsualización y solicita una generación asíncrona. |
+| Generación de música | El usuario define la dirección general y, cuando corresponde, organiza secciones como intro, verso, coro y outro, con letra opcional. |
+
+En la aplicación implementada, la narración de las páginas la redacta y edita el adulto; no existe un `StoryTextGeneratorPort`. Los modelos generativos se aplican a imágenes y música mediante el contexto Generative Media.
+
+#### Procesos secuenciales
+
+Los flujos complejos se presentan como pasos con un resultado verificable:
+
+1. **Autoría de cuentos:** definir título y configuración visual, agregar páginas, escribir el texto, configurar cada escena, solicitar las ilustraciones, revisar el resultado y guardar el contenido.
+2. **Composición musical:** configurar género, ánimo, tempo, instrumentación e idioma; definir secciones y letra opcional; revisar el resumen; encolar la inferencia; reproducir y guardar el resultado.
+3. **Gestión de biblioteca:** seleccionar un recurso propio, validar la referencia, guardar una entrada, editar título o descripción, marcar favoritos y volver a abrir o eliminar la referencia.
+4. **Control parental:** el PIN y el modo protegido forman parte del alcance funcional definido para la experiencia de consumo. La aplicación móvil y su flujo completo de lectura/AR permanecen planificados, no publicados.
+
+Las generaciones de imagen y música son asíncronas: la interfaz recibe la aceptación del trabajo y consulta posteriormente su estado y el asset producido.
+
+#### Organización por categorías y taxonomías
+
+| Dimensión | Categorías o valores |
+| --- | --- |
+| Tipo de medio | Cuentos, imágenes y música; son también los filtros principales de la Biblioteca. |
+| Recursos narrativos | Personajes, escenarios, perfiles de estilo e historias, reutilizables dentro del espacio del propietario. |
+| Estilo visual | Configuración visual de la historia o del trabajo de imagen; los perfiles y presets disponibles se administran en el contexto creativo. |
+| Momento de la escena | Mañana, mediodía, noche u otros valores admitidos por la configuración de la escena. |
+| Música | Género, mood, instrumentación, idioma, duración, BPM y secciones musicales. |
+| Estado | Trabajo pendiente, en proceso, exitoso o fallido para generaciones; favorito o no favorito para elementos de Biblioteca. |
+
+#### Organización adaptativa y contextual
+
+- **Por audiencia:** el espacio adulto expone creación, edición, generación y configuración. El modo protegido para niños debe limitarse al consumo aprobado y ocultar las herramientas de configuración; no se documenta como una vista móvil ya publicada.
+- **Por dispositivo:** la Web Application prioriza el trabajo de edición en escritorio y se adapta a tablet y navegador móvil. La aplicación móvil se ha definido como canal futuro para lectura táctil y AR, pero no forma parte de la implementación web actual.
+- **Por estado del contenido:** la interfaz diferencia recursos en edición, trabajos de generación, resultados disponibles y elementos guardados. Esto evita confundir una solicitud encolada con un asset listo para consumir.
 
 <a id="622-labeling-systems"></a>
 ### 6.2.2. Labeling Systems
 
+El sistema de rotulado usa términos comprensibles para adultos sin conocimientos especializados de inteligencia artificial. La interfaz evita exponer detalles de implementación como checkpoints, latents, Diffusers o LoRA como etiquetas de navegación o acciones principales.
+
+#### Principios de etiquetado
+
+1. **Lenguaje pedagógico:** preferir *Estilo visual*, *Ilustración*, *Cuento* y *Prompt guiado* frente a jerga del modelo.
+2. **Acciones explícitas:** usar verbos que describan el resultado esperado: *Crear*, *Generar*, *Guardar*, *Editar*, *Regenerar*, *Reproducir* y *Eliminar*.
+3. **Coherencia:** conservar los mismos nombres para conceptos equivalentes entre Web Application, Landing Page y futura aplicación móvil.
+4. **Control adulto:** los textos deben dejar claro cuándo una acción guarda, publica, genera o permite que un niño consuma contenido.
+5. **Estados comprensibles:** comunicar qué ocurrió y qué puede hacer el usuario, sin mostrar rutas HTTP, nombres de clases o mensajes internos del backend.
+
+| Categoría | Etiquetas recomendadas o implementadas | Propósito |
+| --- | --- | --- |
+| Navegación | Inicio, Creador de cuentos, Generador de imágenes, Generador de música, Personajes, Escenarios, Biblioteca, Perfil | Ubicar los módulos sin depender de términos técnicos. |
+| Acciones | Crear cuento, Agregar página, Generar, Guardar en biblioteca, Regenerar, Editar, Reproducir | Explicar la consecuencia de la acción. |
+| Biblioteca | Todos, Favoritos, Cuentos, Imágenes, Música | Clasificar contenido guardado. |
+| Campos | Título, Descripción, Texto de la página, Acción, Emoción, Escena, Momento, Prompt libre | Indicar qué información debe aportar el adulto. |
+| Landing Page | Soy padre o cuidador, Soy docente, Crear tu primer recurso, Conocer funcionalidades | Segmentar la propuesta sin prometer destinos no disponibles. |
+
+En la implementación actual, la landing usa CTA diferenciados para padres/cuidadores y docentes. Los destinos de acceso o descarga que todavía no tienen una URL pública se muestran como **Próximamente** y no apuntan a `localhost`.
+
 <a id="623-searching-systems"></a>
 ### 6.2.3. Searching Systems
+
+La búsqueda se diseña según el contexto:
+
+- **Biblioteca:** permite buscar por texto en título y descripción mediante `q`, además de filtrar por tipo de contenido y estado de favorito. Los resultados están asociados al usuario autenticado y se entregan con paginación.
+- **Recursos reutilizables:** Characters, Scenarios y Style Profiles se consultan dentro del espacio del propietario; las referencias de otros usuarios no se incorporan a los resultados. En los selectores de asociación, la búsqueda/autocompletado evita recorrer listas extensas.
+- **Landing Page:** no necesita un buscador interno. La información se descubre mediante la navegación por anclas, la jerarquía de secciones, los CTA y el contenido optimizado para indexación.
+- **Generaciones:** la consulta de un trabajo se realiza por su identificador y estado; no se presenta como una búsqueda textual de assets.
+
+Los filtros previstos para la Biblioteca son **Todos, Cuentos, Imágenes, Música y Favoritos**. Cuando el producto necesite ampliar el catálogo, pueden añadirse filtros temporales (última semana, último mes e histórico) y ordenamientos por más recientes, más antiguos o alfabético; no se documenta un reordenamiento manual de tarjetas como una capacidad actualmente implementada.
+
+Los resultados se presentan como tarjetas con portada o miniatura, tipo de medio, título, fecha y estado de favorito. Las acciones disponibles dependen del recurso y su estado: abrir, editar, reproducir, descargar o eliminar. Para música, la reproducción puede iniciarse desde la tarjeta cuando existe un asset disponible.
+
+Los estados vacíos deben explicar la siguiente acción —por ejemplo, guardar una creación para verla en la Biblioteca— y ofrecer accesos a crear un cuento, generar una imagen o componer una canción. Una búsqueda sin coincidencias debe indicar el término consultado y sugerir revisar la escritura o limpiar los filtros, sin revelar detalles internos del servicio.
 
 <a id="624-seo-tags-and-meta-tags"></a>
 ### 6.2.4. SEO Tags and Meta Tags
 
+La Landing Page pública debe describir la propuesta de Tale Star con metadatos orientados a padres, cuidadores y docentes, sin presentar como disponibles capacidades que todavía están planificadas.
+
+| Elemento | Criterio de contenido |
+| --- | --- |
+| `title` | Nombre de Tale Star y beneficio principal: creación de cuentos y recursos educativos personalizados. |
+| `description` | Explicar que permite a adultos crear cuentos ilustrados, imágenes y música educativa, revisar el contenido y conservarlo. |
+| `keywords` | Usar términos naturales como cuentos infantiles, recursos educativos, cuentos ilustrados, imágenes educativas y música para niños; evitar una lista de tecnologías internas. |
+| `author` | Identificar a Tale Star y al equipo del proyecto cuando corresponda. |
+| `robots` | Permitir la indexación de la landing pública, siempre que el despliegue continúe siendo el canal público previsto. |
+| Open Graph / Twitter Card | Reutilizar el título, descripción e imagen social de la landing para compartir la propuesta de valor de forma consistente. |
+| `og:type` | `website`, porque la URL representa la landing pública del producto. |
+| `og:image` / `twitter:image` | Imagen social alojada en el despliegue público, con una vista representativa de Tale Star y texto alternativo descriptivo. |
+| URL canónica | Usar la URL pública real del despliegue. No documentar `https://talestar.app` como URL operativa si el despliegue vigente es GitHub Pages. |
+
+Estos metadatos son responsabilidad de la landing pública y no deben mezclarse con los metadatos de las historias, generaciones o elementos privados de la Web Application. La aplicación autenticada debe evitar indexar contenido personal y no debe exponer títulos, descripciones o assets de un usuario en buscadores.
+
 <a id="625-navigation-systems"></a>
 ### 6.2.5. Navigation Systems
 
+La navegación combina anclas públicas, navegación global autenticada y rutas de detalle:
+
+1. **Landing Page:** la navbar enlaza con las secciones de propuesta, segmentos, funcionalidades y proceso. El CTA principal conduce a la Web Application cuando existe un destino público; en caso contrario se muestra como *Próximamente*. El footer agrupa enlaces secundarios de producto, segmentos y cuenta.
+2. **Web Application:** el panel autenticado ofrece navegación persistente hacia Inicio, Creador de cuentos, Generador de imágenes, Generador de música, recursos reutilizables, Biblioteca y Perfil. La barra lateral se reduce a iconos en anchos intermedios y se convierte en barra inferior en móvil.
+3. **Navegación de detalle:** desde una lista se accede al detalle de una historia, página, generación o elemento de Biblioteca; las acciones de edición, reproducción, favorito y eliminación se mantienen dentro del contexto del recurso.
+4. **Navegación de retorno:** las pantallas de error y estados vacíos ofrecen una salida clara hacia el área de creación o Biblioteca, en lugar de dejar al usuario en una ruta sin contexto.
+5. **Separación adulto/niño:** el modo protegido, cuando esté disponible en el canal de consumo, debe eliminar enlaces hacia edición, generación, perfil y configuración. No se presenta la AR móvil como parte de la navegación web actualmente publicada.
+
+En responsive, el orden de lectura se conserva: propuesta, identificación del segmento, funcionalidades, proceso y CTA. La landing cambia la navbar por un menú hamburguesa y las grillas por una columna; la Web Application adapta el shell y mantiene la navegación principal accesible.
 <a id="63-landing-page-ui-design"></a>
 ## 6.3. Landing Page UI Design
 
