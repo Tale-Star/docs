@@ -3073,31 +3073,31 @@ Los wireframes son en formato Mobile Application
 ## 6.5. Applications Prototyping
 
 <p align="center">
-  <img src="imgs/ApplicationPrototype/Login.png" alt="Mock-up mobile de Login de Tale Star" title="Mobile Mock-up" width="320" />
+  <img src="imgs/ApplicationsPrototype/Login.png" alt="Mock-up mobile de Login de Tale Star" title="Mobile Mock-up" width="320" />
 </p>
 <p align="center">
-  <img src="imgs/ApplicationPrototype/Home.png" alt="Mock-up Web de Home de Tale Star" title="Mobile Mock-up" width="320" />
+  <img src="imgs/ApplicationsPrototype/Home.png" alt="Mock-up Web de Home de Tale Star" title="Mobile Mock-up" width="320" />
 </p>
 <p align="center">
-  <img src="imgs/ApplicationPrototype/StoryCreator.png" alt="Mock-up Web de Story Creator de Tale Star" title="Web Mock-up" width="320" />
+  <img src="imgs/ApplicationsPrototype/StoryCreator.png" alt="Mock-up Web de Story Creator de Tale Star" title="Web Mock-up" width="320" />
 </p>
 <p align="center">
-  <img src="imgs/ApplicationPrototype/ImageGenerator.png" alt="Mock-up Web de Image Generator de Tale Star" title="Web Mock-up" width="320" />
+  <img src="imgs/ApplicationsPrototype/ImageGenerator.png" alt="Mock-up Web de Image Generator de Tale Star" title="Web Mock-up" width="320" />
 </p>
 <p align="center">
-  <img src="imgs/ApplicationPrototype/ImageGenerated.png" alt="Mock-up Web de Image Generated de Tale Star" title="Web Mock-up" width="320" />
+  <img src="imgs/ApplicationsPrototype/ImageGenerated.png" alt="Mock-up Web de Image Generated de Tale Star" title="Web Mock-up" width="320" />
 </p>
 <p align="center">
-  <img src="imgs/ApplicationPrototype/ContentLibrary.png" alt="Mock-up Web de Content Library de Tale Star" title="Web Mock-up" width="320" />
+  <img src="imgs/ApplicationsPrototype/ContentLibrary.png" alt="Mock-up Web de Content Library de Tale Star" title="Web Mock-up" width="320" />
 </p>
 <p align="center">
-  <img src="imgs/ApplicationPrototype/OpenAR.png" alt="Mock-up Web de Open AR de Tale Star" title="Web Mock-up" width="320" />
+  <img src="imgs/ApplicationsPrototype/OpenAR.png" alt="Mock-up Web de Open AR de Tale Star" title="Web Mock-up" width="320" />
 </p>
 <p align="center">
-  <img src="imgs/ApplicationPrototype/AR.png" alt="Mock-up Web de AR de Tale Star" title="Web Mock-up" width="320" />
+  <img src="imgs/ApplicationsPrototype/AR.png" alt="Mock-up Web de AR de Tale Star" title="Web Mock-up" width="320" />
 </p>
 <p align="center">
-  <img src="imgs/ApplicationPrototype/ExitAR.png" alt="Mock-up Web de Exit AR de Tale Star" title="Web Mock-up" width="320" />
+  <img src="imgs/ApplicationsPrototype/ExitAR.png" alt="Mock-up Web de Exit AR de Tale Star" title="Web Mock-up" width="320" />
 </p>
 
 <a id="capitulo-vii-product-implementation-validation-deployment"></a>
