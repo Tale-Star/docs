@@ -3011,23 +3011,26 @@ Los wireframes son en formato Web Application
 Los wireframes son en formato Mobile Application
 
 <p align="center">
-  <img src="imgs/UX-UI/MobileStoryReader.png" alt="Mock-up  Mobile Story Reader de Tale Star" title="Mobile Mock-up" width="320" />
+  <img src="imgs/UX-UI/MobileStoryReader.png" alt="Mock-up Mobile Story Reader de Tale Star" title="Mobile Mock-up" width="320" />
 </p>
 <p align="center">
-  <img src="imgs/UX-UI/MobileARCamera.png" alt="Mock-up mobile de Mobile AR Camera de Tale Star" title="Mobile Mock-up" width="320" />
+  <img src="imgs/UX-UI/MobileARCamera.png" alt="Mock-up Mobile AR Camera de Tale Star" title="Mobile Mock-up" width="320" />
 </p>
 <p align="center">
-  <img src="imgs/UX-UI/MobileARStoryReader.png" alt="Mock-up mobile de Mobile AR Story Reader de Tale Star" title="Mobile Mock-up" width="320" />
+  <img src="imgs/UX-UI/MobileARStoryReader.png" alt="Mock-up  Mobile AR Story Reader de Tale Star" title="Mobile Mock-up" width="320" />
 </p>
-
-
-
-
-
 
 
 <a id="642-applications-wireflow-diagrams"></a>
 ### 6.4.2. Applications Wireflow Diagrams
+
+<p align="center">
+  <img src="imgs/Wireflow/StoryCreation.png" alt="Mock-up Web de Story Creation de Tale Star" title="Web Mock-up" width="320" />
+</p>
+
+<p align="center">
+  <img src="imgs/Wireflow/MobileARStoryReader.png" alt="Mock-up web de Mobile AR Story Reader de Tale Star" title="Web Mock-up" width="320" />
+</p>
 
 <a id="643-applications-mock-ups"></a>
 ### 6.4.3. Applications Mock-ups
@@ -3068,6 +3071,34 @@ Los wireframes son en formato Mobile Application
 
 <a id="65-applications-prototyping"></a>
 ## 6.5. Applications Prototyping
+
+<p align="center">
+  <img src="imgs/ApplicationPrototype/Login.png" alt="Mock-up mobile de Login de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/ApplicationPrototype/Home.png" alt="Mock-up Web de Home de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/ApplicationPrototype/StoryCreator.png" alt="Mock-up Web de Story Creator de Tale Star" title="Web Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/ApplicationPrototype/ImageGenerator.png" alt="Mock-up Web de Image Generator de Tale Star" title="Web Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/ApplicationPrototype/ImageGenerated.png" alt="Mock-up Web de Image Generated de Tale Star" title="Web Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/ApplicationPrototype/ContentLibrary.png" alt="Mock-up Web de Content Library de Tale Star" title="Web Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/ApplicationPrototype/OpenAR.png" alt="Mock-up Web de Open AR de Tale Star" title="Web Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/ApplicationPrototype/AR.png" alt="Mock-up Web de AR de Tale Star" title="Web Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/ApplicationPrototype/ExitAR.png" alt="Mock-up Web de Exit AR de Tale Star" title="Web Mock-up" width="320" />
+</p>
 
 <a id="capitulo-vii-product-implementation-validation-deployment"></a>
 # Capítulo VII: Product Implementation, Validation & Deployment
