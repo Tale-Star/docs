@@ -87,7 +87,7 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
       - [Preguntas de introducción](#preguntas-de-introducción-1)
       - [Preguntas principales](#preguntas-principales-1)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-      - [Entrevista 1 — Marjorie Mercado](#entrevista-1-segmento-1)
+      - [Entrevista 1 — Marjorie Mercado](#entrevista-1--marjorie-mercado)
       - [Entrevista 2 — Sebastián Ramírez](#entrevista-2--sebastián-ramírez)
       - [Entrevista 3 — Bruno Ontón](#entrevista-3--bruno-ontón)
       - [Entrevista 1 — Sara Davila](#entrevista-1--sara-davila)
@@ -217,7 +217,12 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
       - [Recomendaciones derivadas de la revisión](#recomendaciones-derivadas-de-la-revisión)
   - [6.2. Information Architecture](#62-information-architecture)
     - [6.2.1. Organization Systems](#621-organization-systems)
+      - [Organización jerárquica](#organización-jerárquica)
+      - [Procesos secuenciales](#procesos-secuenciales)
+      - [Organización por categorías y taxonomías](#organización-por-categorías-y-taxonomías)
+      - [Organización adaptativa y contextual](#organización-adaptativa-y-contextual)
     - [6.2.2. Labeling Systems](#622-labeling-systems)
+      - [Principios de etiquetado](#principios-de-etiquetado)
     - [6.2.3. Searching Systems](#623-searching-systems)
     - [6.2.4. SEO Tags and Meta Tags](#624-seo-tags-and-meta-tags)
     - [6.2.5. Navigation Systems](#625-navigation-systems)
@@ -1134,9 +1139,11 @@ Diandra utiliza recursos digitales en distintas áreas curriculares y ha emplead
 <a id="223-analisis-de-entrevistas"></a>
 ### 2.2.3. Análisis de entrevistas
 
-Los dos padres/cuidadores entrevistados utilizan Google y YouTube como punto de partida cuando necesitan explicar o reforzar un tema. Ambos revisan el material antes de presentarlo, ya que encuentran diferencias de nivel, vocabulario, duración o cantidad de estímulos. Cuando el recurso no encaja, buscan otra alternativa, combinan formatos o complementan la explicación personalmente. Para este segmento, el objetivo es encontrar con rapidez contenido apropiado para el niño sin perder el control sobre lo que se muestra.
+Los tres padres/cuidadores entrevistados utilizan Google y YouTube como punto de partida cuando necesitan explicar o reforzar un tema. Revisan el material antes de presentarlo, ya que encuentran diferencias de nivel, vocabulario, duración o cantidad de estímulos. Cuando el recurso no encaja, buscan otra alternativa, combinan formatos o complementan la explicación personalmente. Para este segmento, el objetivo es encontrar con rapidez contenido apropiado para el niño sin perder el control sobre lo que se muestra.
 
 También se observa una apertura prudente hacia herramientas de inteligencia artificial. Los cuidadores las han utilizado como punto de partida para ideas, explicaciones o imágenes, pero señalan la necesidad de revisar la exactitud y adecuación del resultado. Las imágenes, cuentos y canciones se valoran por su capacidad para apoyar la comprensión y el recuerdo, no como sustitutos del acompañamiento adulto.
+
+La entrevista a Bruno Ontón agrega la perspectiva de un padre cuyo tiempo disponible está condicionado por el trabajo. En su experiencia, los videos animados de matemáticas para su hijo menor no siempre logran mantener su atención, por lo que identifica como necesidad recursos más breves, interactivos o que permitan pintar. También considera especialmente útiles las canciones con subtítulos para que los niños puedan cantar. Aunque ha utilizado inteligencia artificial para crear una imagen destinada a colorear, recurre principalmente a materiales disponibles en YouTube porque no dispone de tiempo suficiente para adaptar o crear recursos propios. Este caso refuerza la importancia de ofrecer contenido fácil de seleccionar, revisar y ajustar, así como formatos que favorezcan la participación activa del niño.
 
 Las tres docentes entrevistadas confirman que los recursos digitales son parte habitual de la preparación y el desarrollo de sus clases. Cuentos, imágenes, canciones, fichas y presentaciones se utilizan para contextualizar contenidos, captar la atención de los estudiantes y reforzar actividades de aprendizaje.
 
@@ -3407,6 +3414,8 @@ Tale Star. (n.d.). *Landing page* [Repositorio de código fuente]. GitHub. https
 Tale Star. (n.d.). *Entrevista 1: Marjorie, segmento padres y cuidadores* [Video]. YouTube. https://youtu.be/GYXhUYCt9OM
 
 Tale Star. (n.d.). *Entrevista 2: Sebastián Ramírez, segmento padres y cuidadores* [Video]. YouTube. https://youtu.be/Jr87RMa8Z0Y
+
+Tale Star. (n.d.). *Entrevista 3: Bruno Ontón, segmento padres y cuidadores* [Video]. Google Drive. https://drive.google.com/file/d/1hTwUpfPAk6CyrUUyQKCP9_PDfsskpAoG/view?usp=sharing
 
 Tale Star. (n.d.). *Entrevista 1: Sara Davila, segmento docentes* [Video]. YouTube. https://youtu.be/cABX9cd1hTY
 
