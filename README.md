@@ -3029,7 +3029,7 @@ Los wireframes son en formato Mobile Application
 </p>
 
 <p align="center">
-  <img src="imgs/Wireflow/MobileARStoryReader.png" alt="Mock-up web de Mobile AR Story Reader de Tale Star" title="Web Mock-up" width="320" />
+  <img src="imgs/Wireflow/ARStoryExperience.png.png" alt="Mock-up web de Mobile AR Story Reader de Tale Star" title="Web Mock-up" width="320" />
 </p>
 
 <a id="643-applications-mock-ups"></a>
