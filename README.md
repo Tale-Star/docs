@@ -87,7 +87,7 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
       - [Preguntas de introducción](#preguntas-de-introducción-1)
       - [Preguntas principales](#preguntas-principales-1)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-      - [Entrevista 1 — Marjorie](#entrevista-1--marjorie)
+      - [Entrevista 1 — Marjorie Mercado](#entrevista-1-segmento-1)
       - [Entrevista 2 — Sebastián Ramírez](#entrevista-2--sebastián-ramírez)
       - [Entrevista 3 — Bruno Ontón](#entrevista-3--bruno-ontón)
       - [Entrevista 1 — Sara Davila](#entrevista-1--sara-davila)
@@ -1029,14 +1029,16 @@ Las entrevistas fueron registradas con autorización de las participantes. Los s
 **Segmento objetivo 1: Padres y cuidadores**
 
 <a id="entrevista-1-segmento-1"></a>
-#### Entrevista 1 — Marjorie
+#### Entrevista 1 — Marjorie Mercado
 
 | Dato | Información |
 | :--- | :--- |
 | Edad | 24 años |
+| Distrito | Comas, Lima |
 | Ocupación | Trabajadora independiente |
 | Rol | Cuidadora de una niña de 7 años |
 | Entrevistador | Jorge Díaz |
+| Timing | 00:00 – 04:29 |
 | Registro | [Video de la entrevista](https://youtu.be/GYXhUYCt9OM) |
 
 Marjorie acompaña el aprendizaje de una niña de 7 años, principalmente cuando tiene tareas o cuando la niña quiere aprender algo que le interesa. Suele buscar los recursos en Google y YouTube, y en su experiencia más reciente —un tema sobre el sistema solar— dedicó alrededor de 15 minutos a encontrar material utilizable. Señala que algunos contenidos resultan demasiado complejos y otros demasiado básicos, y que los videos largos la obligan a revisarlos antes de usarlos. Cuando un recurso no se ajusta por completo, combina varios: un video para explicar y luego imágenes para complementar. Prefiere imágenes y videos porque facilitan que la niña visualice lo que se le explica. Adapta o combina material varias veces al mes, sobre todo cuando los recursos están incompletos, y considera que lo que más esfuerzo le demanda es encontrar contenido acorde al nivel de aprendizaje de la niña. Ha probado herramientas de inteligencia artificial para generar explicaciones e imágenes, con buenos resultados como punto de partida, aunque siempre revisa lo generado. Valora una herramienta que permita crear cuentos, imágenes y canciones para un objetivo educativo concreto —por ejemplo, un cuento sobre el sistema solar para una niña de 7 años— y considera importante poder revisar y ajustar personajes, texto, nivel de dificultad y vocabulario antes de mostrar el contenido.
