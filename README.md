@@ -28,7 +28,7 @@
 | U20171a518 | Fabiola Dayane Becerra Llempen |
 
 
-<p align="center"><strong>Diciembre 2026</strong></p>
+<p align="center"><strong>Octubre 2026</strong></p>
 
 <div style="page-break-before: always;"></div>
 
@@ -38,11 +38,14 @@
 | Versión | Fecha | Autores | Descripción de modificación |
 | :--- | :--- | :--- | :--- |
 | TB1 | 19/09/2026 | Seijas Vasquez, Diego Antonio<br>Diaz Fiestas, Jorge Luis<br>Cardenas Minaya, Ricardo Fernando<br>Oblitas Davila, Mariano Moises<br>Huapaya Buitron, Ariana<br>Becerra Llempen, Fabiola Dayane | Consolidación y corrección de los capítulos I–IV; análisis de entrevistas y Needfinding; actualización de User Personas, User Task Matrix, Empathy Mapping y As-Is; consolidación de Requirements Specification; alineación de modelos generativos locales y ejecución reproducible con Docker Compose, sin fijar proveedor cloud; refinamiento de ADD, Strategic DDD, Bounded Context Canvases, Ubiquitous Language, decisiones arquitectónicas, trazabilidad y Student Outcome. |
+| TP1 | 07/10/2026 | Seijas Vasquez, Diego Antonio<br>Diaz Fiestas, Jorge Luis<br>Cardenas Minaya, Ricardo Fernando<br>Oblitas Davila, Mariano Moises<br>Huapaya Buitron, Ariana<br>Becerra Llempen, Fabiola Dayane | Actualización del informe para TP1: Mariano documentó Creative Authoring y Generative Media (5.1–5.2) y sus diagramas tácticos; Ariana contribuyó al análisis estratégico de Identity & Access; Diego desarrolló Style Guidelines (6.1); Ricardo documentó Content Library (5.4) e Information Architecture (6.2); Jorge Luis preparó Landing Page UI Design (6.3) y conclusiones; Fabiola elaboró Applications UX/UI Design (6.4). Los seis participaron por igual en EventStorming (1/6 cada uno). Se corrigieron los flujos de Domain Storytelling, se rediseñaron los Bounded Context Canvases con la plantilla del curso y se integraron las imágenes, además de actualizar Student Outcome y la evidencia previa pertinente. |
 
 <a id="project-report-collaboration-insights"></a>
 # Project Report Collaboration Insights
 
 Durante TB1, el historial del repositorio evidencia una distribución del trabajo documental entre los integrantes: se incorporaron entrevistas y artefactos de Needfinding, mapas de escenarios, Product Backlog, diagramas y correcciones de la arquitectura estratégica. Las contribuciones se integraron progresivamente en `README.md` y en los recursos de `imgs`, manteniendo el informe como fuente central de trazabilidad del proyecto.
+
+Durante TP1, las responsabilidades documentales se distribuyeron por los capítulos asignados y se integraron en el mismo informe: Mariano trabajó Creative Authoring y Generative Media; Ariana, el análisis estratégico de Identity & Access; Diego, Style Guidelines; Ricardo, Content Library e Information Architecture; Jorge Luis, Landing Page UI Design y conclusiones; y Fabiola, Applications UX/UI Design. Además, los seis integrantes elaboraron EventStorming de forma simultánea y colaborativa, con una participación equivalente de 1/6 por persona, sin asignar eventos individuales. La revisión de diagramas e integración de evidencias mantuvo la relación entre requisitos, límites de contexto, decisiones tácticas y diseño de experiencia.
 
 <a id="contenido"></a>
 # Contenido
@@ -290,8 +293,8 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
  
 | Criterio específico | Acciones realizadas | Conclusiones |
 | :--- | :--- | :--- |
-| Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Seijas Vasquez, Diego Antonio — participará en el video de exposición presentando los mapas As-Is y To-Be.<br><br>Diaz Fiestas, Jorge Luis — participará presentando las entrevistas y los hallazgos de Needfinding del segmento docente.<br><br>Cardenas Minaya, Ricardo Fernando — participará presentando el Impact Map, el Product Backlog y los diagramas C4.<br><br>Oblitas Davila, Mariano Moises — participará presentando el análisis de entrevistas docentes y la consolidación documental.<br><br>Huapaya Buitron, Ariana — participará presentando los User Personas, Empathy Maps y los aportes de diseño estratégico.<br><br>Becerra Llempen, Fabiola Dayane — participará presentando los recursos visuales y los artefactos de Strategic DDD y C4. | La exposición grupal permitirá que los seis integrantes comuniquen de manera estructurada la relación entre la investigación realizada, los requisitos identificados y las decisiones de diseño de Tale Star. Cada intervención se centrará en evidencia concreta de su aporte y empleará una explicación comprensible para una audiencia académica y técnica, evitando presentar conclusiones que no estén sustentadas en el informe. En conjunto, el video evidenciará la capacidad del equipo para sintetizar información de diferentes artefactos y justificar cómo estos contribuyen a la propuesta de valor y a la arquitectura de la solución. |
-| Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Seijas Vasquez, Diego Antonio — TB1: documentó los mapas As-Is y To-Be del informe.<br><br>Diaz Fiestas, Jorge Luis — TB1: registró entrevistas de padres/cuidadores y documentó artefactos de Needfinding del segmento docente.<br><br>Cardenas Minaya, Ricardo Fernando — TB1: incorporó evidencia del Impact Map, Product Backlog y diagramas C4.<br><br>Oblitas Davila, Mariano Moises — TB1: incorporó entrevistas y análisis del segmento docente, además de avances documentales del informe.<br><br>Huapaya Buitron, Ariana — TB1: incorporó User Personas, Empathy Maps y actualizaciones del Capítulo IV.<br><br>Becerra Llempen, Fabiola Dayane — TB1: incorporó y ajustó recursos visuales y documentación de Strategic DDD y C4. | Los seis integrantes realizaron contribuciones escritas verificables mediante los commits del repositorio y la documentación consolidada en el informe. La trazabilidad entre entrevistas, artefactos de Needfinding, requisitos, backlog, decisiones arquitectónicas y diagramas permite que el lector comprenda el razonamiento que conecta el problema con la solución propuesta. La documentación distribuye los aportes del equipo sin perder coherencia editorial, emplea evidencia identificable y diferencia los hallazgos observados de los supuestos que deberán validarse en etapas posteriores. De este modo, el informe comunica el avance de Tale Star con suficiente claridad para su evaluación académica y para la comprensión de lectores técnicos. |
+| Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Seijas Vasquez, Diego Antonio — participará en el video de exposición presentando los mapas As-Is y To-Be.<br><br>Diaz Fiestas, Jorge Luis — participará presentando las entrevistas y los hallazgos de Needfinding del segmento docente.<br><br>Cardenas Minaya, Ricardo Fernando — participará presentando el Impact Map, el Product Backlog y los diagramas C4.<br><br>Oblitas Davila, Mariano Moises — participará presentando el análisis de entrevistas docentes y la consolidación documental.<br><br>Huapaya Buitron, Ariana — participará presentando los User Personas, Empathy Maps y los aportes de diseño estratégico.<br><br>Becerra Llempen, Fabiola Dayane — participará presentando los recursos visuales y los artefactos de Strategic DDD y C4.<br><br>TP1 — Seijas Vasquez, Diego Antonio; Diaz Fiestas, Jorge Luis; Cardenas Minaya, Ricardo Fernando; Oblitas Davila, Mariano Moises; Huapaya Buitron, Ariana; y Becerra Llempen, Fabiola Dayane participaron por igual en la discusión oral y revisión conjunta del EventStorming, explicando el flujo completo del dominio (1/6 del aporte cada integrante). No se atribuyen eventos o tarjetas individuales porque el trabajo se realizó simultáneamente; esta actividad evidencia coordinación oral interna y no sustituye la exposición a otras audiencias. | La exposición grupal permitirá que los seis integrantes comuniquen de manera estructurada la relación entre la investigación realizada, los requisitos identificados y las decisiones de diseño de Tale Star. Cada intervención se centrará en evidencia concreta de su aporte y empleará una explicación comprensible para una audiencia académica y técnica, evitando presentar conclusiones que no estén sustentadas en el informe. En conjunto, el video evidenciará la capacidad del equipo para sintetizar información de diferentes artefactos y justificar cómo estos contribuyen a la propuesta de valor y a la arquitectura de la solución. La discusión de EventStorming incorporada en TP1 evidencia comunicación oral durante el modelado colaborativo, pero no sustituye la exposición de resultados a audiencias diversas. |
+| Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Seijas Vasquez, Diego Antonio — TB1: documentó los mapas As-Is y To-Be del informe.<br><br>Diaz Fiestas, Jorge Luis — TB1: registró entrevistas de padres/cuidadores y documentó artefactos de Needfinding del segmento docente.<br><br>Cardenas Minaya, Ricardo Fernando — TB1: incorporó evidencia del Impact Map, Product Backlog y diagramas C4.<br><br>Oblitas Davila, Mariano Moises — TB1: incorporó entrevistas y análisis del segmento docente, además de avances documentales del informe.<br><br>Huapaya Buitron, Ariana — TB1: incorporó User Personas, Empathy Maps y actualizaciones del Capítulo IV.<br><br>Becerra Llempen, Fabiola Dayane — TB1: incorporó y ajustó recursos visuales y documentación de Strategic DDD y C4.<br><br>TP1 — Oblitas Davila, Mariano Moises: documentó Creative Authoring y Generative Media (5.1–5.2) y sus diagramas; Huapaya Buitron, Ariana: contribuyó al análisis estratégico de Identity & Access; Seijas Vasquez, Diego Antonio: desarrolló Style Guidelines (6.1); Cardenas Minaya, Ricardo Fernando: documentó Content Library (5.4) e Information Architecture (6.2); Diaz Fiestas, Jorge Luis: elaboró Landing Page UI Design (6.3) y conclusiones; Becerra Llempen, Fabiola Dayane: desarrolló Applications UX/UI Design (6.4). Los seis también contribuyeron por igual al EventStorming y a la integración de los artefactos del Capítulo IV. | Los seis integrantes realizaron contribuciones escritas verificables mediante los commits del repositorio y la documentación consolidada en el informe. La trazabilidad entre entrevistas, artefactos de Needfinding, requisitos, backlog, decisiones arquitectónicas y diagramas permite que el lector comprenda el razonamiento que conecta el problema con la solución propuesta. La documentación distribuye los aportes del equipo sin perder coherencia editorial, emplea evidencia identificable y diferencia los hallazgos observados de los supuestos que deberán validarse en etapas posteriores. De este modo, el informe comunica el avance de Tale Star con suficiente claridad para su evaluación académica y para la comprensión de lectores técnicos. En TP1, la documentación de los contextos tácticos y del diseño UX/UI amplía esa evidencia escrita, mientras el EventStorming registra la explicación oral colaborativa del equipo. |
 
 <a id="capitulo-i-introduccion"></a>
 # Capítulo I: Introducción
@@ -310,7 +313,7 @@ El componente principal de Tale Star es su creador de cuentos. El usuario puede 
 
 Tale Star incluye adicionalmente generación independiente de imágenes mediante instrucciones en lenguaje natural y generación de canciones o piezas musicales breves que pueden utilizarse como recursos complementarios para explicar o reforzar conceptos.
 
-Finalmente, la solución incorpora una experiencia móvil de realidad aumentada mediante la cual el usuario puede detectar una superficie plana, colocar virtualmente un cuento y navegar entre sus páginas dentro del entorno físico. Esta funcionalidad se plantea como un mecanismo complementario de visualización y no como sustituto del acompañamiento del padre o docente.
+Finalmente, Tale Star contempla una aplicación móvil con una experiencia de realidad aumentada: el usuario podrá detectar una superficie plana, colocar virtualmente un cuento y navegar entre sus páginas dentro del entorno físico. La aplicación Flutter y la experiencia AR forman parte del alcance previsto; aún no existe una implementación móvil publicada. La lectura aumentada será un mecanismo complementario y no sustituirá el acompañamiento del padre o docente.
 
 La propuesta de Tale Star no pretende sustituir el criterio pedagógico del adulto ni afirmar que el uso de tecnología garantiza por sí mismo mejores resultados de aprendizaje. La plataforma busca proporcionar herramientas para que padres y docentes puedan producir contenido con una intención educativa explícita, manteniendo supervisión humana sobre el resultado generado.
 
@@ -324,7 +327,7 @@ Convertirse en una plataforma de referencia en Latinoamérica para la creación 
 
 **Innovación y tecnología**
 
-Tale Star combina inteligencia artificial generativa y realidad aumentada dentro de una solución multicomponente. La inteligencia artificial produce ilustraciones, imágenes y recursos musicales a partir de las configuraciones del usuario, mientras que la realidad aumentada proporciona un nuevo medio para visualizar los cuentos generados. El adulto escribe y revisa el texto de cada Story Page.
+Tale Star prevé combinar inteligencia artificial generativa y realidad aumentada dentro de una solución multicomponente. La inteligencia artificial genera ilustraciones, imágenes y recursos musicales a partir de las configuraciones del usuario; la futura aplicación móvil Flutter ofrecerá la lectura de cuentos mediante AR. Esta capacidad móvil pertenece al alcance objetivo y todavía no cuenta con código publicado. El adulto escribe y revisa el texto de cada Story Page.
 
 La innovación no reside únicamente en utilizar modelos generativos, sino en estructurar estas capacidades alrededor de un proceso orientado a la educación: el adulto define qué desea enseñar, determina las características del contenido, supervisa los resultados y decide cuándo y cómo utilizarlos.
 
@@ -379,7 +382,7 @@ A diferencia de herramientas generales de inteligencia artificial, Tale Star org
 
 Tale Star propone una solución digital multicomponente para padres y docentes que necesitan crear recursos educativos infantiles adaptados a objetivos específicos de aprendizaje.
 
-La solución integra una aplicación web orientada a la creación y administración de contenido, servicios de inteligencia artificial para generación visual y musical, una RESTful API desarrollada por el equipo y una aplicación móvil que incorpora una experiencia de realidad aumentada para visualizar los cuentos generados. El usuario redacta manualmente el texto de los cuentos.
+La solución comprende una Web Application orientada a la creación y administración de contenido, una RESTful API propia y servicios de inteligencia artificial para generación visual y musical. También prevé una aplicación móvil multiplataforma desarrollada con Flutter y Dart, que ofrecerá lectura de cuentos con realidad aumentada. La Web Application y el backend cuentan con código, pero aún no están desplegados públicamente; la aplicación móvil y la experiencia AR siguen en planificación. El usuario redacta manualmente el texto de los cuentos.
 
 El producto busca disminuir el esfuerzo necesario para pasar de una necesidad educativa concreta a un recurso que pueda ser utilizado y supervisado por el adulto.
 
@@ -406,7 +409,7 @@ A ello se añade el esfuerzo asociado con la preparación educativa. Los resulta
 
 En este contexto, la brecha identificada por Tale Star no consiste en una inexistencia absoluta de contenido educativo infantil. La problemática se encuentra entre la enorme disponibilidad de contenido digital y la capacidad de padres y docentes para disponer rápidamente de un recurso que simultáneamente responda a un objetivo educativo, resulte apropiado para la edad, pueda adaptarse al contexto del niño y mantenga al adulto en control de su creación.
 
-La necesidad de adaptar materiales a temas específicos se mantuvo como hipótesis inicial y fue contrastada en las cinco entrevistas de Needfinding. Los participantes describieron búsquedas y adaptaciones asociadas a temas concretos, como el sistema solar, los animales y actividades de aula; este estudio cualitativo no busca estimar su frecuencia poblacional.
+La necesidad de adaptar materiales a temas específicos se mantuvo como hipótesis inicial y fue contrastada en las seis entrevistas de Needfinding: tres a padres o cuidadores y tres a docentes. Los participantes describieron búsquedas y adaptaciones asociadas a temas concretos, como el sistema solar, los animales y actividades de aula; este estudio cualitativo no busca estimar su frecuencia poblacional.
 
 **Enunciado del problema**
 
@@ -1029,7 +1032,7 @@ Cada entrevista comprende hasta tres preguntas de introducción y diez preguntas
 <a id="222-registro-de-entrevistas"></a>
 ### 2.2.2. Registro de entrevistas
 
-Las entrevistas fueron registradas con autorización de las participantes. Los siguientes registros documentan la experiencia de tres docentes de educación inicial respecto a la búsqueda, adaptación y creación de recursos digitales para sus actividades pedagógicas.
+Las seis entrevistas fueron registradas con autorización de las personas participantes. Los siguientes registros documentan la experiencia de tres padres o cuidadores y tres docentes de educación inicial respecto a la búsqueda, adaptación y creación de recursos digitales para el aprendizaje y las actividades pedagógicas.
 
 **Segmento objetivo 1: Padres y cuidadores**
 
@@ -1044,7 +1047,7 @@ Las entrevistas fueron registradas con autorización de las participantes. Los s
 | Rol | Cuidadora de una niña de 7 años |
 | Entrevistador | Jorge Díaz |
 | Timing | 00:00 – 04:29 |
-| Registro | [Video de la entrevista](https://youtu.be/GYXhUYCt9OM) |
+| Registro | [Video de la entrevista desde el inicio](https://youtu.be/GYXhUYCt9OM?t=0) |
 
 Marjorie acompaña el aprendizaje de una niña de 7 años, principalmente cuando tiene tareas o cuando la niña quiere aprender algo que le interesa. Suele buscar los recursos en Google y YouTube, y en su experiencia más reciente —un tema sobre el sistema solar— dedicó alrededor de 15 minutos a encontrar material utilizable. Señala que algunos contenidos resultan demasiado complejos y otros demasiado básicos, y que los videos largos la obligan a revisarlos antes de usarlos. Cuando un recurso no se ajusta por completo, combina varios: un video para explicar y luego imágenes para complementar. Prefiere imágenes y videos porque facilitan que la niña visualice lo que se le explica. Adapta o combina material varias veces al mes, sobre todo cuando los recursos están incompletos, y considera que lo que más esfuerzo le demanda es encontrar contenido acorde al nivel de aprendizaje de la niña. Ha probado herramientas de inteligencia artificial para generar explicaciones e imágenes, con buenos resultados como punto de partida, aunque siempre revisa lo generado. Valora una herramienta que permita crear cuentos, imágenes y canciones para un objetivo educativo concreto —por ejemplo, un cuento sobre el sistema solar para una niña de 7 años— y considera importante poder revisar y ajustar personajes, texto, nivel de dificultad y vocabulario antes de mostrar el contenido.
 <p align="center">
@@ -1060,7 +1063,8 @@ Marjorie acompaña el aprendizaje de una niña de 7 años, principalmente cuando
 | Ocupación | Cuidador de niños |
 | Rol | Cuidador de un niño de 5 años |
 | Entrevistador | Jorge Díaz |
-| Registro | [Video de la entrevista](https://youtu.be/Jr87RMa8Z0Y) |
+| Timing | 00:00 – 04:29 |
+| Registro | [Video de la entrevista desde el inicio](https://youtu.be/Jr87RMa8Z0Y?t=0) |
 
 Sebastián acompaña el aprendizaje de un niño de 5 años, ayudándolo con sus tareas y buscando videos, cuentos o imágenes cuando necesita reforzar algún tema. En su experiencia más reciente —enseñarle los animales y sus sonidos— comenzó buscando en YouTube y Google, y dedicó entre 20 y 30 minutos porque, si bien había bastante contenido, no todo resultaba apropiado para la edad del niño. Señala que algunos videos incluían demasiada información, vocabulario que el niño aún no comprende o un exceso de estímulos. Cuando un recurso no se ajusta, busca otro, se lo explica él mismo o utiliza solo una parte del video o de las imágenes. Prefiere imágenes y canciones: las imágenes ayudan al niño a reconocer las cosas y las canciones facilitan que recuerde la información. Adapta o combina material una o dos veces por semana, sobre todo cuando no encuentra exactamente lo que necesita, y considera que lo que más esfuerzo le demanda es verificar que el contenido sea realmente adecuado, dada la gran cantidad de resultados. Ha usado ChatGPT para generar ideas de cuentos, con buena ayuda, aunque le preocupa que la información no siempre sea correcta o apropiada para un niño pequeño. Considera muy útil una herramienta que permita crear cuentos, imágenes y canciones para un objetivo educativo específico, y valora poder revisar y definir personajes, acciones, objetos y texto antes de usar el contenido para asegurar que sea apropiado y contenga exactamente lo que desea enseñar.
 <p align="center">
@@ -1076,6 +1080,7 @@ Sebastián acompaña el aprendizaje de un niño de 5 años, ayudándolo con sus 
 | Ocupación | Mecánico |
 | Rol | Padre de dos hijos (12 y 7 años) |
 | Entrevistador | Ricardo Cardenas |
+| Timing | 00:00 – 05:19 |
 | Registro | [Video de la entrevista](https://drive.google.com/file/d/1hTwUpfPAk6CyrUUyQKCP9_PDfsskpAoG/view?usp=sharing) |
 
 Bruno participa en el aprendizaje de sus hijos y en la elección de su contenido digital solo cuando su trabajo se lo permite, ya que a veces lo hace él y otras su esposa. En su experiencia más reciente buscó reforzar matemáticas básicas, como sumar y restar, para su hijo menor, a quien le cuesta el tema. Para eso recurrió a videos animados de YouTube. Su principal dificultad no fue tanto que el contenido no fuera apropiado para la edad, sino cómo estaba planteado el video: su hijo menor suele distraerse incluso con un video de matemáticas, por lo que le serviría un recurso más corto o uno en el que pueda pintar. Cuando el material no se ajusta, se lo explica él mismo al final, en tono de broma para que el niño se divierta. Considera que las canciones son el formato más útil por ser interactivas, sobre todo las que muestran la letra como subtítulos para que los niños canten. Adapta, combina o crea material propio muy poco: lo que más le limita es el tiempo, porque le gustaría hacerlo pero su trabajo no se lo permite, y tampoco se considera lo bastante creativo, por lo que recurre a lo que ya está en YouTube. Ha usado inteligencia artificial una vez, para crear una imagen que sus hijos pudieran pintar y así desarrollar su habilidad con el lápiz y los colores, y no comentó preocupaciones al respecto. Le parecería útil una aplicación o programa que le permita elegir qué quiere que su hijo vea, escuche o con qué interactúe, y la usaría sobre todo cuando esté en casa con él. Sobre definir los elementos de un cuento antes de usarlo, mencionó que le gustaría incluir personajes con los que su hijo pueda identificarse o personajes que ya existen, como los héroes de Marvel.
@@ -1091,10 +1096,12 @@ Bruno participa en el aprendizaje de sus hijos y en la elección de su contenido
 | Dato | Información |
 | :--- | :--- |
 | Edad | 48 años |
+| Distrito | Santiago de Surco, Lima, Perú |
 | Experiencia docente | 20 años |
 | Nivel | Educación inicial |
 | Entrevistador | Mariano Oblitas |
-| Registro | [Video de la entrevista](https://youtu.be/cABX9cd1hTY) |
+| Timing | 00:01 – 11:01 |
+| Registro | [Video de la entrevista desde el inicio de la entrevista](https://youtu.be/cABX9cd1hTY?t=1) |
 
 Sara utiliza recursos digitales diariamente y suele crear o adaptar cuentos, imágenes y canciones para vincularlos con las actividades de sus estudiantes. El proceso puede tomar entre dos y tres horas debido a la búsqueda, generación y corrección del material. Señaló dificultades con imágenes generadas por inteligencia artificial, especialmente cuando los personajes son repetitivos o no representan las características solicitadas. Considera necesario revisar el contenido antes de utilizarlo y valora una herramienta que simplifique la configuración mediante elementos reutilizables. También reconoce el potencial de la realidad aumentada para hacer las actividades más interactivas.
 
@@ -1108,10 +1115,12 @@ Sara utiliza recursos digitales diariamente y suele crear o adaptar cuentos, im�
 | Dato | Información |
 | :--- | :--- |
 | Edad | 49 años |
+| Distrito | Santiago de Surco, Lima, Perú |
 | Experiencia docente | 25 años |
 | Nivel | Educación inicial |
 | Entrevistador | Mariano Oblitas |
-| Registro | [Video de la entrevista](https://youtu.be/qM7wqQPLy8w) |
+| Timing | 00:03 – 10:19 |
+| Registro | [Video de la entrevista desde el inicio de la entrevista](https://youtu.be/qM7wqQPLy8w?t=3) |
 
 Roxana emplea recursos digitales de forma continua para motivar y complementar sus clases. Utiliza principalmente PowerPoint y Canva para elaborar cuentos, fichas y otros materiales; sin embargo, la búsqueda de imágenes adecuadas, la eliminación de fondos y la edición incrementan el tiempo de preparación. Al usar inteligencia artificial para generar recursos visuales, tuvo que modificar varias veces sus indicaciones antes de obtener un resultado apropiado. Por ello, considera útil una interfaz guiada que permita definir características sin depender de prompts complejos. Asimismo, percibe la realidad aumentada como un recurso complementario capaz de captar la atención de los niños.
 
@@ -1125,10 +1134,12 @@ Roxana emplea recursos digitales de forma continua para motivar y complementar s
 | Dato | Información |
 | :--- | :--- |
 | Edad | 41 años |
+| Distrito | Santiago de Surco, Lima, Perú |
 | Experiencia docente | 18 años |
 | Nivel | Educación inicial, aula de 5 años |
 | Entrevistador | Mariano Oblitas |
-| Registro | [Video de la entrevista](https://youtu.be/VIJUaUCygm4) |
+| Timing | 00:04 – 11:04 |
+| Registro | [Video de la entrevista desde el inicio de la entrevista](https://youtu.be/VIJUaUCygm4?t=4) |
 
 Diandra utiliza recursos digitales en distintas áreas curriculares y ha empleado Gemini para crear cuentos personalizados. Para buscar imágenes recurre principalmente a Pinterest y estima que seleccionar recursos claros, nítidos y adecuados puede tomar entre 50 y 60 minutos. Aunque reconoce el potencial de la inteligencia artificial, identifica problemas de precisión y consistencia: al corregir un elemento de una imagen pueden aparecer errores en otros. Considera importante controlar personajes, escenarios, objetos y calidad visual, y valora una interfaz organizada por categorías que ayude a formular instrucciones más precisas. También considera la realidad aumentada útil como actividad complementaria para sus estudiantes.
 
@@ -1160,7 +1171,7 @@ En ambos segmentos, la disponibilidad de contenido no evita el esfuerzo de busca
 <a id="23-needfinding"></a>
 ## 2.3. Needfinding
 
-Needfinding transforma los hallazgos de cinco entrevistas en representaciones de los dos segmentos objetivo. Los artefactos sintetizan comportamientos actuales, necesidades, dificultades y criterios de decisión observados en padres/cuidadores y docentes; no representan funcionalidades futuras de Tale Star.
+Needfinding transforma los hallazgos de seis entrevistas —tres a padres/cuidadores y tres a docentes— en representaciones de los dos segmentos objetivo. Los artefactos sintetizan comportamientos actuales, necesidades, dificultades y criterios de decisión observados; no representan funcionalidades futuras de Tale Star.
 
 Los User Personas, la User Task Matrix, los Empathy Maps y los As-Is Scenario Maps se elaboraron a partir de patrones repetidos en los registros de entrevistas. Estos resultados alimentan los requisitos del Capítulo III al identificar dónde se concentran el esfuerzo de búsqueda, la necesidad de adaptación y la importancia de revisar el contenido antes de utilizarlo.
 
@@ -1598,7 +1609,7 @@ Este objetivo no sitúa AR por encima del Story Creator en prioridad de negocio;
 | BG06          | Parent/Caregiver User Persona | Utiliza AR como experiencia complementaria de lectura del Story con el niño.                                                | Mobile Application, Child Mode y AR Story Experience.                         | US82–US90, US96                                         |
 | BG06          | Teacher User Persona          | Utiliza AR cuando resulte apropiado como forma complementaria de presentar un Story.                                        | Mobile Application, Child Mode y AR Story Experience.                         | US82–US90, US96                                         |
 
-El Impact Map debe construirse en UXPressia utilizando los Business Goals anteriores como punto de partida. Para cada objetivo se deben añadir los User Personas relacionados, los Impacts correspondientes, los Deliverables que los provocan y las User Stories asociadas.
+La matriz vincula cada Business Goal con los actores, cambios de comportamiento, entregables y User Stories que componen el Impact Map.
 
 La lectura del mapa evidencia que el Story Creator constituye la capability de mayor importancia para Tale Star. Esta decisión es consistente con el Lean UX Canvas, donde la creación de cuentos ilustrados página por página representa el núcleo de la solución. Image Generation y Music Generation complementan esta propuesta y permiten que el adulto seleccione otro formato cuando un Story completo no sea necesario.
 
@@ -1852,12 +1863,12 @@ Los constraints expresan restricciones técnicas del diseño objetivo y se docum
 |---|---|---|---|
 | **CT01** | RESTful API interna propia | Como Developer, deseo que la integración entre los productos y componentes de Tale Star se realice mediante una API RESTful propia, para mantener un contrato común de comunicación. | La solución expone una REST API propia mediante contratos HTTP/JSON. Las aplicaciones Web y Mobile utilizan esta API para acceder a las capacidades del sistema. |
 | **CT02** | Web Application | Como Developer, deseo que Tale Star disponga de una Web Application, para proporcionar el acceso web a las capacidades de creación y gestión de contenido. | La solución dispone de una Web Application independiente de la Mobile Application y utiliza la REST API propia para comunicarse con los servicios del sistema. |
-| **CT03** | Mobile Application con Flutter + Dart | Como Developer, deseo implementar la Mobile Application utilizando Flutter y Dart, para disponer de una aplicación móvil que integre las capacidades móviles de Tale Star. | La Mobile Application está implementada con **Flutter + Dart** y consume la REST API propia. La aplicación incorpora las capacidades móviles definidas para Tale Star, incluyendo la experiencia AR local. |
+| **CT03** | Mobile Application prevista con Flutter + Dart | Como Developer, deseo implementar la Mobile Application utilizando Flutter y Dart, para disponer de una aplicación móvil que integre las capacidades móviles de Tale Star. | La aplicación se implementará con **Flutter + Dart**, consumirá la REST API propia e incluirá la experiencia de lectura AR ejecutada localmente. Flutter permite orientar el producto a iOS y Android; para la prueba final de esta entrega se prevé validar y distribuir únicamente Android por los costos asociados a la publicación en iOS. |
 | **CT04** | Landing Page | Como Developer, deseo disponer de una Landing Page separada de la Web Application, para presentar la propuesta de Tale Star y dirigir al usuario hacia los puntos de acceso correspondientes. | La solución dispone de una Landing Page conceptualmente separada de la Web Application. La Landing Page proporciona los accesos definidos hacia los productos disponibles. |
 | **CT05** | Generación de imágenes con Z-Image-Turbo | Como Developer, deseo utilizar **Z-Image-Turbo** para generación de imágenes mediante el Worker configurable de Tale Star. | Cuando se selecciona `zimage`, `ZImageAdapter` ejecuta Diffusers/PyTorch dentro del proceso Worker a través del puerto de generación; el runtime no se expone como una API a los clientes. |
 | **CT06** | Generación musical con ACE-Step 1.5 Turbo | Como Developer, deseo utilizar **ACE-Step 1.5 Turbo** para generación musical mediante el Worker configurable de Tale Star. | Cuando se selecciona `acestep`, `AceStepAdapter` usa la integración Python local de ACE-Step dentro del Worker; Creative Authoring no invoca directamente el runtime. |
 | **CT07** | StyleProfiles configurables | Como Developer, deseo combinar perfiles visuales propiedad del usuario con configuraciones de estilo mantenidas por el servidor, para enriquecer las solicitudes de generación de imágenes. | Creative Authoring permite crear y mantener StyleProfiles por usuario; Generative Media puede añadir sus detalles al payload. `ZImageAdapter` también resuelve perfiles del registro JSON y sus opciones LoRA. El backend no aplica un límite de tres perfiles. |
-| **CT08** | AR local únicamente en Mobile mediante ArRuntime | Como Developer, deseo que la experiencia de realidad aumentada se ejecute localmente y únicamente en la Mobile Application, para utilizar las capacidades AR del dispositivo. | La experiencia AR se ejecuta mediante **ArRuntime** dentro de la Mobile Application. El procesamiento de la experiencia AR no se despliega ni ejecuta en la Web Application o en el servidor. |
+| **CT08** | AR local únicamente en Mobile mediante ArRuntime | Como Developer, deseo que la experiencia de realidad aumentada se ejecute localmente y únicamente en la Mobile Application, para utilizar las capacidades AR del dispositivo. | La experiencia AR se ejecutará mediante **ArRuntime** dentro de la Mobile Application. El procesamiento AR pertenecerá al cliente móvil y no se desplegará en la Web Application ni en el servidor. |
 | **CT09** | JWT para recursos privados | Como Developer, deseo utilizar **JWT** para proteger los recursos privados de Tale Star, para controlar el acceso a la información asociada a los usuarios. | Las solicitudes a recursos privados requieren una credencial JWT válida. Las solicitudes sin autorización válida son rechazadas y no permiten acceder al contenido protegido. |
 | **CT10** | Runtimes de IA no accesibles directamente desde clientes | Como Developer, deseo mantener los runtimes de IA aislados de los clientes Web y Mobile, para evitar que estos accedan directamente a los motores de generación. | Los clientes no realizan llamadas directas a Z-Image-Turbo ni a ACE-Step 1.5 Turbo. Las solicitudes de generación pasan por los componentes internos de Tale Star definidos para este propósito. |
 | **CT11** | Conservación de configuración para editar o regenerar *(no implementado en Biblioteca)* | Como Developer, deseo conservar la configuración original utilizada para una generación y recuperarla desde Biblioteca para editarla o generar otra versión. | **Estado del backend actual:** las entradas de Biblioteca guardan una referencia al Story o al asset exitoso y metadata propia, pero no enlazan el `GenerationJob` ni exponen el payload original para recuperarlo, editarlo o regenerarlo. Esta restricción no está satisfecha. |
@@ -1890,7 +1901,7 @@ El Architectural Drivers Backlog reúne los principales elementos que condiciona
 | **QD10** | Operational Simplicity | Quality Attribute Driver | Medium | Medium |
 | **CT01** | RESTful API interna propia | Constraint | — | — |
 | **CT02** | Web Application | Constraint | — | — |
-| **CT03** | Mobile Application implementada con Flutter + Dart | Constraint | — | — |
+| **CT03** | Mobile Application prevista con Flutter + Dart | Constraint | — | — |
 | **CT04** | Landing Page | Constraint | — | — |
 | **CT05** | Generación local de imagen con Z-Image-Turbo | Constraint | — | — |
 | **CT06** | Generación local de música con ACE-Step 1.5 Turbo | Constraint | — | — |
@@ -1942,11 +1953,11 @@ Las decisiones individuales y sus consecuencias se detallan a continuación.
 | **DEC01** | Architecture Style | FD01, FD02, FD03, QD03, QD05, QD07 | **Layered Monolith:** despliegue simple y menor complejidad inicial. **Modular Monolith:** mantiene límites claros y un despliegue sencillo. **Microservices:** permite independencia de despliegue y escalamiento individual. | **Layered:** simplicidad inicial. **Modular:** equilibrio entre modularidad y operación. **Microservices:** mayor independencia de despliegue. | **Layered:** puede aumentar el acoplamiento. **Modular:** los módulos comparten proceso y despliegue. **Microservices:** introduce complejidad distribuida, comunicación entre servicios y mayor carga operativa. | **Modular Monolith** | Se priorizan límites claros entre módulos y Bounded Contexts sin asumir la complejidad distribuida de microservices. El trade-off es una menor independencia de despliegue frente a microservices. |
 | **DEC02** | Internal Module Architecture | QD05, QD03, FD03, CT10 | **Transaction Script:** implementación simple orientada a operaciones. **Layered:** separación tradicional de responsabilidades. **Ports & Adapters:** aislamiento del dominio frente a infraestructura y proveedores externos. | **Transaction Script:** simplicidad. **Layered:** estructura clara. **Ports & Adapters:** mayor aislamiento y modificabilidad. | **Transaction Script:** puede concentrar lógica y dificultar su evolución. **Layered:** puede generar dependencias rígidas. **Ports & Adapters:** requiere más abstracciones y disciplina. | **Ports & Adapters + Domain/Application/Interfaces/Infrastructure** | Se obtiene mayor aislamiento entre dominio e infraestructura, especialmente frente a los runtimes de IA. El trade-off es una mayor cantidad de interfaces, adapters y reglas de dependencia. |
 | **DEC03** | Application Pattern | QD01, FD03, QD06 | **CRUD con servicios:** operaciones directas de aplicación. **Lightweight CQRS:** separa Commands y Queries. **CQRS + Event Sourcing:** permite historial de eventos y replay. | **CRUD con servicios:** baja complejidad y coincide con las operaciones implementadas. **Lightweight CQRS:** separa intenciones. **Event Sourcing:** conserva trazabilidad e historial completo. | **CRUD con servicios:** no ofrece modelos explícitos de Commands/Queries ni historial de eventos. **Lightweight CQRS:** añade estructura. **Event Sourcing:** introduce complejidad e infraestructura innecesaria para el alcance actual. | **Servicios de aplicación y repositorios con operaciones CRUD** | `CreativeAuthoringService`, `GenerationJobService` y `ContentLibraryService` coordinan métodos de aplicación y repositorios. El backend no implementa Commands, Queries, Handlers ni Event Sourcing como patrones explícitos. |
-| **DEC04** | Backend | FD01, QD03, QD05, CT05, CT06 | **NestJS:** estructura backend con TypeScript. **ASP.NET Core:** alto rendimiento y estructura robusta. **Python + FastAPI:** integración directa con el ecosistema Python de los runtimes de IA. | **NestJS:** organización y ecosistema TypeScript. **ASP.NET Core:** rendimiento y robustez. **Python/FastAPI:** integración con runtimes Python/PyTorch. | **NestJS:** requiere integrar un stack diferente con los runtimes de IA. **ASP.NET Core:** aumenta la separación tecnológica. **Python/FastAPI:** requiere mantener consistencia entre tipos y contratos Python. | **Python 3.12 + FastAPI** | FastAPI compone los routers de los cuatro contextos en un monolito modular; los modelos se invocan mediante adaptadores Python locales desde el Worker. El backend aporta imágenes Docker para API y Worker, sin fijar un proveedor cloud. |
+| **DEC04** | Backend | FD01, QD03, QD05, CT05, CT06 | **NestJS:** estructura backend con TypeScript. **ASP.NET Core:** alto rendimiento y estructura robusta. **Python + FastAPI:** integración directa con el ecosistema Python de los runtimes de IA. | **NestJS:** organización y ecosistema TypeScript. **ASP.NET Core:** rendimiento y robustez. **Python/FastAPI:** integración con runtimes Python/PyTorch. | **NestJS:** requiere integrar un stack diferente con los runtimes de IA. **ASP.NET Core:** aumenta la separación tecnológica. **Python/FastAPI:** requiere mantener consistencia entre tipos y contratos Python. | **Python 3.12 + FastAPI** | FastAPI compone los routers de los cuatro contextos en un monolito modular; los modelos se invocan mediante adaptadores Python locales desde el Worker. El backend aporta imágenes Docker para API y Worker. Google Cloud Run es el destino previsto para el backend; el repositorio aún no contiene su configuración de despliegue y la persistencia local debe adaptarse antes de publicarlo. |
 | **DEC05** | Persistence | FD03, QD06, CT11 | **SQLite WAL:** persistencia local en archivo. **PostgreSQL:** servicio relacional con mayor capacidad de concurrencia y crecimiento. **MongoDB:** esquema documental flexible. | **SQLite:** operación sencilla en un solo host. **PostgreSQL:** mayor concurrencia y despliegue dedicado. **MongoDB:** flexibilidad documental. | **SQLite:** serializa las escrituras y el modo WAL requiere que los procesos estén en el mismo host. **PostgreSQL:** mayor complejidad operativa. **MongoDB:** no se ajusta directamente al modelo relacional definido. | **SQLite WAL + ORM/migrations** | Se elige SQLite para el MVP porque Compose ejecuta API y Worker en un único host y la metadata se organiza en relaciones estructuradas. WAL permite que lectores y escritor convivan, pero mantiene un solo escritor; la app valida ownership de varios usuarios, aunque esta decisión no implica capacidad demostrada para una carga multiusuario intensa. Si aumentan las escrituras concurrentes o se distribuye el backend entre hosts, se debe migrar a PostgreSQL. [SQLite WAL](https://www.sqlite.org/wal.html) |
 | **DEC06** | Long-running generation | QD01, QD03, QD07 | **Synchronous:** espera el resultado durante la solicitud. **GenerationJob + Worker:** procesa la generación como un trabajo persistente. **Distributed broker:** distribuye trabajos entre workers. | **Synchronous:** simplicidad. **GenerationJob:** evita bloquear y permite controlar jobs. **Broker:** facilita escalamiento distribuido. | **Synchronous:** bloquea solicitudes y dificulta controlar concurrencia. **GenerationJob:** requiere gestionar estados y errores. **Broker:** añade infraestructura y complejidad operativa. | **GenerationJob en SQLite + Python Worker** | El API confirma `Pending` con `202`; el Worker reclama filas pendientes mediante una actualización condicional y el lock de archivo serializa el uso local de GPU. SQLite actúa como cola durable; no se configura un broker ni recuperación automática de jobs que quedaron en `Processing`. |
 | **DEC07** | AI boundary | QD03, QD05, CT05–CT10 | **Direct SDK:** integración directa. **Ports & Adapters:** aislamiento mediante interfaces. **Servicio generativo administrado:** delegación del procesamiento fuera de la infraestructura del proyecto. | **Direct SDK:** menor cantidad de capas. **Ports & Adapters:** desacoplamiento y modificabilidad. **Servicio administrado:** reduce la carga de infraestructura propia. | **Direct SDK:** propaga contratos de las bibliotecas al resto del backend. **Ports & Adapters:** requiere mappings adicionales. **Servicio administrado:** no corresponde a los adaptadores de inferencia incluidos en el backend. | **Ports & Adapters + adaptadores Python locales** | `ZImageAdapter` invoca Diffusers/PyTorch y `AceStepAdapter` usa la API Python de ACE-Step dentro del Worker. No hay una llamada HTTP interna a un servicio de inferencia; el trade-off es mantener dependencias y modelos en el contenedor/proceso del Worker. |
-| **DEC08** | Mobile | FD05, FD06, QD08, CT03 | **Kotlin/Swift:** desarrollo nativo. **React Native:** aplicación multiplataforma. **Flutter:** aplicación multiplataforma con una base de código. | **Kotlin/Swift:** acceso directo a capacidades nativas. **React Native:** reutilización de código. **Flutter:** base de código compartida y cumplimiento del constraint definido. | **Kotlin/Swift:** requiere mantener plataformas separadas. **React Native:** puede requerir integración nativa para AR. **Flutter:** puede requerir bridge nativo para determinadas capacidades de ARCore/ARKit. | **Flutter + Dart** | Se mantiene una única base de código para la Mobile Application. El trade-off es la posible necesidad de integración nativa para capacidades específicas de realidad aumentada. |
+| **DEC08** | Mobile | FD05, FD06, QD08, CT03 | **Kotlin/Swift:** desarrollo nativo. **React Native:** aplicación multiplataforma. **Flutter:** aplicación multiplataforma con una base de código. | **Kotlin/Swift:** acceso directo a capacidades nativas. **React Native:** reutilización de código. **Flutter:** base de código compartida y cumplimiento del constraint definido. | **Kotlin/Swift:** requiere mantener plataformas separadas. **React Native:** puede requerir integración nativa para AR. **Flutter:** puede requerir bridge nativo para determinadas capacidades de ARCore/ARKit. | **Flutter + Dart** | Se prevé una base de código móvil para Android e iOS; para la prueba final de esta entrega se priorizará Android por los costos de publicación y pruebas en iOS. El alcance móvil incluye lectura de Stories con AR local, sujeto a implementación futura. |
 | **DEC09** | AR | FD06, QD08, CT08 | **Server-side:** procesamiento en servidor. **WebAR:** experiencia AR mediante navegador. **On-device:** procesamiento local en el dispositivo. | **Server-side:** centraliza procesamiento. **WebAR:** evita depender exclusivamente de una aplicación nativa. **On-device:** aprovecha cámara, sensores y capacidades AR del dispositivo. | **Server-side:** no aprovecha adecuadamente capacidades locales. **WebAR:** presenta restricciones de compatibilidad y capacidades. **On-device:** depende de capacidades, permisos y sensores del dispositivo. | **On-device AR mediante ArRuntime; bridge nativo hacia ARCore/ARKit cuando sea necesario** | Se cumple el procesamiento local establecido para la experiencia AR. El trade-off es la dependencia respecto de las capacidades y permisos del dispositivo móvil. |
 | **DEC10** | Authentication | FD07, QD04, CT09 | **Server sessions:** sesiones gestionadas por servidor. **JWT:** autenticación mediante tokens. | **Server sessions:** mecanismo conocido de sesión. **JWT:** adecuado para clientes Web y Mobile. | **Server sessions:** menos conveniente para una REST API consumida por múltiples clientes. **JWT:** requiere gestionar expiración, refresh y custodia segura. | **JWT** | JWT protege la API con autenticación mediante correo y contraseña. El trade-off es gestionar correctamente expiración, refresh y almacenamiento seguro de tokens. |
 | **DEC11** | Generated assets | FD03, QD06, CT11 | **DB BLOB:** archivos dentro de la base de datos. **Filesystem + metadata:** assets como archivos y metadata en SQLite. **Object storage:** almacenamiento especializado y escalable. | **DB BLOB:** centraliza datos. **Filesystem:** separa assets de metadata. **Object storage:** facilita escalamiento. | **DB BLOB:** aumenta el tamaño y dificulta la gestión de multimedia. **Filesystem:** requiere gestionar referencias, backups y consistencia. **Object storage:** introduce infraestructura y dependencia adicional. | **Filesystem local + metadata en SQLite** | `LocalAssetStorage` escribe los bytes directamente en el directorio configurado; `generation_jobs.result` conserva la referencia y metadata del asset. No se implementan staging con rename atómico ni reconciliación automática de archivos huérfanos; un fallo entre escritura del archivo y persistencia del job puede requerir limpieza operativa. |
@@ -2042,8 +2053,8 @@ Los refinamientos priorizan los escenarios que introducen mayor riesgo arquitect
 | **Stimulus** | El usuario selecciona AR Reading. |
 | **Stimulus Source** | Usuario móvil. |
 | **Environment** | Dispositivo compatible y assets disponibles. |
-| **Artifact** | **Flutter Mobile Application / ArRuntime** |
-| **Response** | Se inicia la cámara, se detecta una superficie y se presenta el Story localmente. |
+| **Artifact** | **Futura Flutter Mobile Application / experiencia AR local prevista** |
+| **Response** | La aplicación móvil iniciará la cámara, detectará una superficie y presentará el Story localmente. |
 | **Response Measure** | Inicio en **≤ 3 segundos** sin endpoint AR. |
 | **Questions** | ¿Qué dispositivos y versiones mínimas se soportarán? |
 | **Issues** | Permisos, soporte de ARCore/ARKit mediante bridge nativo cuando corresponda y carga de assets. |
@@ -2111,27 +2122,72 @@ El resultado final establece Creative Authoring como Core Domain; Generative Med
 <a id="423-domain-message-flows-modeling"></a>
 ### 4.2.3. Domain Message Flows Modeling
 
-Los diagramas siguientes usan Domain Storytelling: actores, objetos del dominio y acciones numeradas. Representan el recorrido del usuario y los resultados del dominio; los contratos HTTP, adapters y detalles del Worker se documentan en el Capítulo V.
+La sección aplica Domain Storytelling a los flujos en los que actores y bounded contexts colaboran. Cada diagrama muestra participantes, solicitudes, respuestas y límites de contexto; la historia numerada explica las acciones en lenguaje de negocio. Se distinguen las capacidades implementadas del flujo objetivo de lectura AR, que aún no tiene cliente móvil publicado.
+
+El diagrama muestra la solicitud autenticada de una imagen, su procesamiento asíncrono por el Worker y la recuperación del asset generado.
 
 ![Domain Storytelling - Image Generation](imgs/diagrams/taleStarDomainStoryImageGeneration.png)
 
-El usuario configura prompt, escena, estilo, personajes y parámetros visuales; el backend expande menciones `@name` con personajes propios y añade detalles de un `StyleProfile` propio cuando corresponde. La solicitud origina un `GenerationJob` y, si termina correctamente, un asset que el adulto revisa. Guardar ese asset en Content Library es una acción separada; la referencia no conserva el payload original del job.
+La historia recorre la solicitud asíncrona de imagen hasta la entrega autenticada del asset. La generación puede terminar en `Succeeded` o `Failed`; el alta en Biblioteca no forma parte automática del job.
+
+1. El padre, cuidador o docente configura la descripción visual, personajes, estilo y seed en la Web Application.
+2. La aplicación envía la solicitud autenticada al endpoint de generación de imágenes.
+3. La interfaz amplía las referencias `@name` y `StyleProfile` con recursos propios del usuario, crea el `GenerationJob` en `Pending` y responde `202 Accepted`.
+4. El Worker reclama un job pendiente, lo cambia a `Processing` y selecciona el generador de imagen.
+5. Si la inferencia termina correctamente, el Worker almacena los bytes y la metadata del asset antes de persistir `Succeeded`; ante una excepción, persiste `Failed` y el mensaje de error.
+6. El usuario consulta el job y, si tuvo éxito, recupera el asset mediante la ruta multimedia autenticada para revisarlo.
+7. Si decide conservarlo, crea por separado una referencia de Biblioteca.
+
+El diagrama muestra cómo el adulto crea una Story, agrega páginas y consulta el contenido que queda persistido en Creative Authoring.
 
 ![Domain Storytelling - Story Authoring](imgs/diagrams/taleStarDomainStoryStoryCreation.png)
 
-El adulto crea la `Story`, agrega `StoryPage`, redacta el texto y puede asociar Characters propios y una configuración visual. El backend persiste la autoría; no implementa generación automática del texto. Las ilustraciones se solicitan mediante un flujo de imagen separado. Una Story se puede guardar en Biblioteca mediante una acción explícita.
+La historia muestra la autoría de una Story y sus páginas, con validación de propiedad y recursos asociados. El texto lo redacta el adulto; la generación de ilustraciones se solicita en Generative Media como flujo independiente.
+
+1. El adulto define el título y la descripción de la Story, y puede seleccionar un `Scenario` y un `StyleProfile` propios.
+2. La Web Application envía la creación; `CreativeAuthoringService` valida las referencias y el repositorio persiste la `Story` del usuario autenticado.
+3. El adulto redacta la acción y el texto de una `StoryPage`, define `visual_config` y selecciona Characters propios si los necesita.
+4. La aplicación envía la página a la ruta de Story Pages; el servicio valida la propiedad de Story y Characters, y la unicidad de `page_number`.
+5. El repositorio persiste la página y sus asociaciones ordenadas.
+6. Al consultar la Story, la API devuelve sus páginas ordenadas por número para continuar la edición o lectura.
+
+El diagrama recorre el request de música hasta la generación asíncrona, el almacenamiento del audio y su consulta por el usuario.
 
 ![Domain Storytelling - Music Generation](imgs/diagrams/taleStarDomainStoryMusicGeneration.png)
 
-El adulto define caption, letra o secciones, idioma y parámetros musicales; solicita la generación y revisa el asset de audio cuando el job finaliza. El request admite también duración, voz, género, mood, instrumentos, producción y seed. Si desea conservar el resultado en Biblioteca, guarda una referencia en una acción separada.
+La historia presenta el flujo asíncrono de música desde el request estructurado hasta la revisión del audio. El asset se guarda en el almacenamiento de medios y su referencia a Biblioteca es opcional e independiente.
+
+1. El adulto define si solicita una canción o una pieza instrumental, además de caption, idioma, secciones o letra y parámetros musicales.
+2. La Web Application envía el request autenticado a la API de generación de música.
+3. La API persiste el `GenerationJob` en `Pending` y responde `202 Accepted` sin esperar al modelo.
+4. El Worker reclama el job, lo cambia a `Processing` y selecciona el adaptador de música.
+5. El adaptador produce audio y metadata; el Worker almacena el archivo y persiste `Succeeded`, o registra `Failed` y el error si falla la ejecución o el almacenamiento.
+6. El usuario consulta el estado y recupera el audio autorizado para revisarlo.
+7. Si desea conservarlo, solicita por separado guardar una referencia en Content Library.
+
+El diagrama muestra cómo la Biblioteca resuelve referencias propias de Stories o jobs exitosos y entrega los medios por la ruta autenticada correspondiente.
 
 ![Domain Storytelling - Content Library](imgs/diagrams/taleStarDomainStoryLibraryRetrieval.png)
 
-El usuario guarda una referencia a una Story propia o a un asset generado exitosamente. Content Library permite consultar el recurso, actualizar metadata o favorito, y eliminar la referencia. Para assets generados conserva la referencia y metadata de Biblioteca; no recupera el payload original ni ofrece edición o regeneración desde el elemento guardado.
+La historia separa la metadata de Biblioteca de los recursos originales. Content Library valida cada referencia por owner; la entrega de los bytes de imagen o música continúa a cargo de la ruta multimedia autenticada.
+
+1. El usuario consulta su Biblioteca con filtros opcionales de tipo, texto y favorito; recibe sus entradas ordenadas por fecha.
+2. Para guardar una Story o un asset exitoso, envía el tipo y el identificador del recurso.
+3. `LibraryResourceResolver` comprueba que la Story pertenezca al usuario o que el asset corresponda a un Generation Job exitoso del mismo owner.
+4. `ContentLibraryService` crea el `LibraryItem`; la restricción única impide duplicar owner, tipo y recurso.
+5. Al abrir un asset, el cliente solicita sus bytes a Media API; al editar o quitar una entrada, solo cambia la metadata o la referencia de Biblioteca.
+
+El diagrama presenta el flujo móvil previsto de consulta de una Story, recuperación de sus assets y presentación AR local en el dispositivo.
 
 ![Domain Storytelling - AR Reading (target flow)](imgs/diagrams/taleStarDomainStoryArReading.png)
 
-En el flujo objetivo, el adulto selecciona una Story y el cliente móvil carga páginas y assets para iniciar la lectura AR local. El backend solo entrega contenido y no procesa AR. La aplicación móvil aún no tiene código publicado, por lo que este diagrama expresa el alcance de producto y no una capacidad implementada.
+El flujo representa el alcance previsto para lectura móvil con AR. El backend expone la consulta de Stories y assets, pero la aplicación móvil y la presentación AR local no tienen código publicado.
+
+1. En la aplicación móvil prevista, el adulto selecciona una Story y comienza la lectura.
+2. El cliente móvil consultará la Story y luego sus páginas mediante rutas REST autenticadas separadas.
+3. El cliente recuperará los assets autorizados utilizando las rutas multimedia existentes.
+4. La aplicación móvil presentará las páginas en el entorno mediante AR local; el backend no procesa la cámara ni renderiza la escena.
+5. El niño avanzará por el cuento bajo la supervisión del adulto.
 
 <a id="424-bounded-context-canvases"></a>
 ### 4.2.4. Bounded Context Canvases
@@ -2140,43 +2196,35 @@ Los Bounded Context Canvases se construyen iterativamente mediante Context Overv
 
 ### 1. Creative Authoring Bounded Context Canvas
 
-| Sección | Detalle / Contenido |
-| :--- | :--- |
-| **Contexto / Tipo** | **CREATIVE AUTHORING** *(Core Domain)* |
-| **Propósito (Purpose)** | Concentrar la intención educativa y creativa del usuario adulto para estructurar cuentos y recursos pedagógicos. |
-| **Lenguaje Ubicuo (Ubiquitous Language)** | • Story, Story Page <br> • Character, Scenario, StyleProfile <br> • StoryPage `visual_config` <br> • Texto y referencias creativas |
-| **Capacidades (Capabilities)** | • Character, Scenario y StyleProfile CRUD <br> • Story y Story Page authoring <br> • Configuración visual persistida dentro de cada Story Page <br> • Validación de propiedad y de referencias |
-| **Dependencias e Interfaces** | • Identity & Access provee el usuario autenticado a sus rutas <br> • El cliente solicita jobs a las rutas de Generative Media; no hay un caso de uso de generación dentro de Creative Authoring <br> • Content Library valida referencias de Story mediante un adaptador SQLAlchemy |
+El canvas sintetiza propósito, clasificación estratégica, roles, comunicaciones, lenguaje ubicuo, decisiones, supuestos, métricas de verificación y preguntas abiertas. Creative Authoring se trata como Core Domain porque organiza la autoría personalizada; sus solicitudes de generación permanecen en Generative Media.
+
+![Creative Authoring Bounded Context Canvas](imgs/diagrams/taleStarBoundedContextCanvas-creative-authoring.png)
+
+El flujo de entrada comprende CRUD de `Character`, `Scenario` y `StyleProfile`, además de creación y edición de `Story` y `StoryPage`. El centro destaca que el adulto redacta el texto, que la Story puede referenciar un Scenario y un StyleProfile propios, y que cada página mantiene su configuración visual y sus Characters asociados. Hacia fuera, el cliente recibe las páginas ordenadas; Content Library valida Stories mediante su resolver SQLAlchemy, mientras que la generación de imágenes se solicita separadamente y no es invocada por Creative Authoring.
 
 ### 2. Generative Media Bounded Context Canvas
 
-| Sección | Detalle / Contenido |
-| :--- | :--- |
-| **Contexto / Tipo** | **GENERATIVE MEDIA** *(Supporting Domain)* |
-| **Propósito (Purpose)** | Crear y procesar jobs asíncronos de imagen y música mediante adaptadores fake o runtimes Python locales configurables. |
-| **Lenguaje Ubicuo (Ubiquitous Language)** | • Generation Job <br> • Generation Status <br> • Generated Image, Song <br> • Style Profile |
-| **Capacidades (Capabilities)** | • Image/Music request validation and prompt enrichment <br> • Generation Job state, ownership and result handling <br> • Resolución de StyleProfiles propios y registro JSON de presets <br> • Asset storage y serving autenticado |
-| **Dependencias e Interfaces** | • `ImageGeneratorPort` selecciona fake o `ZImageAdapter` (Diffusers/PyTorch local) <br> • `MusicGeneratorPort` selecciona fake o `AceStepAdapter` (ACE-Step Python local) <br> • `GenerationWorker` reclama jobs desde SQLite; no usa broker ni HTTP interno hacia modelos |
+El canvas organiza el ciclo de trabajo de imágenes y música alrededor de jobs persistidos y ejecución desacoplada. Se clasifica como Supporting Domain: aporta capacidades multimodales al producto sin sustituir la autoría de Stories.
+
+![Generative Media Bounded Context Canvas](imgs/diagrams/taleStarBoundedContextCanvas-generative-media.png)
+
+Las comunicaciones de entrada son solicitudes, consultas de estado y recuperación de assets autenticados. La API persiste `Pending` y confirma con `202 Accepted`; el Worker reclama y procesa el job, guarda el asset y registra `Succeeded` o `Failed`. El canvas resalta que la cola reside en la base de datos, el lock serializa el uso local de GPU y guardar una referencia en Content Library es una operación aparte. Los indicadores mostrados sirven para evaluar latencia, éxito/fallo y entrega de assets; no se presentan como mediciones ya instrumentadas.
 
 ### 3. Content Library Bounded Context Canvas
 
-| Sección | Detalle / Contenido |
-| :--- | :--- |
-| **Contexto / Tipo** | **CONTENT LIBRARY** *(Supporting Domain)* |
-| **Propósito (Purpose)** | Gestionar el ciclo de vida, la organización y la persistencia de los recursos creados. |
-| **Lenguaje Ubicuo (Ubiquitous Language)** | • Library Item <br> • Generated Asset <br> • Generation Configuration <br> • Resource Category |
-| **Capacidades (Capabilities)** | • Save Content & Update Saved Content <br> • Browse Library & Retrieve Content <br> • Store Generation Metadata <br> • Retrieve Story for Mobile / Generated Assets |
-| **Dependencias e Interfaces** | • Generative Media para resultados validados <br> • Persistencia de metadata y assets administrada por infraestructura |
+El canvas describe la Biblioteca como contexto de Supporting Domain enfocado en conservar referencias y metadata para reutilizar recursos. No atribuye a Content Library la propiedad de los archivos generados.
+
+![Content Library Bounded Context Canvas](imgs/diagrams/taleStarBoundedContextCanvas-content-library.png)
+
+El usuario puede guardar una Story propia o un asset de un job exitoso, buscar y filtrar entradas, actualizar metadata/favorito y eliminar una referencia. `LibraryResourceResolver` comprueba la titularidad del recurso de origen; `content_library_items` guarda el `LibraryItem` y aplica unicidad por owner, tipo y recurso. `resource_id` es una referencia lógica sin FK física. El borrado de la entrada no elimina el contenido original y los bytes de medios se sirven desde Generative Media.
 
 ### 4. Identity & Access Bounded Context Canvas
 
-| Sección | Detalle / Contenido |
-| :--- | :--- |
-| **Contexto / Tipo** | **IDENTITY & ACCESS** *(Generic Domain)* |
-| **Propósito (Purpose)** | Gestionar la seguridad, autenticación y mecanismos de protección de interfaz para niños. |
-| **Lenguaje Ubicuo (Ubiquitous Language)** | • User Account <br> • Password <br> • Child PIN <br> • Authenticated User |
-| **Capacidades (Capabilities)** | • Register, Login & Password Recovery <br> • JWT Issuance & Token Refresh <br> • Child PIN Management |
-| **Dependencias e Interfaces** | • REST API para registro, login, refresh y recuperación <br> • Creative Authoring y Content Library como consumidores de identidad autorizada |
+El canvas presenta Identity & Access como Generic Domain que proporciona autenticación y control de acceso a los demás contextos, además del resguardo del modo infantil.
+
+![Identity & Access Bounded Context Canvas](imgs/diagrams/taleStarBoundedContextCanvas-identity-access.png)
+
+El lenguaje del contexto comprende cuentas, credenciales, JWT, refresh token y PIN infantil. Su salida es la identidad autenticada que consumen las rutas protegidas; Creative Authoring, Generative Media y Content Library aplican ownership en sus propias consultas. Las métricas y preguntas abiertas orientan la verificación de autenticación, renovación y PIN, sin afirmar que exista MFA ni una política adicional no documentada.
 
 <a id="425-context-mapping"></a>
 ### 4.2.5. Context Mapping
@@ -2207,7 +2255,7 @@ El modelo C4 presenta la solución de forma progresiva. System Landscape delimit
 
 ![Tale Star System Landscape](imgs/diagrams/taleStarSystemLandscape.png)
 
-El System Landscape amplía la vista más allá del software y sitúa Tale Star en los entornos familiar y educativo. Muestra los actores, los canales de acceso y la plataforma como un sistema; la Mobile Application aparece como alcance planificado, mientras Landing Page, Web Application y Backend REST API son los componentes actuales. El backend no configura proveedores externos de identidad, inferencia ni despliegue cloud.
+El System Landscape amplía la vista más allá del software y sitúa Tale Star en los entornos familiar y educativo. Muestra los actores, los canales de acceso y la plataforma como un sistema; la Mobile Application aparece como alcance planificado, mientras que existen los repositorios de Landing Page, Web Application y Backend REST API. La Landing Page está publicada; la Web Application y el backend aún no tienen un despliegue público. Google Cloud Run y Vercel son los destinos previstos, no una configuración presente en el backend.
 
 <a id="432-software-architecture-context-level-diagram"></a>
 ### 4.3.2. Software Architecture Context Level Diagram
@@ -2223,18 +2271,27 @@ El diagrama separa los procesos API y Worker, y muestra sus recursos compartidos
 
 ![Tale Star Container Diagram](imgs/diagrams/taleStarContainerDiagram.png)
 
-Landing Page y Web Application se desarrollan con Vue 3, TypeScript y Vite. Flutter y Dart son la decisión objetivo para la Mobile Application, pero el repositorio móvil no contiene código publicado; Story Reader y ArRuntime describen alcance planificado. La Web Application consume las rutas REST del backend; Docker Compose expone el API en el puerto 8000 y no configura TLS ni un proxy inverso.
+Landing Page y Web Application se desarrollan con Vue 3, TypeScript y Vite. La Landing Page está publicada en GitHub Pages; la Web Application y el backend cuentan con código, pero aún no están desplegados públicamente. El objetivo es alojar el frontend de la Web Application en Vercel y el backend en Google Cloud Run. En ese despliegue las solicitudes externas usarán HTTPS en el ingreso de las plataformas, donde Cloud Run termina TLS y Vercel provisiona certificados para los dominios configurados ([HTTPS en Cloud Run][18]; [certificados TLS de Vercel][19]). Docker Compose, usado para ejecutar localmente el API en el puerto 8000, no configura TLS ni un proxy inverso. La aplicación móvil prevista utilizará Flutter y Dart, tendrá como objetivo Android e iOS y ofrecerá lectura con AR; para la prueba final de esta entrega se prioriza Android por los costos de publicación y pruebas en iOS. No hay código móvil publicado.
 
 El backend es un monolito modular Python 3.12/FastAPI que compone los cuatro Bounded Contexts en un proceso API; Docker Compose define además un contenedor Worker separado. SQLite WAL, SQLAlchemy y Alembic persisten los contextos y la cola `generation_jobs`; API y Worker comparten el volumen `talestar-data` para la base de datos, medios y lock de GPU. El Worker reclama un `Pending` con un `UPDATE` condicional y usa un lock de archivo; no hay broker distribuido ni llamada directa API-a-Worker. Cuando está configurado, Z-Image usa `ZImageAdapter` con Diffusers/PyTorch y ACE-Step 1.5 Turbo usa `AceStepAdapter` con su API Python local. `Settings` selecciona generadores fake por defecto; la configuración de Docker Compose los selecciona como `zimage` y `acestep`. Character y StyleProfile de Creative Authoring pueden enriquecer el payload; existen perfiles propios por usuario además del registro JSON de presets/LoRA. Identidad se implementa dentro del backend mediante contraseñas Argon2id y JWT HS256; no se integra Google Identity.
 
 <a id="434-software-architecture-deployment-diagram"></a>
 ### 4.3.4. Software Architecture Deployment Diagram
 
-El diagrama resume el despliegue de backend declarado por Docker Compose, incluidos contenedores, volumen persistente, assets de modelos y reserva de GPU.
+El diagrama resume la configuración local del backend declarada por Docker Compose —contenedores, volumen compartido, assets de modelos y reserva de GPU—; no representa un despliegue cloud ya realizado.
 
 ![Tale Star Deployment Diagram](imgs/diagrams/taleStarDeploymentDiagram.png)
 
-El despliegue backend definido por `compose.yaml` contiene dos servicios: `api` y `worker`. API usa `python:3.12-slim-bookworm`; Worker usa `nvidia/cuda:12.8.1-cudnn-runtime-ubuntu24.04`, clona ACE-Step 1.5 y reserva los dispositivos NVIDIA configurados por Compose. El volumen Docker `talestar-data` monta `/var/lib/talestar` en ambos servicios y conserva SQLite, medios y el lock; el Worker también monta cache de Hugging Face, LoRAs y checkpoints de ACE-Step desde rutas configurables del host. Compose selecciona `IMAGE_GENERATOR=zimage`, `MUSIC_GENERATOR=acestep` y CUDA por defecto, con variables de entorno para ajustar esos valores. El proveedor cloud y el alojamiento de Web/Mobile no están definidos por la configuración del backend, por lo que este diagrama no afirma un proveedor ni un servicio de hosting externo.
+El despliegue local de backend definido por `compose.yaml` contiene dos servicios: `api` y `worker`. API usa `python:3.12-slim-bookworm`; Worker usa `nvidia/cuda:12.8.1-cudnn-runtime-ubuntu24.04`, clona ACE-Step 1.5 y reserva los dispositivos NVIDIA configurados por Compose. El volumen Docker `talestar-data` monta `/var/lib/talestar` en ambos servicios y conserva SQLite, medios y el lock; el Worker también monta cache de Hugging Face, LoRAs y checkpoints de ACE-Step desde rutas configurables del host. Compose selecciona `IMAGE_GENERATOR=zimage`, `MUSIC_GENERATOR=acestep` y CUDA por defecto, con variables de entorno para ajustar esos valores. Esta descripción corresponde al entorno local del repositorio, no a la infraestructura cloud prevista.
+
+| Componente | Destino previsto | Estado en esta entrega |
+| --- | --- | --- |
+| Backend: REST API y Generation Worker | Google Cloud Run | No desplegado. `compose.yaml` solo define la ejecución local. |
+| Web Application | Vercel | No desplegada; el repositorio contiene el frontend. |
+| Landing Page | GitHub Pages | Publicada en la URL indicada en el Anexo C. |
+| Mobile Application | Flutter + Dart para Android e iOS | Aún sin código móvil publicado. La prueba final se prevé en Android por los costos asociados a la publicación y pruebas en iOS. |
+
+El backend actual persiste SQLite WAL y los assets en filesystem local compartido por API y Worker. Cloud Run usa un filesystem de instancia que no persiste al detenerse y no comparte archivos entre instancias; por ello, este modelo local no puede presentarse como una configuración cloud lista para producción. Antes del despliegue se deberá resolver una persistencia durable y compartida para la base de datos y los assets. La ejecución del Worker con GPU también requiere configuración de Cloud Run, revisión de regiones/cuotas y validación de costos; esta integración no está configurada en el repositorio ([contrato de ejecución de Cloud Run][16]; [GPU en Cloud Run][17]).
 
 La Web Application es un cliente externo a los contenedores del backend; el cliente móvil descrito en el diseño también consumirá contenido y assets mediante la REST API cuando se implemente. El backend no contiene servicio de AR ni configura Google Identity. El procesamiento de AR pertenece al cliente móvil objetivo.
 
@@ -2368,7 +2425,7 @@ El C4 muestra la ruta desde Web Application hasta el servicio y repositorio de C
 
 ![Creative Authoring Component Diagram](assets/diagrams/creative-authoring-component.png)
 
-La interfaz FastAPI adapta esquemas HTTP a entidades; `CreativeAuthoringService` valida ownership y referencias; `SqlAlchemyCreativeAuthoringRepository` implementa el puerto y persiste las seis tablas del contexto. La Web Application consume la API por HTTPS/JSON. El módulo de autoría no invoca directamente a los adaptadores de generación.
+La interfaz FastAPI adapta esquemas HTTP a entidades; `CreativeAuthoringService` valida ownership y referencias; `SqlAlchemyCreativeAuthoringRepository` implementa el puerto y persiste las seis tablas del contexto. En el despliegue previsto, la Web Application consumirá la API por HTTPS/JSON a través de Vercel y Google Cloud Run; en ejecución local con Docker Compose no se configura TLS. La Web Application y el backend aún no están desplegados públicamente. El módulo de autoría no invoca directamente a los adaptadores de generación.
 
 <a id="516-bounded-context-software-architecture-code-level-diagrams"></a>
 ### 5.1.6. Bounded Context Software Architecture Code Level Diagrams
@@ -2717,7 +2774,7 @@ Esta sección documenta el sistema visual **tal como está implementado** en los
 | Elemento | Descripción |
 | :-- | :-- |
 | **Nombre** | **Tale Star**, acompañado del descriptor **Creative Studio** (logo, sidebar y pantallas de acceso). |
-| **Finalidad del producto** | Ayudar a padres, cuidadores y docentes a convertir un tema concreto en un **cuento ilustrado, una imagen o una canción** para niños, con el adulto siempre en control del contenido. La app móvil complementa el producto con la lectura de cuentos en realidad aumentada. |
+| **Finalidad del producto** | Ayudar a padres, cuidadores y docentes a convertir un tema concreto en un **cuento ilustrado, una imagen o una canción** para niños, con el adulto siempre en control del contenido. La futura aplicación móvil Flutter complementará el producto con lectura de cuentos en realidad aumentada. |
 | **Logo** | Marca cuadrada de esquinas redondeadas con un personaje en tonos lilas sobre fondo violeta (`tale-star-mark.png`, 180 × 180 px). Se usa junto al texto «Tale Star» (Nunito 800) y «Creative Studio» (Inter, `--text-3`). |
 | **Identidad visual** | Violeta como color de marca, fondos lavanda muy claros, superficies blancas y degradados suaves. Las pantallas de acceso y el área de contenido usan paneles translúcidos con desenfoque (*glass panel*). |
 | **Ilustraciones** | La landing no usa imágenes de stock: la vista previa del cuento se dibuja con CSS (cielo lila-rosado, sol amarillo pálido `#fff4bd`, colina verde `#5b7563`, suelo `#e3a7a6`). Los iconos son de línea (*outline*), con trazo de 1.8–2 px y extremos redondeados. Las portadas sin imagen usan un degradado violeta con el icono del tipo de recurso. |
@@ -2901,7 +2958,7 @@ La solución articula tres puntos de contacto complementarios:
 
 1. **Landing Page pública:** comunica la propuesta de valor y orienta a padres o cuidadores y docentes hacia las acciones principales.
 2. **Web Application autenticada:** concentra la autoría de cuentos, la generación de imágenes y música, los recursos reutilizables, la biblioteca y la configuración de la cuenta.
-3. **Mobile Application prevista:** estará orientada a la lectura compartida, el modo protegido para niños y la experiencia de realidad aumentada. Esta aplicación no se presenta como una capacidad publicada en el estado actual del producto.
+3. **Mobile Application prevista:** se desarrollará con Flutter y Dart para Android e iOS y estará orientada a la lectura compartida, el modo protegido para niños y la experiencia de realidad aumentada. No existe código móvil publicado; para la prueba final de esta entrega se prevé validar Android, debido a los costos de publicación y pruebas en iOS.
 
 <a id="621-organization-systems"></a>
 ### 6.2.1. Organization Systems
@@ -3330,9 +3387,9 @@ Las tres pantallas móviles muestran cómo abrir la lectura AR, usar la cámara 
 
 1. Dividir el dominio en cuatro bounded contexts separa la configuración narrativa, la generación, la biblioteca y la identidad según sus responsabilidades. Creative Authoring conserva Stories, páginas y personajes; el adulto revisa el contenido y decide si lo guarda en la biblioteca, sin que la autoría dependa de un modelo generativo concreto.
 2. Organizar los contextos en Domain, Application, Interface e Infrastructure, con Ports & Adapters dentro de un monolito modular, permite sustituir los adaptadores de generación sin incorporar sus dependencias al dominio. En el backend, los puertos de imagen y música aíslan Z-Image-Turbo y ACE-Step; el texto de las Story Pages lo redacta y edita el usuario adulto, pues no existe un `StoryTextGeneratorPort` implementado.
-3. La landing implementa las historias US91–US96 y está publicada con los mismos tokens visuales de la Web App, un CTA para padres o cuidadores y otro para docentes. Esto da continuidad entre el primer contacto y la aplicación. La comprensión de la propuesta y la efectividad de los CTA todavía deben validarse con usuarios.
-4. Generative Media integra los adaptadores de imagen y música como infraestructura; la configuración de ejecución local permite usar Z-Image-Turbo y ACE-Step sin depender de APIs de inferencia de terceros. La realidad aumentada mediante `ArRuntime` es una decisión objetivo para la aplicación móvil, pero aún no está implementada en un cliente móvil publicado ni en el backend; por ello, no se presenta como capacidad operativa actual.
-5. A esta entrega, Tale Star cuenta con el diseño estratégico y táctico documentado, una Web App en desarrollo y una landing implementada y publicada. La aplicación móvil con lectura AR sigue planificada. Todavía no hay resultados de validación con usuarios, por lo que no se reportan métricas de uso.
+3. La Landing Page está implementada y publicada, y comunica la propuesta y los segmentos definidos por US91–US94. Los accesos de US95 y US96 todavía no están disponibles: sus CTA muestran *Próximamente* mientras la Web Application, el backend y la aplicación móvil no tengan destinos públicos. La comprensión de la propuesta y la efectividad de los CTA todavía deben validarse con usuarios.
+4. Generative Media integra los adaptadores de imagen y música como infraestructura; la configuración local permite usar Z-Image-Turbo y ACE-Step sin depender de APIs de inferencia de terceros. Tale Star prevé una aplicación móvil Flutter para Android e iOS con lectura de Stories mediante AR local. Esa experiencia no tiene código móvil publicado; para la prueba final de esta entrega se prevé validar Android por los costos de publicación y pruebas en iOS.
+5. A esta entrega, Tale Star cuenta con el diseño estratégico y táctico documentado, una Web Application y un backend con código pero aún sin despliegue público, y una Landing Page implementada y publicada en GitHub Pages. El destino previsto es Vercel para la Web Application y Google Cloud Run para el backend, sujeto a resolver la persistencia y ejecución del Worker descritas en 4.3.4. La aplicación Flutter con lectura AR continúa como alcance planificado. Todavía no hay resultados de validación con usuarios, por lo que no se reportan métricas de uso.
 
 **Recomendaciones**
 
@@ -3378,6 +3435,14 @@ Storywizard.ai. (n.d.). *Create incredible learning experiences using AI*. Recup
 
 Storywizard.ai. (n.d.). *Education reimagined with Storywizard.ai*. Recuperado el 2 de septiembre de 2026, de [https://www.storywizard.ai/education](https://www.storywizard.ai/education)
 
+Google Cloud. (n.d.). *Cloud Run container runtime contract*. Google Cloud Documentation. [https://docs.cloud.google.com/run/docs/container-contract](https://docs.cloud.google.com/run/docs/container-contract)
+
+Google Cloud. (n.d.). *Configure GPUs for Cloud Run worker pools*. Google Cloud Documentation. [https://docs.cloud.google.com/run/docs/configuring/workerpools/gpu](https://docs.cloud.google.com/run/docs/configuring/workerpools/gpu)
+
+Google Cloud. (n.d.). *Invoke with an HTTPS request*. Google Cloud Documentation. [https://docs.cloud.google.com/run/docs/triggering/https-request](https://docs.cloud.google.com/run/docs/triggering/https-request)
+
+Vercel. (n.d.). *Working with SSL certificates*. Vercel Documentation. [https://vercel.com/docs/domains/working-with-ssl](https://vercel.com/docs/domains/working-with-ssl)
+
 [1]: https://jamanetwork.com/journals/jamapediatrics/fullarticle/2821940 "Early Childhood Screen Use Contexts and Cognitive and Psychosocial Outcomes: A Systematic Review and Meta-analysis | JAMA Pediatrics"
 [2]: https://www.ofcom.org.uk/media-use-and-attitudes/media-literacy/exploring-the-relationship-between-persuasive-design-on-online-platforms-and-the-time-that-children-spend-on-them "Exploring the relationship between persuasive design on online platforms, and the time that children spend on them"
 [3]: https://www.inei.gob.pe/media/MenuRecursivo/boletines/boletin_ninez_iit2025.pdf "Estado de la Niñez y Adolescencia"
@@ -3393,6 +3458,10 @@ Storywizard.ai. (n.d.). *Education reimagined with Storywizard.ai*. Recuperado e
 [13]: https://www.storyjumper.com/school "Why teachers love StoryJumper"
 [14]: https://www.storywizard.ai/ "Storywizard.ai"
 [15]: https://www.storywizard.ai/education "Storywizard.ai Education"
+[16]: https://docs.cloud.google.com/run/docs/container-contract "Cloud Run container runtime contract"
+[17]: https://docs.cloud.google.com/run/docs/configuring/workerpools/gpu "Configure GPUs for Cloud Run worker pools"
+[18]: https://docs.cloud.google.com/run/docs/triggering/https-request "Invoke with an HTTPS request"
+[19]: https://vercel.com/docs/domains/working-with-ssl "Working with SSL certificates"
 
 <a id="anexos"></a>
 # Anexos
@@ -3413,28 +3482,28 @@ Tale Star. (n.d.). *Landing page* [Repositorio de código fuente]. GitHub. https
 <a id="anexo-b-entrevistas"></a>
 ## Anexo B. Entrevistas
 
-Tale Star. (n.d.). *Entrevista 1: Marjorie, segmento padres y cuidadores* [Video]. YouTube. https://youtu.be/GYXhUYCt9OM
+Tale Star. (n.d.). *Entrevista 1: Marjorie, segmento padres y cuidadores* [Video]. YouTube. https://youtu.be/GYXhUYCt9OM?t=0
 
-Tale Star. (n.d.). *Entrevista 2: Sebastián Ramírez, segmento padres y cuidadores* [Video]. YouTube. https://youtu.be/Jr87RMa8Z0Y
+Tale Star. (n.d.). *Entrevista 2: Sebastián Ramírez, segmento padres y cuidadores* [Video]. YouTube. https://youtu.be/Jr87RMa8Z0Y?t=0
 
 Tale Star. (n.d.). *Entrevista 3: Bruno Ontón, segmento padres y cuidadores* [Video]. Google Drive. https://drive.google.com/file/d/1hTwUpfPAk6CyrUUyQKCP9_PDfsskpAoG/view?usp=sharing
 
-Tale Star. (n.d.). *Entrevista 1: Sara Davila, segmento docentes* [Video]. YouTube. https://youtu.be/cABX9cd1hTY
+Tale Star. (n.d.). *Entrevista 1: Sara Davila, segmento docentes* [Video]. YouTube. https://youtu.be/cABX9cd1hTY?t=1
 
-Tale Star. (n.d.). *Entrevista 2: Roxana Alvarado, segmento docentes* [Video]. YouTube. https://youtu.be/qM7wqQPLy8w
+Tale Star. (n.d.). *Entrevista 2: Roxana Alvarado, segmento docentes* [Video]. YouTube. https://youtu.be/qM7wqQPLy8w?t=3
 
-Tale Star. (n.d.). *Entrevista 3: Diandra Valle, segmento docentes* [Video]. YouTube. https://youtu.be/VIJUaUCygm4
+Tale Star. (n.d.). *Entrevista 3: Diandra Valle, segmento docentes* [Video]. YouTube. https://youtu.be/VIJUaUCygm4?t=4
 
 <a id="anexo-c-desplegables"></a>
 ## Anexo C. Desplegables
 
 ### Aplicación web
 
-Enlace de despliegue pendiente de publicación.
+La Web Application y el backend aún no están desplegados públicamente. El destino previsto es Vercel para el frontend y Google Cloud Run para el backend; no existe una URL de acceso que pueda publicarse en esta entrega. La configuración cloud de persistencia y del Generation Worker sigue pendiente de adaptación respecto a la ejecución local descrita en 4.3.4.
 
 ### Aplicación móvil descargable
 
-Enlace de descarga pendiente de publicación.
+La aplicación móvil aún no tiene código ni versión descargable publicada. Está prevista con Flutter y Dart para Android e iOS; la prueba final de esta entrega se enfocará en Android por los costos de publicación y pruebas en iOS. La experiencia de lectura AR forma parte del alcance móvil previsto.
 
 ### Landing page
 
