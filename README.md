@@ -47,47 +47,86 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
 <a id="contenido"></a>
 # Contenido
 
+- [Informe del Trabajo Final](#informe-del-trabajo-final)
+    - [Integrantes](#integrantes)
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
-- [Capítulo I: Introducción](#capitulo-i-introduccion)
+- [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
-    - [1.1.1. Descripción de la Startup](#111-descripcion-de-la-startup)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
     - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
   - [1.2. Solution Profile](#12-solution-profile)
-    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problematica)
+    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
+        - [**¿Qué ocurre? (What)**](#qué-ocurre-what)
+        - [**¿Cuándo ocurre? (When)**](#cuándo-ocurre-when)
+        - [**¿Dónde ocurre? (Where)**](#dónde-ocurre-where)
+        - [**¿A quién afecta? (Who)**](#a-quién-afecta-who)
+        - [**¿Por qué sucede? (Why)**](#por-qué-sucede-why)
+        - [**¿Cómo sucede? (How)**](#cómo-sucede-how)
+        - [**¿Cuán grande es el impacto? (How Much)**](#cuán-grande-es-el-impacto-how-much)
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
       - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
       - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
   - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-- [Capítulo II: Requirements Elicitation & Analysis](#capitulo-ii-requirements-elicitation-analysis)
+      - [Segmento 1: Padres y cuidadores de niños pequeños](#segmento-1-padres-y-cuidadores-de-niños-pequeños)
+      - [Segmento 2: Docentes de educación inicial y primeros años de primaria](#segmento-2-docentes-de-educación-inicial-y-primeros-años-de-primaria)
+- [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation--analysis)
   - [2.1. Competidores](#21-competidores)
-    - [2.1.1. Análisis competitivo](#211-analisis-competitivo)
-    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tacticas-frente-a-competidores)
+    - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
+    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
   - [2.2. Entrevistas](#22-entrevistas)
-    - [2.2.1. Diseño de entrevistas](#221-diseno-de-entrevistas)
+    - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+    - [Segmento 1: Padres y cuidadores](#segmento-1-padres-y-cuidadores)
+      - [Preguntas de introducción](#preguntas-de-introducción)
+      - [Preguntas principales](#preguntas-principales)
+    - [Segmento 2: Docentes](#segmento-2-docentes)
+      - [Preguntas de introducción](#preguntas-de-introducción-1)
+      - [Preguntas principales](#preguntas-principales-1)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-        - [Entrevista 1 — Marjorie](#entrevista-1-segmento-1)
-        - [Entrevista 2 — Sebastián Ramírez](#entrevista-2-segmento-1)
-      - [Entrevista 1 — Sara Davila](#entrevista-1-segmento-2)
-      - [Entrevista 2 — Roxana Alvarado](#entrevista-2-segmento-2)
-      - [Entrevista 3 — Diandra Valle](#entrevista-3-segmento-2)
-    - [2.2.3. Análisis de entrevistas](#223-analisis-de-entrevistas)
+      - [Entrevista 1 — Marjorie](#entrevista-1--marjorie)
+      - [Entrevista 2 — Sebastián Ramírez](#entrevista-2--sebastián-ramírez)
+      - [Entrevista 3 — Bruno Ontón](#entrevista-3--bruno-ontón)
+      - [Entrevista 1 — Sara Davila](#entrevista-1--sara-davila)
+      - [Entrevista 2 — Roxana Alvarado](#entrevista-2--roxana-alvarado)
+      - [Entrevista 3 — Diandra Valle](#entrevista-3--diandra-valle)
+    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
   - [2.3. Needfinding](#23-needfinding)
     - [2.3.1. User Personas](#231-user-personas)
+      - [**User Persona 1 — Padre o Cuidador**](#user-persona-1--padre-o-cuidador)
+      - [**User Persona 2 — Docente**](#user-persona-2--docente)
     - [2.3.2. User Task Matrix](#232-user-task-matrix)
+    - [Artefacto auxiliar: User Journey Mapping](#artefacto-auxiliar-user-journey-mapping)
+      - [**User Journey Map — Padre o Cuidador**](#user-journey-map--padre-o-cuidador)
+      - [**User Journey Map — Docente**](#user-journey-map--docente)
     - [2.3.3. Empathy Mapping](#233-empathy-mapping)
+      - [**Empathy Map — Padre o Cuidador**](#empathy-map--padre-o-cuidador)
+      - [**Empathy Map — Docente**](#empathy-map--docente)
     - [2.3.4. As-is Scenario Mapping](#234-as-is-scenario-mapping)
+      - [**AS-IS Scenario Map — Padre o Cuidador**](#as-is-scenario-map--padre-o-cuidador)
+      - [**AS-IS Scenario Map — Docente**](#as-is-scenario-map--docente)
   - [2.4. Ubiquitous Language](#24-ubiquitous-language)
-- [Capítulo III: Requirements Specification](#capitulo-iii-requirements-specification)
+- [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
   - [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
+    - [To-Be Scenario Map — Padre o Cuidador](#to-be-scenario-map--padre-o-cuidador)
+    - [To-Be Scenario Map — Docente](#to-be-scenario-map--docente)
   - [3.2. User Stories](#32-user-stories)
+    - [Tabla de Epics, User Stories y Technical Stories](#tabla-de-epics-user-stories-y-technical-stories)
   - [3.3. Impact Mapping](#33-impact-mapping)
+    - [Business Goal 1 — Reducción del esfuerzo de creación](#business-goal-1--reducción-del-esfuerzo-de-creación)
+    - [Business Goal 2 — Finalización del Story Creator](#business-goal-2--finalización-del-story-creator)
+    - [Business Goal 3 — Utilización de la propuesta multimodal](#business-goal-3--utilización-de-la-propuesta-multimodal)
+    - [Business Goal 4 — Control sobre el contenido generado](#business-goal-4--control-sobre-el-contenido-generado)
+    - [Business Goal 5 — Reutilización de contenido](#business-goal-5--reutilización-de-contenido)
+    - [Business Goal 6 — Uso satisfactorio de AR](#business-goal-6--uso-satisfactorio-de-ar)
+    - [Matriz de trazabilidad del Impact Mapping](#matriz-de-trazabilidad-del-impact-mapping)
+    - [Consideraciones de impacto de la solución](#consideraciones-de-impacto-de-la-solución)
   - [3.4. Product Backlog](#34-product-backlog)
-- [Capítulo IV: Strategic-Level Software Design](#capitulo-iv-strategic-level-software-design)
+    - [Product Backlog de Tale Star](#product-backlog-de-tale-star)
+- [Capítulo IV: Strategic-Level Software Design](#capítulo-iv-strategic-level-software-design)
   - [4.1. Strategic-Level Attribute-Driven Design](#41-strategic-level-attribute-driven-design)
     - [4.1.1. Design Purpose](#411-design-purpose)
     - [4.1.2. Attribute-Driven Design Inputs](#412-attribute-driven-design-inputs)
@@ -96,22 +135,39 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
       - [4.1.2.3. Constraints](#4123-constraints)
     - [4.1.3. Architectural Drivers Backlog](#413-architectural-drivers-backlog)
     - [4.1.4. Architectural Design Decisions](#414-architectural-design-decisions)
+      - [Proceso de análisis mediante QAW](#proceso-de-análisis-mediante-qaw)
+      - [Candidate Pattern Evaluation Matrix](#candidate-pattern-evaluation-matrix)
     - [4.1.5. Quality Attribute Scenario Refinements](#415-quality-attribute-scenario-refinements)
+    - [QR01 — Non-blocking Generation](#qr01--non-blocking-generation)
+    - [QR02 — AI Runtime Failure Isolation](#qr02--ai-runtime-failure-isolation)
+    - [QR03 — Generator Modifiability](#qr03--generator-modifiability)
+    - [QR04 — Unauthorized Protected Resource Access](#qr04--unauthorized-protected-resource-access)
+    - [QR05 — Mobile Local AR](#qr05--mobile-local-ar)
+    - [QR06 — GPU Resource Contention](#qr06--gpu-resource-contention)
   - [4.2. Strategic-Level Domain-Driven Design](#42-strategic-level-domain-driven-design)
     - [4.2.1. EventStorming](#421-eventstorming)
     - [4.2.2. Candidate Context Discovery](#422-candidate-context-discovery)
     - [4.2.3. Domain Message Flows Modeling](#423-domain-message-flows-modeling)
     - [4.2.4. Bounded Context Canvases](#424-bounded-context-canvases)
+    - [1. Creative Authoring Bounded Context Canvas](#1-creative-authoring-bounded-context-canvas)
+    - [2. Generative Media Bounded Context Canvas](#2-generative-media-bounded-context-canvas)
+    - [3. Content Library Bounded Context Canvas](#3-content-library-bounded-context-canvas)
+    - [4. Identity \& Access Bounded Context Canvas](#4-identity--access-bounded-context-canvas)
     - [4.2.5. Context Mapping](#425-context-mapping)
   - [4.3. Software Architecture](#43-software-architecture)
     - [4.3.1. Software Architecture System Landscape Diagram](#431-software-architecture-system-landscape-diagram)
     - [4.3.2. Software Architecture Context Level Diagram](#432-software-architecture-context-level-diagram)
     - [4.3.3. Software Architecture Container Level Diagram](#433-software-architecture-container-level-diagram)
     - [4.3.4. Software Architecture Deployment Diagram](#434-software-architecture-deployment-diagram)
-- [Capítulo V: Tactical-Level Software Design](#capitulo-v-tactical-level-software-design)
+- [Capítulo V: Tactical-Level Software Design](#capítulo-v-tactical-level-software-design)
   - [5.1. Bounded Context: Creative Authoring](#51-bounded-context-creative-authoring)
     - [5.1.1. Domain Layer](#511-domain-layer)
     - [5.1.2. Interface Layer](#512-interface-layer)
+      - [Characters](#characters)
+      - [Scenarios](#scenarios)
+      - [Style Profiles](#style-profiles)
+      - [Stories](#stories)
+      - [Story Pages](#story-pages)
     - [5.1.3. Application Layer](#513-application-layer)
     - [5.1.4. Infrastructure Layer](#514-infrastructure-layer)
     - [5.1.5. Bounded Context Software Architecture Component Level Diagrams](#515-bounded-context-software-architecture-component-level-diagrams)
@@ -127,7 +183,7 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
     - [5.2.6. Bounded Context Software Architecture Code Level Diagrams](#526-bounded-context-software-architecture-code-level-diagrams)
       - [5.2.6.1. Bounded Context Domain Layer Class Diagrams](#5261-bounded-context-domain-layer-class-diagrams)
       - [5.2.6.2. Bounded Context Database Design Diagram](#5262-bounded-context-database-design-diagram)
-  - [5.3. Bounded Context: Identity & Access](#53-bounded-context-identity-access)
+  - [5.3. Bounded Context: Identity \& Access](#53-bounded-context-identity--access)
     - [5.3.1. Domain Layer](#531-domain-layer)
     - [5.3.2. Interface Layer](#532-interface-layer)
     - [5.3.3. Application Layer](#533-application-layer)
@@ -138,6 +194,8 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
       - [5.3.6.2. Bounded Context Database Design Diagram](#5362-bounded-context-database-design-diagram)
   - [5.4. Bounded Context: Content Library](#54-bounded-context-content-library)
     - [5.4.1. Domain Layer](#541-domain-layer)
+      - [Aggregate Root: `LibraryItem`](#aggregate-root-libraryitem)
+      - [Value Objects, enums y puertos](#value-objects-enums-y-puertos)
     - [5.4.2. Interface Layer](#542-interface-layer)
     - [5.4.3. Application Layer](#543-application-layer)
     - [5.4.4. Infrastructure Layer](#544-infrastructure-layer)
@@ -145,10 +203,18 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
     - [5.4.6. Bounded Context Software Architecture Code Level Diagrams](#546-bounded-context-software-architecture-code-level-diagrams)
       - [5.4.6.1. Bounded Context Domain Layer Class Diagrams](#5461-bounded-context-domain-layer-class-diagrams)
       - [5.4.6.2. Bounded Context Database Design Diagram](#5462-bounded-context-database-design-diagram)
-- [Capítulo VI: Solution UX Design](#capitulo-vi-solution-ux-design)
+- [Capítulo VI: Solution UX Design](#capítulo-vi-solution-ux-design)
   - [6.1. Style Guidelines](#61-style-guidelines)
     - [6.1.1. General Style Guidelines](#611-general-style-guidelines)
-    - [6.1.2. Web, Mobile & Devices Style Guidelines](#612-web-mobile-devices-style-guidelines)
+      - [Branding](#branding)
+      - [Typography](#typography)
+      - [Colors](#colors)
+      - [Spacing](#spacing)
+      - [Tone of Communication](#tone-of-communication)
+    - [6.1.2. Web, Mobile \& Devices Style Guidelines](#612-web-mobile--devices-style-guidelines)
+      - [Web (escritorio y tablet)](#web-escritorio-y-tablet)
+      - [Mobile (navegador móvil y app)](#mobile-navegador-móvil-y-app)
+      - [Recomendaciones derivadas de la revisión](#recomendaciones-derivadas-de-la-revisión)
   - [6.2. Information Architecture](#62-information-architecture)
     - [6.2.1. Organization Systems](#621-organization-systems)
     - [6.2.2. Labeling Systems](#622-labeling-systems)
@@ -165,11 +231,11 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
     - [6.4.3. Applications Mock-ups](#643-applications-mock-ups)
     - [6.4.4. Applications User Flow Diagrams](#644-applications-user-flow-diagrams)
   - [6.5. Applications Prototyping](#65-applications-prototyping)
-- [Capítulo VII: Product Implementation, Validation & Deployment](#capitulo-vii-product-implementation-validation-deployment)
+- [Capítulo VII: Product Implementation, Validation \& Deployment](#capítulo-vii-product-implementation-validation--deployment)
   - [7.1. Software Configuration Management](#71-software-configuration-management)
     - [7.1.1. Software Development Environment Configuration](#711-software-development-environment-configuration)
     - [7.1.2. Source Code Management](#712-source-code-management)
-    - [7.1.3. Source Code Style Guide & Conventions](#713-source-code-style-guide-conventions)
+    - [7.1.3. Source Code Style Guide \& Conventions](#713-source-code-style-guide--conventions)
     - [7.1.4. Software Deployment Configuration](#714-software-deployment-configuration)
   - [7.2. Solution Implementation](#72-solution-implementation)
     - [7.2.1. Sprint 1](#721-sprint-1)
@@ -191,19 +257,22 @@ Durante TB1, el historial del repositorio evidencia una distribución del trabaj
       - [7.2.2.7. Software Deployment Evidence for Sprint Review](#7227-software-deployment-evidence-for-sprint-review)
       - [7.2.2.8. Team Collaboration Insights during Sprint](#7228-team-collaboration-insights-during-sprint)
   - [7.3. Validation Interviews](#73-validation-interviews)
-    - [7.3.1. Diseño de Entrevistas](#731-diseno-de-entrevistas)
+    - [7.3.1. Diseño de Entrevistas](#731-diseño-de-entrevistas)
     - [7.3.2. Registro de Entrevistas](#732-registro-de-entrevistas)
-    - [7.3.3. Evaluaciones según heurísticas](#733-evaluaciones-segun-heuristicas)
+    - [7.3.3. Evaluaciones según heurísticas](#733-evaluaciones-según-heurísticas)
   - [7.4. Video About-the-Product](#74-video-about-the-product)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
   - [Video About-the-Team](#video-about-the-team)
-- [Bibliografía](#bibliografia)
+- [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
   - [Anexo A. Repositorios del proyecto](#anexo-a-repositorios-del-proyecto)
   - [Anexo B. Entrevistas](#anexo-b-entrevistas)
   - [Anexo C. Desplegables](#anexo-c-desplegables)
-  - [Anexo D. Documentación de servicios](#anexo-d-documentacion-de-servicios)
+    - [Aplicación web](#aplicación-web)
+    - [Aplicación móvil descargable](#aplicación-móvil-descargable)
+    - [Landing page](#landing-page)
+  - [Anexo D. Documentación de servicios](#anexo-d-documentación-de-servicios)
   - [Anexo E. Videos de exposiciones](#anexo-e-videos-de-exposiciones)
 
 <a id="student-outcome"></a>
@@ -2482,20 +2551,105 @@ El diseño muestra la única tabla de Generative Media y sus constraints, índic
 <a id="54-bounded-context-content-library"></a>
 ## 5.4. Bounded Context: Content Library
 
+Content Library es un **Supporting Domain** de Tale Star. Su responsabilidad es gestionar el ciclo de vida, persistencia, catalogación, búsqueda textual, filtrado y organización de los contenidos que los usuarios deciden conservar a partir de sus flujos de creación.
+
+A diferencia de los contextos de producción directa (**Creative Authoring** y **Generative Media**), este contexto no duplica recursos. La biblioteca conserva referencias inmutables hacia historias generadas o trabajos de inferencia terminados y añade metadatos propios de organización —título personalizado, descripción pedagógica, estado de favorito y marcas temporales— sin replicar la jerarquía de páginas ni los binarios pesados de imagen o audio.
+
 <a id="541-domain-layer"></a>
 ### 5.4.1. Domain Layer
+
+El Domain Layer encapsula las entidades, reglas invariantes y contratos abstractos de persistencia y resolución de recursos. Se mantiene aislado de FastAPI, SQLAlchemy y cualquier otro detalle de infraestructura.
+
+#### Aggregate Root: `LibraryItem`
+
+`LibraryItem` es la entidad raíz del agregado y representa una entrada en la colección personal de un padre, cuidador o docente.
+
+| Atributo | Tipo | Descripción |
+| --- | --- | --- |
+| `id` | `ItemId` | Identificador global de la entrada (UUID v4). |
+| `user_id` | `UserId` | Usuario propietario; garantiza el aislamiento de datos privados. |
+| `resource_id` | `ResourceId` | Referencia externa inmutable a una `Story` o `GenerationJob`. |
+| `item_type` | `LibraryItemType` | Tipo de contenido catalogado: `STORY`, `IMAGE` o `MUSIC`. |
+| `title` | `str` | Título mostrado en listas y tarjetas. |
+| `description` | `Optional[str]` | Notas pedagógicas, descripción o resumen. |
+| `preview_url` | `Optional[str]` | URI o ruta relativa de la portada, miniatura o pista de audio. |
+| `is_favorite` | `bool` | Indica si el elemento aparece entre los favoritos. |
+| `created_at` | `datetime` | Momento en que el usuario guardó el elemento. |
+| `updated_at` | `datetime` | Última modificación de metadatos o estado. |
+
+**Reglas e invariantes de dominio**
+
+1. El título no puede estar vacío y admite como máximo 150 caracteres.
+2. `user_id`, `resource_id` e `item_type` se asignan al crear el agregado y son inmutables.
+3. `belongs_to(user_id: UserId) -> bool` garantiza que solo el propietario pueda consultar, modificar o retirar un elemento.
+4. `mark_as_favorite()`, `unmark_as_favorite()` y `toggle_favorite() -> bool` modifican el estado y actualizan `updated_at`.
+5. `update_details(title: str, description: Optional[str])` modifica los metadatos textuales después de validar sus restricciones.
+
+#### Value Objects, enums y puertos
+
+| Nombre | Tipo | Descripción |
+| --- | --- | --- |
+| `LibraryItemType` | Enum | Valores permitidos: `STORY` (cuento interactivo), `IMAGE` (ilustración) y `MUSIC` (canción o pieza educativa). |
+| `ItemId`, `UserId`, `ResourceId` | Value Object | Identificadores fuertemente tipados basados en UUID v4. |
+| `ILibraryItemRepository` | Domain Port | Contrato de persistencia y consulta del agregado. |
+| `ILibraryResourceResolverPort` | Domain Port | Valida la existencia e integridad de referencias en Creative Authoring y Generative Media. |
+
+`ILibraryItemRepository` define `save`, `find_by_id`, `find_by_user_id` (con filtros por tipo, favorito y paginación), `search_by_query`, `delete` y `exists_by_user_and_resource`. Este último evita que un usuario guarde dos veces el mismo recurso.
 
 <a id="542-interface-layer"></a>
 ### 5.4.2. Interface Layer
 
+La capa de interfaz expone el contexto mediante FastAPI en `app/content_library/interfaces/`. Convierte las peticiones HTTP, valida las cargas con Pydantic y delega la ejecución al servicio de aplicación. Las rutas se agrupan bajo `/api/v1/library`.
+
+| Método | Endpoint | Responsabilidad | Respuesta |
+| --- | --- | --- | --- |
+| `POST` | `/api/v1/library/items` | Guarda un recurso previamente creado. | `201 Created` |
+| `GET` | `/api/v1/library/items` | Lista elementos; admite `type`, `is_favorite`, `skip` y `limit`. | `200 OK` |
+| `GET` | `/api/v1/library/items/search` | Busca en título y descripción mediante `q`. | `200 OK` |
+| `GET` | `/api/v1/library/items/{item_id}` | Obtiene un elemento verificando titularidad. | `200 OK` / `404 Not Found` |
+| `PATCH` | `/api/v1/library/items/{item_id}` | Actualiza título y descripción. | `200 OK` |
+| `PATCH` | `/api/v1/library/items/{item_id}/favorite` | Establece o conmuta el estado de favorito. | `200 OK` |
+| `DELETE` | `/api/v1/library/items/{item_id}` | Elimina la referencia de la biblioteca personal. | `204 No Content` |
+
+Los contratos Pydantic son `LibraryItemCreateRequest` (`resource_id`, `item_type`, `title`, `description` y `preview_url` opcionales), `LibraryItemUpdateRequest` (campos parciales `title` y `description`), `LibraryItemFavoriteRequest` (`is_favorite`, opcional para conmutar) y `LibraryItemResponse` (representación completa del elemento).
+
 <a id="543-application-layer"></a>
 ### 5.4.3. Application Layer
+
+`ContentLibraryService` orquesta los casos de uso y aplica las reglas de titularidad antes de invocar los puertos de dominio. En la creación, valida el tipo de recurso, consulta `ILibraryResourceResolverPort`, comprueba que el recurso no exista ya para el usuario y persiste el `LibraryItem`. En las operaciones de lectura, actualización y eliminación filtra siempre por el usuario autenticado y responde con un recurso no encontrado cuando la entrada no pertenece al solicitante.
+
+Los principales casos de uso son:
+
+| Caso de uso | Flujo |
+| --- | --- |
+| Guardar contenido | Validar referencia cross-context, prevenir duplicados y crear el agregado. |
+| Listar contenido | Aplicar filtros por tipo/favorito y paginación. |
+| Buscar contenido | Ejecutar coincidencias textuales sobre título y descripción. |
+| Editar detalles | Validar título y descripción y actualizar `updated_at`. |
+| Gestionar favoritos | Marcar, desmarcar o conmutar el estado. |
+| Eliminar contenido | Borrar únicamente la referencia de catálogo, sin eliminar el recurso de origen. |
 
 <a id="544-infrastructure-layer"></a>
 ### 5.4.4. Infrastructure Layer
 
+La infraestructura implementa los puertos mediante SQLAlchemy y SQLite. El repositorio mapea entre `LibraryItem` y la tabla `content_library_items`; el adaptador `LibraryResourceResolver` consulta los módulos propietarios para verificar Stories y Generation Jobs. Las referencias entre contextos se mantienen a nivel de aplicación, sin Foreign Keys físicas, para preservar la autonomía de cada esquema.
+
+| Componente | Responsabilidad | Implementación |
+| --- | --- | --- |
+| `LibraryItemRecord` | Mapeo ORM, columnas e índices. | SQLAlchemy, `content_library_items`. |
+| `LibraryItemRepository` | Persistencia, filtros, búsqueda y prevención de duplicados. | SQLAlchemy/SQLite. |
+| `LibraryResourceResolver` | Verifica Stories y trabajos de generación existentes. | Adaptador cross-context. |
+
+La tabla usa UUID de 36 caracteres, título de hasta 150, descripción y preview opcionales, estado de favorito con valor predeterminado `0` y timestamps automáticos. `idx_user_type_favorite` acelera el panel filtrado por usuario, tipo y favoritos, mientras que `uq_user_resource` garantiza que un usuario no duplique el mismo recurso. La ausencia de Foreign Keys duras evita acoplar las tablas `content_library_items`, `creative_stories` y `generation_jobs`.
+
 <a id="545-bounded-context-software-architecture-component-level-diagrams"></a>
 ### 5.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama muestra la interacción entre los clientes, el router REST, el servicio de aplicación, los adaptadores cross-context, el repositorio y la base de datos.
+
+![Content Library Component Level Diagram](assets/diagrams/content-library-component.png)
+
+Las peticiones de Web Application o Mobile Application llegan al `Library REST Router` con un token JWT. El router valida el JSON y delega en `ContentLibraryService`; para crear un elemento, el servicio consulta `LibraryResourceResolver` en Creative Authoring o Generative Media y, tras superar las reglas de negocio, `LibraryItemRepository` persiste el registro en SQLite mediante SQLAlchemy.
 
 <a id="546-bounded-context-software-architecture-code-level-diagrams"></a>
 ### 5.4.6. Bounded Context Software Architecture Code Level Diagrams
@@ -2503,8 +2657,29 @@ El diseño muestra la única tabla de Generative Media y sus constraints, índic
 <a id="5461-bounded-context-domain-layer-class-diagrams"></a>
 #### 5.4.6.1. Bounded Context Domain Layer Class Diagrams
 
+El diagrama formaliza `LibraryItem` como Aggregate Root, sus Value Objects (`ItemId`, `UserId` y `ResourceId`), el enum `LibraryItemType` y los puertos `ILibraryItemRepository` e `ILibraryResourceResolverPort`. Las relaciones por composición mantienen los identificadores tipados dentro del agregado, mientras que los puertos desacoplan la lógica de aplicación de los detalles de persistencia y de las consultas cross-context.
+
+![Content Library Domain Class Diagram](assets/diagrams/content-library-domain-class.png)
+
 <a id="5462-bounded-context-database-design-diagram"></a>
 #### 5.4.6.2. Bounded Context Database Design Diagram
+
+El esquema físico de `content_library_items` mantiene referencias lógicas hacia `creative_stories` cuando `item_type = 'story'` y hacia `generation_jobs` cuando `item_type = 'image'` o `item_type = 'music'`.
+
+![Content Library Database Design Diagram](assets/diagrams/content-library-database.png)
+
+| Columna / restricción | Definición |
+| --- | --- |
+| `id` | PK `VARCHAR(36)` para el UUID del elemento. |
+| `user_id` | `VARCHAR(36) NOT NULL`, indexado para consultas de biblioteca personal. |
+| `resource_id` | `VARCHAR(36) NOT NULL`, referencia lógica al recurso de origen. |
+| `item_type` | `VARCHAR(20) NOT NULL`, restringido a `story`, `image` y `music`. |
+| `title` | `VARCHAR(150) NOT NULL`. |
+| `description`, `preview_url` | Campos opcionales para descripción y acceso rápido al preview. |
+| `is_favorite` | Booleano `NOT NULL DEFAULT 0`, indexado. |
+| `created_at`, `updated_at` | `DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP`. |
+| `idx_user_type_favorite` | Índice compuesto sobre `user_id`, `item_type` e `is_favorite`. |
+| `uq_user_resource` | Unicidad compuesta sobre `user_id` y `resource_id`. |
 
 <a id="capitulo-vi-solution-ux-design"></a>
 # Capítulo VI: Solution UX Design
