@@ -2560,105 +2560,113 @@ El diseño muestra la única tabla de Generative Media y sus constraints, índic
 <a id="54-bounded-context-content-library"></a>
 ## 5.4. Bounded Context: Content Library
 
-Content Library es un **Supporting Domain** de Tale Star. Su responsabilidad es gestionar el ciclo de vida, persistencia, catalogación, búsqueda textual, filtrado y organización de los contenidos que los usuarios deciden conservar a partir de sus flujos de creación.
-
-A diferencia de los contextos de producción directa (**Creative Authoring** y **Generative Media**), este contexto no duplica recursos. La biblioteca conserva referencias inmutables hacia historias generadas o trabajos de inferencia terminados y añade metadatos propios de organización —título personalizado, descripción pedagógica, estado de favorito y marcas temporales— sin replicar la jerarquía de páginas ni los binarios pesados de imagen o audio.
+Content Library centraliza las referencias que una persona autenticada guarda desde la Web Application. Cada entrada conserva metadatos de biblioteca y apunta a una Story o a un asset de una generación completada; los archivos de imagen y audio permanecen bajo la gestión de Generative Media.
 
 <a id="541-domain-layer"></a>
 ### 5.4.1. Domain Layer
 
-El Domain Layer encapsula las entidades, reglas invariantes y contratos abstractos de persistencia y resolución de recursos. Se mantiene aislado de FastAPI, SQLAlchemy y cualquier otro detalle de infraestructura.
+El Domain Layer de este contexto contiene la entidad `LibraryItem`, un enum, una estructura inmutable para recursos resueltos y dos errores. El código no declara una clase `AggregateRoot` ni marca explícitamente a `LibraryItem` como raíz de agregado.
 
-#### Aggregate Root: `LibraryItem`
+#### Entidad `LibraryItem`
 
-`LibraryItem` es la entidad raíz del agregado y representa una entrada en la colección personal de un padre, cuidador o docente.
+`LibraryItem` representa una referencia guardada por una persona propietaria. Hereda `id: UUID` de la entidad compartida `Entity`; el resto de los atributos declarados en el contexto son:
 
 | Atributo | Tipo | Descripción |
 | --- | --- | --- |
-| `id` | `ItemId` | Identificador global de la entrada (UUID v4). |
-| `user_id` | `UserId` | Usuario propietario; garantiza el aislamiento de datos privados. |
-| `resource_id` | `ResourceId` | Referencia externa inmutable a una `Story` o `GenerationJob`. |
+| `owner_id` | `UUID` | Usuario propietario de la referencia. |
+| `resource_id` | `UUID` | Identificador lógico de una Story o del asset de un Generation Job. |
 | `item_type` | `LibraryItemType` | Tipo de contenido catalogado: `STORY`, `IMAGE` o `MUSIC`. |
-| `title` | `str` | Título mostrado en listas y tarjetas. |
-| `description` | `Optional[str]` | Notas pedagógicas, descripción o resumen. |
-| `preview_url` | `Optional[str]` | URI o ruta relativa de la portada, miniatura o pista de audio. |
-| `is_favorite` | `bool` | Indica si el elemento aparece entre los favoritos. |
-| `created_at` | `datetime` | Momento en que el usuario guardó el elemento. |
-| `updated_at` | `datetime` | Última modificación de metadatos o estado. |
+| `name` | `str` | Nombre que aparece en la biblioteca; puede derivarse del recurso original. |
+| `description` | `str` | Descripción; su valor inicial es una cadena vacía. |
+| `resource_path` | `str \| None` | Ruta del asset cuando el recurso es una generación. |
+| `media_type` | `str \| None` | Tipo MIME del asset, si está disponible. |
+| `favorite` | `bool` | Estado de favorito; su valor inicial en la entidad es `False`. |
+| `created_at`, `updated_at` | `datetime` | Fechas UTC inicializadas al crear la entidad. |
 
-**Reglas e invariantes de dominio**
+La entidad no implementa métodos de negocio para favoritos, titularidad o edición, y no valida por sí misma límites de nombre o descripción. El límite de nombre y descripción se valida en los schemas HTTP; la propiedad se aplica mediante el usuario autenticado y las consultas del repositorio. La combinación de `owner_id`, `item_type` y `resource_id` no se puede duplicar por el índice único de persistencia.
 
-1. El título no puede estar vacío y admite como máximo 150 caracteres.
-2. `user_id`, `resource_id` e `item_type` se asignan al crear el agregado y son inmutables.
-3. `belongs_to(user_id: UserId) -> bool` garantiza que solo el propietario pueda consultar, modificar o retirar un elemento.
-4. `mark_as_favorite()`, `unmark_as_favorite()` y `toggle_favorite() -> bool` modifican el estado y actualizan `updated_at`.
-5. `update_details(title: str, description: Optional[str])` modifica los metadatos textuales después de validar sus restricciones.
-
-#### Value Objects, enums y puertos
+#### Enum, estructura inmutable y errores de dominio
 
 | Nombre | Tipo | Descripción |
 | --- | --- | --- |
-| `LibraryItemType` | Enum | Valores permitidos: `STORY` (cuento interactivo), `IMAGE` (ilustración) y `MUSIC` (canción o pieza educativa). |
-| `ItemId`, `UserId`, `ResourceId` | Value Object | Identificadores fuertemente tipados basados en UUID v4. |
-| `ILibraryItemRepository` | Domain Port | Contrato de persistencia y consulta del agregado. |
-| `ILibraryResourceResolverPort` | Domain Port | Valida la existencia e integridad de referencias en Creative Authoring y Generative Media. |
+| `LibraryItemType` | `StrEnum` | Declara `IMAGE = "image"`, `STORY = "story"` y `MUSIC = "music"`. |
+| `ResolvedLibraryResource` | Dataclass inmutable (`frozen=True`) | Transporta `name`, `resource_path` y `media_type` resueltos desde el contexto propietario. |
+| `LibraryResourceNotFound` | Error de dominio | Indica que el recurso de origen no existe o no pertenece a la persona solicitante. |
+| `LibraryItemAlreadySaved` | Error de dominio | Indica que la referencia ya existe para esa persona, tipo y recurso. |
 
-`ILibraryItemRepository` define `save`, `find_by_id`, `find_by_user_id` (con filtros por tipo, favorito y paginación), `search_by_query`, `delete` y `exists_by_user_and_resource`. Este último evita que un usuario guarde dos veces el mismo recurso.
+No hay Value Objects `ItemId`, `UserId` o `ResourceId`. Los Protocols `LibraryRepository` y `LibraryResourceResolver` están definidos en `application/ports.py`, por lo que pertenecen a Application y no a Domain.
 
 <a id="542-interface-layer"></a>
 ### 5.4.2. Interface Layer
 
-La capa de interfaz expone el contexto mediante FastAPI en `app/content_library/interfaces/`. Convierte las peticiones HTTP, valida las cargas con Pydantic y delega la ejecución al servicio de aplicación. Las rutas se agrupan bajo `/api/v1/library`.
+La capa de interfaz expone rutas FastAPI autenticadas con el usuario de la sesión Bearer. El router tiene el prefijo `/library` y se monta desde `app/main.py` bajo `/api/v1`; los schemas Pydantic validan los datos antes de delegar en `ContentLibraryService`.
 
-| Método | Endpoint | Responsabilidad | Respuesta |
+| Método | Ruta | Request / consulta | Resultado y códigos relevantes |
 | --- | --- | --- | --- |
-| `POST` | `/api/v1/library/items` | Guarda un recurso previamente creado. | `201 Created` |
-| `GET` | `/api/v1/library/items` | Lista elementos; admite `type`, `is_favorite`, `skip` y `limit`. | `200 OK` |
-| `GET` | `/api/v1/library/items/search` | Busca en título y descripción mediante `q`. | `200 OK` |
-| `GET` | `/api/v1/library/items/{item_id}` | Obtiene un elemento verificando titularidad. | `200 OK` / `404 Not Found` |
-| `PATCH` | `/api/v1/library/items/{item_id}` | Actualiza título y descripción. | `200 OK` |
-| `PATCH` | `/api/v1/library/items/{item_id}/favorite` | Establece o conmuta el estado de favorito. | `200 OK` |
-| `DELETE` | `/api/v1/library/items/{item_id}` | Elimina la referencia de la biblioteca personal. | `204 No Content` |
+| `POST` | `/api/v1/library` | `LibraryItemCreateRequest`: `type`, `resource_id`, `name` opcional, `description` opcional. | `LibraryItemResponse`; `201`, `401`, `404` (recurso ausente o ajeno), `409` (duplicado), `422`. |
+| `GET` | `/api/v1/library` | Query `type`, `q` (máx. 200 caracteres), `favorite`, todos opcionales. | Lista de `LibraryItemResponse`; `200`, `401`, `422`. No admite paginación. |
+| `GET` | `/api/v1/library/{item_id}` | UUID en la ruta. | `LibraryItemResponse`; `200`, `401`, `404`, `422`. |
+| `PATCH` | `/api/v1/library/{item_id}` | `LibraryItemPatchRequest`: `name`, `description` o `favorite`, opcionales. | `LibraryItemResponse`; `200`, `401`, `404`, `422`. |
+| `DELETE` | `/api/v1/library/{item_id}` | UUID en la ruta. | Cuerpo vacío; `204`, `401`, `404`, `422`. |
 
-Los contratos Pydantic son `LibraryItemCreateRequest` (`resource_id`, `item_type`, `title`, `description` y `preview_url` opcionales), `LibraryItemUpdateRequest` (campos parciales `title` y `description`), `LibraryItemFavoriteRequest` (`is_favorite`, opcional para conmutar) y `LibraryItemResponse` (representación completa del elemento).
+`LibraryItemCreateRequest` restringe `name` a 1–200 caracteres tras quitar espacios y `description` a 5.000 caracteres; esta última puede omitirse y toma `""`. `LibraryItemPatchRequest` acepta los tres campos parciales. `LibraryItemResponse` devuelve `id`, `type`, `resource_id`, `name`, `description`, `favorite`, `resource_url`, `media_type`, `created_at` y `updated_at`. La búsqueda y el filtro de favoritos forman parte de `GET /library`; no hay endpoints separados para esos casos.
 
 <a id="543-application-layer"></a>
 ### 5.4.3. Application Layer
 
-`ContentLibraryService` orquesta los casos de uso y aplica las reglas de titularidad antes de invocar los puertos de dominio. En la creación, valida el tipo de recurso, consulta `ILibraryResourceResolverPort`, comprueba que el recurso no exista ya para el usuario y persiste el `LibraryItem`. En las operaciones de lectura, actualización y eliminación filtra siempre por el usuario autenticado y responde con un recurso no encontrado cuando la entrada no pertenece al solicitante.
+`ContentLibraryService` coordina los casos de uso a través de los Protocols de `application/ports.py`: `LibraryRepository` y `LibraryResourceResolver`. No usa Commands ni Handlers.
 
 Los principales casos de uso son:
 
-| Caso de uso | Flujo |
+| Caso de uso | Comportamiento implementado |
 | --- | --- |
-| Guardar contenido | Validar referencia cross-context, prevenir duplicados y crear el agregado. |
-| Listar contenido | Aplicar filtros por tipo/favorito y paginación. |
-| Buscar contenido | Ejecutar coincidencias textuales sobre título y descripción. |
-| Editar detalles | Validar título y descripción y actualizar `updated_at`. |
-| Gestionar favoritos | Marcar, desmarcar o conmutar el estado. |
-| Eliminar contenido | Borrar únicamente la referencia de catálogo, sin eliminar el recurso de origen. |
+| Crear | El resolver valida que la persona sea propietaria de la Story o del asset de una generación exitosa. El servicio usa el nombre enviado o el nombre resuelto, crea `LibraryItem` y llama a `repository.add`; el índice único protege contra duplicados. |
+| Obtener | `get(item_id, owner_id)` consulta por ambos identificadores y devuelve `None` si la entrada no existe o pertenece a otra persona. |
+| Listar y buscar | `list` delega filtros opcionales por tipo, texto `q` y favorito. La búsqueda compara en minúsculas `name` y `description`; los resultados se ordenan por `created_at` descendente y luego por `id`. No hay paginación. |
+| Actualizar | La ruta aplica los campos no nulos del PATCH; `save` verifica la entrada con `id` y `owner_id`, actualiza `updated_at` y persiste `name`, `description` y `favorite`. |
+| Eliminar | `delete(item_id, owner_id)` elimina solo la referencia de biblioteca. El recurso original no se borra. |
+
+La titularidad se obtiene de `get_current_user` y se propaga en las consultas. La regla de unicidad se aplica en persistencia; el servicio no hace una consulta previa de duplicados.
 
 <a id="544-infrastructure-layer"></a>
 ### 5.4.4. Infrastructure Layer
 
-La infraestructura implementa los puertos mediante SQLAlchemy y SQLite. El repositorio mapea entre `LibraryItem` y la tabla `content_library_items`; el adaptador `LibraryResourceResolver` consulta los módulos propietarios para verificar Stories y Generation Jobs. Las referencias entre contextos se mantienen a nivel de aplicación, sin Foreign Keys físicas, para preservar la autonomía de cada esquema.
+La infraestructura implementa los Protocols con adaptadores SQLAlchemy. FastAPI resuelve `get_db_session` para cada request; `get_content_library_service` construye `ContentLibraryService` con `SqlAlchemyLibraryRepository` y `SqlAlchemyLibraryResourceResolver`, ambos usando la misma `Session`. La configuración predeterminada usa SQLite y activa WAL para bases SQLite en archivo.
 
 | Componente | Responsabilidad | Implementación |
 | --- | --- | --- |
-| `LibraryItemRecord` | Mapeo ORM, columnas e índices. | SQLAlchemy, `content_library_items`. |
-| `LibraryItemRepository` | Persistencia, filtros, búsqueda y prevención de duplicados. | SQLAlchemy/SQLite. |
-| `LibraryResourceResolver` | Verifica Stories y trabajos de generación existentes. | Adaptador cross-context. |
+| `LibraryItemRecord` | Mapeo ORM de la tabla y sus índices. | SQLAlchemy; `content_library_items`. |
+| `SqlAlchemyLibraryRepository` | Agregar, obtener, listar, guardar y eliminar entradas filtradas por propietario; traduce la violación de unicidad a `LibraryItemAlreadySaved`. | Adaptador de `LibraryRepository`. |
+| `SqlAlchemyLibraryResourceResolver` | Busca Stories por `id` y `owner_id`; para imagen/música busca un Generation Job exitoso del propietario y compara el `asset_id`. | Adaptador de `LibraryResourceResolver`. |
+| `get_content_library_service` | Construye el servicio con adaptadores para la sesión del request. | Dependencia FastAPI. |
 
-La tabla usa UUID de 36 caracteres, título de hasta 150, descripción y preview opcionales, estado de favorito con valor predeterminado `0` y timestamps automáticos. `idx_user_type_favorite` acelera el panel filtrado por usuario, tipo y favoritos, mientras que `uq_user_resource` garantiza que un usuario no duplique el mismo recurso. La ausencia de Foreign Keys duras evita acoplar las tablas `content_library_items`, `creative_stories` y `generation_jobs`.
+La tabla física es `content_library_items`. La migración y el modelo declaran estas columnas y restricciones:
+
+| Columna / restricción | Definición real |
+| --- | --- |
+| `id` | `Uuid`, PK, no nulo. |
+| `owner_id` | `Uuid`, no nulo; FK a `identity_users.id` con `ON DELETE CASCADE`. |
+| `item_type` | `VARCHAR(10)`, no nulo; `CHECK` limita valores a `image`, `story` y `music`. |
+| `resource_id` | `Uuid`, no nulo, sin FK física. |
+| `name` | `VARCHAR(200)`, no nulo. |
+| `description` | `TEXT`, no nulo. |
+| `resource_path` | `TEXT`, nullable. |
+| `media_type` | `VARCHAR(120)`, nullable. |
+| `favorite` | `BOOLEAN`, no nulo; `default=False` de SQLAlchemy, sin `server_default` en la migración. |
+| `created_at`, `updated_at` | `DateTime(timezone=True)`, no nulos; se inicializan en la entidad, no con defaults SQL. |
+| `ix_content_library_owner_type` | Índice sobre `(owner_id, item_type)`. |
+| `uq_content_library_owner_resource` | Índice único sobre `(owner_id, item_type, resource_id)`. |
+
+La única FK de la tabla pertenece a Identity & Access (`owner_id`). `resource_id` mantiene referencias lógicas a Creative Authoring o Generative Media y se valida en `SqlAlchemyLibraryResourceResolver`; esas tablas no se dibujan como relaciones FK del contexto.
 
 <a id="545-bounded-context-software-architecture-component-level-diagrams"></a>
 ### 5.4.5. Bounded Context Software Architecture Component Level Diagrams
 
-El diagrama muestra la interacción entre los clientes, el router REST, el servicio de aplicación, los adaptadores cross-context, el repositorio y la base de datos.
+El diagrama muestra el camino implementado desde la Web Application autenticada hasta el router, el servicio, los puertos de aplicación y sus adaptadores SQLAlchemy. La consulta de recursos de origen reutiliza la base compartida; no representa una aplicación móvil publicada.
 
 ![Content Library Component Level Diagram](assets/diagrams/content-library-component.png)
 
-Las peticiones de Web Application o Mobile Application llegan al `Library REST Router` con un token JWT. El router valida el JSON y delega en `ContentLibraryService`; para crear un elemento, el servicio consulta `LibraryResourceResolver` en Creative Authoring o Generative Media y, tras superar las reglas de negocio, `LibraryItemRepository` persiste el registro en SQLite mediante SQLAlchemy.
+La Web Application envía JSON con el token de acceso; las dependencias de interfaz obtienen el usuario autenticado. `ContentLibraryService` usa `LibraryRepository` para persistencia y `LibraryResourceResolver` para validar referencias. `SqlAlchemyLibraryRepository` escribe la tabla propia, mientras `SqlAlchemyLibraryResourceResolver` consulta Stories y Generation Jobs exitosos por propietario y asset.
 
 <a id="546-bounded-context-software-architecture-code-level-diagrams"></a>
 ### 5.4.6. Bounded Context Software Architecture Code Level Diagrams
@@ -2666,29 +2674,30 @@ Las peticiones de Web Application o Mobile Application llegan al `Library REST R
 <a id="5461-bounded-context-domain-layer-class-diagrams"></a>
 #### 5.4.6.1. Bounded Context Domain Layer Class Diagrams
 
-El diagrama formaliza `LibraryItem` como Aggregate Root, sus Value Objects (`ItemId`, `UserId` y `ResourceId`), el enum `LibraryItemType` y los puertos `ILibraryItemRepository` e `ILibraryResourceResolverPort`. Las relaciones por composición mantienen los identificadores tipados dentro del agregado, mientras que los puertos desacoplan la lógica de aplicación de los detalles de persistencia y de las consultas cross-context.
+El diagrama contiene únicamente tipos definidos en Domain: `Entity`, `LibraryItem`, `LibraryItemType`, `ResolvedLibraryResource` y los errores. `LibraryItem` hereda su UUID de `Entity`; el enum tipa su medio. `ResolvedLibraryResource` es una estructura congelada devuelta por el resolver. No se muestran puertos porque `LibraryRepository` y `LibraryResourceResolver` están en Application, ni se atribuyen métodos de negocio o Value Objects inexistentes.
 
 ![Content Library Domain Class Diagram](assets/diagrams/content-library-domain-class.png)
 
 <a id="5462-bounded-context-database-design-diagram"></a>
 #### 5.4.6.2. Bounded Context Database Design Diagram
 
-El esquema físico de `content_library_items` mantiene referencias lógicas hacia `creative_stories` cuando `item_type = 'story'` y hacia `generation_jobs` cuando `item_type = 'image'` o `item_type = 'music'`.
+El diagrama muestra exclusivamente la tabla `content_library_items`, de acuerdo con el alcance de este contexto. La FK del propietario apunta fuera del diagrama a `identity_users.id`; `resource_id` no es FK y sus referencias se validan por aplicación.
 
 ![Content Library Database Design Diagram](assets/diagrams/content-library-database.png)
 
 | Columna / restricción | Definición |
 | --- | --- |
-| `id` | PK `VARCHAR(36)` para el UUID del elemento. |
-| `user_id` | `VARCHAR(36) NOT NULL`, indexado para consultas de biblioteca personal. |
-| `resource_id` | `VARCHAR(36) NOT NULL`, referencia lógica al recurso de origen. |
-| `item_type` | `VARCHAR(20) NOT NULL`, restringido a `story`, `image` y `music`. |
-| `title` | `VARCHAR(150) NOT NULL`. |
-| `description`, `preview_url` | Campos opcionales para descripción y acceso rápido al preview. |
-| `is_favorite` | Booleano `NOT NULL DEFAULT 0`, indexado. |
-| `created_at`, `updated_at` | `DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP`. |
-| `idx_user_type_favorite` | Índice compuesto sobre `user_id`, `item_type` e `is_favorite`. |
-| `uq_user_resource` | Unicidad compuesta sobre `user_id` y `resource_id`. |
+| `id` | PK `Uuid`, no nulo. |
+| `owner_id` | `Uuid NOT NULL`, FK a `identity_users.id`, `ON DELETE CASCADE`. |
+| `resource_id` | `Uuid NOT NULL`, referencia lógica sin FK. |
+| `item_type` | `VARCHAR(10) NOT NULL`, `CHECK` para `image`, `story`, `music`. |
+| `name` | `VARCHAR(200) NOT NULL`. |
+| `description` | `TEXT NOT NULL`. |
+| `resource_path`, `media_type` | `TEXT NULL` y `VARCHAR(120) NULL`, respectivamente. |
+| `favorite` | `BOOLEAN NOT NULL`, con default de aplicación SQLAlchemy `False`; sin default del servidor. |
+| `created_at`, `updated_at` | `DateTime(timezone=True) NOT NULL`, sin default SQL. |
+| `ix_content_library_owner_type` | Índice `(owner_id, item_type)`. |
+| `uq_content_library_owner_resource` | Índice único `(owner_id, item_type, resource_id)`. |
 
 <a id="capitulo-vi-solution-ux-design"></a>
 # Capítulo VI: Solution UX Design
@@ -2699,7 +2708,7 @@ El esquema físico de `content_library_items` mantiene referencias lógicas haci
 <a id="611-general-style-guidelines"></a>
 ### 6.1.1. General Style Guidelines
 
-Esta sección documenta el sistema visual **tal como está implementado** en los repositorios de Tale Star: [`landing-page`](https://github.com/Tale-Star/landing-page) y [`frontend-web`](https://github.com/Tale-Star/frontend-web). Ambos comparten el mismo archivo de tokens (`src/styles/tokens.css`), por lo que los valores de color, tipografía y radios son idénticos. Las capturas provienen de esos frontends en ejecución. El diseño de referencia de la landing está en [Figma — Tale Star Landing Page](https://www.figma.com/design/9N8xyYoj4Enr7pB6jDBMAW/Tale-Star-%E2%80%94-Landing-Page).
+Esta sección documenta el sistema visual **tal como está implementado** en los repositorios de Tale Star: [`landing-page`](https://github.com/Tale-Star/landing-page) y [`frontend-web`](https://github.com/Tale-Star/frontend-web). Cada repositorio mantiene su propia copia de `src/styles/tokens.css`; en la versión revisada sus contenidos coinciden, por lo que los valores de color, tipografía y radios son iguales. Las capturas provienen de esos frontends en ejecución. El diseño de referencia de la landing está en [Figma — Tale Star Landing Page](https://www.figma.com/design/9N8xyYoj4Enr7pB6jDBMAW/Tale-Star-%E2%80%94-Landing-Page).
 
 > **Alcance de la verificación.** El repositorio [`frontend-mobile`](https://github.com/Tale-Star/frontend-mobile) estaba vacío al momento de redactar esta sección, por lo que las reglas de Mobile (6.1.2) se derivan del comportamiento responsive de la Web App y la Landing, y deben revalidarse cuando exista la app móvil.
 
@@ -2957,7 +2966,7 @@ El sistema de rotulado usa términos comprensibles para adultos sin conocimiento
 
 | Categoría | Etiquetas recomendadas o implementadas | Propósito |
 | --- | --- | --- |
-| Navegación | Inicio, Creador de cuentos, Generador de imágenes, Generador de música, Personajes, Escenarios, Biblioteca, Perfil | Ubicar los módulos sin depender de términos técnicos. |
+| Navegación | Imágenes, Cuentos, Música, Biblioteca y Perfil; Personajes, Escenarios y Estilos se administran desde pestañas de Biblioteca o se seleccionan dentro de los flujos de creación | Ubicar los módulos según las vistas y controles disponibles. |
 | Acciones | Crear cuento, Agregar página, Generar, Guardar en biblioteca, Regenerar, Editar, Reproducir | Explicar la consecuencia de la acción. |
 | Biblioteca | Todos, Favoritos, Cuentos, Imágenes, Música | Clasificar contenido guardado. |
 | Campos | Título, Descripción, Texto de la página, Acción, Emoción, Escena, Momento, Prompt libre | Indicar qué información debe aportar el adulto. |
@@ -2970,14 +2979,14 @@ En la implementación actual, la landing usa CTA diferenciados para padres/cuida
 
 La búsqueda se diseña según el contexto:
 
-- **Biblioteca:** permite buscar por texto en título y descripción mediante `q`, además de filtrar por tipo de contenido y estado de favorito. Los resultados están asociados al usuario autenticado y se entregan con paginación.
-- **Recursos reutilizables:** Characters, Scenarios y Style Profiles se consultan dentro del espacio del propietario; las referencias de otros usuarios no se incorporan a los resultados. En los selectores de asociación, la búsqueda/autocompletado evita recorrer listas extensas.
-- **Landing Page:** no necesita un buscador interno. La información se descubre mediante la navegación por anclas, la jerarquía de secciones, los CTA y el contenido optimizado para indexación.
+- **Biblioteca:** permite buscar por texto en nombre y descripción mediante `q`, además de filtrar por tipo de contenido y estado de favorito. El API restringe los resultados al usuario autenticado y devuelve la lista completa ordenada por fecha de creación descendente e identificador; no implementa paginación.
+- **Recursos reutilizables:** las listas de Characters, Scenarios y Style Profiles son propias del usuario y el panel de administración de recursos admite búsqueda textual. En el editor de cuentos, escribir `@` en el texto o acción de una página sugiere personajes; los selectores de escenarios y estilos no tienen un buscador independiente.
+- **Landing Page:** no tiene un buscador interno; la información se descubre mediante anclas, jerarquía de secciones y CTA. El SEO es un conjunto de criterios descrito en 6.2.4, no una capacidad de búsqueda del sitio.
 - **Generaciones:** la consulta de un trabajo se realiza por su identificador y estado; no se presenta como una búsqueda textual de assets.
 
 Los filtros previstos para la Biblioteca son **Todos, Cuentos, Imágenes, Música y Favoritos**. Cuando el producto necesite ampliar el catálogo, pueden añadirse filtros temporales (última semana, último mes e histórico) y ordenamientos por más recientes, más antiguos o alfabético; no se documenta un reordenamiento manual de tarjetas como una capacidad actualmente implementada.
 
-Los resultados se presentan como tarjetas con portada o miniatura, tipo de medio, título, fecha y estado de favorito. Las acciones disponibles dependen del recurso y su estado: abrir, editar, reproducir, descargar o eliminar. Para música, la reproducción puede iniciarse desde la tarjeta cuando existe un asset disponible.
+Los resultados se presentan como tarjetas con portada o miniatura, tipo de medio, nombre, fecha y estado de favorito. Las acciones disponibles dependen del recurso y su estado: abrir en el visor, editar metadatos, editar una Story, cambiar favorito o retirar la referencia. El código no ofrece una acción general de descarga desde esas tarjetas; la música disponible se puede reproducir en el visor.
 
 Los estados vacíos deben explicar la siguiente acción —por ejemplo, guardar una creación para verla en la Biblioteca— y ofrecer accesos a crear un cuento, generar una imagen o componer una canción. Una búsqueda sin coincidencias debe indicar el término consultado y sugerir revisar la escritura o limpiar los filtros, sin revelar detalles internos del servicio.
 
@@ -2985,6 +2994,8 @@ Los estados vacíos deben explicar la siguiente acción —por ejemplo, guardar 
 ### 6.2.4. SEO Tags and Meta Tags
 
 La Landing Page pública debe describir la propuesta de Tale Star con metadatos orientados a padres, cuidadores y docentes, sin presentar como disponibles capacidades que todavía están planificadas.
+
+La tabla siguiente especifica criterios recomendados, no afirma que todos estén aplicados. El `index.html` actual declara `title`, `description`, `viewport` y `theme-color`, además del favicon y las fuentes. No declara `keywords`, `author`, `robots`, Open Graph, Twitter Cards ni URL canónica.
 
 | Elemento | Criterio de contenido |
 | --- | --- |
@@ -3003,13 +3014,13 @@ Estos metadatos son responsabilidad de la landing pública y no deben mezclarse 
 <a id="625-navigation-systems"></a>
 ### 6.2.5. Navigation Systems
 
-La navegación combina anclas públicas, navegación global autenticada y rutas de detalle:
+La navegación combina anclas públicas, rutas principales autenticadas y acciones contextuales dentro de cada vista. No hay una ruta web independiente para cada Story, página o generación:
 
 1. **Landing Page:** la navbar enlaza con las secciones de propuesta, segmentos, funcionalidades y proceso. El CTA principal conduce a la Web Application cuando existe un destino público; en caso contrario se muestra como *Próximamente*. El footer agrupa enlaces secundarios de producto, segmentos y cuenta.
-2. **Web Application:** el panel autenticado ofrece navegación persistente hacia Inicio, Creador de cuentos, Generador de imágenes, Generador de música, recursos reutilizables, Biblioteca y Perfil. La barra lateral se reduce a iconos en anchos intermedios y se convierte en barra inferior en móvil.
-3. **Navegación de detalle:** desde una lista se accede al detalle de una historia, página, generación o elemento de Biblioteca; las acciones de edición, reproducción, favorito y eliminación se mantienen dentro del contexto del recurso.
-4. **Navegación de retorno:** las pantallas de error y estados vacíos ofrecen una salida clara hacia el área de creación o Biblioteca, en lugar de dejar al usuario en una ruta sin contexto.
-5. **Separación adulto/niño:** el modo protegido, cuando esté disponible en el canal de consumo, debe eliminar enlaces hacia edición, generación, perfil y configuración. No se presenta la AR móvil como parte de la navegación web actualmente publicada.
+2. **Web Application:** el router define `/images`, `/stories`, `/music`, `/library` y `/profile`; `/` redirige a `/images`. Los recursos reutilizables aparecen como pestañas de Biblioteca y como selectores dentro de creación. La navegación global se reduce a iconos en anchos intermedios y se convierte en barra inferior en móvil.
+3. **Acciones contextuales:** una Story se selecciona y edita dentro de la vista de cuentos; sus páginas se administran en el editor. La Biblioteca abre recursos en un visor y edita metadatos mediante modales. Las generaciones y resultados se consultan desde sus vistas y componentes; no son rutas de detalle independientes.
+4. **Navegación de retorno:** las vistas y estados vacíos ofrecen accesos a creación o Biblioteca cuando corresponden, en lugar de depender de rutas de detalle inexistentes.
+5. **Separación adulto/niño:** el modo protegido, cuando esté disponible en el canal de consumo, debe eliminar enlaces hacia edición, generación, perfil y configuración. La AR móvil no forma parte de la navegación web actualmente publicada.
 
 En responsive, el orden de lectura se conserva: propuesta, identificación del segmento, funcionalidades, proceso y CTA. La landing cambia la navbar por un menú hamburguesa y las grillas por una columna; la Web Application adapta el shell y mantiene la navegación principal accesible.
 <a id="63-landing-page-ui-design"></a>
@@ -3109,124 +3120,115 @@ La comparación de ambas capturas confirma que la estructura se adapta por ancho
 
 <a id="641-applications-wireframes"></a>
 ### 6.4.1. Applications Wireframes
-Los wireframes son en formato Web Application
-<p align="center">
-  <img src="imgs/UX-UI/Login.png" alt="Mock-up mobile de Login de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/UX-UI/Home.png" alt="Mock-up mobile de Home de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/UX-UI/StoryCreator.png" alt="Mock-up mobile de Story Creator de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/UX-UI/ImageGenerator.png" alt="Mock-up mobile de Image Generator de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/UX-UI/GenerationResult.png" alt="Mock-up mobile de Generation Result de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/UX-UI/ContentLibrary.png" alt="Mock-up mobile de Content Library de Tale Star" title="Web Mock-up" width="320" />
-</p>
-Los wireframes son en formato Mobile Application
+Los wireframes separan la experiencia de autoría web de la experiencia móvil de lectura. Los seis primeros son pantallas web de escritorio en baja fidelidad; los tres últimos son propuestas verticales para la aplicación móvil futura. Estos últimos documentan una experiencia objetivo, no una aplicación publicada.
 
-<p align="center">
-  <img src="imgs/UX-UI/MobileStoryReader.png" alt="Mock-up Mobile Story Reader de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/UX-UI/MobileARCamera.png" alt="Mock-up Mobile AR Camera de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/UX-UI/MobileARStoryReader.png" alt="Mock-up  Mobile AR Story Reader de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
+#### Web Application — escritorio
 
+El conjunto sigue la tarea de un adulto: iniciar sesión, llegar al espacio de trabajo, crear una historia, preparar una ilustración, revisar el resultado y organizar el recurso. Los dibujos grises representan estructura y jerarquía, no el estilo visual final.
+
+<p align="center"><img src="imgs/UX-UI/Login.png" alt="Wireframe web de escritorio: inicio de sesión" title="Web wireframe — Login" width="700" /></p>
+<p align="center"><img src="imgs/UX-UI/Home.png" alt="Wireframe web de escritorio: panel de inicio" title="Web wireframe — Home" width="700" /></p>
+<p align="center"><img src="imgs/UX-UI/StoryCreator.png" alt="Wireframe web de escritorio: editor de historias" title="Web wireframe — Story Creator" width="700" /></p>
+<p align="center"><img src="imgs/UX-UI/ImageGenerator.png" alt="Wireframe web de escritorio: configuración del generador de imágenes" title="Web wireframe — Image Generator" width="700" /></p>
+<p align="center"><img src="imgs/UX-UI/GenerationResult.png" alt="Wireframe web de escritorio: resultado de una generación" title="Web wireframe — Generation Result" width="700" /></p>
+<p align="center"><img src="imgs/UX-UI/ContentLibrary.png" alt="Wireframe web de escritorio: biblioteca de contenido" title="Web wireframe — Content Library" width="700" /></p>
+
+| Pantalla | Propósito en la tarea |
+| --- | --- |
+| Login | Identificar al adulto antes de entrar al espacio autenticado. |
+| Home | Orientar hacia las áreas de cuentos, imágenes, música y biblioteca. |
+| Story Creator | Editar la historia y sus páginas, y asociar recursos narrativos. |
+| Image Generator | Configurar la solicitud de ilustración. |
+| Generation Result | Revisar el resultado y decidir si conservarlo o volver a generarlo. |
+| Content Library | Encontrar y organizar las creaciones guardadas. |
+
+#### Aplicación móvil prevista — lectura y AR
+
+Estas pantallas verticales proponen el consumo de una historia guardada: lectura convencional, activación de cámara y visualización de la página en realidad aumentada. El repositorio `frontend-mobile` no contiene una implementación publicada de este flujo.
+
+<p align="center"><img src="imgs/UX-UI/MobileStoryReader.png" alt="Wireframe móvil propuesto: lector de historias" title="Mobile wireframe — Story Reader (planned)" width="220" /></p>
+<p align="center"><img src="imgs/UX-UI/MobileARCamera.png" alt="Wireframe móvil propuesto: cámara para detectar una superficie" title="Mobile wireframe — AR Camera (planned)" width="220" /></p>
+<p align="center"><img src="imgs/UX-UI/MobileARStoryReader.png" alt="Wireframe móvil propuesto: página de cuento en realidad aumentada" title="Mobile wireframe — AR Story Reader (planned)" width="220" /></p>
 
 <a id="642-applications-wireflow-diagrams"></a>
 ### 6.4.2. Applications Wireflow Diagrams
 
-<p align="center">
-  <img src="imgs/Wireflow/StoryCreation.png" alt="Mock-up Web de Story Creation de Tale Star" title="Web Mock-up" width="320" />
-</p>
+El primer wireflow conecta las pantallas web de la tarea de autoría. Hace visible el paso desde el acceso hasta la creación, solicitud de imagen, revisión y biblioteca; cada marco corresponde a una vista de baja fidelidad.
 
-<p align="center">
-  <img src="imgs/Wireflow/ARStoryExperience.png" alt="Mock-up web de Mobile AR Story Reader de Tale Star" title="Web Mock-up" width="320" />
-</p>
+<p align="center"><img src="imgs/Wireflow/StoryCreation.png" alt="Wireflow web: acceso, panel, editor de historia, generador, resultado y biblioteca" title="Web wireflow — Story Creation" width="100%" /></p>
+
+El recorrido enlaza **Login → Home/Dashboard → Story Creator → Image Generator → Generation Result → Content Library**. La pantalla de resultado permite volver a configurar la generación; la biblioteca aparece como destino para la referencia que el adulto decide conservar.
+
+El segundo wireflow describe una experiencia móvil planificada, no una capacidad disponible en la Web Application. El adulto o lector abre una historia, inicia la cámara, detecta una superficie y coloca la página en la vista AR.
+
+<p align="center"><img src="imgs/Wireflow/ARStoryExperience.png" alt="Wireflow móvil propuesto: lector, cámara AR y página de historia colocada" title="Mobile wireflow — AR Story Experience (planned)" width="100%" /></p>
+
+La secuencia **Mobile Story Reader → Open AR / AR Camera → Detect Surface / Place Story / AR Reader** comunica la transición entre lectura tradicional y lectura aumentada; depende de la futura aplicación móvil y no debe interpretarse como funcionalidad desplegada.
 
 <a id="643-applications-mock-ups"></a>
 ### 6.4.3. Applications Mock-ups
 
-<p align="center">
-  <img src="imgs/Mockups/Login.png" alt="Mock-up mobile de Login de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/Mockups/Home.png" alt="Mock-up mobile de Home de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/Mockups/StoryCreator.png" alt="Mock-up mobile de Story Creator de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/Mockups/ImageGenerator.png" alt="Mock-up mobile de Image Generator de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/Mockups/GenerationResult.png" alt="Mock-up mobile de Generation Result de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/Mockups/ContentLibrary.png" alt="Mock-up mobile de Content Library de Tale Star" title="Web Mock-up" width="320" />
-</p>
-Los wireframes son en formato Mobile Application
+Los mock-ups aplican color, tipografía, jerarquía y componentes a las mismas tareas de los wireframes. Los seis primeros son propuestas de interfaz web de escritorio; los tres últimos corresponden a la aplicación móvil futura.
 
-<p align="center">
-  <img src="imgs/Mockups/MobileStoryReader.png" alt="Mock-up  Mobile Story Reader de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/Mockups/MobileARCamera.png" alt="Mock-up mobile de Mobile AR Camera de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/Mockups/MobileARStoryReader.png" alt="Mock-up mobile de Mobile AR Story Reader de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
+#### Web Application — mock-ups de escritorio
 
+<p align="center"><img src="imgs/Mockups/Login.png" alt="Mock-up web de escritorio: inicio de sesión" title="Web mock-up — Login" width="700" /></p>
+<p align="center"><img src="imgs/Mockups/Home.png" alt="Mock-up web de escritorio: panel de inicio" title="Web mock-up — Home" width="700" /></p>
+<p align="center"><img src="imgs/Mockups/StoryCreator.png" alt="Mock-up web de escritorio: editor de historias" title="Web mock-up — Story Creator" width="700" /></p>
+<p align="center"><img src="imgs/Mockups/ImageGenerator.png" alt="Mock-up web de escritorio: generador de imágenes" title="Web mock-up — Image Generator" width="700" /></p>
+<p align="center"><img src="imgs/Mockups/GenerationResult.png" alt="Mock-up web de escritorio: resultado de generación" title="Web mock-up — Generation Result" width="700" /></p>
+<p align="center"><img src="imgs/Mockups/ContentLibrary.png" alt="Mock-up web de escritorio: biblioteca de contenido" title="Web mock-up — Content Library" width="700" /></p>
+
+El conjunto visualiza la continuidad de la tarea desde autenticación hasta creación y conservación. El panel de inicio enlaza las áreas principales; el editor agrupa historia y página; el generador y su resultado separan configuración de revisión; la biblioteca concentra los recursos guardados.
+
+#### Aplicación móvil prevista — mock-ups de lectura AR
+
+<p align="center"><img src="imgs/Mockups/MobileStoryReader.png" alt="Mock-up móvil propuesto: lector de historias" title="Mobile mock-up — Story Reader (planned)" width="220" /></p>
+<p align="center"><img src="imgs/Mockups/MobileARCamera.png" alt="Mock-up móvil propuesto: cámara de realidad aumentada" title="Mobile mock-up — AR Camera (planned)" width="220" /></p>
+<p align="center"><img src="imgs/Mockups/MobileARStoryReader.png" alt="Mock-up móvil propuesto: cuento en realidad aumentada" title="Mobile mock-up — AR Story Reader (planned)" width="220" /></p>
+
+La propuesta mantiene la lectura en formato vertical y sitúa los controles AR alrededor de la cámara y la página seleccionada. No representa una app ya implementada.
+
+**Alcance frente a la Web Application actual.** Estos wireframes y mock-ups son artefactos de diseño, no capturas del frontend desplegado. Las dos versiones de Login incluyen “Remember me” y “Forgot password”; ninguna de esas funciones está implementada en el frontend ni hay rutas de recuperación de contraseña en el backend. En el flujo actual, el registro crea la sesión y redirige al usuario sin exigir un segundo login. Las pantallas y flujos AR son propuestas de la aplicación móvil aún no publicada.
 
 <a id="644-applications-user-flow-diagrams"></a>
 ### 6.4.4. Applications User Flow Diagrams
 
-<p align="center">
-  <img src="imgs/FlowDiagrams/CreateAndSaveStory.png" alt="User Flow Diagrams de Create And Save Story de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
+El flujo de autoría muestra dos entradas: el usuario existente inicia sesión; el usuario nuevo crea una cuenta y queda autenticado automáticamente. Luego crea o selecciona una Story, añade y configura páginas, solicita una ilustración, revisa o regenera el resultado y guarda la historia. Guardarla en Content Library es una acción posterior y opcional.
 
-<p align="center">
-  <img src="imgs/FlowDiagrams/ARStoryExperience.png" alt="User Flow Diagrams de AR Story Experience de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
+<p align="center"><img src="imgs/FlowDiagrams/CreateAndSaveStory.png" alt="User flow web: registro o login, creación de Story, generación de ilustración y guardado opcional en biblioteca" title="Web user flow — Create and Save a Story" width="430" /></p>
+
+El registro no va seguido de un segundo inicio de sesión: `POST /api/v1/auth/register` devuelve un token y `RegisterView` redirige a la vista autenticada. La ilustración es una generación asíncrona que el adulto revisa antes de conservarla; la referencia de biblioteca se guarda por separado.
+
+El siguiente flujo es una propuesta para lectura móvil con realidad aumentada. Comienza al abrir una historia guardada, pasa por la cámara y la detección de una superficie, y termina con la página colocada en el entorno y el retorno al lector.
+
+<p align="center"><img src="imgs/FlowDiagrams/ARStoryExperience.png" alt="User flow móvil propuesto: abrir historia, detectar superficie y leer una página en AR" title="Mobile user flow — AR Story Experience (planned)" width="900" /></p>
+
+Este recorrido es conceptual: el repositorio móvil no implementa el flujo AR y el backend no expone un runtime AR.
 
 <a id="65-applications-prototyping"></a>
 ## 6.5. Applications Prototyping
 
-<p align="center">
-  <img src="imgs/ApplicationsPrototype/Login.png" alt="Mock-up mobile de Login de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/ApplicationsPrototype/Home.png" alt="Mock-up Web de Home de Tale Star" title="Mobile Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/ApplicationsPrototype/StoryCreator.png" alt="Mock-up Web de Story Creator de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/ApplicationsPrototype/ImageGenerator.png" alt="Mock-up Web de Image Generator de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/ApplicationsPrototype/ImageGenerated.png" alt="Mock-up Web de Image Generated de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/ApplicationsPrototype/ContentLibrary.png" alt="Mock-up Web de Content Library de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/ApplicationsPrototype/OpenAR.png" alt="Mock-up Web de Open AR de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/ApplicationsPrototype/AR.png" alt="Mock-up Web de AR de Tale Star" title="Web Mock-up" width="320" />
-</p>
-<p align="center">
-  <img src="imgs/ApplicationsPrototype/ExitAR.png" alt="Mock-up Web de Exit AR de Tale Star" title="Web Mock-up" width="320" />
-</p>
+Los prototipos visuales presentan una secuencia de autoría web y una secuencia conceptual de lectura móvil con AR. Son pantallas de diseño para comunicar interacciones y continuidad; las pantallas móviles no acreditan una implementación publicada.
+
+#### Prototipo de autoría web
+
+El recorrido web enlaza acceso, panel, editor de historias, configuración de imagen, revisión de la imagen generada y biblioteca. La secuencia ayuda a revisar si las acciones de crear, revisar y conservar tienen continuidad.
+
+<p align="center"><img src="imgs/ApplicationsPrototype/Login.png" alt="Prototipo web de escritorio: inicio de sesión" title="Web prototype — Login" width="700" /></p>
+<p align="center"><img src="imgs/ApplicationsPrototype/Home.png" alt="Prototipo web de escritorio: panel principal" title="Web prototype — Home" width="700" /></p>
+<p align="center"><img src="imgs/ApplicationsPrototype/StoryCreator.png" alt="Prototipo web de escritorio: editor de historias" title="Web prototype — Story Creator" width="700" /></p>
+<p align="center"><img src="imgs/ApplicationsPrototype/ImageGenerator.png" alt="Prototipo web de escritorio: configuración del generador" title="Web prototype — Image Generator" width="700" /></p>
+<p align="center"><img src="imgs/ApplicationsPrototype/ImageGenerated.png" alt="Prototipo web de escritorio: revisión de ilustración generada" title="Web prototype — Generated Image" width="700" /></p>
+<p align="center"><img src="imgs/ApplicationsPrototype/ContentLibrary.png" alt="Prototipo web de escritorio: biblioteca de contenido" title="Web prototype — Content Library" width="700" /></p>
+
+#### Prototipo móvil de lectura AR — propuesta
+
+Las tres pantallas móviles muestran cómo abrir la lectura AR, usar la cámara para situar una página y salir de esa experiencia. Se documentan como interacción futura; no hay un cliente móvil publicado que implemente estos pasos.
+
+<p align="center"><img src="imgs/ApplicationsPrototype/OpenAR.png" alt="Prototipo móvil propuesto: abrir la experiencia AR" title="Mobile prototype — Open AR (planned)" width="220" /></p>
+<p align="center"><img src="imgs/ApplicationsPrototype/AR.png" alt="Prototipo móvil propuesto: lectura de una página en realidad aumentada" title="Mobile prototype — AR Reader (planned)" width="220" /></p>
+<p align="center"><img src="imgs/ApplicationsPrototype/ExitAR.png" alt="Prototipo móvil propuesto: salir de la lectura AR" title="Mobile prototype — Exit AR (planned)" width="220" /></p>
 
 <a id="capitulo-vii-product-implementation-validation-deployment"></a>
 # Capítulo VII: Product Implementation, Validation & Deployment
