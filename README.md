@@ -3032,6 +3032,37 @@ Los wireframes son en formato Mobile Application
 <a id="643-applications-mock-ups"></a>
 ### 6.4.3. Applications Mock-ups
 
+<p align="center">
+  <img src="imgs/Mockups/Login.png" alt="Mock-up mobile de Login de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/Home.png" alt="Mock-up mobile de Home de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/StoryCreator.png" alt="Mock-up mobile de Story Creator de Tale Star" title="Web Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/ImageGenerator.png" alt="Mock-up mobile de Image Generator de Tale Star" title="Web Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/GenerationResult.png" alt="Mock-up mobile de Generation Result de Tale Star" title="Web Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/ContentLibrary.png" alt="Mock-up mobile de Content Library de Tale Star" title="Web Mock-up" width="320" />
+</p>
+Los wireframes son en formato Mobile Application
+
+<p align="center">
+  <img src="imgs/UX-UI/MobileStoryReader.png" alt="Mock-up  Mobile Story Reader de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/MobileARCamera.png" alt="Mock-up mobile de Mobile AR Camera de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/MobileARStoryReader.png" alt="Mock-up mobile de Mobile AR Story Reader de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+
+
 <a id="644-applications-user-flow-diagrams"></a>
 ### 6.4.4. Applications User Flow Diagrams
 
