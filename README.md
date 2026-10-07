@@ -2989,6 +2989,24 @@ La comparación de ambas capturas confirma que la estructura se adapta por ancho
 
 <a id="641-applications-wireframes"></a>
 ### 6.4.1. Applications Wireframes
+<p align="center">
+  <img src="imgs/UX-UI/Login.png" alt="Mock-up mobile de Login de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/Home.png" alt="Mock-up mobile de Home de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/StoryCreator.png" alt="Mock-up mobile de Story Creator de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/ImageGenerator.png" alt="Mock-up mobile de Image Generator de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/GenerationResult.png" alt="Mock-up mobile de Generation Result de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
+<p align="center">
+  <img src="imgs/UX-UI/ContentLibrary.png" alt="Mock-up mobile de Content Library de Tale Star" title="Mobile Mock-up" width="320" />
+</p>
 
 <a id="642-applications-wireflow-diagrams"></a>
 ### 6.4.2. Applications Wireflow Diagrams
