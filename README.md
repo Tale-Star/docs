@@ -2593,17 +2593,147 @@ El diseño muestra la única tabla de Generative Media y sus constraints, índic
 <a id="531-domain-layer"></a>
 ### 5.3.1. Domain Layer
 
+El Domain Layer del Bounded Context **Identity & Access** contiene las entidades y reglas relacionadas con la identidad y las credenciales de los usuarios. Su responsabilidad principal es representar la información propia del usuario y mantener las reglas de negocio que pertenecen directamente al dominio.
+
+Este contexto se limita a las responsabilidades de **identidad, credenciales, perfil y PIN parental**, sin incluir funcionalidades relacionadas con la generación, almacenamiento o gestión de historias.
+
+#### Entidad `User`
+
+La entidad principal del contexto es `User`, ubicada en:
+
+`app/identity_access/domain/user.py`
+
+`User` representa la información de identidad y perfil de un usuario dentro del sistema. La entidad almacena las credenciales en forma de hashes y mantiene el estado necesario para gestionar el acceso y el perfil del usuario.
+
+El identificador `id` no se declara directamente en `User`, sino que es heredado de la clase base `Entity` del Shared Kernel.
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| `id` | `UUID` | Identificador único de la entidad, heredado de `Entity`. |
+| `email` | `str` | Correo electrónico utilizado como identificador de acceso del usuario. |
+| `display_name` | `str` | Nombre mostrado para identificar al usuario dentro de la aplicación. |
+| `password_hash` | `str` | Hash de la contraseña del usuario. No almacena la contraseña en texto plano. |
+| `parental_pin_hash` | `str \| None` | Hash del PIN parental. Puede ser `None` cuando el PIN todavía no ha sido configurado. |
+| `created_at` | `datetime` | Fecha y hora en la que se creó el usuario. |
+
+La entidad se implementa como un `dataclass` con `slots=True` y `eq=False`, manteniendo únicamente los atributos propios de la identidad y perfil del usuario.
+
+#### Reglas y responsabilidades del dominio
+
+La entidad `User` mantiene información relacionada con:
+
+- La identidad del usuario mediante su correo electrónico e identificador único.
+- El perfil mediante `display_name`.
+- Las credenciales mediante `password_hash`.
+- El PIN parental mediante `parental_pin_hash`.
+- La fecha de creación mediante `created_at`.
+
+Los valores almacenados para la contraseña y el PIN corresponden a **hashes**, no a credenciales en texto plano. Sin embargo, la generación y validación de estos hashes no pertenece directamente a la entidad `User`; dichas operaciones son coordinadas por la Application Layer mediante sus respectivos ports e implementadas en Infrastructure.
+
+Las operaciones de registro, inicio de sesión, generación de tokens y validación del PIN no forman parte de la entidad. Estas responsabilidades corresponden a la Application Layer.
+
+#### Errores de dominio
+
+El contexto define errores específicos para representar situaciones relacionadas con la identidad y autenticación:
+
+| Error | Descripción |
+|---|---|
+| `IdentityError` | Excepción base para errores propios del contexto Identity & Access. |
+| `EmailAlreadyRegistered` | Indica que el correo electrónico utilizado durante el registro ya se encuentra asociado a un usuario existente. |
+| `InvalidCredentials` | Indica que las credenciales proporcionadas no son válidas para realizar la autenticación. |
+
+Estos errores se encuentran dentro de `app/identity_access/domain/errors.py` y permiten representar condiciones propias del contexto sin depender de mecanismos específicos de HTTP o infraestructura.
+
+#### Elementos que no pertenecen al Domain Layer
+
+El Domain Layer de **Identity & Access** no contiene:
+
+- Endpoints o rutas HTTP.
+- Schemas de request o response de la API.
+- Servicios de aplicación.
+- Interfaces de repositorio.
+- Ports para hashing o generación de tokens.
+- Implementaciones de SQLAlchemy.
+- Adaptadores JWT o Argon2.
+- Lógica específica de FastAPI.
+- Entidades relacionadas con historias o contenido educativo.
+
+Los contratos `UserRepository`, `PasswordHasherPort` y `AccessTokenPort` pertenecen a la **Application Layer**, mientras que sus implementaciones concretas pertenecen a la **Infrastructure Layer**. De esta manera, el dominio permanece independiente de los mecanismos utilizados para persistencia, hashing, autenticación y comunicación HTTP.
+
+
 <a id="532-interface-layer"></a>
 ### 5.3.2. Interface Layer
+
+La capa de interfaz expone las operaciones de **Identity & Access** mediante rutas FastAPI. El router utiliza el prefijo `/auth` y se monta desde `app/main.py` bajo `/api/v1`, por lo que las rutas finales quedan bajo `/api/v1/auth`. Los schemas Pydantic validan los datos de entrada antes de delegar las operaciones en `IdentityAccessService`. Las operaciones protegidas obtienen el usuario autenticado mediante el token Bearer.
+
+| **Método** | **Ruta** | **Request / consulta** | **Resultado y códigos relevantes** |
+| ---------- | -------- | ---------------------- | ---------------------------------- |
+| `POST` | `/api/v1/auth/register` | `RegisterRequest`: `email`, `display_name`, `password` y `parental_pin` opcional. | `AuthResponse`; `201`, `409` (correo ya registrado), `422`. |
+| `POST` | `/api/v1/auth/login` | `LoginRequest`: `email` y `password`. | `AuthResponse`; `200`, `401` (credenciales inválidas), `422`. |
+| `GET` | `/api/v1/auth/me` | Sin cuerpo de solicitud. | `UserResponse`; `200`, `401`. |
+| `PUT` | `/api/v1/auth/parental-pin` | `SetParentalPinRequest`: `current_password` y `pin`. | `UserResponse`; `200`, `401`. |
+| `POST` | `/api/v1/auth/parental-pin/validate` | `ValidateParentalPinRequest`: `pin`. | `ValidateParentalPinResponse`; `200`, `401`. |
+
+`RegisterRequest` recibe el correo electrónico, nombre visible, contraseña y un PIN parental opcional. `LoginRequest` contiene las credenciales necesarias para autenticación. `SetParentalPinRequest` requiere la contraseña actual y el nuevo PIN, mientras que `ValidateParentalPinRequest` recibe el PIN que se desea validar. Las operaciones `/me`, `/parental-pin` y `/parental-pin/validate` requieren autenticación Bearer; `/register` y `/login` no requieren usuario autenticado. Los endpoints protegidos utilizan la dependencia `get_current_user` para obtener el usuario asociado al token antes de delegar en `IdentityAccessService`.
+
 
 <a id="533-application-layer"></a>
 ### 5.3.3. Application Layer
 
+`IdentityAccessService` coordina los casos de uso del bounded context **Identity & Access** mediante los Protocols definidos en `application/ports.py`: `UserRepository`, `PasswordHasherPort` y `AccessTokenPort`. El servicio concentra la lógica de aplicación de registro, autenticación, consulta del perfil y gestión del PIN parental, delegando la persistencia de usuarios, el hashing y la verificación de credenciales y la generación de tokens en sus respectivos ports. No utiliza Commands ni Handlers.
+
+Los principales casos de uso son:
+
+| **Caso de uso** | **Comportamiento implementado** |
+| --- | --- |
+| **Registrar** | Verifica mediante `UserRepository` que el correo no esté registrado, genera el hash de la contraseña mediante `PasswordHasherPort`, genera el hash del PIN parental cuando se proporciona, crea la entidad `User` y la persiste mediante el repositorio. Finalmente genera un token de acceso mediante `AccessTokenPort`. |
+| **Iniciar sesión** | Busca el usuario mediante `UserRepository`, verifica la contraseña proporcionada contra `password_hash` mediante `PasswordHasherPort` y, si las credenciales son válidas, genera un token de acceso mediante `AccessTokenPort`. Si las credenciales no son válidas, produce `InvalidCredentials`. |
+| **Obtener perfil** | Recupera el usuario autenticado mediante su identificador utilizando `UserRepository` y devuelve la información necesaria para construir la respuesta del perfil. |
+| **Establecer PIN parental** | Verifica la contraseña actual mediante `PasswordHasherPort`, genera el hash del nuevo PIN parental y actualiza el usuario mediante `UserRepository`. El PIN no se almacena directamente en texto plano. |
+| **Validar PIN parental** | Recupera el usuario mediante `UserRepository` y compara el PIN proporcionado con `parental_pin_hash` mediante `PasswordHasherPort`. Devuelve el resultado de la validación. |
+
+`UserRepository` abstrae la consulta y persistencia de usuarios; `PasswordHasherPort` abstrae el hashing y la verificación de contraseñas y PIN; y `AccessTokenPort` abstrae la generación y validación de tokens de acceso. `IdentityAccessService` no depende directamente de SQLAlchemy, Argon2 ni JWT, sino de estos ports. Las implementaciones concretas se encuentran en Infrastructure y son utilizadas por la Interface Layer a través de las dependencias del bounded context.
+
+
 <a id="534-infrastructure-layer"></a>
 ### 5.3.4. Infrastructure Layer
 
+La infraestructura implementa los Protocols de la Application Layer mediante adaptadores concretos. FastAPI resuelve `get_db_session` para cada request; `get_identity_access_service` construye `IdentityAccessService` con `SqlAlchemyUserRepository`, `Argon2PasswordHasher` y `JwtAccessTokenAdapter`, utilizando la misma `Session` para la persistencia del usuario. La persistencia se implementa mediante SQLAlchemy, el hashing de contraseñas y PINs mediante Argon2 y los tokens de acceso mediante JWT con algoritmo HS256.
+
+| **Componente** | **Responsabilidad** | **Implementación** |
+| --- | --- | --- |
+| `UserRecord` | Mapeo ORM de la entidad `User` hacia la tabla de persistencia y definición de sus columnas e índices. | SQLAlchemy; `identity_users`. |
+| `SqlAlchemyUserRepository` | Agregar, obtener, buscar por correo y guardar usuarios; convierte los registros SQLAlchemy en entidades `User` y viceversa. También traduce una violación de unicidad del correo a `EmailAlreadyRegistered`. | Adaptador de `UserRepository`. |
+| `Argon2PasswordHasher` | Genera y verifica hashes para contraseñas y PINs. | Adaptador de `PasswordHasherPort` mediante `pwdlib` con Argon2. |
+| `JwtAccessTokenAdapter` | Genera y valida tokens de acceso asociados al identificador del usuario, verificando `sub`, `iat`, `exp` e `iss`. | Adaptador de `AccessTokenPort` mediante JWT HS256. |
+| `get_identity_access_service` | Construye `IdentityAccessService` con el repositorio, hasher y adaptador de tokens para el request actual. | Dependencia FastAPI. |
+| `get_current_user` | Obtiene las credenciales Bearer de la solicitud, valida el access token y devuelve el `User` autenticado. | Dependencia FastAPI mediante `HTTPBearer`. |
+
+La tabla física es `identity_users`. El modelo `UserRecord` y la migración `20260930_0003_mvp_contexts.py` declaran las siguientes columnas y restricciones:
+
+| **Columna / restricción** | **Definición real** |
+| --- | --- |
+| `id` | `Uuid`, PK, no nulo. |
+| `email` | `VARCHAR(320)`, no nulo, con índice único `ix_identity_users_email`. |
+| `display_name` | `VARCHAR(100)`, no nulo. |
+| `password_hash` | `TEXT`, no nulo. |
+| `parental_pin_hash` | `TEXT`, nullable. |
+| `created_at` | `DateTime(timezone=True)`, no nulo; el valor se proporciona desde la entidad `User`. |
+| `pk_identity_users` | Restricción de clave primaria sobre `id`. |
+| `ix_identity_users_email` | Índice único sobre `email`. |
+
+La tabla `identity_users` no contiene claves foráneas hacia otras tablas del contexto. Su identificador `id` es utilizado como referencia por otros bounded contexts que necesitan asociar recursos con un usuario. Por ejemplo, `content_library_items.owner_id`, `creative_characters.owner_id`, `creative_scenarios.owner_id`, `creative_style_profiles.owner_id`, `creative_stories.owner_id` y `generation_jobs.owner_id` mantienen relaciones de propiedad hacia `identity_users.id`. Estas tablas pertenecen a otros contextos y no forman parte de la tabla física de Identity & Access.
+
+
 <a id="535-bounded-context-software-architecture-component-level-diagrams"></a>
 ### 5.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama muestra el flujo implementado desde la Web Application autenticada hacia el bounded context de Identity & Access. La aplicación web consume la Identity & Access REST API mediante HTTPS y JSON, enviando el access token como Bearer token cuando la operación requiere autenticación. El router de `/api/v1/auth` delega los casos de uso en `IdentityAccessService`, responsable de coordinar el registro, login, consulta del perfil y gestión del PIN parental.
+
+![Content Identity&Access Component Level Diagram](assets/diagrams/content-identity&access-component.png)
+
+`IdentityAccessService` utiliza los ports `UserRepository`, `PasswordHasherPort` y `AccessTokenPort`, cuyas implementaciones se encuentran en Infrastructure. `SqlAlchemyUserRepository` persiste los usuarios mediante `UserRecord` en la tabla `identity_users`, mientras `Argon2PasswordHasher` gestiona el hashing y verificación de contraseñas y PINs, y `JwtAccessTokenAdapter` emite y valida access tokens mediante JWT HS256. Para las operaciones protegidas, `get_current_user` valida el esquema Bearer y resuelve el usuario autenticado mediante el servicio de aplicación.
+
 
 <a id="536-bounded-context-software-architecture-code-level-diagrams"></a>
 ### 5.3.6. Bounded Context Software Architecture Code Level Diagrams
@@ -2611,8 +2741,31 @@ El diseño muestra la única tabla de Generative Media y sus constraints, índic
 <a id="5361-bounded-context-domain-layer-class-diagrams"></a>
 #### 5.3.6.1. Bounded Context Domain Layer Class Diagrams
 
+El diagrama representa los principales componentes del Bounded Context Identity & Access y sus dependencias entre las capas Interface, Application e Infrastructure. El frontend web consume la Identity REST API mediante las operaciones de registro, login, consulta de perfil y configuración y validación del PIN parental. Las rutas HTTP delegan los casos de uso a `IdentityAccessService`, que depende de los ports `UserRepository`, `PasswordHasherPort` y `AccessTokenPort`. Infrastructure proporciona las implementaciones concretas mediante `SqlAlchemyUserRepository`, `Argon2PasswordHasher` y `JwtAccessTokenAdapter`, mientras que `SqlAlchemyUserRepository` persiste las cuentas en la tabla `identity_users`. La autenticación de las operaciones protegidas utiliza Bearer tokens mediante la dependencia `get_current_user`.
+
+![Content Identity&Access Domain Layer Diagram](assets/diagrams/content-identity&access-domainlayer.png)
+
+
+
 <a id="5362-bounded-context-database-design-diagram"></a>
 #### 5.3.6.2. Bounded Context Database Design Diagram
+
+El diagrama muestra exclusivamente la tabla `identity_users`, de acuerdo con el alcance de este contexto. La tabla almacena la identidad y las credenciales de los usuarios de Identity & Access. `id` constituye la clave primaria y `email` posee un índice único; `parental_pin_hash` es nullable porque el PIN parental puede no estar configurado. La tabla no contiene claves foráneas propias hacia otras tablas; otros Bounded Contexts pueden referenciar `identity_users.id` mediante sus respectivos campos `owner_id`.
+
+![Content Identity&Access Database Diagram](assets/diagrams/content-identity&access-Database.png)
+
+| **Columna / restricción** | **Definición** |
+| --- | --- |
+| `id` | `UUID`, PK, no nulo. |
+| `email` | `VARCHAR(320)`, no nulo; índice único `ix_identity_users_email`. |
+| `display_name` | `VARCHAR(100)`, no nulo. |
+| `password_hash` | `TEXT`, no nulo. |
+| `parental_pin_hash` | `TEXT`, nullable. |
+| `created_at` | `DateTime(timezone=True)`, no nulo; se inicializa desde la entidad `User`, sin default SQL de servidor. |
+| `pk_identity_users` | Clave primaria sobre `id`. |
+| `ix_identity_users_email` | Índice único sobre `email`. |
+
+
 
 <a id="54-bounded-context-content-library"></a>
 ## 5.4. Bounded Context: Content Library
