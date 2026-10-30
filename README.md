@@ -3530,16 +3530,57 @@ Los rangos de historias indican la funcionalidad relacionada que se observa en e
 
 #### 7.2.1.3. Development Evidence for Sprint Review
 
-<a id="7214-testing-suite-evidence-for-sprint-review"></a>
+Los historiales consultados registran, entre otros, los siguientes cambios. Se conservan los nombres públicos tal como aparecen en Git; `vr700` no se asocia a una persona porque no hay evidencia para hacerlo.
+
+| Repositorio | Commit / fecha | Descripción del cambio |
+| :--- | :--- | :--- |
+| `frontend-web` | `5596456` — 01/10/2026 — `vr700` | Base de aplicación e integración de autenticación. |
+| `frontend-web` | `9e57878` — 01/10/2026 — `vr700` | Integración de creación de imágenes e historias. |
+| `frontend-web` | `b6ea032` — 01/10/2026 — `vr700` | Integración de generación musical. |
+| `frontend-web` | `a176967` — 01/10/2026 — `vr700` | Aplicación web integrada con backend. |
+| `frontend-web` | `366ddf1`, `d48b11d` — 26/10/2026 — Ricardo Cardenas | Consentimiento de registro/términos y merge del PR #1 desde `develop`. |
+| `backend` | `bb39932`, `59bcb49` — 30/09/2026 — `vr700` | Pruebas de base del backend y publicación del MVP de la API. |
+| `backend` | `d4056f3`, `efecb87` — 30/09/2026 — `vr700` | Documentación de la API y contenedores para API/worker. |
+| `backend` | `8a1ed45`, `603d153` — 01–02/10/2026 — `vr700` | Preparación de despliegue y configuración de descargas de modelos/prompts. |
+
+Estos commits prueban cambios registrados, no que cada historia se haya terminado dentro de un sprint específico. El repositorio de documentación conserva la historia de entregas anteriores y se actualiza en esta copia de trabajo para el hito actual.
+
 #### 7.2.1.4. Testing Suite Evidence for Sprint Review
 
-<a id="7215-execution-evidence-for-sprint-review"></a>
+El backend contiene pruebas en `tests/test_api.py`, `test_database.py`, `test_domain.py`, `test_generations.py`, `test_local_asset_storage.py`, `test_model_adapters.py`, `test_mvp_contexts.py` e `tests/integration/test_real_generators.py`. Estas últimas requieren modelos reales y se etiquetan como integración. El frontend ofrece `type-check`, `lint` y `build`, pero no declara un script de pruebas automatizadas en `package.json`.
+
+**Resultado de esta revisión:** no se ejecutaron las suites ni los comandos de validación. Por tanto, no se reportan conteos, cobertura ni resultados de aprobación. La existencia de archivos de prueba es evidencia de pruebas escritas, no de su ejecución o éxito en este corte.
+
 #### 7.2.1.5. Execution Evidence for Sprint Review
 
-<a id="7216-services-documentation-evidence-for-sprint-review"></a>
+Las capturas son de la Web Application ejecutada localmente el 30/10/2026. Para evitar iniciar modelos pesados, la API y el worker se configuraron con adaptadores simulados; el usuario, historia y recursos creados para las capturas son datos sintéticos guardados dentro de la copia temporal de trabajo.
+
+| Flujo ejecutado localmente | Captura |
+| :--- | :--- |
+| Formulario de generación de imagen | <img src="imgs/evidence/front-image-generator.png" alt="Web App local: formulario de generación de imagen" width="560" /> |
+| Editor de historia y páginas | <img src="imgs/evidence/front-story-editor.png" alt="Web App local: editor de historia" width="560" /> |
+| Composición de música | <img src="imgs/evidence/front-music-creator.png" alt="Web App local: compositor de música" width="560" /> |
+| Biblioteca de contenido | <img src="imgs/evidence/front-content-library.png" alt="Web App local: biblioteca de contenido" width="560" /> |
+
+Las capturas acreditan que las vistas y rutas se pudieron abrir en modo local y que la UI recibió respuestas simuladas. No acreditan la salida de modelos generativos reales, una publicación pública ni la validación del producto por usuarios.
+
 #### 7.2.1.6. Services Documentation Evidence for Sprint Review
 
-<a id="7217-software-deployment-evidence-for-sprint-review"></a>
+La API publica Swagger UI en `http://127.0.0.1:8000/docs`, ReDoc en `/redoc` y el contrato OpenAPI en `/openapi.json` cuando se ejecuta localmente. La siguiente captura registra Swagger con las rutas publicadas al momento de la revisión.
+
+<p align="center"><img src="imgs/evidence/backend-openapi-swagger.png" alt="Swagger UI local del backend Tale Star con operaciones OpenAPI" title="Backend — Swagger UI" width="850" /></p>
+
+| Contexto | Operaciones principales documentadas |
+| :--- | :--- |
+| Health | `GET /health`, `GET /api/v1/health` |
+| Identity & Access | Registro/login, perfil autenticado y configuración/validación del PIN parental. |
+| Creative Authoring | CRUD de personajes, escenarios, perfiles de estilo, historias y páginas de historias. |
+| Generative Media | `POST /api/v1/generations/images`, `POST /api/v1/generations/music` y `GET /api/v1/generations/{job_id}` para encolar y consultar trabajos asíncronos. |
+| Content Library | Crear, listar, obtener, modificar y eliminar recursos guardados. |
+| Media | Recuperar recursos por identificador o clave de medio. |
+
+La documentación API es local y refleja el esquema de la aplicación ejecutada en esta copia. No debe citarse `127.0.0.1` como dirección de un servicio público.
+
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
 
 <a id="7218-team-collaboration-insights-during-sprint"></a>
