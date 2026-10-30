@@ -3451,33 +3451,83 @@ El prototipo es un recurso de revisión de interacción, no evidencia de que la 
 # Capítulo VII: Product Implementation, Validation & Deployment
 
 <a id="71-software-configuration-management"></a>
+
 ## 7.1. Software Configuration Management
 
-<a id="711-software-development-environment-configuration"></a>
 ### 7.1.1. Software Development Environment Configuration
 
-<a id="712-source-code-management"></a>
+La versión de referencia es el código visible en los repositorios consultados el 30/10/2026. La tabla registra tecnologías declaradas por los proyectos; no significa que todos los modelos de IA se hayan descargado en este entorno.
+
+| Componente | Herramientas y versión declarada | Uso observado |
+| :--- | :--- | :--- |
+| Web Application | Node.js 22 (configuración de tipos), Vue 3, TypeScript 5, Vite 6, Vue Router y Pinia | SPA con autenticación, autoría de historias, generación de imagen y música, biblioteca y perfil. `package.json` incluye `dev`, `build`, `type-check` y `lint`; no declara un script `test`. |
+| Backend/API | Python 3.12; FastAPI, SQLAlchemy 2, Alembic, Pydantic Settings y Uvicorn | API REST modular con SQLite en modo WAL, migraciones y documentación OpenAPI. |
+| Generación multimedia | Adaptadores para Z-Image-Turbo y ACE-Step; trabajador asíncrono; adaptadores simulados disponibles | Se ejecutó la evidencia local con generadores simulados y descargas de modelos desactivadas; no se midió calidad o rendimiento de los modelos reales. |
+| Contenedores | Docker y Docker Compose | `compose.yaml` define la ejecución local de API y trabajador; la configuración documenta el perfil con GPU para inferencia real. |
+| Informe y prototipos | Markdown, PNG/SVG y HTML/CSS/JavaScript local | El prototipo de 6.5 navega entre exportaciones visuales sin persistencia o conexión a API. |
+| Calidad declarada en backend | Pytest, Ruff y Mypy | Hay configuración y archivos de pruebas en el repositorio; no se ejecutó la suite para este informe. |
+
 ### 7.1.2. Source Code Management
 
-<a id="713-source-code-style-guide-conventions"></a>
+El proyecto mantiene repositorios separados para código y documentación:
+
+| Repositorio | Contenido | URL |
+| :--- | :--- | :--- |
+| `frontend-web` | Aplicación web Vue | [github.com/Tale-Star/frontend-web](https://github.com/Tale-Star/frontend-web) |
+| `backend` | API, dominios, adaptadores y worker | [github.com/Tale-Star/backend](https://github.com/Tale-Star/backend) |
+| `docs` | Informe y artefactos de diseño | [github.com/Tale-Star/docs](https://github.com/Tale-Star/docs) |
+| `landing-page` | Landing pública | [github.com/Tale-Star/landing-page](https://github.com/Tale-Star/landing-page) |
+
+En las copias revisadas, `main` era la rama actual. El historial de `frontend-web` registra un merge de PR #1 desde `develop`; este dato no demuestra que todos los cambios hayan seguido una política de ramas uniforme. Los repositorios usan mensajes de commit legibles, con prefijos `feat`, `fix`, `chore`, `test` y `docs` entre los ejemplos observados. La fecha del último commit y la rama se describen como una instantánea de revisión, no como la política completa del equipo.
+
 ### 7.1.3. Source Code Style Guide & Conventions
 
-<a id="714-software-deployment-configuration"></a>
+| Área | Convenciones observadas |
+| :--- | :--- |
+| Frontend | Componentes Vue en PascalCase; variables y funciones en camelCase; composables con prefijo `use`; TypeScript y ESLint; nombres de código en inglés y textos de interfaz mayormente en español. |
+| Backend | Módulos y funciones en `snake_case`, clases en PascalCase, anotaciones de tipos y separación por capas/puertos; Ruff y Mypy están configurados. |
+| API | Rutas agrupadas por contexto (`auth`, `characters`, `stories`, `generations`, `library`, `media`); especificación publicada por FastAPI en OpenAPI. |
+| Informe | README en Markdown con anchors, tablas y recursos versionados dentro de `imgs/`; las capturas de esta revisión se guardan en `imgs/evidence/`. |
+
+Se documentan convenciones visibles en el código y la configuración. No se localizaron archivos de escenarios Gherkin ni reglas suficientes para afirmar una guía de estilo más amplia que la anterior.
+
 ### 7.1.4. Software Deployment Configuration
 
-<a id="72-solution-implementation"></a>
+La topología configurada para ejecutar localmente el backend usa una API FastAPI, una base SQLite/volumen de datos y un proceso worker separado para trabajos de imagen o música. La inferencia real puede requerir dependencias de IA, pesos de modelos y GPU. Los adaptadores `fake` permiten levantar una ruta demostrativa sin descargar esos modelos.
+
+Para esta evidencia, API y worker se ejecutaron en la máquina local con generadores simulados y datos sintéticos; la Web Application se abrió contra la API local. Esta ejecución permitió capturar el recorrido y Swagger, pero no es un despliegue accesible por internet ni una prueba de rendimiento. La única URL pública verificada en este corte es la Landing Page de GitHub Pages; Web Application y API no tienen un despliegue público acreditado. El diagrama de despliegue existente representa la topología de contenedores prevista/local, no una infraestructura cloud activa.
+
 ## 7.2. Solution Implementation
 
 <a id="721-sprint-1"></a>
 ### 7.2.1. Sprint 1
 
-<a id="7211-sprint-planning-1"></a>
+El Final Project Statement solicita evidencia de Sprint 1 (Universidad Peruana de Ciencias Aplicadas, 2026e). No se encontró un acta, tablero histórico, fechas de inicio/cierre, estimaciones, capacidad ni registro de reuniones para reconstruir su planificación original. Por ello, las subsecciones siguientes separan datos ausentes de una reconstrucción del estado actual de código hecha el 30/10/2026. La presencia de una función en el repositorio no acredita por sí sola que se haya aceptado formalmente una historia de usuario.
+
 #### 7.2.1.1. Sprint Planning 1
 
-<a id="7212-sprint-backlog-1"></a>
+| Dato de planificación | Evidencia disponible |
+| :--- | :--- |
+| Objetivo de sprint reconstruido | Contar con un MVP web conectado a una API para registrar usuarios, crear y editar contenido, solicitar generación multimedia y consultar recursos guardados; mantener la landing pública como canal informativo. Se deduce del producto actual y no de un acta original. |
+| Fechas del sprint, reunión, duración y asistentes | No se localizaron registros que permitan informarlos. |
+| Capacidad, horas, velocidad y story points comprometidos | No se localizaron registros. No se calculan retrospectivamente. |
+| Definition of Done y aceptación formal | El código y las pantallas permiten documentar alcance, pero no se encontró acta de aceptación del sprint. Los tests no se ejecutaron en esta revisión. |
+
 #### 7.2.1.2. Sprint Backlog 1
 
-<a id="7213-development-evidence-for-sprint-review"></a>
+El siguiente estado se reconstruyó mediante la inspección de los repositorios y la ejecución local con datos sintéticos. “Implementación observada” significa que se encontró código o una ruta utilizable; no equivale a completar todos los criterios de aceptación ni a una validación con usuarios.
+
+<p align="center"><img src="imgs/diagrams/sprint1-evidence-board.svg" alt="Reconstrucción documental del estado de funcionalidades en los repositorios; no es una captura del tablero original de Sprint 1" title="Sprint 1 — estado reconstruido desde el código" width="100%" /></p>
+
+| Estado de código al 30/10/2026 | Historias / capacidad y evidencia localizada |
+| :--- | :--- |
+| **Implementación observada** | US01–US02: registro e inicio de sesión. US05–US17 y US19–US25: recursos reutilizables y flujo de configuración/generación/revisión de imágenes. US26–US41: creación de historias y páginas. US42–US62: configuración, generación y reproducción/descarga de música. US63–US65, US67–US69 y US73: consulta, búsqueda, apertura, favoritos e historial de biblioteca. US74–US75, US78 y US82–US84: perfil y controles de PIN/modo infantil presentes en distintos grados. US91–US94: contenido principal de la landing. |
+| **Parcial, no comprobado o con criterio pendiente** | US03–US04 y US76: recordar acceso/recuperación o cambio de contraseña no aparecen como flujos implementados. US18, US66 y US70–US72: no se confirmó el comportamiento completo de guardar configuración sin generar, reordenar o editar/regenerar desde la biblioteca. US77 y US79–US81: apariencia y gestión de planes no se acreditan con el MVP revisado. US95–US96: la landing muestra CTA “Próximamente” sin destino configurado. |
+| **Diseñado, no implementado** | US85–US90: lectura de cuento con cámara y realidad aumentada. Hay wireframes, mock-ups y prototipo navegable conceptual; no se encontró cliente móvil publicado ni runtime AR. |
+| **Trabajo técnico habilitador observado** | API modular, SQLite WAL y migraciones Alembic; endpoints REST y esquema OpenAPI; jobs asíncronos para generación; almacenamiento local de medios; integración de frontend, autenticación y biblioteca; configuración Docker Compose para API y worker. |
+
+Los rangos de historias indican la funcionalidad relacionada que se observa en el código. Los elementos no verificados se conservan como tales; no se asignan responsables, horas ni puntos de historia sin fuente.
+
 #### 7.2.1.3. Development Evidence for Sprint Review
 
 <a id="7214-testing-suite-evidence-for-sprint-review"></a>

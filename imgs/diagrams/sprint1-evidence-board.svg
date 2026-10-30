@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="940" viewBox="0 0 1440 940" role="img" aria-labelledby="title desc">
+  <title id="title">Tale Star: tablero reconstruido de Sprint 1</title>
+  <desc id="desc">Resumen visual del estado de historias y productos comprobado en los repositorios el 30 de octubre de 2026. No es una captura de un tablero de gestión original.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f4efff"/><stop offset="1" stop-color="#faf9ff"/></linearGradient>
+    <linearGradient id="accent" x1="0" x2="1"><stop stop-color="#6848f5"/><stop offset="1" stop-color="#9b79ff"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#39206f" flood-opacity=".10"/></filter>
+  </defs>
+  <rect width="1440" height="940" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1440" height="128" fill="#fff"/>
+  <rect x="0" y="126" width="1440" height="2" fill="#e9e2f7"/>
+  <text x="56" y="58" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="800" fill="#211b37">Tale Star · Sprint 1</text>
+  <text x="56" y="94" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#6c6680">Estado reconstruido desde frontend-web y backend · corte documental: 30/10/2026</text>
+  <rect x="1098" y="38" width="286" height="44" rx="22" fill="#f1ecff" stroke="#d9ceff"/>
+  <text x="1241" y="66" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#5c40df">Snapshot documental · no tablero original</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="40" y="158" width="440" height="706" rx="20" fill="#eef9f2" stroke="#cfe9d6"/>
+    <rect x="500" y="158" width="440" height="706" rx="20" fill="#fff8e9" stroke="#f1dfb8"/>
+    <rect x="960" y="158" width="440" height="706" rx="20" fill="#f3efff" stroke="#ddd4f6"/>
+
+    <rect x="40" y="158" width="440" height="64" rx="20" fill="#e3f5e9"/>
+    <rect x="500" y="158" width="440" height="64" rx="20" fill="#fff2d4"/>
+    <rect x="960" y="158" width="440" height="64" rx="20" fill="#e9e2ff"/>
+    <text x="68" y="199" font-size="20" font-weight="800" fill="#23653a">Implementado en código</text>
+    <text x="528" y="199" font-size="20" font-weight="800" fill="#835a12">Parcial / sin evidencia completa</text>
+    <text x="988" y="199" font-size="20" font-weight="800" fill="#563acb">Diseñado, aún sin implementación</text>
+
+    <g filter="url(#shadow)">
+      <rect x="60" y="244" width="400" height="100" rx="14" fill="#fff"/>
+      <rect x="60" y="362" width="400" height="126" rx="14" fill="#fff"/>
+      <rect x="60" y="506" width="400" height="112" rx="14" fill="#fff"/>
+      <rect x="60" y="636" width="400" height="112" rx="14" fill="#fff"/>
+      <rect x="60" y="766" width="400" height="76" rx="14" fill="#fff"/>
+
+      <rect x="520" y="244" width="400" height="132" rx="14" fill="#fff"/>
+      <rect x="520" y="394" width="400" height="132" rx="14" fill="#fff"/>
+      <rect x="520" y="544" width="400" height="132" rx="14" fill="#fff"/>
+      <rect x="520" y="694" width="400" height="148" rx="14" fill="#fff"/>
+
+      <rect x="980" y="244" width="400" height="140" rx="14" fill="#fff"/>
+      <rect x="980" y="402" width="400" height="140" rx="14" fill="#fff"/>
+      <rect x="980" y="560" width="400" height="140" rx="14" fill="#fff"/>
+      <rect x="980" y="718" width="400" height="124" rx="14" fill="#fff"/>
+    </g>
+
+    <text x="82" y="278" font-size="16" font-weight="800" fill="#211b37">Acceso y recursos creativos</text>
+    <text x="82" y="305" font-size="13" fill="#5f596e">US01–02, US05–08 · registro, sesión,</text>
+    <text x="82" y="325" font-size="13" fill="#5f596e">personajes y escenarios reutilizables</text>
+
+    <text x="82" y="398" font-size="16" font-weight="800" fill="#211b37">Cuentos e ilustraciones</text>
+    <text x="82" y="425" font-size="13" fill="#5f596e">US09–17, US19–25, US26–41</text>
+    <text x="82" y="446" font-size="13" fill="#5f596e">Editor por páginas, prompt guiado/libre,</text>
+    <text x="82" y="467" font-size="13" fill="#5f596e">trabajos asíncronos y revisión del resultado</text>
+
+    <text x="82" y="542" font-size="16" font-weight="800" fill="#211b37">Generación musical</text>
+    <text x="82" y="569" font-size="13" fill="#5f596e">US42–62 · configuración, job,</text>
+    <text x="82" y="590" font-size="13" fill="#5f596e">reproducción y descarga</text>
+
+    <text x="82" y="672" font-size="16" font-weight="800" fill="#211b37">Biblioteca</text>
+    <text x="82" y="699" font-size="13" fill="#5f596e">US63–65, US67–69, US73 · buscar,</text>
+    <text x="82" y="720" font-size="13" fill="#5f596e">consultar, abrir y marcar favoritos</text>
+
+    <text x="82" y="799" font-size="15" font-weight="800" fill="#211b37">Landing Page: US91–94</text>
+    <text x="82" y="822" font-size="13" fill="#5f596e">Publicada; capturas actualizadas</text>
+
+    <text x="542" y="278" font-size="16" font-weight="800" fill="#211b37">Perfil y protección parental</text>
+    <text x="542" y="305" font-size="13" fill="#5f596e">US74–75, US78, US82–84 tienen soporte</text>
+    <text x="542" y="327" font-size="13" fill="#5f596e">parcial en frontend/API. US76–81 no está</text>
+    <text x="542" y="349" font-size="13" fill="#5f596e">completo como se definió en el backlog.</text>
+
+    <text x="542" y="428" font-size="16" font-weight="800" fill="#211b37">Persistencia y despliegue</text>
+    <text x="542" y="455" font-size="13" fill="#5f596e">Compose definido y ejecutable en local;</text>
+    <text x="542" y="477" font-size="13" fill="#5f596e">no hay evidencia de despliegue público</text>
+    <text x="542" y="499" font-size="13" fill="#5f596e">para frontend-web ni backend.</text>
+
+    <text x="542" y="578" font-size="16" font-weight="800" fill="#211b37">US18 y biblioteca avanzada</text>
+    <text x="542" y="605" font-size="13" fill="#5f596e">No se verificó guardar configuración sin</text>
+    <text x="542" y="627" font-size="13" fill="#5f596e">generar, reordenar o regenerar desde</text>
+    <text x="542" y="649" font-size="13" fill="#5f596e">biblioteca: US18, US66, US70–72.</text>
+
+    <text x="542" y="728" font-size="16" font-weight="800" fill="#211b37">CTAs de acceso de la landing</text>
+    <text x="542" y="755" font-size="13" fill="#5f596e">US95–96 muestran «Próximamente»</text>
+    <text x="542" y="777" font-size="13" fill="#5f596e">mientras no haya destinos públicos.</text>
+
+    <text x="1002" y="278" font-size="16" font-weight="800" fill="#211b37">Lectura de cuento en AR</text>
+    <text x="1002" y="305" font-size="13" fill="#5f596e">US85–90 · wireframes, wireflow,</text>
+    <text x="1002" y="327" font-size="13" fill="#5f596e">user flow y prototipo visual.</text>
+    <text x="1002" y="356" font-size="12" font-weight="700" fill="#6749d8">No existe implementación móvil en los repos.</text>
+
+    <text x="1002" y="436" font-size="16" font-weight="800" fill="#211b37">Prototipo web navegable</text>
+    <text x="1002" y="463" font-size="13" fill="#5f596e">Simula seis estados del flujo de autoría</text>
+    <text x="1002" y="485" font-size="13" fill="#5f596e">con pantallas exportadas; no se conecta</text>
+    <text x="1002" y="507" font-size="13" fill="#5f596e">a los servicios ni persiste información.</text>
+
+    <text x="1002" y="594" font-size="16" font-weight="800" fill="#211b37">Planificación del Sprint</text>
+    <text x="1002" y="621" font-size="13" fill="#5f596e">No se entregó acta, tablero externo,</text>
+    <text x="1002" y="643" font-size="13" fill="#5f596e">estimaciones ni asignaciones. Este gráfico</text>
+    <text x="1002" y="665" font-size="13" fill="#5f596e">reconstruye estados desde el código.</text>
+
+    <text x="1002" y="752" font-size="16" font-weight="800" fill="#211b37">Cómo leer el estado</text>
+    <text x="1002" y="779" font-size="13" fill="#5f596e">«Implementado» significa evidencia de</text>
+    <text x="1002" y="801" font-size="13" fill="#5f596e">código, no validación con usuarios ni</text>
+    <text x="1002" y="823" font-size="13" fill="#5f596e">aceptación de cada criterio funcional.</text>
+  </g>
+
+  <text x="56" y="905" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#827a96">La asignación de personas, horas y story points no se infiere a partir de commits.</text>
+</svg>
