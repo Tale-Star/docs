@@ -1,0 +1,9 @@
+flowchart LR
+    HTTP[Interface: REST routes] --> CMD[Application: Command Handlers]
+    CMD --> DOM[Domain: User, Entities, Value Objects]
+    CMD --> REPO[Domain: UserRepository]
+    SQL[Infrastructure: SQLAlchemy adapter] -. implements .-> REPO
+    CMD --> UOW[Application: UnitOfWork]
+    UOW --> OUTBOX[Infrastructure: transaction and outbox]
+    OUTBOX --> EVT[Application: Event Handlers]
+    EVT --> PROJ[Infrastructure: projections and audit]

@@ -1,0 +1,33 @@
+classDiagram
+    class User {
+        <<AggregateRoot>>
+        +id
+        +updateProfile(displayName)
+        +setParentalPin(pinHash)
+    }
+    class ParentalControl {
+        <<Entity>>
+        +id
+    }
+    class EmailAddress {
+        <<ValueObject>>
+        +validate()
+    }
+    class UserFactory {
+        <<Factory>>
+        +create()
+    }
+    class RegistrationPolicy {
+        <<DomainService>>
+        +validate()
+    }
+    class UserRepository {
+        <<interface>>
+        +get(id)
+        +save(aggregate)
+    }
+    User "1" *-- "0..1" ParentalControl : controls
+    User --> EmailAddress : uses
+    UserFactory ..> User : creates
+    RegistrationPolicy ..> User : validates
+    UserRepository ..> User : persists

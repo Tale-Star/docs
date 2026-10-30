@@ -37,17 +37,48 @@
 
 | Versión | Fecha | Autores | Descripción de modificación |
 | :--- | :--- | :--- | :--- |
-| TB1 | 19/09/2026 | Seijas Vasquez, Diego Antonio<br>Diaz Fiestas, Jorge Luis<br>Cardenas Minaya, Ricardo Fernando<br>Oblitas Davila, Mariano Moises<br>Huapaya Buitron, Ariana<br>Becerra Llempen, Fabiola Dayane | Consolidación y corrección de los capítulos I–IV; análisis de entrevistas y Needfinding; actualización de User Personas, User Task Matrix, Empathy Mapping y As-Is; consolidación de Requirements Specification; alineación de modelos generativos locales y ejecución reproducible con Docker Compose, sin fijar proveedor cloud; refinamiento de ADD, Strategic DDD, Bounded Context Canvases, Ubiquitous Language, decisiones arquitectónicas, trazabilidad y Student Outcome. |
+| TB1 | 19/09/2026 | Seijas Vasquez, Diego Antonio<br>Diaz Fiestas, Jorge Luis<br>Cardenas Minaya, Ricardo Fernando<br>Oblitas Davila, Mariano Moises<br>Huapaya Buitron, Ariana<br>Becerra Llempen, Fabiola Dayane | Consolidación y corrección de los capítulos I–IV; análisis de entrevistas y Needfinding; actualización de User Personas, User Task Matrix, Empathy Mapping y As-Is; consolidación de Requirements Specification; alineación de modelos generativos locales y ejecución reproducible con Docker Compose, sin fijar proveedor cloud; refinamiento de ADD, Strategic DDD, Bounded Context Canvases, Ubiquitous Language, decisiones arquitectónicas, trazabilidad y Student Outcome. Distribución TB1: Diego documentó As-Is y To-Be; Jorge Luis registró entrevistas de padres/cuidadores y Needfinding docente; Ricardo incorporó Impact Map, Product Backlog y C4; Mariano incorporó entrevistas/análisis docentes y consolidación documental; Ariana incorporó User Personas, Empathy Maps y Capítulo IV; Fabiola ajustó recursos visuales de Strategic DDD y C4. |
 | TP1 | 08/10/2026 | Seijas Vasquez, Diego Antonio<br>Diaz Fiestas, Jorge Luis<br>Cardenas Minaya, Ricardo Fernando<br>Oblitas Davila, Mariano Moises<br>Huapaya Buitron, Ariana<br>Becerra Llempen, Fabiola Dayane | Actualización del informe para TP1: Mariano documentó Creative Authoring y Generative Media (5.1–5.2) y sus diagramas tácticos; Ariana contribuyó al análisis estratégico y documentó el Bounded Context Identity & Access (5.3), sus capas y diagramas; Diego desarrolló Style Guidelines (6.1); Ricardo documentó Content Library (5.4) e Information Architecture (6.2); Jorge Luis preparó Landing Page UI Design (6.3) y conclusiones; Fabiola elaboró Applications UX/UI Design (6.4). Los seis participaron por igual en EventStorming (1/6 cada uno). Se corrigieron los flujos de Domain Storytelling, se rediseñaron los Bounded Context Canvases con la plantilla del curso y se integraron las imágenes, además de actualizar Student Outcome y la evidencia previa pertinente. |
-| Hito 3 (Semana 12) | 30/10/2026 | Seijas Vasquez, Diego Antonio<br>Diaz Fiestas, Jorge Luis<br>Cardenas Minaya, Ricardo Fernando<br>Oblitas Davila, Mariano Moises<br>Huapaya Buitron, Ariana<br>Becerra Llempen, Fabiola Dayane | Actualización colectiva del Student Outcome ABET 3 y consolidación de las secciones 6.3.3, 6.4.2, 6.5 y 7.1–7.2.1. La contribución documental se distribuye en seis commits `docs:` del Hito 3, uno por integrante: Diego (Student Outcome y registro), Ricardo (flujos y prototipo), Jorge Luis (SCM y backlog), Ariana (evidencia de desarrollo y API), Fabiola (despliegue y conclusiones) y Mariano Moises (bibliografía y anexo). El usuario confirmó que `vr700` corresponde a Mariano Moises Oblitas Davila. |
+| Hito 3 (Semana 12) | 30/10/2026 | Seijas Vasquez, Diego Antonio<br>Diaz Fiestas, Jorge Luis<br>Cardenas Minaya, Ricardo Fernando<br>Oblitas Davila, Mariano Moises<br>Huapaya Buitron, Ariana<br>Becerra Llempen, Fabiola Dayane | Actualización colectiva del Student Outcome ABET 3 y consolidación de las secciones 6.3.3, 6.4.2, 6.5 y 7.1–7.2.1. La contribución documental se distribuyó inicialmente en seis commits `docs:` del Hito 3, uno por integrante: Diego (Student Outcome y registro), Ricardo (flujos y prototipo), Jorge Luis (SCM y backlog), Ariana (evidencia de desarrollo y API), Fabiola (despliegue y conclusiones) y Mariano Moises (bibliografía y anexo). La cuenta `vr700` corresponde a Mariano Moises Oblitas Davila, según la identificación proporcionada por el equipo. |
+| Hito 3 — corrección de aportes | 30/10/2026 | Oblitas Davila, Mariano Moises (`vr700`) | Commit `1f5a55a`: incorpora en Student Outcome las correcciones de enlaces de la landing y del documento anterior comunicadas por el equipo como aporte de Diego. Este commit documenta la atribución; no contiene la modificación del código de la landing. |
+| Hito 3 — revisión de conformidad | 30/10/2026 | Oblitas Davila, Mariano Moises (`vr700`) | Integra la corrección documental: Student Outcome acumulativo; trazabilidad de autores y commits; diseño táctico objetivo de los cuatro contextos con agregados, Value Objects, factories, Domain Services, contratos de repositorio, Command Handlers y Event Handlers; flujos por persona; explicación de mock-ups y prototipos; evidencias de colaboración y revisión de referencias. 7.3 y 7.4 se conservan vacías por alcance acordado. |
+
 
 <a id="project-report-collaboration-insights"></a>
 
 # Project Report Collaboration Insights
 
-Para Hito 3, el equipo asignó los seis commits documentales a sus integrantes según el apartado trabajado: Diego Antonio Seijas Vasquez — Student Outcome y registro de versiones; Ricardo Fernando Cardenas Minaya — flujos de aplicación y prototipo; Jorge Luis Diaz Fiestas — gestión de configuración y backlog de Sprint 1; Ariana Huapaya Buitron — evidencia de desarrollo, pruebas inventariadas, ejecución y servicios API; Fabiola Dayane Becerra Llempen — despliegue y conclusiones; Mariano Moises Oblitas Davila — bibliografía y anexo de repositorios. El usuario confirmó que la cuenta Git `vr700` le pertenece a Mariano.
+Para Hito 3, el equipo registró seis commits documentales iniciales a sus integrantes según el apartado trabajado: Diego Antonio Seijas Vasquez — Student Outcome y registro de versiones; Ricardo Fernando Cardenas Minaya — flujos de aplicación y prototipo; Jorge Luis Diaz Fiestas — gestión de configuración y backlog de Sprint 1; Ariana Huapaya Buitron — evidencia de desarrollo, pruebas inventariadas, ejecución y servicios API; Fabiola Dayane Becerra Llempen — despliegue y conclusiones; Mariano Moises Oblitas Davila — bibliografía y anexo de repositorios. La cuenta Git `vr700` corresponde a Mariano, según la identificación proporcionada por el equipo.
 
 La atribución de cambios anteriores también puede contrastarse con los historiales de los repositorios: Ricardo aparece en los cambios de términos y consentimiento del frontend; la cuenta `vr700` aparece en cambios del backend y frontend y se identifica aquí con Mariano por confirmación del usuario. El estado del backlog de Sprint 1 sigue descrito como reconstrucción del código, porque no se encontró un tablero o acta original.
+
+
+**Repositorios y evidencia de colaboración.** El informe se mantiene en [Tale-Star/docs](https://github.com/Tale-Star/docs). Los historiales de [frontend-web](https://github.com/Tale-Star/frontend-web/commits/main/) y [backend](https://github.com/Tale-Star/backend/commits/main/) permiten contrastar el desarrollo. Los cambios documentales iniciales de Hito 3 son:
+
+| Commit | Autor registrado | Secciones y aporte |
+| :--- | :--- | :--- |
+| [5487061](https://github.com/Tale-Star/docs/commit/5487061) | Diego Antonio Seijas Vasquez | Student Outcome, registro y colaboración. |
+| [7f75b8f](https://github.com/Tale-Star/docs/commit/7f75b8f) | Ricardo Fernando Cardenas Minaya | 6.3.3, 6.4.2 y 6.5: capturas, wireflows y prototipo. |
+| [b3dee2c](https://github.com/Tale-Star/docs/commit/b3dee2c) | Jorge Luis Diaz Fiestas | 7.1 y 7.2.1.1–7.2.1.2: SCM y reconstrucción del sprint. |
+| [c058b6b](https://github.com/Tale-Star/docs/commit/c058b6b) | Ariana Huapaya Buitron | 7.2.1.3–7.2.1.6: desarrollo, inventario de pruebas, ejecución y API. |
+| [33f9f13](https://github.com/Tale-Star/docs/commit/33f9f13) | Fabiola Dayane Becerra Llempen | 7.2.1.7–7.2.2 y conclusiones: despliegue, colaboración y estado del siguiente sprint. |
+| [8b402e4](https://github.com/Tale-Star/docs/commit/8b402e4) | Mariano Moises Oblitas Davila | Bibliografía y anexo de repositorios. |
+| [1f5a55a](https://github.com/Tale-Star/docs/commit/1f5a55a) | Mariano Moises Oblitas Davila | Integración posterior del aporte reportado de Diego en Student Outcome. |
+
+Estos seis commits iniciales y el ajuste posterior forman una secuencia documental, no seis implementaciones independientes del producto. Las correcciones de conformidad de esta revisión se registran como una nueva modificación de integración a nombre de Mariano. La autoría Git, la distribución comunicada por el equipo y la ejecución funcional son evidencias distintas.
+
+**Capturas de GitHub — 30/10/2026, anteriores al commit de esta revisión.** El panel Contributors usa el periodo «Last 3 months», rama main y conteo de commits sin merges. Sus cifras no representan horas ni porcentajes de participación; pueden actualizarse después de un push. La lista de commits permite distinguir autor y committer.
+
+[Analíticos de documentación](https://github.com/Tale-Star/docs/graphs/contributors)
+
+![Contribuidores y analíticos reales de GitHub para docs](imgs/evidence/github-docs-contributors-2026-10-30.png)
+
+[Historial documental](https://github.com/Tale-Star/docs/commits/main/)
+
+![Commits reales del repositorio docs](imgs/evidence/github-docs-commits-2026-10-30.png)
+
+La cuenta que GitHub muestra como `Sigilo-dev` corresponde a los commits cuya identidad Git figura como `vr700`; el equipo la identifica con Mariano. Los nombres y secciones de la tabla se basan en la autoría registrada y en la distribución comunicada por el equipo.
+
 
 <a id="contenido"></a>
 # Contenido
@@ -199,7 +230,7 @@ La atribución de cambios anteriores también puede contrastarse con los histori
       - [5.3.6.2. Bounded Context Database Design Diagram](#5362-bounded-context-database-design-diagram)
   - [5.4. Bounded Context: Content Library](#54-bounded-context-content-library)
     - [5.4.1. Domain Layer](#541-domain-layer)
-      - [Aggregate Root: `LibraryItem`](#aggregate-root-libraryitem)
+      - [Entidad `LibraryItem`](#entidad-libraryitem)
       - [Value Objects, enums y puertos](#value-objects-enums-y-puertos)
     - [5.4.2. Interface Layer](#542-interface-layer)
     - [5.4.3. Application Layer](#543-application-layer)
@@ -238,8 +269,32 @@ La atribución de cambios anteriores también puede contrastarse con los histori
   - [6.4. Applications UX/UI Design](#64-applications-uxui-design)
     - [6.4.1. Applications Wireframes](#641-applications-wireframes)
     - [6.4.2. Applications Wireflow Diagrams](#642-applications-wireflow-diagrams)
+      - [P01 — Valeria Torres: Acceder a mi espacio](#wireflow-p01)
+      - [P02 — Valeria Torres: Crear y guardar un cuento](#wireflow-p02)
+      - [P03 — Valeria Torres: Preparar una imagen](#wireflow-p03)
+      - [P04 — Valeria Torres: Preparar una canción](#wireflow-p04)
+      - [P05 — Valeria Torres: Recuperar un recurso](#wireflow-p05)
+      - [P06 — Valeria Torres: Leer un cuento en AR](#wireflow-p06)
+      - [D01 — Daniela Rojas: Acceder a mi espacio](#wireflow-d01)
+      - [D02 — Daniela Rojas: Crear y guardar un cuento](#wireflow-d02)
+      - [D03 — Daniela Rojas: Preparar una imagen](#wireflow-d03)
+      - [D04 — Daniela Rojas: Preparar una canción](#wireflow-d04)
+      - [D05 — Daniela Rojas: Recuperar un recurso](#wireflow-d05)
+      - [D06 — Daniela Rojas: Leer un cuento en AR](#wireflow-d06)
     - [6.4.3. Applications Mock-ups](#643-applications-mock-ups)
     - [6.4.4. Applications User Flow Diagrams](#644-applications-user-flow-diagrams)
+      - [P01 — Valeria Torres: Acceder a mi espacio](#userflow-p01)
+      - [P02 — Valeria Torres: Crear y guardar un cuento](#userflow-p02)
+      - [P03 — Valeria Torres: Preparar una imagen](#userflow-p03)
+      - [P04 — Valeria Torres: Preparar una canción](#userflow-p04)
+      - [P05 — Valeria Torres: Recuperar un recurso](#userflow-p05)
+      - [P06 — Valeria Torres: Leer un cuento en AR](#userflow-p06)
+      - [D01 — Daniela Rojas: Acceder a mi espacio](#userflow-d01)
+      - [D02 — Daniela Rojas: Crear y guardar un cuento](#userflow-d02)
+      - [D03 — Daniela Rojas: Preparar una imagen](#userflow-d03)
+      - [D04 — Daniela Rojas: Preparar una canción](#userflow-d04)
+      - [D05 — Daniela Rojas: Recuperar un recurso](#userflow-d05)
+      - [D06 — Daniela Rojas: Leer un cuento en AR](#userflow-d06)
   - [6.5. Applications Prototyping](#65-applications-prototyping)
 - [Capítulo VII: Product Implementation, Validation \& Deployment](#capítulo-vii-product-implementation-validation--deployment)
   - [7.1. Software Configuration Management](#71-software-configuration-management)
@@ -282,6 +337,7 @@ La atribución de cambios anteriores también puede contrastarse con los histori
     - [Aplicación web](#aplicación-web)
     - [Aplicación móvil descargable](#aplicación-móvil-descargable)
   - [Anexo D. Landing Page publicada](#anexo-d-landing-page-publicada)
+  - [Anexo E. Trazabilidad de correcciones de Hito 3](#anexo-e-trazabilidad-de-correcciones)
 
 <a id="student-outcome"></a>
 
@@ -290,30 +346,17 @@ La atribución de cambios anteriores también puede contrastarse con los histori
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
 **ABET – EAC - Student Outcome 3**
+
 **Criterio:** Capacidad de comunicarse efectivamente con un rango de audiencias.
 
-En el siguiente cuadro se describen las acciones y conclusiones del grupo que permiten contrastar el logro del ABET – EAC - Student Outcome 3 con la evidencia disponible.
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 3.
 
-### Criterio 3.c1 — Comunicación oral
-
-| Acciones realizadas | Conclusión |
-| :--- | :--- |
-| El informe de TP1 registra la participación conjunta de Diego Antonio Seijas Vasquez, Jorge Luis Diaz Fiestas, Ricardo Fernando Cardenas Minaya, Mariano Moises Oblitas Davila, Ariana Huapaya Buitron y Fabiola Dayane Becerra Llempen en la discusión de EventStorming. Para Hito 3 no se localizó un video o registro de exposición oral individual. | La evidencia de TP1 documenta intercambio oral grupal durante el modelado. No permite evaluar el desempeño oral individual de Hito 3 ni acreditar una presentación a audiencias diversas en este corte. |
-
-### Criterio 3.c2 — Comunicación escrita
-
-| Integrante | Aporte del Hito 3 y evidencia atribuida | Relación con el criterio y conclusión |
+| Criterio específico | Acciones realizadas | Conclusiones |
 | :--- | :--- | :--- |
-| **Diego Antonio Seijas Vasquez** | `docs: update week twelve outcome and report history` — actualizó Student Outcome ABET 3, el registro de versiones de Hito 3 y las notas de colaboración del informe. Además, el equipo reporta que corrigió enlaces de la Landing Page y enlaces/correcciones del documento de la entrega anterior. | Sus correcciones ayudan a que los enlaces y el informe comuniquen la información de forma correcta y navegable. El commit y los aportes reportados sustentan comunicación escrita del proyecto; no demuestran por sí solos el dominio completo del criterio. |
-| **Ricardo Fernando Cardenas Minaya** | `docs: document application flows and prototype` — documentó las capturas de la landing, los objetivos y pasos de wireflows, y el prototipo navegable de las secciones 6.3.3, 6.4.2 y 6.5. | Comunicó por escrito el recorrido de usuario y distinguió la aplicación web existente de la propuesta móvil. El contenido facilita que lectores técnicos y no técnicos comprendan el alcance. |
-| **Jorge Luis Diaz Fiestas** | `docs: document scm and sprint one planning` — documentó el entorno y control de código, la reconstrucción del planning/backlog de Sprint 1 y el tablero visual de estados. | Organizó evidencia de configuración y alcance del sprint con estados y límites explícitos, haciendo legible qué se observó en código y qué no se pudo verificar. |
-| **Ariana Huapaya Buitron** | `docs: add sprint development and api evidence` — añadió evidencia de desarrollo, inventario de pruebas, capturas de ejecución local y documentación de Swagger/API en 7.2.1.3–7.2.1.6. | Explicó por escrito los servicios y la evidencia de ejecución, indicando que los generadores simulados no equivalen a una prueba con modelos reales. |
-| **Fabiola Dayane Becerra Llempen** | `docs: document deployment and report conclusions` — documentó el estado de despliegue, colaboración de sprint, alcance de Sprint 2 y conclusiones/recomendaciones. | Sintetizó el estado de disponibilidad y las limitaciones del producto para comunicar resultados y próximos pasos de forma objetiva. |
-| **Mariano Moises Oblitas Davila** | `docs: add course references and repo appendix` — añadió referencias del curso y documentación técnica, y completó el anexo de repositorios. El usuario confirmó que su cuenta es `vr700`. | Organizó por escrito las fuentes y ubicaciones del código para que el lector pueda verificar el informe y sus artefactos. |
+| **3.c1.** Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | **Entregas anteriores — planificación de exposición y participación en TP1:**<br>Seijas Vasquez, Diego Antonio — participará en el video de exposición presentando los mapas As-Is y To-Be.<br><br>Diaz Fiestas, Jorge Luis — participará presentando las entrevistas y los hallazgos de Needfinding del segmento docente.<br><br>Cardenas Minaya, Ricardo Fernando — participará presentando el Impact Map, el Product Backlog y los diagramas C4.<br><br>Oblitas Davila, Mariano Moises — participará presentando el análisis de entrevistas docentes y la consolidación documental.<br><br>Huapaya Buitron, Ariana — participará presentando los User Personas, Empathy Maps y el análisis estratégico y táctico de Identity & Access (5.3).<br><br>Becerra Llempen, Fabiola Dayane — participará presentando los recursos visuales y los artefactos de Strategic DDD y C4.<br><br>TP1 — Seijas Vasquez, Diego Antonio; Diaz Fiestas, Jorge Luis; Cardenas Minaya, Ricardo Fernando; Oblitas Davila, Mariano Moises; Huapaya Buitron, Ariana; y Becerra Llempen, Fabiola Dayane participaron por igual en la discusión oral y revisión conjunta del EventStorming, explicando el flujo completo del dominio (1/6 del aporte cada integrante). No se atribuyen eventos o tarjetas individuales porque el trabajo se realizó simultáneamente; esta actividad evidencia coordinación oral interna y no sustituye la exposición a otras audiencias.<br><br>**Hito 3 — Semana 12:** Los seis integrantes aportan material documental para comunicar sus resultados. El registro de una contribución escrita no acredita una intervención oral individual; no se incluye una evaluación oral nueva sin una evidencia verificable. | La exposición grupal permitirá que los seis integrantes comuniquen de manera estructurada la relación entre la investigación realizada, los requisitos identificados y las decisiones de diseño de Tale Star. Cada intervención se centrará en evidencia concreta de su aporte y empleará una explicación comprensible para una audiencia académica y técnica, evitando presentar conclusiones que no estén sustentadas en el informe. En conjunto, el video evidenciará la capacidad del equipo para sintetizar información de diferentes artefactos y justificar cómo estos contribuyen a la propuesta de valor y a la arquitectura de la solución. La discusión de EventStorming incorporada en TP1 evidencia comunicación oral durante el modelado colaborativo, pero no sustituye la exposición de resultados a audiencias diversas.<br><br>**Hito 3:** Se conservan los antecedentes y se distingue la preparación de material del desempeño oral. La conclusión de este criterio queda limitada a las evidencias de las entregas previas. |
+| **3.c2.** Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | Seijas Vasquez, Diego Antonio — TB1: documentó los mapas As-Is y To-Be del informe.<br><br>Diaz Fiestas, Jorge Luis — TB1: registró entrevistas de padres/cuidadores y documentó artefactos de Needfinding del segmento docente.<br><br>Cardenas Minaya, Ricardo Fernando — TB1: incorporó evidencia del Impact Map, Product Backlog y diagramas C4.<br><br>Oblitas Davila, Mariano Moises — TB1: incorporó entrevistas y análisis del segmento docente, además de avances documentales del informe.<br><br>Huapaya Buitron, Ariana — TB1: incorporó User Personas, Empathy Maps y actualizaciones del Capítulo IV.<br><br>Becerra Llempen, Fabiola Dayane — TB1: incorporó y ajustó recursos visuales y documentación de Strategic DDD y C4.<br><br>TP1 — Oblitas Davila, Mariano Moises: documentó Creative Authoring y Generative Media (5.1–5.2) y sus diagramas; Huapaya Buitron, Ariana: documentó Identity & Access (5.3), sus capas y diagramas, además de contribuir al análisis estratégico; Seijas Vasquez, Diego Antonio: desarrolló Style Guidelines (6.1); Cardenas Minaya, Ricardo Fernando: documentó Content Library (5.4) e Information Architecture (6.2); Diaz Fiestas, Jorge Luis: elaboró Landing Page UI Design (6.3) y conclusiones; Becerra Llempen, Fabiola Dayane: desarrolló Applications UX/UI Design (6.4). Los seis también contribuyeron por igual al EventStorming y a la integración de los artefactos del Capítulo IV.<br><br>**Hito 3 — Semana 12:**<br>**Diego Antonio Seijas Vasquez:** `docs: update week twelve outcome and report history` — actualizó Student Outcome ABET 3, el registro de versiones de Hito 3 y las notas de colaboración del informe. Además, el equipo reporta que corrigió enlaces de la Landing Page y enlaces/correcciones del documento de la entrega anterior. Relación con 3.c2: Sus correcciones ayudan a que los enlaces y el informe comuniquen la información de forma correcta y navegable. El commit y los aportes reportados sustentan comunicación escrita del proyecto; no demuestran por sí solos el dominio completo del criterio.<br><br>**Ricardo Fernando Cardenas Minaya:** `docs: document application flows and prototype` — documentó las capturas de la landing, los objetivos y pasos de wireflows, y el prototipo navegable de las secciones 6.3.3, 6.4.2 y 6.5. Relación con 3.c2: Comunicó por escrito el recorrido de usuario y distinguió la aplicación web existente de la propuesta móvil. El contenido facilita que lectores técnicos y no técnicos comprendan el alcance.<br><br>**Jorge Luis Diaz Fiestas:** `docs: document scm and sprint one planning` — documentó el entorno y control de código, la reconstrucción del planning/backlog de Sprint 1 y el tablero visual de estados. Relación con 3.c2: Organizó evidencia de configuración y alcance del sprint con estados y límites explícitos, haciendo legible qué se observó en código y qué no se pudo verificar.<br><br>**Ariana Huapaya Buitron:** `docs: add sprint development and api evidence` — añadió evidencia de desarrollo, inventario de pruebas, capturas de ejecución local y documentación de Swagger/API en 7.2.1.3–7.2.1.6. Relación con 3.c2: Explicó por escrito los servicios y la evidencia de ejecución, indicando que los generadores simulados no equivalen a una prueba con modelos reales.<br><br>**Fabiola Dayane Becerra Llempen:** `docs: document deployment and report conclusions` — documentó el estado de despliegue, colaboración de sprint, alcance de Sprint 2 y conclusiones/recomendaciones. Relación con 3.c2: Sintetizó el estado de disponibilidad y las limitaciones del producto para comunicar resultados y próximos pasos de forma objetiva.<br><br>**Mariano Moises Oblitas Davila:** `docs: add course references and repo appendix` — añadió referencias del curso y documentación técnica, y completó el anexo de repositorios. La identidad Git `vr700` corresponde a Mariano. En la revisión posterior de Hito 3 integró la recuperación del historial del Student Outcome, las evidencias de GitHub, el diseño táctico objetivo, los flujos por persona y la revisión de coherencia documental. Relación con 3.c2: Organizó por escrito las fuentes y ubicaciones del código para que el lector pueda verificar el informe y sus artefactos. | Los seis integrantes realizaron contribuciones escritas verificables mediante los commits del repositorio y la documentación consolidada en el informe. La trazabilidad entre entrevistas, artefactos de Needfinding, requisitos, backlog, decisiones arquitectónicas y diagramas permite que el lector comprenda el razonamiento que conecta el problema con la solución propuesta. La documentación distribuye los aportes del equipo sin perder coherencia editorial, emplea evidencia identificable y diferencia los hallazgos observados de los supuestos que deberán validarse en etapas posteriores. De este modo, el informe comunica el avance de Tale Star con suficiente claridad para su evaluación académica y para la comprensión de lectores técnicos. En TP1, la documentación táctica de Creative Authoring, Generative Media e Identity & Access, junto con los aportes de UX/UI, amplía esa evidencia escrita, mientras el EventStorming registra la explicación oral colaborativa del equipo.<br><br>**Hito 3:** La documentación articula diseño, implementación observada y limitaciones con lenguaje técnico y apoyos visuales para la audiencia académica. Los seis aportes documentales iniciales se conservan; las correcciones posteriores de integración se identifican por separado en el registro de versiones. La auditoría documental permite revisar coherencia y trazabilidad antes de la entrega, sin atribuir a los commits resultados de validación oral. |
 
-Los seis commits documentales aportan evidencia de comunicación escrita del equipo para Hito 3. La evidencia oral de este hito sigue pendiente; por ello, el logro del Student Outcome debe valorarse con ambos criterios y no inferirse únicamente de los commits o del informe.
-
-La Rúbrica de Logro del curso sirve para contrastar el desempeño y la evidencia, no para inferir una calificación automática a partir de la existencia del documento.
+Las acciones y conclusiones se acumulan por entrega. Las correcciones de enlaces de la landing y del informe anterior atribuidas a Diego se registran como información proporcionada por el equipo; los seis commits documentales iniciales no sustituyen la referencia a los commits de código donde se hicieron esas correcciones. La rúbrica ABET distingue comunicación oral y escrita; no se infiere una calificación automática a partir del número de commits.
 
 <a id="capitulo-i-introduccion"></a>
 # Capítulo I: Introducción
@@ -869,6 +912,8 @@ El objetivo del Competitive Analysis Landscape es determinar cómo Tale Star se 
 
 Los precios y características de Storywizard.ai han sido obtenidos directamente de su plataforma oficial, que actualmente publica planes separados para Families y Schools & Teachers. ([Storywizard.ai][14]) Oscar Stories publica oficialmente su enfoque para familias, público de 2 a 12 años y precio anual Premium. ([Oscar Stories][9]) StoryJumper señala que su uso online para crear y compartir libros es gratuito y publica precios diferenciados para PDF, Video Book, paperback y hardcover. ([StoryJumper][11])
 
+Las páginas específicas de [precios de Oscar Stories][10], [uso escolar de StoryJumper][13] y [educación de Storywizard.ai][15] complementan las fuentes del análisis competitivo. Las características y precios se conservan como una instantánea de la investigación de septiembre de 2026, no como una cotización vigente.
+
 Las filas correspondientes al análisis SWOT representan una interpretación estratégica del equipo basada en las características observadas y no declaraciones realizadas por las empresas analizadas.
 
 A partir de la comparación se observa que Tale Star no puede considerar como diferenciación suficiente la simple “generación de cuentos mediante inteligencia artificial”. Storywizard.ai y Oscar Stories ya ofrecen generación de historias infantiles mediante IA, y StoryJumper posee un editor estructurado por páginas y herramientas especialmente maduras para docentes. ([Storywizard.ai][14])
@@ -1001,6 +1046,8 @@ El Final Project Statement exige preguntas principales y complementarias diferen
 
 <a id="221-diseno-de-entrevistas"></a>
 ### 2.2.1. Diseño de entrevistas
+
+El diseño de la investigación toma como referencia las guías de [necesidades de usuarios][7] y [entrevistas en profundidad][8] de Government Digital Service.
 
 Las entrevistas semiestructuradas se realizarán de manera individual a padres, cuidadores y docentes. El guion prioriza experiencias recientes y comportamientos observables; el contraste con la propuesta de Tale Star se presenta únicamente al cierre para reducir el sesgo de confirmación.
 
@@ -2316,10 +2363,24 @@ La Web Application es un cliente externo a los contenedores del backend; el clie
 
 Compose declara `restart: unless-stopped` y una ventana de apagado de 15 minutos para Worker, pero ese reinicio de proceso no recupera jobs que quedaron en `Processing`; una terminación abrupta puede dejar esos registros detenidos. El directorio persistente mantiene los bytes, mientras que no existe una reconciliación automática entre archivos y metadata. Esta configuración documenta los servicios y volúmenes del repositorio, no una garantía de alta disponibilidad ni la infraestructura donde se ejecutan.
 
-La trazabilidad obtenida conecta Requirements con ADD Inputs, Architectural Drivers, decisiones, Bounded Contexts y arquitectura C4. El Capítulo V desarrollará el diseño táctico interno de cada Bounded Context sin modificar estos límites estratégicos.
+La trazabilidad obtenida conecta Requirements con ADD Inputs, Architectural Drivers, decisiones, Bounded Contexts y arquitectura C4. El Capítulo V presenta el diseño táctico interno de cada Bounded Context sin modificar estos límites estratégicos.
 
 <a id="capitulo-v-tactical-level-software-design"></a>
 # Capítulo V: Tactical-Level Software Design
+
+**Criterio de lectura del diseño táctico.** Cada sección distingue el **diseño objetivo de Hito 3** y el **estado del código revisado**. El primero completa los elementos DDD solicitados y define contratos, invariantes y colaboración; el segundo conserva la trazabilidad del backend existente. Los diagramas del código y su esquema físico siguen describiendo la implementación observada. Incorporar una especificación no implica haber refactorizado el backend ni ejecutado los nuevos handlers.
+
+Los repositorios de agregados se sitúan en Domain en el diseño objetivo. Los puertos para hashing, tokens, inferencia, almacenamiento y Unit of Work quedan en Application; Infrastructure implementa los adaptadores. Las rutas HTTP crean Commands y delegan en Command Handlers. Los Event Handlers reaccionan a hechos ya confirmados; no reemplazan validaciones síncronas ni autorizan operaciones por sí solos.
+
+
+
+**Persistencia transversal propuesta para comandos y eventos.** La consistencia entre cambios de agregados y entrega de eventos requiere una migración compartida. Se propone guardar el estado del agregado y su evento en una misma transacción SQLite; un despachador consulta eventos pendientes después del commit. La tabla de recibos usa una clave única por consumidor y evento. Un fallo del despachador deja el evento pendiente para reintento; cada handler evita duplicar efectos. Las llamadas costosas a modelos ocurren fuera de una transacción de escritura prolongada.
+
+![Diseño táctico objetivo 1](imgs/tactical-target/target-01.png)
+
+[Fuente editable del diagrama](imgs/tactical-target/target-01.mmd)
+
+La clave compuesta de COMMAND_RECEIPTS impide repetir la misma solicitud del usuario; reutilizar requestId con un payload distinto se rechaza. La clave compuesta de PROCESSED_EVENTS aplica idempotencia por consumidor. Las migraciones, el despachador y sus pruebas se mantienen pendientes de implementación; este esquema es diseño objetivo y no se presenta como base de datos ya desplegada.
 
 <a id="51-bounded-context-creative-authoring"></a>
 ## 5.1. Bounded Context: Creative Authoring
@@ -2328,6 +2389,22 @@ Creative Authoring conserva la intención escrita por el usuario para personajes
 
 <a id="511-domain-layer"></a>
 ### 5.1.1. Domain Layer
+
+**Diseño objetivo de Hito 3 — modelo de dominio**
+
+| Elemento DDD | Clases, responsabilidades y límites |
+| :--- | :--- |
+| Aggregate Roots y Entities | `Story` es raíz de `StoryPage`: añadir, editar y eliminar páginas ocurre a través de la historia; número de página único por historia. `Character`, `Scenario` y `StyleProfile` son raíces independientes, compartidas por identificador y propietario; no se eliminan en cascada al borrar una Story. |
+| Value Objects | `StoryId`, `OwnerId`, `StoryTitle` (no vacío), `PageNumber` (entero positivo), `SceneDescription` y referencias inmutables a recursos narrativos. |
+| Factories | `StoryFactory.create(owner, title)` y factories de Character/Scenario/StyleProfile crean objetos válidos; `Story.add_page` construye una página dentro del agregado. |
+| Domain Services | `NarrativeReferencePolicy` comprueba compatibilidad y pertenencia de referencias a partir de información de dominio suministrada; no consulta HTTP ni SQL. |
+| Interfaces de Repositories | `StoryRepository.get/save/delete` persiste la historia y sus páginas como unidad; `CharacterRepository`, `ScenarioRepository` y `StyleProfileRepository` administran las otras raíces. Interfaces en Domain; adaptadores SQLAlchemy en Infrastructure. |
+| Invariante principal | Una Story solo modifica páginas propias; el número de página no se repite y las referencias narrativas pertenecen al mismo adulto. |
+
+Las Entities se comparan por identidad y los Value Objects por valor; estos últimos son inmutables. La raíz controla las modificaciones de sus entidades internas. Las referencias a otras raíces conservan identificadores y se validan en el caso de uso. Las factories garantizan condiciones de construcción y no reemplazan las reglas de modificación de la raíz.
+
+**Estado del código revisado**
+
 
 El dominio contiene entidades dataclass independientes de HTTP y persistencia. Todas heredan `Entity`, que asigna un UUID y define igualdad por tipo e identidad. El código no declara una clase `AggregateRoot`, value objects ni enums propios de Creative Authoring; tampoco encapsula páginas dentro de `Story`. La asociación y sus reglas se coordinan en Application.
 
@@ -2407,6 +2484,21 @@ Las respuestas incluyen UUID y fechas; `StoryPageResponse` también expone `char
 <a id="513-application-layer"></a>
 ### 5.1.3. Application Layer
 
+**Diseño objetivo de Hito 3 — Commands y Events**
+
+| Tipo de clase | Responsabilidad y colaboración |
+| :--- | :--- |
+| Commands / Command Handlers | `CreateStoryHandler`, `UpdateStoryHandler`, `AddStoryPageHandler`, `UpdateStoryPageHandler`, `DeleteStoryPageHandler` y handlers CRUD de Character/Scenario/StyleProfile cargan raíces, autorizan al propietario y ejecutan sus métodos. |
+| Events / Event Handlers | `StoryCreated`, `StoryPageAdded`, `StoryPageUpdated` y `StoryDeleted`; `StoryOutlineProjectionHandler` actualiza la proyección de páginas y `StoryDeletionIntegrationHandler` publica la eliminación para referencias de biblioteca. No se dispara una generación por el mero guardado. |
+| Límite transaccional | El handler autoriza al usuario, carga la raíz, ejecuta el método de dominio y persiste mediante UnitOfWork; el evento se registra en la misma transacción y se entrega después del commit. Un fallo produce rollback. |
+| Reintentos e idempotencia | Cada comando mutador incorpora requestId y cada evento eventId, aggregateId, versión e instante UTC. Un registro de procesamiento impide repetir efectos. Se propone outbox para entrega durable; aún no forma parte del backend revisado. |
+| Consultas y errores | Los query services resuelven lecturas sin publicar eventos; Interface traduce errores de dominio a respuestas HTTP documentadas, sin exponer credenciales o trazas internas. |
+
+Ejemplo de secuencia: `Interface → AddStoryPageHandler → StoryRepository → Story → commit → StoryOutlineProjectionHandler`. El nombre representa la familia del caso de uso; los handlers concretos se enumeran en la tabla. La migración conserva las rutas REST existentes y debe verificarse con las pruebas de autorización, invariantes y duplicados antes de sustituir los servicios actuales.
+
+**Estado del código revisado**
+
+
 `CreativeAuthoringService` concentra los casos de uso y depende del protocolo `CreativeAuthoringRepository`; no define Commands ni Handlers. Los métodos `create_*`, `get_*`, `list_*`, `save_*` y `delete_*` delegan operaciones. `save_*` implementa Update y actualiza `updated_at` en UTC.
 
 | Caso de uso | Coordinación del servicio |
@@ -2440,6 +2532,17 @@ El puerto define lectura/escritura y `owns_characters`. La validación evita enl
 <a id="515-bounded-context-software-architecture-component-level-diagrams"></a>
 ### 5.1.5. Bounded Context Software Architecture Component Level Diagrams
 
+**Colaboración de componentes del diseño objetivo**
+
+![Diseño táctico objetivo 2](imgs/tactical-target/target-02.png)
+
+[Fuente editable del diagrama](imgs/tactical-target/target-02.mmd)
+
+El outbox, las proyecciones y los nuevos handlers son componentes del diseño objetivo. Su incorporación requiere migraciones y pruebas de entrega/reintento; la topología local actual continúa descrita en 4.3.4 y 7.1.4.
+
+**Componentes de la implementación revisada**
+
+
 El C4 muestra la ruta desde Web Application hasta el servicio y repositorio de Creative Authoring, junto con SQLite. La fuente Structurizr DSL conserva el modelo y la vista de componentes de este contexto.
 
 ![Creative Authoring Component Diagram](assets/diagrams/creative-authoring-component.png)
@@ -2454,6 +2557,17 @@ Los diagramas de código detallan las entidades del dominio y las tablas que imp
 <a id="5161-bounded-context-domain-layer-class-diagrams"></a>
 #### 5.1.6.1. Bounded Context Domain Layer Class Diagrams
 
+**Diagrama de clases del diseño objetivo** (complementa el diagrama de implementación que aparece a continuación):
+
+![Diseño táctico objetivo 3](imgs/tactical-target/target-03.png)
+
+[Fuente editable del diagrama](imgs/tactical-target/target-03.mmd)
+
+Las cardinalidades detalladas se rigen por el texto del modelo: User admite como máximo una configuración parental y LibraryItem un metadato; Story admite varias páginas y GenerationJob varios intentos. Los nombres de métodos del diagrama expresan responsabilidades conceptuales, no firmas ya disponibles en Python.
+
+**Diagrama de clases de la implementación revisada**
+
+
 El UML muestra la herencia desde `Entity`, las cinco entidades y sus referencias identificadoras. `CreativeAuthoringRepository` no aparece como interfaz de dominio porque su `Protocol` vive en Application.
 
 ![Creative Authoring Domain Class Diagram](assets/diagrams/creative-authoring-domain-class.png)
@@ -2462,6 +2576,9 @@ El UML muestra la herencia desde `Entity`, las cinco entidades y sus referencias
 
 <a id="5162-bounded-context-database-design-diagram"></a>
 #### 5.1.6.2. Bounded Context Database Design Diagram
+
+**Correspondencia de persistencia del diseño objetivo.** `Story` y sus `StoryPage` conservan sus tablas actuales. `StoryRepository.save` debe persistir ambos dentro de la misma transacción; el índice único por historia/número sigue siendo una defensa de concurrencia. Character, Scenario y StyleProfile conservan tablas independientes. Los Value Objects se serializan a columnas existentes; no requieren una tabla por objeto. Los diagramas siguientes representan el esquema físico inspeccionado.
+
 
 El diseño incluye únicamente las tablas de Creative Authoring. Las FK `owner_id` apuntan a `identity_users.id`, fuera de este conjunto de tablas, y se identifican sin añadir una tabla externa.
 
@@ -2476,6 +2593,22 @@ Generative Media recibe solicitudes de imágenes y música, las conserva como jo
 
 <a id="521-domain-layer"></a>
 ### 5.2.1. Domain Layer
+
+**Diseño objetivo de Hito 3 — modelo de dominio**
+
+| Elemento DDD | Clases, responsabilidades y límites |
+| :--- | :--- |
+| Aggregate Roots y Entities | `GenerationJob` es raíz y gobierna Pending → Processing → Succeeded/Failed. `GenerationAttempt` es entidad interna del historial de ejecución propuesto. Un reintento crea un nuevo Job relacionado; no reabre silenciosamente un estado terminal. |
+| Value Objects | `GenerationRequest` (tipo y parámetros inmutables), `GenerationResult` (asset y metadatos), `JobId`, `Seed` y `FailureReason`. Se validan límites y parámetros por tipo de generación. |
+| Factories | `GenerationJobFactory.request(owner, request)` crea un Job Pending con identificador nuevo y fecha UTC; rechaza parámetros incompatibles antes de encolar. |
+| Domain Services | `GenerationPolicy` verifica compatibilidad entre tipo y parámetros y reglas de admisión; la inferencia se mantiene en adaptadores externos al dominio. |
+| Interfaces de Repositories | `GenerationJobRepository` pertenece a Domain y ofrece get/save/claim_next; la operación de reclamación debe garantizar exclusión de consumidores. El puerto UnitOfWork permanece en Application. |
+| Invariante principal | Solo el worker que reclamó el trabajo puede completar ese intento; una notificación repetida no duplica assets ni vuelve a ejecutar el modelo. |
+
+Las Entities se comparan por identidad y los Value Objects por valor; estos últimos son inmutables. La raíz controla las modificaciones de sus entidades internas. Las referencias a otras raíces conservan identificadores y se validan en el caso de uso. Las factories garantizan condiciones de construcción y no reemplazan las reglas de modificación de la raíz.
+
+**Estado del código revisado**
+
 
 `GenerationJob` es el agregado documentado en `domain.generation_job`: contiene tipo, payload, owner opcional, seed, estado, resultado, error, timestamps e intentos. Hereda `Entity` para la identidad UUID. Tipo y estado usan `GenerationType` y `GenerationStatus`; el dominio no declara value objects ni puertos propios.
 
@@ -2509,6 +2642,21 @@ En imagen, el router enriquece el payload con personajes propios y detalles de S
 
 <a id="523-application-layer"></a>
 ### 5.2.3. Application Layer
+
+**Diseño objetivo de Hito 3 — Commands y Events**
+
+| Tipo de clase | Responsabilidad y colaboración |
+| :--- | :--- |
+| Commands / Command Handlers | `RequestImageGenerationHandler` y `RequestMusicGenerationHandler` crean y persisten Jobs; `StartGenerationHandler`, `CompleteGenerationHandler` y `FailGenerationHandler` controlan transiciones y registran eventos. |
+| Events / Event Handlers | `GenerationRequested` es atendido por `GenerationRequestedHandler` para notificar trabajo disponible; `GenerationCompleted` y `GenerationFailed` actualizan una proyección de resultados mediante handlers de Application. La biblioteca no guarda automáticamente el resultado: requiere acción del adulto. |
+| Límite transaccional | El handler autoriza al usuario, carga la raíz, ejecuta el método de dominio y persiste mediante UnitOfWork; el evento se registra en la misma transacción y se entrega después del commit. Un fallo produce rollback. |
+| Reintentos e idempotencia | Cada comando mutador incorpora requestId y cada evento eventId, aggregateId, versión e instante UTC. Un registro de procesamiento impide repetir efectos. Se propone outbox para entrega durable; aún no forma parte del backend revisado. |
+| Consultas y errores | Los query services resuelven lecturas sin publicar eventos; Interface traduce errores de dominio a respuestas HTTP documentadas, sin exponer credenciales o trazas internas. |
+
+Ejemplo de secuencia: `Interface → RequestImageGenerationHandler → GenerationJobRepository → GenerationJob → commit → GenerationResultProjectionHandler`. El nombre representa la familia del caso de uso; los handlers concretos se enumeran en la tabla. La migración conserva las rutas REST existentes y debe verificarse con las pruebas de autorización, invariantes y duplicados antes de sustituir los servicios actuales.
+
+**Estado del código revisado**
+
 
 `GenerationJobService` implementa creación, consulta de job y resolución de asset por medio de `GenerationJobRepository`. `create` construye y persiste un GenerationJob Pending; no inicia el modelo. `get` y `get_asset` delegan consultas con ownership. Las rutas no acceden directamente a SQLAlchemy.
 
@@ -2577,6 +2725,17 @@ El prompt combina personajes, acción, emoción, escena, momento, objetos, detal
 <a id="525-bounded-context-software-architecture-component-level-diagrams"></a>
 ### 5.2.5. Bounded Context Software Architecture Component Level Diagrams
 
+**Colaboración de componentes del diseño objetivo**
+
+![Diseño táctico objetivo 4](imgs/tactical-target/target-04.png)
+
+[Fuente editable del diagrama](imgs/tactical-target/target-04.mmd)
+
+El outbox, las proyecciones y los nuevos handlers son componentes del diseño objetivo. Su incorporación requiere migraciones y pruebas de entrega/reintento; la topología local actual continúa descrita en 4.3.4 y 7.1.4.
+
+**Componentes de la implementación revisada**
+
+
 El C4 separa la API del Worker como contenedores/procesos distintos. La API recibe y consulta jobs; el Worker reclama los mismos registros, activa los adaptadores y escribe medios. Ambos acceden al directorio compartido. No se muestra broker porque la cola se materializa en `generation_jobs`.
 
 ![Generative Media Component Diagram](assets/diagrams/generative-media-component.png)
@@ -2591,6 +2750,17 @@ Los diagramas de código presentan el agregado, sus estados y la tabla `generati
 <a id="5261-bounded-context-domain-layer-class-diagrams"></a>
 #### 5.2.6.1. Bounded Context Domain Layer Class Diagrams
 
+**Diagrama de clases del diseño objetivo** (complementa el diagrama de implementación que aparece a continuación):
+
+![Diseño táctico objetivo 5](imgs/tactical-target/target-05.png)
+
+[Fuente editable del diagrama](imgs/tactical-target/target-05.mmd)
+
+Las cardinalidades detalladas se rigen por el texto del modelo: User admite como máximo una configuración parental y LibraryItem un metadato; Story admite varias páginas y GenerationJob varios intentos. Los nombres de métodos del diagrama expresan responsabilidades conceptuales, no firmas ya disponibles en Python.
+
+**Diagrama de clases de la implementación revisada**
+
+
 El UML representa `GenerationJob`, enums, operaciones de transición, excepción de transición inválida y base compartida `Entity`.
 
 ![Generative Media Domain Class Diagram](assets/diagrams/generative-media-domain-class.png)
@@ -2599,6 +2769,9 @@ El job conserva payload y resultado como diccionarios. El estado avanza de Pendi
 
 <a id="5262-bounded-context-database-design-diagram"></a>
 #### 5.2.6.2. Bounded Context Database Design Diagram
+
+**Correspondencia de persistencia del diseño objetivo.** `GenerationJob` conserva su tabla y transiciones. El historial `GenerationAttempt` del diseño objetivo requiere una nueva tabla `generation_attempts` con FK a Job y unicidad (job_id, attempt_number). Las entidades de reintento y el registro outbox no existen en el esquema actual: su migración es un requisito previo a implementar los handlers. Los diagramas siguientes representan el esquema físico inspeccionado.
+
 
 El diseño muestra la única tabla de Generative Media y sus constraints, índices y campos opcionales. Owner apunta a Identity & Access, fuera de las tablas incluidas.
 
@@ -2611,6 +2784,22 @@ El diseño muestra la única tabla de Generative Media y sus constraints, índic
 
 <a id="531-domain-layer"></a>
 ### 5.3.1. Domain Layer
+
+**Diseño objetivo de Hito 3 — modelo de dominio**
+
+| Elemento DDD | Clases, responsabilidades y límites |
+| :--- | :--- |
+| Aggregate Roots y Entities | `User` es raíz de su perfil y de `ParentalControl`, entidad interna identificada por el usuario. El cambio de PIN se realiza mediante User y nunca mediante acceso externo directo a la entidad interna. |
+| Value Objects | `UserId`, `EmailAddress` (formato y normalización definidos), `DisplayName`, `PasswordHash` y `ParentalPinHash`. Contraseña y PIN en claro no forman parte de eventos ni del estado persistido de dominio. |
+| Factories | `UserFactory.register(email, displayName, passwordHash)` recibe hashes producidos por puertos de Application y construye una identidad válida. |
+| Domain Services | `RegistrationPolicy` evalúa el correo normalizado y la disponibilidad informada por Application; una restricción única en persistencia resuelve registros concurrentes. |
+| Interfaces de Repositories | `UserRepository.add/get/find_by_email/save` es un contrato de Domain. `PasswordHasherPort` y `AccessTokenPort` permanecen en Application; SQLAlchemy, Argon2 y JWT permanecen en Infrastructure. |
+| Invariante principal | Correo normalizado único; el cambio del PIN exige verificar la contraseña y no concede acceso por la simple recepción de un evento. |
+
+Las Entities se comparan por identidad y los Value Objects por valor; estos últimos son inmutables. La raíz controla las modificaciones de sus entidades internas. Las referencias a otras raíces conservan identificadores y se validan en el caso de uso. Las factories garantizan condiciones de construcción y no reemplazan las reglas de modificación de la raíz.
+
+**Estado del código revisado**
+
 
 El Domain Layer del Bounded Context **Identity & Access** contiene las entidades y reglas relacionadas con la identidad y las credenciales de los usuarios. Su responsabilidad principal es representar la información propia del usuario y mantener las reglas de negocio que pertenecen directamente al dominio.
 
@@ -2699,6 +2888,21 @@ La capa de interfaz expone las operaciones de **Identity & Access** mediante rut
 <a id="533-application-layer"></a>
 ### 5.3.3. Application Layer
 
+**Diseño objetivo de Hito 3 — Commands y Events**
+
+| Tipo de clase | Responsabilidad y colaboración |
+| :--- | :--- |
+| Commands / Command Handlers | `RegisterUserHandler`, `LoginHandler`, `UpdateProfileHandler`, `SetParentalPinHandler` y `ValidateParentalPinHandler` reemplazan la coordinación concentrada en IdentityAccessService. Login emite token solo después de verificar credenciales. |
+| Events / Event Handlers | `UserRegistered`, `ProfileUpdated` y `ParentalPinChanged`; sus handlers de auditoría en Application registran identificador, instante y tipo sin copiar hashes, PIN, contraseña o token. No se añade un correo de bienvenida sin un servicio implementado. |
+| Límite transaccional | El handler autoriza al usuario, carga la raíz, ejecuta el método de dominio y persiste mediante UnitOfWork; el evento se registra en la misma transacción y se entrega después del commit. Un fallo produce rollback. |
+| Reintentos e idempotencia | Cada comando mutador incorpora requestId y cada evento eventId, aggregateId, versión e instante UTC. Un registro de procesamiento impide repetir efectos. Se propone outbox para entrega durable; aún no forma parte del backend revisado. |
+| Consultas y errores | Los query services resuelven lecturas sin publicar eventos; Interface traduce errores de dominio a respuestas HTTP documentadas, sin exponer credenciales o trazas internas. |
+
+Ejemplo de secuencia: `Interface → RegisterUserHandler → UserRepository → User → commit → UserRegisteredAuditHandler`. El nombre representa la familia del caso de uso; los handlers concretos se enumeran en la tabla. La migración conserva las rutas REST existentes y debe verificarse con las pruebas de autorización, invariantes y duplicados antes de sustituir los servicios actuales.
+
+**Estado del código revisado**
+
+
 `IdentityAccessService` coordina los casos de uso del bounded context **Identity & Access** mediante los Protocols definidos en `application/ports.py`: `UserRepository`, `PasswordHasherPort` y `AccessTokenPort`. El servicio concentra la lógica de aplicación de registro, autenticación, consulta del perfil y gestión del PIN parental, delegando la persistencia de usuarios, el hashing y la verificación de credenciales y la generación de tokens en sus respectivos ports. No utiliza Commands ni Handlers.
 
 Los principales casos de uso son:
@@ -2747,6 +2951,17 @@ La tabla `identity_users` no contiene claves foráneas hacia otras tablas del co
 <a id="535-bounded-context-software-architecture-component-level-diagrams"></a>
 ### 5.3.5. Bounded Context Software Architecture Component Level Diagrams
 
+**Colaboración de componentes del diseño objetivo**
+
+![Diseño táctico objetivo 6](imgs/tactical-target/target-06.png)
+
+[Fuente editable del diagrama](imgs/tactical-target/target-06.mmd)
+
+El outbox, las proyecciones y los nuevos handlers son componentes del diseño objetivo. Su incorporación requiere migraciones y pruebas de entrega/reintento; la topología local actual continúa descrita en 4.3.4 y 7.1.4.
+
+**Componentes de la implementación revisada**
+
+
 El diagrama representa el flujo local entre la Web Application y el backend: la REST API usa HTTP/JSON, pues aún no está desplegada públicamente y Docker Compose no configura TLS. En el despliegue previsto, Vercel y Google Cloud Run expondrán el tráfico externo mediante HTTPS, con TLS terminado por las plataformas. Las operaciones protegidas envían el access token como Bearer token.
 
 ![Identity & Access Component Level Diagram](assets/diagrams/content-identity&access-component.png)
@@ -2760,6 +2975,17 @@ El diagrama representa el flujo local entre la Web Application y el backend: la 
 <a id="5361-bounded-context-domain-layer-class-diagrams"></a>
 #### 5.3.6.1. Bounded Context Domain Layer Class Diagrams
 
+**Diagrama de clases del diseño objetivo** (complementa el diagrama de implementación que aparece a continuación):
+
+![Diseño táctico objetivo 7](imgs/tactical-target/target-07.png)
+
+[Fuente editable del diagrama](imgs/tactical-target/target-07.mmd)
+
+Las cardinalidades detalladas se rigen por el texto del modelo: User admite como máximo una configuración parental y LibraryItem un metadato; Story admite varias páginas y GenerationJob varios intentos. Los nombres de métodos del diagrama expresan responsabilidades conceptuales, no firmas ya disponibles en Python.
+
+**Diagrama de clases de la implementación revisada**
+
+
 El UML muestra únicamente clases del Domain Layer: User, su clase base compartida Entity y la jerarquía de errores de identidad. No incluye rutas, servicios de aplicación, ports ni adaptadores de infraestructura.
 
 ![Identity & Access Domain Layer Class Diagram](assets/diagrams/content-identity&access-domainlayer.png)
@@ -2770,6 +2996,9 @@ User hereda de Entity el UUID y las reglas de igualdad y hash basadas en identid
 
 <a id="5362-bounded-context-database-design-diagram"></a>
 #### 5.3.6.2. Bounded Context Database Design Diagram
+
+**Correspondencia de persistencia del diseño objetivo.** `EmailAddress`, `DisplayName`, `PasswordHash` y `ParentalPinHash` se convierten a columnas del registro User. ParentalControl es un componente interno opcional del agregado y se representa con el hash y configuración del usuario; no se impone una tabla adicional. La unicidad debe usar la misma política de normalización en dominio y persistencia. Los diagramas siguientes representan el esquema físico inspeccionado.
+
 
 El diagrama muestra exclusivamente la tabla `identity_users`, de acuerdo con el alcance de este contexto. La tabla almacena la identidad y las credenciales de los usuarios de Identity & Access. `id` constituye la clave primaria y `email` posee un índice único; `parental_pin_hash` es nullable porque el PIN parental puede no estar configurado. La tabla no contiene claves foráneas propias hacia otras tablas; otros Bounded Contexts pueden referenciar `identity_users.id` mediante sus respectivos campos `owner_id`.
 
@@ -2795,6 +3024,22 @@ Content Library centraliza las referencias que una persona autenticada guarda de
 
 <a id="541-domain-layer"></a>
 ### 5.4.1. Domain Layer
+
+**Diseño objetivo de Hito 3 — modelo de dominio**
+
+| Elemento DDD | Clases, responsabilidades y límites |
+| :--- | :--- |
+| Aggregate Roots y Entities | `LibraryItem` es raíz de su metadato `LibraryMetadata`; mantiene el favorito, título y referencia. Story y GenerationJob siguen perteneciendo a sus contextos, sin copiarlos dentro del agregado de biblioteca. |
+| Value Objects | `LibraryItemId`, `OwnerId`, `ResourceReference` (tipo e identificador), `LibraryTitle` y `FavoriteState`. `ResolvedLibraryResource` se modela como instantánea inmutable de una referencia resuelta. |
+| Factories | `LibraryItemFactory.save(owner, resolvedResource, title)` acepta únicamente recursos existentes y accesibles y normaliza los metadatos antes de crear la entrada. |
+| Domain Services | `LibraryAdmissionPolicy` valida tipo, ownership y disponibilidad a partir de una instantánea resuelta. La consulta a otro contexto se coordina con `LibraryResourceResolver` de Application. |
+| Interfaces de Repositories | `LibraryRepository.add/get/list/save/delete` reside en Domain; su adaptador implementa unicidad (owner, tipo, resourceId). `LibraryResourceResolver` permanece en Application como puerto de consulta entre contextos. |
+| Invariante principal | No hay entradas duplicadas para un mismo recurso del adulto; retirar una referencia de biblioteca no elimina la historia ni el asset de origen. |
+
+Las Entities se comparan por identidad y los Value Objects por valor; estos últimos son inmutables. La raíz controla las modificaciones de sus entidades internas. Las referencias a otras raíces conservan identificadores y se validan en el caso de uso. Las factories garantizan condiciones de construcción y no reemplazan las reglas de modificación de la raíz.
+
+**Estado del código revisado**
+
 
 El Domain Layer de este contexto contiene la entidad `LibraryItem`, un enum, una estructura inmutable para recursos resueltos y dos errores. El código no declara una clase `AggregateRoot` ni marca explícitamente a `LibraryItem` como raíz de agregado.
 
@@ -2845,6 +3090,21 @@ La capa de interfaz expone rutas FastAPI autenticadas con el usuario de la sesi�
 <a id="543-application-layer"></a>
 ### 5.4.3. Application Layer
 
+**Diseño objetivo de Hito 3 — Commands y Events**
+
+| Tipo de clase | Responsabilidad y colaboración |
+| :--- | :--- |
+| Commands / Command Handlers | `SaveLibraryItemHandler`, `UpdateLibraryMetadataHandler`, `SetFavoriteHandler` y `RemoveLibraryItemHandler` autorizan, resuelven referencias y llaman a la raíz. Las consultas emplean query services sin mutar agregados. |
+| Events / Event Handlers | `LibraryItemSaved`, `LibraryItemUpdated` y `LibraryItemRemoved` actualizan la proyección de biblioteca mediante handlers de Application. `StoryDeletedHandler` procesa la referencia eliminada y deja un resultado explícito de recurso no disponible; no borra medios de otro contexto. |
+| Límite transaccional | El handler autoriza al usuario, carga la raíz, ejecuta el método de dominio y persiste mediante UnitOfWork; el evento se registra en la misma transacción y se entrega después del commit. Un fallo produce rollback. |
+| Reintentos e idempotencia | Cada comando mutador incorpora requestId y cada evento eventId, aggregateId, versión e instante UTC. Un registro de procesamiento impide repetir efectos. Se propone outbox para entrega durable; aún no forma parte del backend revisado. |
+| Consultas y errores | Los query services resuelven lecturas sin publicar eventos; Interface traduce errores de dominio a respuestas HTTP documentadas, sin exponer credenciales o trazas internas. |
+
+Ejemplo de secuencia: `Interface → SaveLibraryItemHandler → LibraryRepository → LibraryItem → commit → LibraryItemSavedProjectionHandler`. El nombre representa la familia del caso de uso; los handlers concretos se enumeran en la tabla. La migración conserva las rutas REST existentes y debe verificarse con las pruebas de autorización, invariantes y duplicados antes de sustituir los servicios actuales.
+
+**Estado del código revisado**
+
+
 `ContentLibraryService` coordina los casos de uso a través de los Protocols de `application/ports.py`: `LibraryRepository` y `LibraryResourceResolver`. No usa Commands ni Handlers.
 
 Los principales casos de uso son:
@@ -2893,6 +3153,17 @@ La única FK de la tabla pertenece a Identity & Access (`owner_id`). `resource_i
 <a id="545-bounded-context-software-architecture-component-level-diagrams"></a>
 ### 5.4.5. Bounded Context Software Architecture Component Level Diagrams
 
+**Colaboración de componentes del diseño objetivo**
+
+![Diseño táctico objetivo 8](imgs/tactical-target/target-08.png)
+
+[Fuente editable del diagrama](imgs/tactical-target/target-08.mmd)
+
+El outbox, las proyecciones y los nuevos handlers son componentes del diseño objetivo. Su incorporación requiere migraciones y pruebas de entrega/reintento; la topología local actual continúa descrita en 4.3.4 y 7.1.4.
+
+**Componentes de la implementación revisada**
+
+
 El diagrama muestra el camino implementado desde la Web Application autenticada hasta el router, el servicio, los puertos de aplicación y sus adaptadores SQLAlchemy. La consulta de recursos de origen reutiliza la base compartida; no representa una aplicación móvil publicada.
 
 ![Content Library Component Level Diagram](assets/diagrams/content-library-component.png)
@@ -2905,12 +3176,26 @@ La Web Application envía JSON con el token de acceso; las dependencias de inter
 <a id="5461-bounded-context-domain-layer-class-diagrams"></a>
 #### 5.4.6.1. Bounded Context Domain Layer Class Diagrams
 
+**Diagrama de clases del diseño objetivo** (complementa el diagrama de implementación que aparece a continuación):
+
+![Diseño táctico objetivo 9](imgs/tactical-target/target-09.png)
+
+[Fuente editable del diagrama](imgs/tactical-target/target-09.mmd)
+
+Las cardinalidades detalladas se rigen por el texto del modelo: User admite como máximo una configuración parental y LibraryItem un metadato; Story admite varias páginas y GenerationJob varios intentos. Los nombres de métodos del diagrama expresan responsabilidades conceptuales, no firmas ya disponibles en Python.
+
+**Diagrama de clases de la implementación revisada**
+
+
 El diagrama contiene únicamente tipos definidos en Domain: `Entity`, `LibraryItem`, `LibraryItemType`, `ResolvedLibraryResource` y los errores. `LibraryItem` hereda su UUID de `Entity`; el enum tipa su medio. `ResolvedLibraryResource` es una estructura congelada devuelta por el resolver. No se muestran puertos porque `LibraryRepository` y `LibraryResourceResolver` están en Application, ni se atribuyen métodos de negocio o Value Objects inexistentes.
 
 ![Content Library Domain Class Diagram](assets/diagrams/content-library-domain-class.png)
 
 <a id="5462-bounded-context-database-design-diagram"></a>
 #### 5.4.6.2. Bounded Context Database Design Diagram
+
+**Correspondencia de persistencia del diseño objetivo.** `LibraryMetadata` y los Value Objects se almacenan en las columnas existentes de LibraryItem. ResourceReference conserva tipo e identificador; la restricción única por propietario/tipo/recurso evita duplicados. Las referencias entre contextos se resuelven mediante el puerto de Application y no convierten sus tablas en parte del agregado LibraryItem. Los diagramas siguientes representan el esquema físico inspeccionado.
+
 
 El diagrama muestra exclusivamente la tabla `content_library_items`, de acuerdo con el alcance de este contexto. La FK del propietario apunta fuera del diagrama a `identity_users.id`; `resource_id` no es FK y sus referencias se validan por aplicación.
 
@@ -3344,6 +3629,9 @@ Las capturas documentan el estado público en esa fecha. No demuestran que la We
 <a id="64-applications-uxui-design"></a>
 ## 6.4. Applications UX/UI Design
 
+**Correspondencia con el enunciado.** Se conserva la numeración del informe de ejemplo: 6.4.1 Wireframes, 6.4.2 Wireflows, 6.4.3 Mock-ups y 6.4.4 User Flows. El índice general del Statement duplica 6.4.2 y su lista de Hito 3 llama 6.4.2 a Mock-ups y 6.4.3 a User Flows. Ambos contenidos están aquí presentes en 6.4.3 y 6.4.4, respectivamente; esta equivalencia evita duplicar identificadores y mantiene navegable el índice.
+
+
 <a id="641-applications-wireframes"></a>
 ### 6.4.1. Applications Wireframes
 Los wireframes separan la experiencia de autoría web de la experiencia móvil de lectura. Los seis primeros son pantallas web de escritorio en baja fidelidad; los tres últimos son propuestas verticales para la aplicación móvil futura. Estos últimos documentan una experiencia objetivo, no una aplicación publicada.
@@ -3368,6 +3656,12 @@ El conjunto sigue la tarea de un adulto: iniciar sesión, llegar al espacio de t
 | Generation Result | Revisar el resultado y decidir si conservarlo o volver a generarlo. |
 | Content Library | Encontrar y organizar las creaciones guardadas. |
 
+**Wireframes complementarios de registro y música.**
+
+![Wireframe de registro](imgs/UX-UI/Register.svg)
+
+![Wireframe de música](imgs/UX-UI/MusicCreator.svg)
+
 #### Aplicación móvil prevista — lectura y AR
 
 Estas pantallas verticales proponen el consumo de una historia guardada: lectura convencional, activación de cámara y visualización de la página en realidad aumentada. El repositorio `frontend-mobile` no contiene una implementación publicada de este flujo.
@@ -3380,24 +3674,207 @@ Estas pantallas verticales proponen el consumo de una historia guardada: lectura
 
 ### 6.4.2. Applications Wireflow Diagrams
 
-#### Web Application — creación y conservación de una historia
+Los recorridos se derivan de las tareas de las personas de 2.3.1 y del backlog de 3.2–3.4. Cada persona tiene un objetivo explícito por capacidad; comparte componentes, pero contextualiza el resultado esperado. Las rutas alternativas contemplan errores y recuperación. La AR conserva su condición de diseño futuro.
 
-**User Goal:** Como padre, cuidador o docente, quiero crear una historia ilustrada, revisar sus páginas y guardar el resultado que considero útil, para preparar un recurso educativo personalizado.
+<a id="wireflow-p01"></a>
 
-<p align="center"><img src="imgs/Wireflow/StoryCreation.png" alt="Wireflow web de autoría: acceso, panel, editor, generador de imagen, revisión y biblioteca" title="Web wireflow — Story Creation" width="100%" /></p>
+#### P01 — Valeria Torres: Acceder a mi espacio
 
-El flujo inicia en **Login** o en el registro; un registro exitoso crea la sesión y lleva al usuario al área autenticada. Desde **Home/Dashboard**, crea o abre una historia, define el título y configura páginas con texto, personajes y detalles de la escena. Luego solicita una ilustración, espera el resultado asíncrono y decide si la conserva o vuelve a ajustar la solicitud. El guardado en **Content Library** es una acción separada y opcional. La respuesta visual esperada es la página actualizada y, al concluir la generación, el recurso disponible para revisión. Si falla la solicitud, el usuario puede corregirla o volver a intentarlo; la evidencia de este flujo corresponde a la Web Application existente.
+**User Goal:** Como padre o cuidador, quiero acceder a mi espacio personal para preparar recursos para el niño bajo mi supervisión.
 
-#### Aplicación móvil prevista — lectura con realidad aumentada
+**Persona:** padre o cuidador. **Trazabilidad:** US01–US02. **Precondición:** Adulto sin sesión; cuenta nueva o existente.
 
-**User Goal:** Como padre o docente, quiero colocar una página de una historia guardada sobre una superficie del entorno y navegarla en AR, para acompañar una experiencia de lectura compartida.
+![wireflow P01: Acceder a mi espacio](imgs/flows-hito3/P01-wireflow.png)
 
-<p align="center"><img src="imgs/Wireflow/ARStoryExperience.png" alt="Wireflow móvil propuesto: lector, cámara, detección de superficie y lector AR" title="Mobile wireflow — AR Story Experience (planned)" width="100%" /></p>
+**Ruta principal:** El adulto con cuenta inicia sesión y entra directamente al espacio autenticado. El adulto sin cuenta elige registro, crea su cuenta y queda autenticado; no necesita un segundo login.
 
-La propuesta parte del lector móvil, abre la cámara, detecta una superficie plana y coloca la página para continuar la lectura. Si no se detecta una superficie, la interacción debe permitir reintentar o regresar al lector. El flujo es **diseño conceptual**: el repositorio móvil no ofrece una implementación publicada de cámara, detección de superficie ni navegación AR y no se presenta como funcionalidad ejecutable.
+**Ruta alternativa:** Correo ya registrado o credenciales inválidas: corregir datos o volver al inicio de sesión; nunca mostrar información privada. **Recuperación:** Volver al formulario y corregir los datos.
+
+**Resultado esperado:** La sesión identifica al adulto y habilita las rutas protegidas.
+
+<a id="wireflow-p02"></a>
+
+#### P02 — Valeria Torres: Crear y guardar un cuento
+
+**User Goal:** Como padre o cuidador, quiero crear un cuento sobre un tema que interese al niño y revisarlo antes de leer juntos.
+
+**Persona:** padre o cuidador. **Trazabilidad:** US26–US41. **Precondición:** Sesión adulta; historia nueva o existente propia.
+
+![wireflow P02: Crear y guardar un cuento](imgs/flows-hito3/P02-wireflow.png)
+
+**Ruta principal:** Abrir cuentos → Escribir páginas y escena → Solicitar ilustración → Revisar o regenerar → Guardar referencia opcional.
+
+**Ruta alternativa:** Falla la generación o el resultado no es adecuado: conservar el texto, ajustar la escena y solicitar una nueva ilustración. **Recuperación:** Ajustar la escena y volver a generar.
+
+**Resultado esperado:** Texto y páginas guardados; la biblioteca contiene una referencia solo si el adulto la solicita.
+
+<a id="wireflow-p03"></a>
+
+#### P03 — Valeria Torres: Preparar una imagen
+
+**User Goal:** Como padre o cuidador, quiero obtener una imagen sencilla que me ayude a explicar un tema al niño.
+
+**Persona:** padre o cuidador. **Trazabilidad:** US05–US25. **Precondición:** Sesión adulta y una descripción del recurso deseado.
+
+![wireflow P03: Preparar una imagen](imgs/flows-hito3/P03-wireflow.png)
+
+**Ruta principal:** Elegir imágenes → Describir el recurso → Revisar el resultado → Guardar en biblioteca.
+
+**Ruta alternativa:** Solicitud inválida, error del trabajo o imagen inadecuada: corregir descripción y volver a solicitar; guardar requiere confirmación. **Recuperación:** Corregir descripción y reintentar.
+
+**Resultado esperado:** El adulto revisa la imagen y decide conservar una referencia del resultado.
+
+<a id="wireflow-p04"></a>
+
+#### P04 — Valeria Torres: Preparar una canción
+
+**User Goal:** Como padre o cuidador, quiero preparar una canción breve para reforzar un tema durante una actividad compartida.
+
+**Persona:** padre o cuidador. **Trazabilidad:** US42–US62. **Precondición:** Sesión adulta; tema y duración definidos.
+
+![wireflow P04: Preparar una canción](imgs/flows-hito3/P04-wireflow.png)
+
+**Ruta principal:** Elegir música → Definir tema y duración → Escuchar y revisar → Conservar el recurso.
+
+**Ruta alternativa:** La canción falla o no se ajusta al tema: editar la configuración y reintentar; no reproducir automáticamente ante el niño. **Recuperación:** Ajustar tema o duración y regenerar.
+
+**Resultado esperado:** La revisión adulta precede al uso del audio y su guardado opcional.
+
+<a id="wireflow-p05"></a>
+
+#### P05 — Valeria Torres: Recuperar un recurso
+
+**User Goal:** Como padre o cuidador, quiero encontrar un recurso que guardé para reutilizarlo con el niño.
+
+**Persona:** padre o cuidador. **Trazabilidad:** US63–US75. **Precondición:** Sesión adulta; puede existir una biblioteca vacía.
+
+![wireflow P05: Recuperar un recurso](imgs/flows-hito3/P05-wireflow.png)
+
+**Ruta principal:** Abrir biblioteca → Buscar y seleccionar → Revisar antes de reutilizar.
+
+**Ruta alternativa:** No hay coincidencias o el recurso no está disponible: limpiar filtros, volver a la lista o ir a creación. **Recuperación:** Limpiar búsqueda y volver a biblioteca.
+
+**Resultado esperado:** Se localiza un recurso propio o se ofrece una acción comprensible para crear uno.
+
+<a id="wireflow-p06"></a>
+
+#### P06 — Valeria Torres: Leer un cuento en AR
+
+**User Goal:** Como padre o cuidador, quiero acompañar al niño en una lectura aumentada con posibilidad de volver al lector convencional.
+
+**Persona:** padre o cuidador. **Trazabilidad:** US85–US90. **Precondición:** Diseño móvil futuro; cuento disponible y adulto acompañante.
+
+![wireflow P06: Leer un cuento en AR](imgs/flows-hito3/P06-wireflow.png)
+
+**Ruta principal:** Abrir cuento guardado → Permitir cámara y detectar superficie → Colocar y leer páginas → Volver a lectura convencional.
+
+**Ruta alternativa:** Sin permiso de cámara o superficie detectable: explicar la causa, reintentar el escaneo o continuar leyendo sin AR. **Recuperación:** Volver a lectura sin cámara.
+
+**Resultado esperado:** El lector conserva salida hacia lectura convencional. Flujo conceptual, no app móvil implementada.
+
+<a id="wireflow-d01"></a>
+
+#### D01 — Daniela Rojas: Acceder a mi espacio
+
+**User Goal:** Como docente, quiero acceder a mi espacio de trabajo para preparar materiales de clase con mi cuenta.
+
+**Persona:** docente. **Trazabilidad:** US01–US02. **Precondición:** Adulto sin sesión; cuenta nueva o existente.
+
+![wireflow D01: Acceder a mi espacio](imgs/flows-hito3/D01-wireflow.png)
+
+**Ruta principal:** El adulto con cuenta inicia sesión y entra directamente al espacio autenticado. El adulto sin cuenta elige registro, crea su cuenta y queda autenticado; no necesita un segundo login.
+
+**Ruta alternativa:** Correo ya registrado o credenciales inválidas: corregir datos o volver al inicio de sesión; nunca mostrar información privada. **Recuperación:** Volver al formulario y corregir los datos.
+
+**Resultado esperado:** La sesión identifica al adulto y habilita las rutas protegidas.
+
+<a id="wireflow-d02"></a>
+
+#### D02 — Daniela Rojas: Crear y guardar un cuento
+
+**User Goal:** Como docente, quiero crear un cuento alineado con el tema de clase y revisar sus páginas antes de utilizarlo.
+
+**Persona:** docente. **Trazabilidad:** US26–US41. **Precondición:** Sesión adulta; historia nueva o existente propia.
+
+![wireflow D02: Crear y guardar un cuento](imgs/flows-hito3/D02-wireflow.png)
+
+**Ruta principal:** Abrir cuentos → Escribir páginas y escena → Solicitar ilustración → Revisar o regenerar → Guardar referencia opcional.
+
+**Ruta alternativa:** Falla la generación o el resultado no es adecuado: conservar el texto, ajustar la escena y solicitar una nueva ilustración. **Recuperación:** Ajustar la escena y volver a generar.
+
+**Resultado esperado:** Texto y páginas guardados; la biblioteca contiene una referencia solo si el adulto la solicita.
+
+<a id="wireflow-d03"></a>
+
+#### D03 — Daniela Rojas: Preparar una imagen
+
+**User Goal:** Como docente, quiero preparar una imagen relacionada con el objetivo de aprendizaje de mi clase.
+
+**Persona:** docente. **Trazabilidad:** US05–US25. **Precondición:** Sesión adulta y una descripción del recurso deseado.
+
+![wireflow D03: Preparar una imagen](imgs/flows-hito3/D03-wireflow.png)
+
+**Ruta principal:** Elegir imágenes → Describir el recurso → Revisar el resultado → Guardar en biblioteca.
+
+**Ruta alternativa:** Solicitud inválida, error del trabajo o imagen inadecuada: corregir descripción y volver a solicitar; guardar requiere confirmación. **Recuperación:** Corregir descripción y reintentar.
+
+**Resultado esperado:** El adulto revisa la imagen y decide conservar una referencia del resultado.
+
+<a id="wireflow-d04"></a>
+
+#### D04 — Daniela Rojas: Preparar una canción
+
+**User Goal:** Como docente, quiero preparar una canción breve para reforzar el tema de la sesión con mis estudiantes.
+
+**Persona:** docente. **Trazabilidad:** US42–US62. **Precondición:** Sesión adulta; tema y duración definidos.
+
+![wireflow D04: Preparar una canción](imgs/flows-hito3/D04-wireflow.png)
+
+**Ruta principal:** Elegir música → Definir tema y duración → Escuchar y revisar → Conservar el recurso.
+
+**Ruta alternativa:** La canción falla o no se ajusta al tema: editar la configuración y reintentar; no reproducir automáticamente ante el niño. **Recuperación:** Ajustar tema o duración y regenerar.
+
+**Resultado esperado:** La revisión adulta precede al uso del audio y su guardado opcional.
+
+<a id="wireflow-d05"></a>
+
+#### D05 — Daniela Rojas: Recuperar un recurso
+
+**User Goal:** Como docente, quiero recuperar material guardado para reutilizarlo en una nueva actividad de clase.
+
+**Persona:** docente. **Trazabilidad:** US63–US75. **Precondición:** Sesión adulta; puede existir una biblioteca vacía.
+
+![wireflow D05: Recuperar un recurso](imgs/flows-hito3/D05-wireflow.png)
+
+**Ruta principal:** Abrir biblioteca → Buscar y seleccionar → Revisar antes de reutilizar.
+
+**Ruta alternativa:** No hay coincidencias o el recurso no está disponible: limpiar filtros, volver a la lista o ir a creación. **Recuperación:** Limpiar búsqueda y volver a biblioteca.
+
+**Resultado esperado:** Se localiza un recurso propio o se ofrece una acción comprensible para crear uno.
+
+<a id="wireflow-d06"></a>
+
+#### D06 — Daniela Rojas: Leer un cuento en AR
+
+**User Goal:** Como docente, quiero presentar una lectura aumentada durante una actividad guiada sin depender de la cámara para continuar.
+
+**Persona:** docente. **Trazabilidad:** US85–US90. **Precondición:** Diseño móvil futuro; cuento disponible y adulto acompañante.
+
+![wireflow D06: Leer un cuento en AR](imgs/flows-hito3/D06-wireflow.png)
+
+**Ruta principal:** Abrir cuento guardado → Permitir cámara y detectar superficie → Colocar y leer páginas → Volver a lectura convencional.
+
+**Ruta alternativa:** Sin permiso de cámara o superficie detectable: explicar la causa, reintentar el escaneo o continuar leyendo sin AR. **Recuperación:** Volver a lectura sin cámara.
+
+**Resultado esperado:** El lector conserva salida hacia lectura convencional. Flujo conceptual, no app móvil implementada.
 
 <a id="643-applications-mock-ups"></a>
 ### 6.4.3. Applications Mock-ups
+
+**Aplicación del Design System, arquitectura de información y diseño inclusivo.** Las vistas utilizan la jerarquía definida en 6.1: título de tarea, configuración, acción principal y revisión del resultado. Se agrupan creación y biblioteca siguiendo los sistemas de organización y navegación de 6.2; los estados vacíos indican cómo comenzar y los mensajes de error explican cómo recuperarse. La propuesta contempla foco visible, operación por teclado, etiquetas de texto junto a los iconos y mensajes que no dependen solo del color. Se conserva una sola acción principal por estado para reducir decisiones simultáneas.
+
+Los recorridos de Valeria Torres priorizan revisión adulta y recuperación sencilla del recurso; los de Daniela Rojas contextualizan las mismas capacidades como preparación y reutilización de material educativo. La interfaz no presupone conocimientos de prompting ni expone configuración de infraestructura. La lectura móvil conserva controles de salida y alternativa convencional cuando la cámara no está disponible. Estas decisiones son criterios del diseño; las brechas de contraste y tamaño del frontend observadas en 6.1.2 siguen requiriendo corrección y evaluación en dispositivos antes de afirmar accesibilidad plena.
+
 
 Los mock-ups aplican color, tipografía, jerarquía y componentes a las mismas tareas de los wireframes. Los seis primeros son propuestas de interfaz web de escritorio; los tres últimos corresponden a la aplicación móvil futura.
 
@@ -3412,6 +3889,12 @@ Los mock-ups aplican color, tipografía, jerarquía y componentes a las mismas t
 
 El conjunto visualiza la continuidad de la tarea desde autenticación hasta creación y conservación. El panel de inicio enlaza las áreas principales; el editor agrupa historia y página; el generador y su resultado separan configuración de revisión; la biblioteca concentra los recursos guardados.
 
+**Vistas complementarias de registro y música (diseño objetivo).**
+
+![Registro de adulto](imgs/Mockups/Register.svg)
+
+![Composición de música](imgs/Mockups/MusicCreator.svg)
+
 #### Aplicación móvil prevista — mock-ups de lectura AR
 
 <p align="center"><img src="imgs/Mockups/MobileStoryReader.png" alt="Mock-up móvil propuesto: lector de historias" title="Mobile mock-up — Story Reader (planned)" width="220" /></p>
@@ -3420,34 +3903,225 @@ El conjunto visualiza la continuidad de la tarea desde autenticación hasta crea
 
 La propuesta mantiene la lectura en formato vertical y sitúa los controles AR alrededor de la cámara y la página seleccionada. No representa una app ya implementada.
 
-**Alcance frente a la Web Application actual.** Estos wireframes y mock-ups son artefactos de diseño, no capturas del frontend desplegado. Las dos versiones de Login incluyen “Remember me” y “Forgot password”; ninguna de esas funciones está implementada en el frontend ni hay rutas de recuperación de contraseña en el backend. En el flujo actual, el registro crea la sesión y redirige al usuario sin exigir un segundo login. Las pantallas y flujos AR son propuestas de la aplicación móvil aún no publicada.
+**Alcance frente a la Web Application actual.** Estos wireframes y mock-ups son artefactos de diseño, no capturas del frontend desplegado. Los diseños originales de Login incluyen “Remember me” y “Forgot password”; ninguna de esas funciones está implementada en el frontend ni hay rutas de recuperación de contraseña en el backend. En el flujo actual, el registro crea la sesión y redirige al usuario sin exigir un segundo login. Las pantallas y flujos AR son propuestas de la aplicación móvil aún no publicada.
 
 <a id="644-applications-user-flow-diagrams"></a>
 ### 6.4.4. Applications User Flow Diagrams
 
-El flujo de autoría muestra dos entradas: el usuario existente inicia sesión; el usuario nuevo crea una cuenta y queda autenticado automáticamente. Luego crea o selecciona una Story, añade y configura páginas, solicita una ilustración, revisa o regenera el resultado y guarda la historia. Guardarla en Content Library es una acción posterior y opcional.
+Los diagramas incorporan las vistas de los mock-ups, la secuencia principal y una ruta de recuperación. Los identificadores P01–P06 y D01–D06 coinciden con los wireflows y el prototipo.
 
-<p align="center"><img src="imgs/FlowDiagrams/CreateAndSaveStory.png" alt="User flow web: registro o login, creación de Story, generación de ilustración y guardado opcional en biblioteca" title="Web user flow — Create and Save a Story" width="430" /></p>
+Los recorridos se derivan de las tareas de las personas de 2.3.1 y del backlog de 3.2–3.4. Cada persona tiene un objetivo explícito por capacidad; comparte componentes, pero contextualiza el resultado esperado. Las rutas alternativas contemplan errores y recuperación. La AR conserva su condición de diseño futuro.
 
-El registro no va seguido de un segundo inicio de sesión: `POST /api/v1/auth/register` devuelve un token y `RegisterView` redirige a la vista autenticada. La ilustración es una generación asíncrona que el adulto revisa antes de conservarla; la referencia de biblioteca se guarda por separado.
+<a id="userflow-p01"></a>
 
-El siguiente flujo es una propuesta para lectura móvil con realidad aumentada. Comienza al abrir una historia guardada, pasa por la cámara y la detección de una superficie, y termina con la página colocada en el entorno y el retorno al lector.
+#### P01 — Valeria Torres: Acceder a mi espacio
 
-<p align="center"><img src="imgs/FlowDiagrams/ARStoryExperience.png" alt="User flow móvil propuesto: abrir historia, detectar superficie y leer una página en AR" title="Mobile user flow — AR Story Experience (planned)" width="900" /></p>
+**User Goal:** Como padre o cuidador, quiero acceder a mi espacio personal para preparar recursos para el niño bajo mi supervisión.
 
-Este recorrido es conceptual: el repositorio móvil no implementa el flujo AR y el backend no expone un runtime AR.
+**Persona:** padre o cuidador. **Trazabilidad:** US01–US02. **Precondición:** Adulto sin sesión; cuenta nueva o existente.
+
+![userflow P01: Acceder a mi espacio](imgs/flows-hito3/P01-userflow.png)
+
+**Ruta principal:** El adulto con cuenta inicia sesión y entra directamente al espacio autenticado. El adulto sin cuenta elige registro, crea su cuenta y queda autenticado; no necesita un segundo login.
+
+**Ruta alternativa:** Correo ya registrado o credenciales inválidas: corregir datos o volver al inicio de sesión; nunca mostrar información privada. **Recuperación:** Volver al formulario y corregir los datos.
+
+**Resultado esperado:** La sesión identifica al adulto y habilita las rutas protegidas.
+
+<a id="userflow-p02"></a>
+
+#### P02 — Valeria Torres: Crear y guardar un cuento
+
+**User Goal:** Como padre o cuidador, quiero crear un cuento sobre un tema que interese al niño y revisarlo antes de leer juntos.
+
+**Persona:** padre o cuidador. **Trazabilidad:** US26–US41. **Precondición:** Sesión adulta; historia nueva o existente propia.
+
+![userflow P02: Crear y guardar un cuento](imgs/flows-hito3/P02-userflow.png)
+
+**Ruta principal:** Abrir cuentos → Escribir páginas y escena → Solicitar ilustración → Revisar o regenerar → Guardar referencia opcional.
+
+**Ruta alternativa:** Falla la generación o el resultado no es adecuado: conservar el texto, ajustar la escena y solicitar una nueva ilustración. **Recuperación:** Ajustar la escena y volver a generar.
+
+**Resultado esperado:** Texto y páginas guardados; la biblioteca contiene una referencia solo si el adulto la solicita.
+
+<a id="userflow-p03"></a>
+
+#### P03 — Valeria Torres: Preparar una imagen
+
+**User Goal:** Como padre o cuidador, quiero obtener una imagen sencilla que me ayude a explicar un tema al niño.
+
+**Persona:** padre o cuidador. **Trazabilidad:** US05–US25. **Precondición:** Sesión adulta y una descripción del recurso deseado.
+
+![userflow P03: Preparar una imagen](imgs/flows-hito3/P03-userflow.png)
+
+**Ruta principal:** Elegir imágenes → Describir el recurso → Revisar el resultado → Guardar en biblioteca.
+
+**Ruta alternativa:** Solicitud inválida, error del trabajo o imagen inadecuada: corregir descripción y volver a solicitar; guardar requiere confirmación. **Recuperación:** Corregir descripción y reintentar.
+
+**Resultado esperado:** El adulto revisa la imagen y decide conservar una referencia del resultado.
+
+<a id="userflow-p04"></a>
+
+#### P04 — Valeria Torres: Preparar una canción
+
+**User Goal:** Como padre o cuidador, quiero preparar una canción breve para reforzar un tema durante una actividad compartida.
+
+**Persona:** padre o cuidador. **Trazabilidad:** US42–US62. **Precondición:** Sesión adulta; tema y duración definidos.
+
+![userflow P04: Preparar una canción](imgs/flows-hito3/P04-userflow.png)
+
+**Ruta principal:** Elegir música → Definir tema y duración → Escuchar y revisar → Conservar el recurso.
+
+**Ruta alternativa:** La canción falla o no se ajusta al tema: editar la configuración y reintentar; no reproducir automáticamente ante el niño. **Recuperación:** Ajustar tema o duración y regenerar.
+
+**Resultado esperado:** La revisión adulta precede al uso del audio y su guardado opcional.
+
+<a id="userflow-p05"></a>
+
+#### P05 — Valeria Torres: Recuperar un recurso
+
+**User Goal:** Como padre o cuidador, quiero encontrar un recurso que guardé para reutilizarlo con el niño.
+
+**Persona:** padre o cuidador. **Trazabilidad:** US63–US75. **Precondición:** Sesión adulta; puede existir una biblioteca vacía.
+
+![userflow P05: Recuperar un recurso](imgs/flows-hito3/P05-userflow.png)
+
+**Ruta principal:** Abrir biblioteca → Buscar y seleccionar → Revisar antes de reutilizar.
+
+**Ruta alternativa:** No hay coincidencias o el recurso no está disponible: limpiar filtros, volver a la lista o ir a creación. **Recuperación:** Limpiar búsqueda y volver a biblioteca.
+
+**Resultado esperado:** Se localiza un recurso propio o se ofrece una acción comprensible para crear uno.
+
+<a id="userflow-p06"></a>
+
+#### P06 — Valeria Torres: Leer un cuento en AR
+
+**User Goal:** Como padre o cuidador, quiero acompañar al niño en una lectura aumentada con posibilidad de volver al lector convencional.
+
+**Persona:** padre o cuidador. **Trazabilidad:** US85–US90. **Precondición:** Diseño móvil futuro; cuento disponible y adulto acompañante.
+
+![userflow P06: Leer un cuento en AR](imgs/flows-hito3/P06-userflow.png)
+
+**Ruta principal:** Abrir cuento guardado → Permitir cámara y detectar superficie → Colocar y leer páginas → Volver a lectura convencional.
+
+**Ruta alternativa:** Sin permiso de cámara o superficie detectable: explicar la causa, reintentar el escaneo o continuar leyendo sin AR. **Recuperación:** Volver a lectura sin cámara.
+
+**Resultado esperado:** El lector conserva salida hacia lectura convencional. Flujo conceptual, no app móvil implementada.
+
+<a id="userflow-d01"></a>
+
+#### D01 — Daniela Rojas: Acceder a mi espacio
+
+**User Goal:** Como docente, quiero acceder a mi espacio de trabajo para preparar materiales de clase con mi cuenta.
+
+**Persona:** docente. **Trazabilidad:** US01–US02. **Precondición:** Adulto sin sesión; cuenta nueva o existente.
+
+![userflow D01: Acceder a mi espacio](imgs/flows-hito3/D01-userflow.png)
+
+**Ruta principal:** El adulto con cuenta inicia sesión y entra directamente al espacio autenticado. El adulto sin cuenta elige registro, crea su cuenta y queda autenticado; no necesita un segundo login.
+
+**Ruta alternativa:** Correo ya registrado o credenciales inválidas: corregir datos o volver al inicio de sesión; nunca mostrar información privada. **Recuperación:** Volver al formulario y corregir los datos.
+
+**Resultado esperado:** La sesión identifica al adulto y habilita las rutas protegidas.
+
+<a id="userflow-d02"></a>
+
+#### D02 — Daniela Rojas: Crear y guardar un cuento
+
+**User Goal:** Como docente, quiero crear un cuento alineado con el tema de clase y revisar sus páginas antes de utilizarlo.
+
+**Persona:** docente. **Trazabilidad:** US26–US41. **Precondición:** Sesión adulta; historia nueva o existente propia.
+
+![userflow D02: Crear y guardar un cuento](imgs/flows-hito3/D02-userflow.png)
+
+**Ruta principal:** Abrir cuentos → Escribir páginas y escena → Solicitar ilustración → Revisar o regenerar → Guardar referencia opcional.
+
+**Ruta alternativa:** Falla la generación o el resultado no es adecuado: conservar el texto, ajustar la escena y solicitar una nueva ilustración. **Recuperación:** Ajustar la escena y volver a generar.
+
+**Resultado esperado:** Texto y páginas guardados; la biblioteca contiene una referencia solo si el adulto la solicita.
+
+<a id="userflow-d03"></a>
+
+#### D03 — Daniela Rojas: Preparar una imagen
+
+**User Goal:** Como docente, quiero preparar una imagen relacionada con el objetivo de aprendizaje de mi clase.
+
+**Persona:** docente. **Trazabilidad:** US05–US25. **Precondición:** Sesión adulta y una descripción del recurso deseado.
+
+![userflow D03: Preparar una imagen](imgs/flows-hito3/D03-userflow.png)
+
+**Ruta principal:** Elegir imágenes → Describir el recurso → Revisar el resultado → Guardar en biblioteca.
+
+**Ruta alternativa:** Solicitud inválida, error del trabajo o imagen inadecuada: corregir descripción y volver a solicitar; guardar requiere confirmación. **Recuperación:** Corregir descripción y reintentar.
+
+**Resultado esperado:** El adulto revisa la imagen y decide conservar una referencia del resultado.
+
+<a id="userflow-d04"></a>
+
+#### D04 — Daniela Rojas: Preparar una canción
+
+**User Goal:** Como docente, quiero preparar una canción breve para reforzar el tema de la sesión con mis estudiantes.
+
+**Persona:** docente. **Trazabilidad:** US42–US62. **Precondición:** Sesión adulta; tema y duración definidos.
+
+![userflow D04: Preparar una canción](imgs/flows-hito3/D04-userflow.png)
+
+**Ruta principal:** Elegir música → Definir tema y duración → Escuchar y revisar → Conservar el recurso.
+
+**Ruta alternativa:** La canción falla o no se ajusta al tema: editar la configuración y reintentar; no reproducir automáticamente ante el niño. **Recuperación:** Ajustar tema o duración y regenerar.
+
+**Resultado esperado:** La revisión adulta precede al uso del audio y su guardado opcional.
+
+<a id="userflow-d05"></a>
+
+#### D05 — Daniela Rojas: Recuperar un recurso
+
+**User Goal:** Como docente, quiero recuperar material guardado para reutilizarlo en una nueva actividad de clase.
+
+**Persona:** docente. **Trazabilidad:** US63–US75. **Precondición:** Sesión adulta; puede existir una biblioteca vacía.
+
+![userflow D05: Recuperar un recurso](imgs/flows-hito3/D05-userflow.png)
+
+**Ruta principal:** Abrir biblioteca → Buscar y seleccionar → Revisar antes de reutilizar.
+
+**Ruta alternativa:** No hay coincidencias o el recurso no está disponible: limpiar filtros, volver a la lista o ir a creación. **Recuperación:** Limpiar búsqueda y volver a biblioteca.
+
+**Resultado esperado:** Se localiza un recurso propio o se ofrece una acción comprensible para crear uno.
+
+<a id="userflow-d06"></a>
+
+#### D06 — Daniela Rojas: Leer un cuento en AR
+
+**User Goal:** Como docente, quiero presentar una lectura aumentada durante una actividad guiada sin depender de la cámara para continuar.
+
+**Persona:** docente. **Trazabilidad:** US85–US90. **Precondición:** Diseño móvil futuro; cuento disponible y adulto acompañante.
+
+![userflow D06: Leer un cuento en AR](imgs/flows-hito3/D06-userflow.png)
+
+**Ruta principal:** Abrir cuento guardado → Permitir cámara y detectar superficie → Colocar y leer páginas → Volver a lectura convencional.
+
+**Ruta alternativa:** Sin permiso de cámara o superficie detectable: explicar la causa, reintentar el escaneo o continuar leyendo sin AR. **Recuperación:** Volver a lectura sin cámara.
+
+**Resultado esperado:** El lector conserva salida hacia lectura convencional. Flujo conceptual, no app móvil implementada.
 
 <a id="65-applications-prototyping"></a>
 
 ## 6.5. Applications Prototyping
 
-Se preparó un prototipo navegable local para revisar las secuencias web y móvil. [Abrir el prototipo de aplicaciones](prototypes/applications/index.html). La navegación admite botones, indicadores de paso y teclado; no llama a la API ni guarda información. En el recorrido web, las pantallas son exportaciones estáticas de los mock-ups existentes. El recorrido móvil permite navegar la propuesta AR y está rotulado como experiencia futura.
+El [prototipo navegable](prototypes/applications/index.html) cubre los doce objetivos P01–P06 y D01–D06 de 6.4.2 y 6.4.4. Debe descargarse el repositorio y abrirse el archivo HTML en un navegador; GitHub muestra el código de ese archivo y no ejecuta por sí mismo el prototipo. Cada recorrido permite avanzar, retroceder y simular una incidencia con recuperación. Se presentan precondiciones, acciones y resultados para relacionar la interacción con la arquitectura de información de 6.2.
 
-<p align="center"><img src="imgs/evidence/prototype-web-image-step.png" alt="Prototipo navegable web, paso de configuración de imagen" title="Web prototype — image step" width="850" /></p>
+Las decisiones de interacción priorizan orientación por tarea, un paso activo claramente identificado, revisión adulta antes de conservar el resultado y retorno seguro ante errores. El selector de persona contextualiza la tarea; no crea roles adicionales en el backend. Las imágenes y controles simulan navegación y no persisten datos. Las pantallas de música y registro completan la propuesta visual; los demás estados reutilizan los mock-ups. La simulación de fallo representa una condición diseñada, no una respuesta real de la API.
 
-<p align="center"><img src="imgs/evidence/prototype-mobile-ar-step.png" alt="Prototipo navegable móvil, paso conceptual de lectura AR" title="Mobile prototype — AR step (planned)" width="320" /></p>
+| Aplicación | Grabación del prototipo | Cobertura |
+| :--- | :--- | :--- |
+| Web Application | [Recorrido web con subtítulos en pantalla](assets/videos/prototype-web.mp4) | Acceso, cuentos, imágenes, música y biblioteca para ambas personas; una recuperación por recorrido. |
+| Aplicación móvil prevista | [Recorrido móvil con subtítulos en pantalla](assets/videos/prototype-mobile.mp4) | Lectura AR propuesta para ambas personas y salida hacia lectura convencional. |
 
-El prototipo es un recurso de revisión de interacción, no evidencia de que la experiencia AR esté implementada ni de que haya sido validada con usuarios. El Final Project Statement solicita acompañar el prototipo con una grabación y un enlace de Microsoft Stream; no se encontró esa grabación ni URL entre los materiales recibidos o los repositorios consultados (Universidad Peruana de Ciencias Aplicadas, 2026e). Se debe añadir aquí el vínculo real cuando el equipo publique el video.
+![Cuadro de la grabación web](imgs/evidence/prototype-web-video.png)
+
+![Cuadro de la grabación móvil](imgs/evidence/prototype-mobile-video.png)
+
+Los videos se construyeron a partir de capturas secuenciales de la simulación navegable recorrida en Chromium, con texto explicativo en pantalla; no son testimonios de exposición ni pruebas con usuarios. Falta publicar estas grabaciones en Microsoft Stream y registrar las URLs institucionales requeridas por el Statement. Los archivos MP4 versionados permiten revisar el contenido mientras se realiza esa publicación. La funcionalidad móvil y la AR siguen siendo conceptuales.
 
 <a id="capitulo-vii-product-implementation-validation-deployment"></a>
 # Capítulo VII: Product Implementation, Validation & Deployment
@@ -3504,7 +4178,7 @@ Para esta evidencia, API y worker se ejecutaron en la máquina local con generad
 <a id="721-sprint-1"></a>
 ### 7.2.1. Sprint 1
 
-El Final Project Statement solicita evidencia de Sprint 1 (Universidad Peruana de Ciencias Aplicadas, 2026e). No se encontró un acta, tablero histórico, fechas de inicio/cierre, estimaciones, capacidad ni registro de reuniones para reconstruir su planificación original. Por ello, las subsecciones siguientes separan datos ausentes de una reconstrucción del estado actual de código hecha el 30/10/2026. La presencia de una función en el repositorio no acredita por sí sola que se haya aceptado formalmente una historia de usuario.
+El Final Project Statement solicita evidencia de Sprint 1 (Universidad Peruana de Ciencias Aplicadas, 2026e). No se encontró un acta, tablero histórico, fechas de inicio/cierre, estimaciones, capacidad ni registro de reuniones para reconstruir su planificación original. Por ello, las subsecciones siguientes separan datos ausentes de una reconstrucción del estado actual de código hecha el 30/10/2026. La presencia de una función en el repositorio no acredita por sí sola que se haya aceptado formalmente una historia de usuario. La refactorización a agregados, Value Objects y handlers de los diseños objetivo del Capítulo V es trabajo posterior al código inspeccionado y no se contabiliza aquí como implementación completada.
 
 #### 7.2.1.1. Sprint Planning 1
 
@@ -3532,7 +4206,7 @@ Los rangos de historias indican la funcionalidad relacionada que se observa en e
 
 #### 7.2.1.3. Development Evidence for Sprint Review
 
-Los historiales consultados registran, entre otros, los siguientes cambios. Se conservan los nombres públicos tal como aparecen en Git; `vr700` no se asocia a una persona porque no hay evidencia para hacerlo.
+Los historiales consultados registran, entre otros, los siguientes cambios. Se conservan los nombres públicos tal como aparecen en Git; `vr700` se identifica con Mariano Moises Oblitas Davila según la confirmación del equipo.
 
 | Repositorio | Commit / fecha | Descripción del cambio |
 | :--- | :--- | :--- |
@@ -3591,7 +4265,26 @@ La Landing Page sí tiene publicación pública verificable en [GitHub Pages](ht
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint
 
-Los commits disponibles muestran integración de autenticación, autoría, imágenes, música, biblioteca y API entre fines de septiembre y octubre; también existe un PR de frontend desde `develop`. El registro de versiones previo del informe documenta responsabilidades por capítulos para TB1/TP1. En cambio, no se encontró tablero o acta de Sprint 1, ni datos de asistencia, tareas individuales, horas o story points. Este capítulo informa el estado de producto a partir del código sin adjudicar retrospectivamente su trabajo a miembros concretos.
+Los commits disponibles muestran integración de autenticación, autoría, imágenes, música, biblioteca y API entre fines de septiembre y octubre; también existe un PR de frontend desde `develop`. El registro de versiones previo del informe documenta responsabilidades por capítulos para TB1/TP1. En cambio, no se encontró tablero o acta de Sprint 1, ni datos de asistencia, tareas individuales, horas o story points. Este capítulo informa el estado de producto a partir del código sin adjudicar retrospectivamente su trabajo a miembros concretos sin evidencia. Los autores de los cambios documentales y sus secciones se detallan en Project Report Collaboration Insights, junto con los enlaces y capturas de GitHub; esa atribución documental se distingue del trabajo de programación del sprint.
+
+
+**Evidencia de colaboración en repositorios de implementación.** Las capturas corresponden al 30/10/2026 y muestran el periodo acumulado de GitHub, no un intervalo de Sprint 1 validado por acta.
+
+[Analíticos de frontend-web](https://github.com/Tale-Star/frontend-web/graphs/contributors)
+
+![Analíticos reales de GitHub: frontend-web](imgs/evidence/github-frontend-web-contributors-2026-10-30.png)
+
+[Commits de frontend-web](https://github.com/Tale-Star/frontend-web/commits/main/)
+
+![Commits reales de GitHub: frontend-web](imgs/evidence/github-frontend-web-commits-2026-10-30.png)
+
+[Analíticos de backend](https://github.com/Tale-Star/backend/graphs/contributors)
+
+![Analíticos reales de GitHub: backend](imgs/evidence/github-backend-contributors-2026-10-30.png)
+
+[Commits de backend](https://github.com/Tale-Star/backend/commits/main/)
+
+![Commits reales de GitHub: backend](imgs/evidence/github-backend-commits-2026-10-30.png)
 
 ### 7.2.2. Sprint 2
 
@@ -3658,6 +4351,8 @@ No se encontró evidencia específica de colaboración de Sprint 2 que permita a
 3. La Landing Page está publicada en GitHub Pages y comunica la propuesta y capacidades principales. Sus CTA para ingresar a la Web Application o descargar la aplicación móvil aún indican *Próximamente*, pues esos destinos no están publicados.
 4. La configuración de despliegue de API y worker existe en Docker Compose, pero no se verificó una publicación pública del frontend web o backend. La inferencia real requiere resolver ejecución de modelos, cómputo y persistencia adecuados para una instancia desplegada.
 5. La lectura AR móvil continúa como diseño conceptual. Los wireflows, mock-ups y prototipo navegable ayudan a revisar la interacción, pero no equivalen a un cliente móvil ni a una experiencia AR implementada. No se encontraron resultados de validación del producto con usuarios para este corte.
+
+6. La revisión de Hito 3 completa la especificación táctica objetivo y la trazabilidad de interacción mediante doce recorridos por persona. Los agregados, Value Objects y handlers propuestos definen una refactorización pendiente y no modifican el estado de implementación o despliegue descrito en esta entrega.
 
 **Recomendaciones**
 
@@ -3824,3 +4519,22 @@ La Landing Page de Tale Star está publicada en [GitHub Pages](https://tale-star
 <p align="center"><img src="imgs/style/landing-mobile.png" alt="Landing Page publicada de Tale Star en vista móvil responsive" title="Landing Page — móvil responsive" width="320" /></p>
 
 <p align="center"><em>Vista móvil responsive de la misma Landing Page publicada.</em></p>
+
+
+<a id="anexo-e-trazabilidad-de-correcciones"></a>
+## Anexo E. Trazabilidad de correcciones de Hito 3
+
+| Observación | Corrección o estado documentado |
+| :--- | :--- |
+| Domain Layer y repositorios | 5.1–5.4 presentan modelos objetivo con raíces de agregado, Entities, Value Objects, factories, Domain Services y repositorios en Domain. Se mantienen identificados los modelos del código existente para no confundir diseño con implementación. |
+| Command Handlers y Event Handlers | Cada Application Layer especifica casos de uso, eventos, handlers, transacciones e idempotencia; los diagramas de componentes explican la colaboración. Su implementación aún requiere refactorización del backend. |
+| Flujos por User Persona | Doce objetivos para Valeria Torres y Daniela Rojas, con doce wireflows y doce user flows, pantallas, condiciones y recuperación. Prototipo correspondiente en 6.5. |
+| Collaboration Insights | URL del informe, tabla de commits por autor y capturas reales de analíticos/commits en docs, frontend-web y backend. |
+| Registro y Student Outcome | Aportes por autor en TB1/TP1/Hito 3; distinción de seis commits iniciales y correcciones posteriores. Acciones y conclusiones acumulativas y párrafo del Anexo A del Statement. |
+| Numeración UX | Se documenta equivalencia entre la lista de Hito 3 y la numeración sin duplicados del ejemplo. |
+| Prototipos | Recorridos locales y MP4 de web/móvil disponibles; publicación en Microsoft Stream pendiente. |
+| Despliegue | Landing pública; Web Application/API y ejecución de modelos reales no acreditadas públicamente. Las capturas locales no resuelven este requisito del Statement. |
+| Validación y About-the-Product | Secciones 7.3 y 7.4 reservadas vacías por alcance acordado. |
+| Planificación y pruebas | Se conserva la reconstrucción del sprint y el inventario de pruebas; actas, tablero histórico y resultados de suites siguen sin aportarse. |
+
+La revisión corrige artefactos de diseño y comunicación. Las evidencias de despliegue, aceptación, ejecución de modelos y publicación institucional requieren actividades reales adicionales; no se sustituyen por capturas del prototipo ni por una afirmación de cumplimiento total.

@@ -1,0 +1,33 @@
+classDiagram
+    class LibraryItem {
+        <<AggregateRoot>>
+        +id
+        +updateMetadata(title)
+        +setFavorite(state)
+    }
+    class LibraryMetadata {
+        <<Entity>>
+        +id
+    }
+    class ResourceReference {
+        <<ValueObject>>
+        +validate()
+    }
+    class LibraryItemFactory {
+        <<Factory>>
+        +create()
+    }
+    class LibraryAdmissionPolicy {
+        <<DomainService>>
+        +validate()
+    }
+    class LibraryRepository {
+        <<interface>>
+        +get(id)
+        +save(aggregate)
+    }
+    LibraryItem "1" *-- "1" LibraryMetadata : controls
+    LibraryItem --> ResourceReference : uses
+    LibraryItemFactory ..> LibraryItem : creates
+    LibraryAdmissionPolicy ..> LibraryItem : validates
+    LibraryRepository ..> LibraryItem : persists

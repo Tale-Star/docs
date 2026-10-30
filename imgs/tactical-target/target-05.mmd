@@ -1,0 +1,34 @@
+classDiagram
+    class GenerationJob {
+        <<AggregateRoot>>
+        +id
+        +markProcessing()
+        +markSucceeded(result)
+        +markFailed(reason)
+    }
+    class GenerationAttempt {
+        <<Entity>>
+        +id
+    }
+    class GenerationRequest {
+        <<ValueObject>>
+        +validate()
+    }
+    class GenerationJobFactory {
+        <<Factory>>
+        +create()
+    }
+    class GenerationPolicy {
+        <<DomainService>>
+        +validate()
+    }
+    class GenerationJobRepository {
+        <<interface>>
+        +get(id)
+        +save(aggregate)
+    }
+    GenerationJob "1" *-- "0..*" GenerationAttempt : controls
+    GenerationJob --> GenerationRequest : uses
+    GenerationJobFactory ..> GenerationJob : creates
+    GenerationPolicy ..> GenerationJob : validates
+    GenerationJobRepository ..> GenerationJob : persists

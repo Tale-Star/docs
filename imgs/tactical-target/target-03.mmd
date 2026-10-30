@@ -1,0 +1,34 @@
+classDiagram
+    class Story {
+        <<AggregateRoot>>
+        +id
+        +addPage(pageNumber, scene)
+        +updatePage(pageId, changes)
+        +removePage(pageId)
+    }
+    class StoryPage {
+        <<Entity>>
+        +id
+    }
+    class PageNumber {
+        <<ValueObject>>
+        +validate()
+    }
+    class StoryFactory {
+        <<Factory>>
+        +create()
+    }
+    class NarrativeReferencePolicy {
+        <<DomainService>>
+        +validate()
+    }
+    class StoryRepository {
+        <<interface>>
+        +get(id)
+        +save(aggregate)
+    }
+    Story "1" *-- "0..*" StoryPage : controls
+    Story --> PageNumber : uses
+    StoryFactory ..> Story : creates
+    NarrativeReferencePolicy ..> Story : validates
+    StoryRepository ..> Story : persists

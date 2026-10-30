@@ -1,0 +1,34 @@
+erDiagram
+    OUTBOX_EVENTS {
+        uuid event_id PK
+        uuid aggregate_id
+        string context
+        string event_type
+        integer aggregate_version
+        text payload_json
+        datetime occurred_at
+        datetime published_at
+    }
+    PROCESSED_EVENTS {
+        string consumer_id PK
+        uuid event_id PK, FK
+        datetime processed_at
+    }
+    COMMAND_RECEIPTS {
+        uuid owner_id PK
+        uuid request_id PK
+        string command_type
+        string payload_digest
+        text result_reference
+        datetime completed_at
+    }
+    GENERATION_JOBS ||--o{ GENERATION_ATTEMPTS : records
+    GENERATION_ATTEMPTS {
+        uuid id PK
+        uuid job_id FK
+        integer attempt_number
+        datetime started_at
+        datetime completed_at
+        string status
+    }
+    OUTBOX_EVENTS ||--o{ PROCESSED_EVENTS : consumed_by

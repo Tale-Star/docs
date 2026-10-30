@@ -1,0 +1,428 @@
+[
+  {
+    "key": "access",
+    "label": "Acceder a mi espacio",
+    "us": "US01–US02",
+    "screens": [
+      "Login",
+      "Register",
+      "Home"
+    ],
+    "steps": [
+      "Identificar acceso",
+      "Registrar cuenta si es nueva",
+      "Entrar al espacio autenticado"
+    ],
+    "error": "Correo ya registrado o credenciales inválidas: corregir datos o volver al inicio de sesión; nunca mostrar información privada.",
+    "recovery": "Volver al formulario y corregir los datos",
+    "goals": [
+      "acceder a mi espacio personal para preparar recursos para el niño bajo mi supervisión",
+      "acceder a mi espacio de trabajo para preparar materiales de clase con mi cuenta"
+    ],
+    "pre": "Adulto sin sesión; cuenta nueva o existente.",
+    "success": "La sesión identifica al adulto y habilita las rutas protegidas.",
+    "id": "P01",
+    "persona": "Valeria Torres",
+    "role": "padre o cuidador",
+    "goal": "Como padre o cuidador, quiero acceder a mi espacio personal para preparar recursos para el niño bajo mi supervisión.",
+    "mobile": false,
+    "images": [
+      "../../imgs/Mockups/Login.png",
+      "../../imgs/Mockups/Register.svg",
+      "../../imgs/Mockups/Home.png"
+    ]
+  },
+  {
+    "key": "story",
+    "label": "Crear y guardar un cuento",
+    "us": "US26–US41",
+    "screens": [
+      "Home",
+      "StoryCreator",
+      "ImageGenerator",
+      "GenerationResult",
+      "ContentLibrary"
+    ],
+    "steps": [
+      "Abrir cuentos",
+      "Escribir páginas y escena",
+      "Solicitar ilustración",
+      "Revisar o regenerar",
+      "Guardar referencia opcional"
+    ],
+    "error": "Falla la generación o el resultado no es adecuado: conservar el texto, ajustar la escena y solicitar una nueva ilustración.",
+    "recovery": "Ajustar la escena y volver a generar",
+    "goals": [
+      "crear un cuento sobre un tema que interese al niño y revisarlo antes de leer juntos",
+      "crear un cuento alineado con el tema de clase y revisar sus páginas antes de utilizarlo"
+    ],
+    "pre": "Sesión adulta; historia nueva o existente propia.",
+    "success": "Texto y páginas guardados; la biblioteca contiene una referencia solo si el adulto la solicita.",
+    "id": "P02",
+    "persona": "Valeria Torres",
+    "role": "padre o cuidador",
+    "goal": "Como padre o cuidador, quiero crear un cuento sobre un tema que interese al niño y revisarlo antes de leer juntos.",
+    "mobile": false,
+    "images": [
+      "../../imgs/Mockups/Home.png",
+      "../../imgs/Mockups/StoryCreator.png",
+      "../../imgs/Mockups/ImageGenerator.png",
+      "../../imgs/Mockups/GenerationResult.png",
+      "../../imgs/Mockups/ContentLibrary.png"
+    ]
+  },
+  {
+    "key": "image",
+    "label": "Preparar una imagen",
+    "us": "US05–US25",
+    "screens": [
+      "Home",
+      "ImageGenerator",
+      "GenerationResult",
+      "ContentLibrary"
+    ],
+    "steps": [
+      "Elegir imágenes",
+      "Describir el recurso",
+      "Revisar el resultado",
+      "Guardar en biblioteca"
+    ],
+    "error": "Solicitud inválida, error del trabajo o imagen inadecuada: corregir descripción y volver a solicitar; guardar requiere confirmación.",
+    "recovery": "Corregir descripción y reintentar",
+    "goals": [
+      "obtener una imagen sencilla que me ayude a explicar un tema al niño",
+      "preparar una imagen relacionada con el objetivo de aprendizaje de mi clase"
+    ],
+    "pre": "Sesión adulta y una descripción del recurso deseado.",
+    "success": "El adulto revisa la imagen y decide conservar una referencia del resultado.",
+    "id": "P03",
+    "persona": "Valeria Torres",
+    "role": "padre o cuidador",
+    "goal": "Como padre o cuidador, quiero obtener una imagen sencilla que me ayude a explicar un tema al niño.",
+    "mobile": false,
+    "images": [
+      "../../imgs/Mockups/Home.png",
+      "../../imgs/Mockups/ImageGenerator.png",
+      "../../imgs/Mockups/GenerationResult.png",
+      "../../imgs/Mockups/ContentLibrary.png"
+    ]
+  },
+  {
+    "key": "music",
+    "label": "Preparar una canción",
+    "us": "US42–US62",
+    "screens": [
+      "Home",
+      "MusicCreator",
+      "MusicResult",
+      "ContentLibrary"
+    ],
+    "steps": [
+      "Elegir música",
+      "Definir tema y duración",
+      "Escuchar y revisar",
+      "Conservar el recurso"
+    ],
+    "error": "La canción falla o no se ajusta al tema: editar la configuración y reintentar; no reproducir automáticamente ante el niño.",
+    "recovery": "Ajustar tema o duración y regenerar",
+    "goals": [
+      "preparar una canción breve para reforzar un tema durante una actividad compartida",
+      "preparar una canción breve para reforzar el tema de la sesión con mis estudiantes"
+    ],
+    "pre": "Sesión adulta; tema y duración definidos.",
+    "success": "La revisión adulta precede al uso del audio y su guardado opcional.",
+    "id": "P04",
+    "persona": "Valeria Torres",
+    "role": "padre o cuidador",
+    "goal": "Como padre o cuidador, quiero preparar una canción breve para reforzar un tema durante una actividad compartida.",
+    "mobile": false,
+    "images": [
+      "../../imgs/Mockups/Home.png",
+      "../../imgs/Mockups/MusicCreator.svg",
+      "../../imgs/Mockups/MusicResult.svg",
+      "../../imgs/Mockups/ContentLibrary.png"
+    ]
+  },
+  {
+    "key": "library",
+    "label": "Recuperar un recurso",
+    "us": "US63–US75",
+    "screens": [
+      "Home",
+      "ContentLibrary",
+      "GenerationResult"
+    ],
+    "steps": [
+      "Abrir biblioteca",
+      "Buscar y seleccionar",
+      "Revisar antes de reutilizar"
+    ],
+    "error": "No hay coincidencias o el recurso no está disponible: limpiar filtros, volver a la lista o ir a creación.",
+    "recovery": "Limpiar búsqueda y volver a biblioteca",
+    "goals": [
+      "encontrar un recurso que guardé para reutilizarlo con el niño",
+      "recuperar material guardado para reutilizarlo en una nueva actividad de clase"
+    ],
+    "pre": "Sesión adulta; puede existir una biblioteca vacía.",
+    "success": "Se localiza un recurso propio o se ofrece una acción comprensible para crear uno.",
+    "id": "P05",
+    "persona": "Valeria Torres",
+    "role": "padre o cuidador",
+    "goal": "Como padre o cuidador, quiero encontrar un recurso que guardé para reutilizarlo con el niño.",
+    "mobile": false,
+    "images": [
+      "../../imgs/Mockups/Home.png",
+      "../../imgs/Mockups/ContentLibrary.png",
+      "../../imgs/Mockups/GenerationResult.png"
+    ]
+  },
+  {
+    "key": "ar",
+    "label": "Leer un cuento en AR",
+    "us": "US85–US90",
+    "screens": [
+      "MobileStoryReader",
+      "MobileARCamera",
+      "MobileARStoryReader",
+      "MobileStoryReader"
+    ],
+    "steps": [
+      "Abrir cuento guardado",
+      "Permitir cámara y detectar superficie",
+      "Colocar y leer páginas",
+      "Volver a lectura convencional"
+    ],
+    "error": "Sin permiso de cámara o superficie detectable: explicar la causa, reintentar el escaneo o continuar leyendo sin AR.",
+    "recovery": "Volver a lectura sin cámara",
+    "goals": [
+      "acompañar al niño en una lectura aumentada con posibilidad de volver al lector convencional",
+      "presentar una lectura aumentada durante una actividad guiada sin depender de la cámara para continuar"
+    ],
+    "pre": "Diseño móvil futuro; cuento disponible y adulto acompañante.",
+    "success": "El lector conserva salida hacia lectura convencional. Flujo conceptual, no app móvil implementada.",
+    "id": "P06",
+    "persona": "Valeria Torres",
+    "role": "padre o cuidador",
+    "goal": "Como padre o cuidador, quiero acompañar al niño en una lectura aumentada con posibilidad de volver al lector convencional.",
+    "mobile": true,
+    "images": [
+      "../../imgs/Mockups/MobileStoryReader.png",
+      "../../imgs/Mockups/MobileARCamera.png",
+      "../../imgs/Mockups/MobileARStoryReader.png",
+      "../../imgs/Mockups/MobileStoryReader.png"
+    ]
+  },
+  {
+    "key": "access",
+    "label": "Acceder a mi espacio",
+    "us": "US01–US02",
+    "screens": [
+      "Login",
+      "Register",
+      "Home"
+    ],
+    "steps": [
+      "Identificar acceso",
+      "Registrar cuenta si es nueva",
+      "Entrar al espacio autenticado"
+    ],
+    "error": "Correo ya registrado o credenciales inválidas: corregir datos o volver al inicio de sesión; nunca mostrar información privada.",
+    "recovery": "Volver al formulario y corregir los datos",
+    "goals": [
+      "acceder a mi espacio personal para preparar recursos para el niño bajo mi supervisión",
+      "acceder a mi espacio de trabajo para preparar materiales de clase con mi cuenta"
+    ],
+    "pre": "Adulto sin sesión; cuenta nueva o existente.",
+    "success": "La sesión identifica al adulto y habilita las rutas protegidas.",
+    "id": "D01",
+    "persona": "Daniela Rojas",
+    "role": "docente",
+    "goal": "Como docente, quiero acceder a mi espacio de trabajo para preparar materiales de clase con mi cuenta.",
+    "mobile": false,
+    "images": [
+      "../../imgs/Mockups/Login.png",
+      "../../imgs/Mockups/Register.svg",
+      "../../imgs/Mockups/Home.png"
+    ]
+  },
+  {
+    "key": "story",
+    "label": "Crear y guardar un cuento",
+    "us": "US26–US41",
+    "screens": [
+      "Home",
+      "StoryCreator",
+      "ImageGenerator",
+      "GenerationResult",
+      "ContentLibrary"
+    ],
+    "steps": [
+      "Abrir cuentos",
+      "Escribir páginas y escena",
+      "Solicitar ilustración",
+      "Revisar o regenerar",
+      "Guardar referencia opcional"
+    ],
+    "error": "Falla la generación o el resultado no es adecuado: conservar el texto, ajustar la escena y solicitar una nueva ilustración.",
+    "recovery": "Ajustar la escena y volver a generar",
+    "goals": [
+      "crear un cuento sobre un tema que interese al niño y revisarlo antes de leer juntos",
+      "crear un cuento alineado con el tema de clase y revisar sus páginas antes de utilizarlo"
+    ],
+    "pre": "Sesión adulta; historia nueva o existente propia.",
+    "success": "Texto y páginas guardados; la biblioteca contiene una referencia solo si el adulto la solicita.",
+    "id": "D02",
+    "persona": "Daniela Rojas",
+    "role": "docente",
+    "goal": "Como docente, quiero crear un cuento alineado con el tema de clase y revisar sus páginas antes de utilizarlo.",
+    "mobile": false,
+    "images": [
+      "../../imgs/Mockups/Home.png",
+      "../../imgs/Mockups/StoryCreator.png",
+      "../../imgs/Mockups/ImageGenerator.png",
+      "../../imgs/Mockups/GenerationResult.png",
+      "../../imgs/Mockups/ContentLibrary.png"
+    ]
+  },
+  {
+    "key": "image",
+    "label": "Preparar una imagen",
+    "us": "US05–US25",
+    "screens": [
+      "Home",
+      "ImageGenerator",
+      "GenerationResult",
+      "ContentLibrary"
+    ],
+    "steps": [
+      "Elegir imágenes",
+      "Describir el recurso",
+      "Revisar el resultado",
+      "Guardar en biblioteca"
+    ],
+    "error": "Solicitud inválida, error del trabajo o imagen inadecuada: corregir descripción y volver a solicitar; guardar requiere confirmación.",
+    "recovery": "Corregir descripción y reintentar",
+    "goals": [
+      "obtener una imagen sencilla que me ayude a explicar un tema al niño",
+      "preparar una imagen relacionada con el objetivo de aprendizaje de mi clase"
+    ],
+    "pre": "Sesión adulta y una descripción del recurso deseado.",
+    "success": "El adulto revisa la imagen y decide conservar una referencia del resultado.",
+    "id": "D03",
+    "persona": "Daniela Rojas",
+    "role": "docente",
+    "goal": "Como docente, quiero preparar una imagen relacionada con el objetivo de aprendizaje de mi clase.",
+    "mobile": false,
+    "images": [
+      "../../imgs/Mockups/Home.png",
+      "../../imgs/Mockups/ImageGenerator.png",
+      "../../imgs/Mockups/GenerationResult.png",
+      "../../imgs/Mockups/ContentLibrary.png"
+    ]
+  },
+  {
+    "key": "music",
+    "label": "Preparar una canción",
+    "us": "US42–US62",
+    "screens": [
+      "Home",
+      "MusicCreator",
+      "MusicResult",
+      "ContentLibrary"
+    ],
+    "steps": [
+      "Elegir música",
+      "Definir tema y duración",
+      "Escuchar y revisar",
+      "Conservar el recurso"
+    ],
+    "error": "La canción falla o no se ajusta al tema: editar la configuración y reintentar; no reproducir automáticamente ante el niño.",
+    "recovery": "Ajustar tema o duración y regenerar",
+    "goals": [
+      "preparar una canción breve para reforzar un tema durante una actividad compartida",
+      "preparar una canción breve para reforzar el tema de la sesión con mis estudiantes"
+    ],
+    "pre": "Sesión adulta; tema y duración definidos.",
+    "success": "La revisión adulta precede al uso del audio y su guardado opcional.",
+    "id": "D04",
+    "persona": "Daniela Rojas",
+    "role": "docente",
+    "goal": "Como docente, quiero preparar una canción breve para reforzar el tema de la sesión con mis estudiantes.",
+    "mobile": false,
+    "images": [
+      "../../imgs/Mockups/Home.png",
+      "../../imgs/Mockups/MusicCreator.svg",
+      "../../imgs/Mockups/MusicResult.svg",
+      "../../imgs/Mockups/ContentLibrary.png"
+    ]
+  },
+  {
+    "key": "library",
+    "label": "Recuperar un recurso",
+    "us": "US63–US75",
+    "screens": [
+      "Home",
+      "ContentLibrary",
+      "GenerationResult"
+    ],
+    "steps": [
+      "Abrir biblioteca",
+      "Buscar y seleccionar",
+      "Revisar antes de reutilizar"
+    ],
+    "error": "No hay coincidencias o el recurso no está disponible: limpiar filtros, volver a la lista o ir a creación.",
+    "recovery": "Limpiar búsqueda y volver a biblioteca",
+    "goals": [
+      "encontrar un recurso que guardé para reutilizarlo con el niño",
+      "recuperar material guardado para reutilizarlo en una nueva actividad de clase"
+    ],
+    "pre": "Sesión adulta; puede existir una biblioteca vacía.",
+    "success": "Se localiza un recurso propio o se ofrece una acción comprensible para crear uno.",
+    "id": "D05",
+    "persona": "Daniela Rojas",
+    "role": "docente",
+    "goal": "Como docente, quiero recuperar material guardado para reutilizarlo en una nueva actividad de clase.",
+    "mobile": false,
+    "images": [
+      "../../imgs/Mockups/Home.png",
+      "../../imgs/Mockups/ContentLibrary.png",
+      "../../imgs/Mockups/GenerationResult.png"
+    ]
+  },
+  {
+    "key": "ar",
+    "label": "Leer un cuento en AR",
+    "us": "US85–US90",
+    "screens": [
+      "MobileStoryReader",
+      "MobileARCamera",
+      "MobileARStoryReader",
+      "MobileStoryReader"
+    ],
+    "steps": [
+      "Abrir cuento guardado",
+      "Permitir cámara y detectar superficie",
+      "Colocar y leer páginas",
+      "Volver a lectura convencional"
+    ],
+    "error": "Sin permiso de cámara o superficie detectable: explicar la causa, reintentar el escaneo o continuar leyendo sin AR.",
+    "recovery": "Volver a lectura sin cámara",
+    "goals": [
+      "acompañar al niño en una lectura aumentada con posibilidad de volver al lector convencional",
+      "presentar una lectura aumentada durante una actividad guiada sin depender de la cámara para continuar"
+    ],
+    "pre": "Diseño móvil futuro; cuento disponible y adulto acompañante.",
+    "success": "El lector conserva salida hacia lectura convencional. Flujo conceptual, no app móvil implementada.",
+    "id": "D06",
+    "persona": "Daniela Rojas",
+    "role": "docente",
+    "goal": "Como docente, quiero presentar una lectura aumentada durante una actividad guiada sin depender de la cámara para continuar.",
+    "mobile": true,
+    "images": [
+      "../../imgs/Mockups/MobileStoryReader.png",
+      "../../imgs/Mockups/MobileARCamera.png",
+      "../../imgs/Mockups/MobileARStoryReader.png",
+      "../../imgs/Mockups/MobileStoryReader.png"
+    ]
+  }
+]
