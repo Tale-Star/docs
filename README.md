@@ -3324,25 +3324,20 @@ Los mock-ups son la versión de alta fidelidad de los wireframes. Se construyero
 La vista previa del hero reproduce la escena de "Vista previa" de la Web App. Así, el visitante ve el tipo de resultado que obtendrá antes de registrarse.
 
 <a id="633-landing-page-implementation-screenshots"></a>
+
 ### 6.3.3. Landing Page Implementation Screenshots
 
-Las siguientes capturas muestran la landing publicada en GitHub Pages después del arreglo de sus destinos de navegación. Son capturas de la implementación ejecutándose en Chromium, no wireframes ni mock-ups; se tomó la página completa para documentar el orden y la adaptación de sus secciones. En la vista móvil se usó un viewport de 390 × 844 px y se verificó que el documento no excediera los 390 px de ancho.
+Las capturas siguientes se tomaron el **30 de octubre de 2026** desde la landing publicada en [GitHub Pages](https://tale-star.github.io/landing-page/). Corresponden a la página implementada, no a un wireframe. Se registraron los viewports de escritorio (1440 × 900 px) y móvil (390 × 844 px) en Chromium.
 
-**Implementación en desktop (viewport de 1440 × 900 px).** La captura muestra el hero en dos columnas, las grillas de problemas, segmentos, funcionalidades y pasos, la banda de app móvil, el CTA final y el footer. Los CTA de acceso y descarga aparecen deshabilitados como *Próximamente* mientras no haya URLs públicas configuradas.
+**Escritorio — 1440 × 900 px.** Se observan la navegación, el hero y las secciones de problema, segmentos, funcionalidades y pasos. Las acciones de acceso y descarga indican *Próximamente*: sus destinos públicos aún no están configurados.
 
-<p align="center">
-  <img src="imgs/landing/landingResponsiveDesktop.png" alt="Captura completa de la landing implementada en viewport desktop de 1440 píxeles" title="Landing Page — Implementación responsive desktop" width="850" />
-</p>
+<p align="center"><img src="imgs/evidence/landing-desktop-2026-10-30.png" alt="Landing Page publicada, viewport de escritorio 1440 por 900, captura del 30 de octubre de 2026" title="Landing Page — desktop, 30/10/2026" width="850" /></p>
 
-**Implementación responsive en móvil (viewport de 390 × 844 px).** La captura muestra el menú hamburguesa, el hero apilado y las secciones en una sola columna; el ancho de contenido permanece dentro del viewport y los CTA sin destino público se presentan como *Próximamente*.
+**Móvil — 390 × 844 px.** La navegación se adapta al ancho reducido y las secciones se apilan en una columna. Los CTA siguen indicando *Próximamente*.
 
-<p align="center">
-  <img src="imgs/landing/landingResponsiveMobile.png" alt="Captura completa de la landing implementada y responsive en viewport móvil de 390 píxeles" title="Landing Page — Implementación responsive móvil" width="320" />
-</p>
+<p align="center"><img src="imgs/evidence/landing-mobile-2026-10-30.png" alt="Landing Page publicada, viewport móvil 390 por 844, captura del 30 de octubre de 2026" title="Landing Page — mobile, 30/10/2026" width="320" /></p>
 
-La comparación de ambas capturas confirma que la estructura se adapta por ancho de viewport: la navegación cambia a menú hamburguesa y las grillas pasan a una columna en móvil, mientras se conserva el orden visual del recorrido.
-
----
+Las capturas documentan el estado público en esa fecha. No demuestran que la Web Application ni la API estén desplegadas; esos componentes se ejecutaron localmente para la evidencia de Sprint 1.
 
 <a id="64-applications-uxui-design"></a>
 ## 6.4. Applications UX/UI Design
@@ -3380,19 +3375,24 @@ Estas pantallas verticales proponen el consumo de una historia guardada: lectura
 <p align="center"><img src="imgs/UX-UI/MobileARStoryReader.png" alt="Wireframe móvil propuesto: página de cuento en realidad aumentada" title="Mobile wireframe — AR Story Reader (planned)" width="220" /></p>
 
 <a id="642-applications-wireflow-diagrams"></a>
+
 ### 6.4.2. Applications Wireflow Diagrams
 
-El primer wireflow conecta las pantallas web de la tarea de autoría. Hace visible el paso desde el acceso hasta la creación, solicitud de imagen, revisión y biblioteca; cada marco corresponde a una vista de baja fidelidad.
+#### Web Application — creación y conservación de una historia
 
-<p align="center"><img src="imgs/Wireflow/StoryCreation.png" alt="Wireflow web: acceso, panel, editor de historia, generador, resultado y biblioteca" title="Web wireflow — Story Creation" width="100%" /></p>
+**User Goal:** Como padre, cuidador o docente, quiero crear una historia ilustrada, revisar sus páginas y guardar el resultado que considero útil, para preparar un recurso educativo personalizado.
 
-El recorrido enlaza **Login → Home/Dashboard → Story Creator → Image Generator → Generation Result → Content Library**. La pantalla de resultado permite volver a configurar la generación; la biblioteca aparece como destino para la referencia que el adulto decide conservar.
+<p align="center"><img src="imgs/Wireflow/StoryCreation.png" alt="Wireflow web de autoría: acceso, panel, editor, generador de imagen, revisión y biblioteca" title="Web wireflow — Story Creation" width="100%" /></p>
 
-El segundo wireflow describe una experiencia móvil planificada, no una capacidad disponible en la Web Application. El adulto o lector abre una historia, inicia la cámara, detecta una superficie y coloca la página en la vista AR.
+El flujo inicia en **Login** o en el registro; un registro exitoso crea la sesión y lleva al usuario al área autenticada. Desde **Home/Dashboard**, crea o abre una historia, define el título y configura páginas con texto, personajes y detalles de la escena. Luego solicita una ilustración, espera el resultado asíncrono y decide si la conserva o vuelve a ajustar la solicitud. El guardado en **Content Library** es una acción separada y opcional. La respuesta visual esperada es la página actualizada y, al concluir la generación, el recurso disponible para revisión. Si falla la solicitud, el usuario puede corregirla o volver a intentarlo; la evidencia de este flujo corresponde a la Web Application existente.
 
-<p align="center"><img src="imgs/Wireflow/ARStoryExperience.png" alt="Wireflow móvil propuesto: lector, cámara AR y página de historia colocada" title="Mobile wireflow — AR Story Experience (planned)" width="100%" /></p>
+#### Aplicación móvil prevista — lectura con realidad aumentada
 
-La secuencia **Mobile Story Reader → Open AR / AR Camera → Detect Surface / Place Story / AR Reader** comunica la transición entre lectura tradicional y lectura aumentada; depende de la futura aplicación móvil y no debe interpretarse como funcionalidad desplegada.
+**User Goal:** Como padre o docente, quiero colocar una página de una historia guardada sobre una superficie del entorno y navegarla en AR, para acompañar una experiencia de lectura compartida.
+
+<p align="center"><img src="imgs/Wireflow/ARStoryExperience.png" alt="Wireflow móvil propuesto: lector, cámara, detección de superficie y lector AR" title="Mobile wireflow — AR Story Experience (planned)" width="100%" /></p>
+
+La propuesta parte del lector móvil, abre la cámara, detecta una superficie plana y coloca la página para continuar la lectura. Si no se detecta una superficie, la interacción debe permitir reintentar o regresar al lector. El flujo es **diseño conceptual**: el repositorio móvil no ofrece una implementación publicada de cámara, detección de superficie ni navegación AR y no se presenta como funcionalidad ejecutable.
 
 <a id="643-applications-mock-ups"></a>
 ### 6.4.3. Applications Mock-ups
@@ -3436,28 +3436,16 @@ El siguiente flujo es una propuesta para lectura móvil con realidad aumentada. 
 Este recorrido es conceptual: el repositorio móvil no implementa el flujo AR y el backend no expone un runtime AR.
 
 <a id="65-applications-prototyping"></a>
+
 ## 6.5. Applications Prototyping
 
-Los prototipos visuales presentan una secuencia de autoría web y una secuencia conceptual de lectura móvil con AR. Son pantallas de diseño para comunicar interacciones y continuidad; las pantallas móviles no acreditan una implementación publicada.
+Se preparó un prototipo navegable local para revisar las secuencias web y móvil. [Abrir el prototipo de aplicaciones](prototypes/applications/index.html). La navegación admite botones, indicadores de paso y teclado; no llama a la API ni guarda información. En el recorrido web, las pantallas son exportaciones estáticas de los mock-ups existentes. El recorrido móvil permite navegar la propuesta AR y está rotulado como experiencia futura.
 
-#### Prototipo de autoría web
+<p align="center"><img src="imgs/evidence/prototype-web-image-step.png" alt="Prototipo navegable web, paso de configuración de imagen" title="Web prototype — image step" width="850" /></p>
 
-El recorrido web enlaza acceso, panel, editor de historias, configuración de imagen, revisión de la imagen generada y biblioteca. La secuencia ayuda a revisar si las acciones de crear, revisar y conservar tienen continuidad.
+<p align="center"><img src="imgs/evidence/prototype-mobile-ar-step.png" alt="Prototipo navegable móvil, paso conceptual de lectura AR" title="Mobile prototype — AR step (planned)" width="320" /></p>
 
-<p align="center"><img src="imgs/ApplicationsPrototype/Login.png" alt="Prototipo web de escritorio: inicio de sesión" title="Web prototype — Login" width="700" /></p>
-<p align="center"><img src="imgs/ApplicationsPrototype/Home.png" alt="Prototipo web de escritorio: panel principal" title="Web prototype — Home" width="700" /></p>
-<p align="center"><img src="imgs/ApplicationsPrototype/StoryCreator.png" alt="Prototipo web de escritorio: editor de historias" title="Web prototype — Story Creator" width="700" /></p>
-<p align="center"><img src="imgs/ApplicationsPrototype/ImageGenerator.png" alt="Prototipo web de escritorio: configuración del generador" title="Web prototype — Image Generator" width="700" /></p>
-<p align="center"><img src="imgs/ApplicationsPrototype/ImageGenerated.png" alt="Prototipo web de escritorio: revisión de ilustración generada" title="Web prototype — Generated Image" width="700" /></p>
-<p align="center"><img src="imgs/ApplicationsPrototype/ContentLibrary.png" alt="Prototipo web de escritorio: biblioteca de contenido" title="Web prototype — Content Library" width="700" /></p>
-
-#### Prototipo móvil de lectura AR — propuesta
-
-Las tres pantallas móviles muestran cómo abrir la lectura AR, usar la cámara para situar una página y salir de esa experiencia. Se documentan como interacción futura; no hay un cliente móvil publicado que implemente estos pasos.
-
-<p align="center"><img src="imgs/ApplicationsPrototype/OpenAR.png" alt="Prototipo móvil propuesto: abrir la experiencia AR" title="Mobile prototype — Open AR (planned)" width="220" /></p>
-<p align="center"><img src="imgs/ApplicationsPrototype/AR.png" alt="Prototipo móvil propuesto: lectura de una página en realidad aumentada" title="Mobile prototype — AR Reader (planned)" width="220" /></p>
-<p align="center"><img src="imgs/ApplicationsPrototype/ExitAR.png" alt="Prototipo móvil propuesto: salir de la lectura AR" title="Mobile prototype — Exit AR (planned)" width="220" /></p>
+El prototipo es un recurso de revisión de interacción, no evidencia de que la experiencia AR esté implementada ni de que haya sido validada con usuarios. El Final Project Statement solicita acompañar el prototipo con una grabación y un enlace de Microsoft Stream; no se encontró esa grabación ni URL entre los materiales recibidos o los repositorios consultados (Universidad Peruana de Ciencias Aplicadas, 2026e). Se debe añadir aquí el vínculo real cuando el equipo publique el video.
 
 <a id="capitulo-vii-product-implementation-validation-deployment"></a>
 # Capítulo VII: Product Implementation, Validation & Deployment
