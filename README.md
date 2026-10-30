@@ -311,7 +311,9 @@ En el siguiente cuadro se describen las acciones y conclusiones del grupo que pe
 | **Fabiola Dayane Becerra Llempen** | `docs: document deployment and report conclusions` — documentó el estado de despliegue, colaboración de sprint, alcance de Sprint 2 y conclusiones/recomendaciones. | Sintetizó el estado de disponibilidad y las limitaciones del producto para comunicar resultados y próximos pasos de forma objetiva. |
 | **Mariano Moises Oblitas Davila** | `docs: add course references and repo appendix` — añadió referencias del curso y documentación técnica, y completó el anexo de repositorios. El usuario confirmó que su cuenta es `vr700`. | Organizó por escrito las fuentes y ubicaciones del código para que el lector pueda verificar el informe y sus artefactos. |
 
-Los seis commits documentales aportan evidencia de comunicación escrita del equipo para Hito 3. La evidencia oral de este hito sigue pendiente; por ello, el logro del Student Outcome debe valorarse con ambos criterios y no inferirse únicamente de los commits o del informe. La Rúbrica de Logro del curso sirve para contrastar el desempeño y no para inferir una calificación automática a partir de la existencia del documento.
+Los seis commits documentales aportan evidencia de comunicación escrita del equipo para Hito 3. La evidencia oral de este hito sigue pendiente; por ello, el logro del Student Outcome debe valorarse con ambos criterios y no inferirse únicamente de los commits o del informe.
+
+La Rúbrica de Logro del curso sirve para contrastar el desempeño y la evidencia, no para inferir una calificación automática a partir de la existencia del documento.
 
 <a id="capitulo-i-introduccion"></a>
 # Capítulo I: Introducción
@@ -3715,6 +3717,37 @@ Google Cloud. (n.d.). *Invoke with an HTTPS request*. Google Cloud Documentation
 
 Vercel. (n.d.). *Working with SSL certificates*. Vercel Documentation. [https://vercel.com/docs/domains/working-with-ssl](https://vercel.com/docs/domains/working-with-ssl)
 
+OpenAPI Initiative. (2024). *OpenAPI Specification 3.1.1*. https://spec.openapis.org/oas/v3.1.1.html
+
+Universidad Peruana de Ciencias Aplicadas. (2026a). *1ASI0728 – Arquitecturas de Software Emergentes, ciclo 202620, NRC 16365* [Syllabus del curso].
+
+Universidad Peruana de Ciencias Aplicadas. (2026b). *Rúbrica ABET 1ASI0728 202620* [Hoja de cálculo del curso].
+
+Universidad Peruana de Ciencias Aplicadas. (2026c). *Rúbrica de Logro 1ASI0728 202620* [Hoja de cálculo del curso].
+
+Universidad Peruana de Ciencias Aplicadas. (2026d). *TF 1ASI0728 202620 Ejemplo* [Informe de ejemplo, PDF].
+
+Universidad Peruana de Ciencias Aplicadas. (2026e). *Trabajo Final 1ASI0728 202620* [Final Project Statement, PDF].
+
+Python Software Foundation. (n.d.). *Python 3.12 documentation*. https://docs.python.org/3.12/
+
+FastAPI. (n.d.). *FastAPI documentation*. https://fastapi.tiangolo.com/
+
+Vue.js. (n.d.). *Vue.js documentation*. https://vuejs.org/guide/introduction
+
+Docker Inc. (n.d.). *Docker Compose documentation*. https://docs.docker.com/compose/
+
+SQLite. (n.d.). *Write-Ahead Logging*. https://www.sqlite.org/wal.html
+
+GitHub. (n.d.). *Tale Star frontend-web repository*. https://github.com/Tale-Star/frontend-web
+
+GitHub. (n.d.). *Tale Star backend repository*. https://github.com/Tale-Star/backend
+
+GitHub. (n.d.). *Tale Star documentation repository*. https://github.com/Tale-Star/docs
+
+GitHub. (n.d.). *Tale Star landing-page repository*. https://github.com/Tale-Star/landing-page
+
+
 [1]: https://jamanetwork.com/journals/jamapediatrics/fullarticle/2821940 "Early Childhood Screen Use Contexts and Cognitive and Psychosocial Outcomes: A Systematic Review and Meta-analysis | JAMA Pediatrics"
 [2]: https://www.ofcom.org.uk/media-use-and-attitudes/media-literacy/exploring-the-relationship-between-persuasive-design-on-online-platforms-and-the-time-that-children-spend-on-them "Exploring the relationship between persuasive design on online platforms, and the time that children spend on them"
 [3]: https://www.inei.gob.pe/media/MenuRecursivo/boletines/boletin_ninez_iit2025.pdf "Estado de la Niñez y Adolescencia"
@@ -3744,6 +3777,8 @@ Vercel. (n.d.). *Working with SSL certificates*. Vercel Documentation. [https://
 Tale Star. (n.d.). *Design* [Repositorio de diseño]. GitHub. https://github.com/Tale-Star/design
 
 Tale Star. (n.d.). *Documentation* [Repositorio de documentación]. GitHub. https://github.com/Tale-Star/docs
+
+Tale Star. (n.d.). *Backend* [Repositorio de código fuente]. GitHub. https://github.com/Tale-Star/backend
 
 Tale Star. (n.d.). *Frontend mobile* [Repositorio de código fuente]. GitHub. https://github.com/Tale-Star/frontend-mobile
 
