@@ -3583,35 +3583,49 @@ La documentación API es local y refleja el esquema de la aplicación ejecutada 
 
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
 
-<a id="7218-team-collaboration-insights-during-sprint"></a>
+El backend incluye `compose.yaml`, Dockerfiles separados para API y worker, migraciones de base de datos y variables de configuración. La guía del repositorio documenta `docker compose build`, la migración con Alembic y `docker compose up`. La ejecución de capturas de este informe se hizo en procesos locales con almacenamiento de la copia de trabajo y generadores simulados; no se publicó ni modificó una instancia cloud.
+
+La Landing Page sí tiene publicación pública verificable en [GitHub Pages](https://tale-star.github.io/landing-page/), documentada en 6.3.3. No se localizó URL pública para frontend-web o backend. El despliegue del worker con modelos reales sigue condicionado por el almacenamiento persistente, recursos de cómputo y estrategia de ejecución.
+
 #### 7.2.1.8. Team Collaboration Insights during Sprint
 
-<a id="722-sprint-2"></a>
+Los commits disponibles muestran integración de autenticación, autoría, imágenes, música, biblioteca y API entre fines de septiembre y octubre; también existe un PR de frontend desde `develop`. El registro de versiones previo del informe documenta responsabilidades por capítulos para TB1/TP1. En cambio, no se encontró tablero o acta de Sprint 1, ni datos de asistencia, tareas individuales, horas o story points. Este capítulo informa el estado de producto a partir del código sin adjudicar retrospectivamente su trabajo a miembros concretos.
+
 ### 7.2.2. Sprint 2
 
-<a id="7221-sprint-planning-2"></a>
+El alcance del hito de semana 12 que se informa aquí corresponde a Sprint 1. No se encontró una fuente suficiente para reconstruir la planificación o ejecución de Sprint 2; se conserva la estructura del informe y se registra la ausencia de evidencia sin inventar backlog, pruebas o despliegues.
+
 #### 7.2.2.1. Sprint Planning 2
 
-<a id="7222-sprint-backlog-2"></a>
+No se encontró acta de planificación ni datos verificables de fechas, asistentes, capacidad o estimaciones para Sprint 2.
+
 #### 7.2.2.2. Sprint Backlog 2
 
-<a id="7223-development-evidence-for-sprint-review"></a>
+No se encontró un tablero de Sprint 2 que permita atribuir historias o estados.
+
 #### 7.2.2.3. Development Evidence for Sprint Review
 
-<a id="7224-testing-suite-evidence-for-sprint-review"></a>
+Los commits de los repositorios están relacionados en 7.2.1.3; no se asignan a Sprint 2 por fecha sin evidencia del sprint.
+
 #### 7.2.2.4. Testing Suite Evidence for Sprint Review
 
-<a id="7225-execution-evidence-for-sprint-review"></a>
+No se obtuvo una ejecución de pruebas identificada como Sprint 2.
+
 #### 7.2.2.5. Execution Evidence for Sprint Review
 
-<a id="7226-services-documentation-evidence-for-sprint-review"></a>
+No se encontró evidencia de ejecución etiquetada como Sprint 2.
+
 #### 7.2.2.6. Services Documentation Evidence for Sprint Review
 
-<a id="7227-software-deployment-evidence-for-sprint-review"></a>
+El contrato API disponible se documenta en 7.2.1.6; no se identificó una versión de Sprint 2.
+
 #### 7.2.2.7. Software Deployment Evidence for Sprint Review
 
-<a id="7228-team-collaboration-insights-during-sprint"></a>
+El estado de despliegue público y local se documenta en 7.2.1.7; no se identificó un despliegue de Sprint 2.
+
 #### 7.2.2.8. Team Collaboration Insights during Sprint
+
+No se encontró evidencia específica de colaboración de Sprint 2 que permita atribuir tareas, reuniones u horas.
 
 <a id="73-validation-interviews"></a>
 ## 7.3. Validation Interviews
@@ -3632,24 +3646,31 @@ La documentación API es local y refleja el esquema de la aplicación ejecutada 
 # Conclusiones
 
 <a id="conclusiones-y-recomendaciones"></a>
+
 ## Conclusiones y recomendaciones
 
 **Conclusiones**
 
-1. Dividir el dominio en cuatro bounded contexts separa la configuración narrativa, la generación, la biblioteca y la identidad según sus responsabilidades. Creative Authoring conserva Stories, páginas y personajes; el adulto revisa el contenido y decide si lo guarda en la biblioteca, sin que la autoría dependa de un modelo generativo concreto.
-2. Organizar los contextos en Domain, Application, Interface e Infrastructure, con Ports & Adapters dentro de un monolito modular, permite sustituir los adaptadores de generación sin incorporar sus dependencias al dominio. En el backend, los puertos de imagen y música aíslan Z-Image-Turbo y ACE-Step; el texto de las Story Pages lo redacta y edita el usuario adulto, pues no existe un `StoryTextGeneratorPort` implementado.
-3. La Landing Page está implementada y publicada, y comunica la propuesta y los segmentos definidos por US91–US94. Los accesos de US95 y US96 todavía no están disponibles: sus CTA muestran *Próximamente* mientras la Web Application, el backend y la aplicación móvil no tengan destinos públicos. La comprensión de la propuesta y la efectividad de los CTA todavía deben validarse con usuarios.
-4. Generative Media integra los adaptadores de imagen y música como infraestructura; la configuración local permite usar Z-Image-Turbo y ACE-Step sin depender de APIs de inferencia de terceros. Tale Star prevé una aplicación móvil Flutter para Android e iOS con lectura de Stories mediante AR local. Esa experiencia no tiene código móvil publicado; para la prueba final de esta entrega se prevé validar Android por los costos de publicación y pruebas en iOS.
-5. A esta entrega, Tale Star cuenta con el diseño estratégico y táctico documentado, una Web Application y un backend con código pero aún sin despliegue público, y una Landing Page implementada y publicada en GitHub Pages. El destino previsto es Vercel para la Web Application y Google Cloud Run para el backend, sujeto a resolver la persistencia y ejecución del Worker descritas en 4.3.4. La aplicación Flutter con lectura AR continúa como alcance planificado. Todavía no hay resultados de validación con usuarios, por lo que no se reportan métricas de uso.
+1. La solución cuenta con una Web Application conectada a una API para autenticación, autoría de historias/páginas, creación de imágenes y música, y consulta de contenido guardado. La API organiza esos comportamientos por contextos y tiene contrato OpenAPI; el proceso de generación está separado mediante trabajos asíncronos y adaptadores de infraestructura.
+2. La evidencia de ejecución de este informe se obtuvo en local con datos sintéticos y adaptadores de generación simulados. Acredita la apertura de los flujos principales y Swagger, pero no mide calidad de imágenes/música reales, rendimiento, seguridad en producción ni aceptación de usuarios.
+3. La Landing Page está publicada en GitHub Pages y comunica la propuesta y capacidades principales. Sus CTA para ingresar a la Web Application o descargar la aplicación móvil aún indican *Próximamente*, pues esos destinos no están publicados.
+4. La configuración de despliegue de API y worker existe en Docker Compose, pero no se verificó una publicación pública del frontend web o backend. La inferencia real requiere resolver ejecución de modelos, cómputo y persistencia adecuados para una instancia desplegada.
+5. La lectura AR móvil continúa como diseño conceptual. Los wireflows, mock-ups y prototipo navegable ayudan a revisar la interacción, pero no equivalen a un cliente móvil ni a una experiencia AR implementada. No se encontraron resultados de validación del producto con usuarios para este corte.
 
 **Recomendaciones**
 
-1. Validar con padres/cuidadores y docentes si la propuesta, los segmentos y las acciones principales de la landing se comprenden sin explicación adicional; ajustar los textos a partir de esos resultados.
-2. Comprobar que el workflow de publicación termina correctamente después de cambios en la landing y mantener actualizados los destinos de sus CTA.
-3. Cuando la aplicación móvil tenga una versión descargable, configurar y verificar el CTA móvil de producción para que dirija a su canal oficial de distribución.
+1. Publicar la Web Application y API en entornos accesibles, definiendo primero persistencia, almacenamiento de medios, trabajos asíncronos y protección de credenciales/modelos.
+2. Configurar los CTA de la landing con destinos verificados y volver a capturar la página después de publicar esos componentes.
+3. Ejecutar y registrar las suites automatizadas del backend, validaciones del frontend y pruebas manuales del flujo; luego incluir resultados reales con fecha y alcance.
+4. Realizar validaciones con padres/cuidadores y docentes, registrar consentimiento, tareas y hallazgos, y usar los resultados para priorizar ajustes.
+5. Si el alcance móvil se mantiene, implementar y probar la lectura AR en dispositivos reales antes de presentar el wireflow como capacidad disponible.
+6. Mantener un tablero/acta por sprint con objetivo, responsables, estimaciones, criterios de aceptación y evidencia de revisión para que futuras versiones puedan atribuir el trabajo sin reconstrucciones.
 
 <a id="video-about-the-team"></a>
+
 ## Video About-the-Team
+
+No se encontró un video About-the-Team ni un enlace de publicación entre los materiales revisados, por lo que no se afirma que la grabación esté terminada. Para completar este artefacto, el equipo puede grabar una presentación breve con estos puntos: integrantes y roles; necesidad educativa que aborda Tale Star; estado actual de Web Application, API y landing; límites de la funcionalidad móvil/AR; y próximos pasos. Añadir aquí la URL real de Microsoft Stream cuando el equipo publique la grabación.
 
 <a id="bibliografia"></a>
 # Bibliografía
