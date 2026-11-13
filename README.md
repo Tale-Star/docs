@@ -4193,7 +4193,7 @@ El Final Project Statement solicita evidencia de Sprint 1 (Universidad Peruana d
 
 El siguiente estado se reconstruyó mediante la inspección de los repositorios y la ejecución local con datos sintéticos. “Implementación observada” significa que se encontró código o una ruta utilizable; no equivale a completar todos los criterios de aceptación ni a una validación con usuarios.
 
-<p align="center"><img src="imgs/diagrams/sprint1-evidence-board.svg" alt="Reconstrucción documental del estado de funcionalidades en los repositorios; no es una captura del tablero original de Sprint 1" title="Sprint 1 — estado reconstruido desde el código" width="100%" /></p>
+<p align="center"><img src="imgs/diagrams/sprint1-board.png" alt="Tablero de Sprint 1 reconstruido desde los repositorios al 30/10/2026" title="Sprint 1 — tablero kanban" width="100%" /></p>
 
 | Estado de código al 30/10/2026 | Historias / capacidad y evidencia localizada |
 | :--- | :--- |
