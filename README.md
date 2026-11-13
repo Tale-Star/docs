@@ -322,7 +322,7 @@ La cuenta que GitHub muestra como `Sigilo-dev` corresponde a los commits cuya id
       - [7.2.2.7. Software Deployment Evidence for Sprint Review](#7227-software-deployment-evidence-for-sprint-review)
       - [7.2.2.8. Team Collaboration Insights during Sprint](#7228-team-collaboration-insights-during-sprint)
   - [7.3. Validation Interviews](#73-validation-interviews)
-    - [7.3.1. Diseño de Entrevistas](#731-diseño-de-entrevistas)
+    - [7.3.1. Diseño de entrevistas de validación](#731-diseno-de-entrevistas-de-validacion)
     - [7.3.2. Registro de Entrevistas](#732-registro-de-entrevistas)
     - [7.3.3. Evaluaciones según heurísticas](#733-evaluaciones-según-heurísticas)
   - [7.4. Video About-the-Product](#74-video-about-the-product)
@@ -4325,8 +4325,48 @@ No se encontró evidencia específica de colaboración de Sprint 2 que permita a
 <a id="73-validation-interviews"></a>
 ## 7.3. Validation Interviews
 
-<a id="731-diseno-de-entrevistas"></a>
-### 7.3.1. Diseño de Entrevistas
+<a id="731-diseno-de-entrevistas-de-validacion"></a>
+### 7.3.1. Diseño de entrevistas de validación
+
+El diseño de las entrevistas de validación busca conocer la percepción de padres, cuidadores y docentes después de observar una demostración del funcionamiento de Tale Star. Las entrevistas serán semiestructuradas e individuales, y el mismo recorrido de demostración se presentará antes de formular las preguntas principales para cada segmento.
+
+Cada entrevista comienza con preguntas de introducción para contextualizar la experiencia de la persona participante. Luego de la demostración, se realizan las preguntas principales sobre facilidad de uso, adecuación del contenido, utilidad y oportunidades de mejora. Se pueden solicitar ejemplos para profundizar las respuestas sin cambiar las preguntas centrales del guion.
+
+### Segmento 1: Padres y cuidadores
+
+#### Preguntas de introducción
+
+1. ¿Cuál es tu nombre, edad y ocupación actual?
+2. ¿Eres madre, padre o cuidador? ¿Qué edad tiene el niño o los niños a tu cargo?
+3. ¿Cómo participas habitualmente en sus actividades de aprendizaje y en la selección de contenido digital?
+
+#### Preguntas principales
+
+1. Después de ver cómo funciona Tale Star, ¿qué tan sencillo te parece crear un cuento personalizado para un niño?
+2. ¿Crees que podrías crear un cuento con los personajes y las características que deseas sin mayores dificultades?
+3. ¿Qué opinas sobre las imágenes y los textos generados? ¿Consideras que son apropiados para la edad de los niños?
+4. ¿Qué tan útil te parece la posibilidad de modificar o regenerar las imágenes y partes del cuento?
+5. Comparando Tale Star con los recursos que utilizas actualmente, ¿crees que te ayudaría a ahorrar tiempo? ¿Por qué?
+6. ¿En qué situaciones utilizarías Tale Star con un niño y con qué frecuencia?
+7. Después de conocer sus funcionalidades, ¿qué es lo que más te gustó de Tale Star y qué mejorarías?
+
+### Segmento 2: Docentes
+
+#### Preguntas de introducción
+
+1. ¿Cuál es tu nombre, edad, profesión y años de experiencia docente?
+2. ¿En qué nivel, grado e institución trabajas actualmente?
+3. ¿Qué rol cumplen los recursos digitales en la preparación de tus clases?
+
+#### Preguntas principales
+
+1. Después de ver cómo funciona Tale Star, ¿qué tan sencillo te parece crear cuentos personalizados para tus estudiantes?
+2. ¿Consideras que los cuentos, las imágenes y la música generados podrían adaptarse a las necesidades y características de tus estudiantes?
+3. ¿Qué opinas sobre la posibilidad de personalizar personajes, escenarios y páginas de un cuento para tus actividades educativas?
+4. ¿Qué tan útil te parece poder modificar o regenerar el contenido antes de utilizarlo en clase?
+5. Comparando Tale Star con las herramientas que utilizas actualmente, ¿crees que te ayudaría a reducir el tiempo de preparación de materiales educativos? ¿Por qué?
+6. ¿En qué actividades de enseñanza utilizarías Tale Star y con qué frecuencia?
+7. Después de conocer el funcionamiento de Tale Star, ¿qué funcionalidad consideras más valiosa para tu trabajo como docente y qué mejorarías?
 
 <a id="732-registro-de-entrevistas"></a>
 ### 7.3.2. Registro de Entrevistas
