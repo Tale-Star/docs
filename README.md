@@ -324,6 +324,9 @@ La cuenta que GitHub muestra como `Sigilo-dev` corresponde a los commits cuya id
   - [7.3. Validation Interviews](#73-validation-interviews)
     - [7.3.1. Diseño de entrevistas de validación](#731-diseno-de-entrevistas-de-validacion)
     - [7.3.2. Registro de Entrevistas](#732-registro-de-entrevistas)
+      - [Entrevista 1 — Roxana Alvarado](#validacion-entrevista-1-roxana-alvarado)
+      - [Entrevista 2 — Diandra Valle](#validacion-entrevista-2-diandra-valle)
+      - [Entrevista 3 — Sara Dávila](#validacion-entrevista-3-sara-davila)
     - [7.3.3. Evaluaciones según heurísticas](#733-evaluaciones-según-heurísticas)
   - [7.4. Video About-the-Product](#74-video-about-the-product)
 - [Conclusiones](#conclusiones)
@@ -4371,6 +4374,67 @@ Cada entrevista comienza con preguntas de introducción para contextualizar la e
 <a id="732-registro-de-entrevistas"></a>
 ### 7.3.2. Registro de Entrevistas
 
+Las siguientes entrevistas corresponden a tres docentes del segmento objetivo 2 y registran su percepción de Tale Star después de observar una demostración. Los datos de perfil de Roxana, Diandra y Sara se mantienen de las fichas de las mismas participantes en 2.2.2; las síntesis que siguen describen sus nuevas respuestas de validación. Las transcripciones recibidas no incluyen marcas de tiempo.
+
+**Segmento objetivo 2: Docentes**
+
+<a id="validacion-entrevista-1-roxana-alvarado"></a>
+#### Entrevista 1 — Roxana Alvarado
+
+| Dato | Información |
+| :--- | :--- |
+| Edad | 49 años |
+| Distrito | Santiago de Surco, Lima, Perú |
+| Experiencia docente | 25 años |
+| Nivel | Educación inicial |
+| Entrevistador | Mariano Oblitas |
+| Timing | No consignado en la transcripción recibida |
+| Registro | [Video de la entrevista desde el inicio](https://youtu.be/dpScmTNNNnA) |
+
+Roxana valoró que la plataforma reúna en un mismo lugar la creación, edición y organización de cuentos, imágenes y canciones, pues así resulta más sencillo encontrar lo trabajado y se evita alternar entre herramientas como ChatGPT y Gemini, descargar archivos y reunirlos después. Consideró que las imágenes pueden adaptarse al trabajo con niños de inicial y destacó la posibilidad de utilizar personajes disponibles o crear y guardar personajes propios, además de preparar fondos. Señaló que modificar o regenerar contenido puede ser útil, aunque primero necesitaría familiarizarse con el funcionamiento de la plataforma. Para su trabajo, destacó especialmente los cuentos, las imágenes y los fondos; también consideró valiosa la creación de canciones. No indicó una frecuencia concreta de uso ni propuso una mejora específica en la transcripción.
+
+<p align="center">
+  <img src="imgs/interviews/validation/validacion-docente-1-roxana.png" alt="Captura de la entrevista de validación a Roxana Alvarado" title="Entrevista de validación 1 — Roxana Alvarado, segmento Docentes" width="850" />
+</p>
+
+<a id="validacion-entrevista-2-diandra-valle"></a>
+#### Entrevista 2 — Diandra Valle
+
+| Dato | Información |
+| :--- | :--- |
+| Edad | 41 años |
+| Distrito | Santiago de Surco, Lima, Perú |
+| Experiencia docente | 18 años |
+| Nivel | Educación inicial, aula de 5 años |
+| Entrevistador | Mariano Oblitas |
+| Timing | No consignado en la transcripción recibida |
+| Registro | [Video de la entrevista desde el inicio](https://youtu.be/TGzRloTDTcE) |
+
+Diandra describió el proceso como sencillo y práctico, y señaló que los recursos visuales resultan atractivos para los niños. Consideró útil personalizar los personajes según sus fortalezas y debilidades, y propuso que pudieran tener voz para convertir los cuentos en audiocuentos. Valoró guardar y editar personajes y escenarios para reutilizarlos en historias posteriores y acercarlos al contexto de los estudiantes, por ejemplo, usando un parque conocido del distrito. También observó que un personaje reutilizable podría cambiar junto con el aprendizaje del niño. La opción de regenerar una imagen le pareció práctica porque permite corregir una base sin repetir el proceso desde cero. Identificó como principal valor la creación de cuentos personalizados según el contexto del niño y destacó el ahorro de tiempo. No indicó una frecuencia concreta de uso; la propuesta de incorporar narración de voz fue su mejora explícita.
+
+<p align="center">
+  <img src="imgs/interviews/validation/validacion-docente-2-diandra.png" alt="Captura de la entrevista de validación a Diandra Valle" title="Entrevista de validación 2 — Diandra Valle, segmento Docentes" width="850" />
+</p>
+
+<a id="validacion-entrevista-3-sara-davila"></a>
+#### Entrevista 3 — Sara Dávila
+
+| Dato | Información |
+| :--- | :--- |
+| Edad | 48 años |
+| Distrito | Santiago de Surco, Lima, Perú |
+| Experiencia docente | 20 años |
+| Nivel | Educación inicial |
+| Entrevistador | Mariano Oblitas |
+| Timing | No consignado en la transcripción recibida |
+| Registro | [Video de la entrevista desde el inicio](https://youtu.be/LhYMQi9H1YE) |
+
+Sara consideró sencillo el proceso porque las herramientas están visibles y los pasos le resultaron fáciles de seguir. Comentó que la personalización de personajes, escenarios y música puede ayudar a establecer un vínculo con los niños y a ajustar los recursos a su edad. Valoró guardar los elementos creados porque mantiene organizados personajes, escenarios y textos, y facilita alinearlos con lo que solicita el área curricular. Señaló que los cuentos pueden utilizarse en distintas áreas para motivar, generar expectativas, invitar a los estudiantes a formular hipótesis o proponer nuevos finales que después puedan representarse visualmente. Consideró valiosos los recursos centralizados, el ahorro de tiempo, la música y el control parental que se le presentó, al que atribuyó importancia para ofrecer contenido apropiado. No indicó una frecuencia concreta de uso ni formuló otra mejora específica en la transcripción.
+
+<p align="center">
+  <img src="imgs/interviews/validation/validacion-docente-3-sara.png" alt="Captura de la entrevista de validación a Sara Dávila" title="Entrevista de validación 3 — Sara Dávila, segmento Docentes" width="850" />
+</p>
+
 <a id="733-evaluaciones-segun-heuristicas"></a>
 ### 7.3.3. Evaluaciones según heurísticas
 
@@ -4535,6 +4599,12 @@ Tale Star. (n.d.). *Entrevista 1: Sara Davila, segmento docentes* [Video]. YouTu
 Tale Star. (n.d.). *Entrevista 2: Roxana Alvarado, segmento docentes* [Video]. YouTube. https://youtu.be/qM7wqQPLy8w?t=3
 
 Tale Star. (n.d.). *Entrevista 3: Diandra Valle, segmento docentes* [Video]. YouTube. https://youtu.be/VIJUaUCygm4?t=4
+
+Tale Star. (n.d.). *Entrevista de validación 1: Roxana Alvarado, segmento docentes* [Video]. YouTube. https://youtu.be/dpScmTNNNnA
+
+Tale Star. (n.d.). *Entrevista de validación 2: Diandra Valle, segmento docentes* [Video]. YouTube. https://youtu.be/TGzRloTDTcE
+
+Tale Star. (n.d.). *Entrevista de validación 3: Sara Dávila, segmento docentes* [Video]. YouTube. https://youtu.be/LhYMQi9H1YE
 
 <a id="anexo-c-desplegables"></a>
 ## Anexo C. Desplegables
