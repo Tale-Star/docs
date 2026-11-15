@@ -4677,3 +4677,5 @@ La revisión corrige artefactos de diseño y comunicación. Las evidencias de de
 Tale Star. (n.d.). *Video About The Product TaleStar* [Video]. YouTube. https://youtu.be/5qs1HM4F4bk
 
 [Ver el video About-the-Product](https://youtu.be/5qs1HM4F4bk).
+
+[Ver el video About The Team](https://youtu.be/uPa1ZUtRjZY)
