@@ -324,6 +324,7 @@ La cuenta que GitHub muestra como `Sigilo-dev` corresponde a los commits cuya id
   - [7.3. Validation Interviews](#73-validation-interviews)
     - [7.3.1. Diseño de entrevistas de validación](#731-diseno-de-entrevistas-de-validacion)
     - [7.3.2. Registro de Entrevistas](#732-registro-de-entrevistas)
+      - [Entrevista 1 — Sintia Micaela Olivera](#validacion-entrevista-sintia-micaela-olivera)
       - [Entrevista 1 — Roxana Alvarado](#validacion-entrevista-1-roxana-alvarado)
       - [Entrevista 2 — Diandra Valle](#validacion-entrevista-2-diandra-valle)
       - [Entrevista 3 — Sara Dávila](#validacion-entrevista-3-sara-davila)
@@ -341,6 +342,7 @@ La cuenta que GitHub muestra como `Sigilo-dev` corresponde a los commits cuya id
     - [Aplicación móvil descargable](#aplicación-móvil-descargable)
   - [Anexo D. Landing Page publicada](#anexo-d-landing-page-publicada)
   - [Anexo E. Trazabilidad de correcciones de Hito 3](#anexo-e-trazabilidad-de-correcciones)
+  - [Anexo F. Video About-the-Product](#anexo-f-video-about-the-product)
 
 <a id="student-outcome"></a>
 
@@ -4374,7 +4376,25 @@ Cada entrevista comienza con preguntas de introducción para contextualizar la e
 <a id="732-registro-de-entrevistas"></a>
 ### 7.3.2. Registro de Entrevistas
 
-Las siguientes entrevistas corresponden a tres docentes del segmento objetivo 2 y registran su percepción de Tale Star después de observar una demostración. Los datos de perfil de Roxana, Diandra y Sara se mantienen de las fichas de las mismas participantes en 2.2.2; las síntesis que siguen describen sus nuevas respuestas de validación. Las transcripciones recibidas no incluyen marcas de tiempo.
+Las siguientes entrevistas registran las percepciones de representantes de los dos segmentos objetivo después de observar una demostración de Tale Star. Los datos disponibles de cada participante se consignan junto a su registro; las síntesis describen sus respuestas sin atribuirles resultados medidos. Se incluyen marcas de tiempo cuando estuvieron disponibles en la transcripción.
+
+**Segmento objetivo 1: Padres y cuidadores**
+
+<a id="validacion-entrevista-sintia-micaela-olivera"></a>
+#### Entrevista 1 — Sintia Micaela Olivera
+
+| Dato | Información |
+| :--- | :--- |
+| Edad | 44 años |
+| Segmento | Padres y cuidadores |
+| Relación con niños | Madre de dos niños |
+| Edades de sus hijos | 3 y 5 años |
+| Distrito | No consignado |
+| Entrevistador | No consignado en la transcripción |
+| Timing | 00:03–03:45 |
+| Registro | [Video de la entrevista desde el inicio](https://www.youtube.com/watch?v=so_GaIihE0Q) |
+
+Sintia consideró sencillo crear el cuento página por página y señaló que podría incluir personajes que sus hijos prefieren, como el conejito de peluche de su hija. Opinó que las ilustraciones pueden ayudar a los niños a reconocer animales y personas, y que el contenido debe ajustarse a la edad. Le pareció útil modificar o regenerar partes del cuento y expresó que le gustaría contar con más ilustraciones. Indicó que Tale Star podría ayudarle a conversar con su hija mediante historias ilustradas y que la usaría a diario o semanalmente para motivar a sus hijos y acompañar su aprendizaje. Lo que más destacó fue poder usar palabras propias para revisar y practicar el cuento en casa, jugar con la historia y animar a los niños a leer.
 
 **Segmento objetivo 2: Docentes**
 
@@ -4606,6 +4626,8 @@ Tale Star. (n.d.). *Entrevista de validación 2: Diandra Valle, segmento docente
 
 Tale Star. (n.d.). *Entrevista de validación 3: Sara Dávila, segmento docentes* [Video]. YouTube. https://youtu.be/LhYMQi9H1YE
 
+Tale Star. (n.d.). *Entrevista 1: Sintia Micaela Olivera, segmento padres y cuidadores* [Video]. YouTube. https://www.youtube.com/watch?v=so_GaIihE0Q
+
 <a id="anexo-c-desplegables"></a>
 ## Anexo C. Desplegables
 
@@ -4644,7 +4666,14 @@ La Landing Page de Tale Star está publicada en [GitHub Pages](https://tale-star
 | Numeración UX | Se documenta equivalencia entre la lista de Hito 3 y la numeración sin duplicados del ejemplo. |
 | Prototipos | Recorridos locales y MP4 de web/móvil disponibles; publicación en Microsoft Stream pendiente. |
 | Despliegue | Landing pública; Web Application/API y ejecución de modelos reales no acreditadas públicamente. Las capturas locales no resuelven este requisito del Statement. |
-| Validación y About-the-Product | Secciones 7.3 y 7.4 reservadas vacías por alcance acordado. |
+| Validación y About-the-Product | 7.3.1 presenta el diseño de entrevistas y 7.3.2 registra entrevistas de padres/cuidadores y docentes; 7.3.3 y 7.4 permanecen vacías. El video About-the-Product se referencia en el Anexo F. |
 | Planificación y pruebas | Se conserva la reconstrucción del sprint y el inventario de pruebas; actas, tablero histórico y resultados de suites siguen sin aportarse. |
 
 La revisión corrige artefactos de diseño y comunicación. Las evidencias de despliegue, aceptación, ejecución de modelos y publicación institucional requieren actividades reales adicionales; no se sustituyen por capturas del prototipo ni por una afirmación de cumplimiento total.
+
+<a id="anexo-f-video-about-the-product"></a>
+## Anexo F. Video About-the-Product
+
+Tale Star. (n.d.). *Video About The Product TaleStar* [Video]. YouTube. https://youtu.be/5qs1HM4F4bk
+
+[Ver el video About-the-Product](https://youtu.be/5qs1HM4F4bk).
